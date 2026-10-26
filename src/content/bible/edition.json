@@ -1,0 +1,22 @@
+{
+  "id": "blivre-tr-2018.2.0",
+  "name": "Bíblia Livre (BLIVRE) · TR · fevereiro de 2018",
+  "language": "pt-BR",
+  "license": "Creative Commons Atribuição 3.0 Brasil (CC BY 3.0 BR)",
+  "licenseUrl": "https://creativecommons.org/licenses/by/3.0/br/",
+  "attribution": "Bíblia Livre (BLIVRE), Copyright © Diego Santos, Mario Sérgio e Marco Teles — fevereiro de 2018. https://sites.google.com/site/biblialivre/ . Licença Creative Commons Atribuição 3.0 Brasil. Reprodução permitida desde que devidamente mencionados fonte e autores. Conversão técnica de VPL para JSON pelo InJessusName, sem revisão ou alteração da redação dos versículos. O formato VPL não inclui as notas da edição. Atribuição não implica apoio dos autores ao aplicativo.",
+  "sourceUrl": "https://github.com/blivre/BibliaLivre/releases/tag/2018.2.0",
+  "sourceArtifactUrl": "https://github.com/blivre/BibliaLivre/releases/download/2018.2.0/bliv-tr_vpl.zip",
+  "sourceArchiveSha256": "af8d9876919c4ca67195b8d8adcb9998a63f25ea4509750574ab6a7eedb9e2f1",
+  "sourceVersion": "2018.2.0",
+  "sourceVariant": "TR (Textus Receptus no Novo Testamento, conforme documentação do projeto)",
+  "bookCount": 66,
+  "chapterCount": 1189,
+  "verseCount": 31102,
+  "canonNote": "Esta edição contém os 66 livros do cânon protestante. Não contém os deuterocanônicos nem todos os livros reconhecidos por outras tradições cristãs.",
+  "editorialNote": "A tradução é descrita pelos autores como trabalho em andamento. Este leitor preserva a versão de fevereiro de 2018; não é uma revisão do texto nem edição oficial de uma denominação.",
+  "checkedAt": "2026-10-25",
+  "sourceCommit": "a386942daee9984c654ebc8cea95ec9d3661b183",
+  "rightsEvidenceUrl": "https://github.com/blivre/BibliaLivre/blob/a386942daee9984c654ebc8cea95ec9d3661b183/LICENCA.md",
+  "corpusSha256": "d9dc1ff27d9c4d5893accfc532c85c3c493d75d1e59b437d83a789c51e2eeaa0"
+}

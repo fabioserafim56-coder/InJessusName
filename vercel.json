@@ -1,0 +1,6 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "nextjs",
+  "installCommand": "npm ci --no-fund --no-audit",
+  "buildCommand": "node scripts/import-bible.mjs --check && npm run build"
+}
