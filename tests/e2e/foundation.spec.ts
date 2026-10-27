@@ -1,49 +1,45 @@
 import { test, expect } from "@playwright/test";
 
-test("apresentação cristã carrega e todas as âncoras levam a seções existentes", async ({ page }) => {
+test("painel de estudo carrega com navegação e entrada real na primeira aula", async ({ page }) => {
   const pageErrors: string[] = [];
   page.on("pageerror", (error) => pageErrors.push(error.message));
   const response = await page.goto("/");
   expect(response?.status()).toBe(200);
   expect(response?.headers()["x-frame-options"]).toBe("DENY");
   await expect(page.locator("html")).toHaveAttribute("lang", "pt-BR");
-  await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
-  await expect(page.getByRole("heading", { level: 1 })).toContainText("Conhecer a Palavra.");
-  await expect(page.getByRole("heading", { name: /Congregação Cristã/ })).toBeVisible();
-  await expect(page.getByRole("main")).toContainText("Aulas planejadas para 15–20 minutos");
+  await expect(page.getByRole("main").getByRole("heading", { level: 1 })).toBeVisible();
+  const startLesson = page.getByRole("link", { name: "Começar a primeira aula", exact: true });
+  await expect(startLesson).toHaveAttribute("href", "/aprender/primeiros-passos");
 
   const invalidLinks = await page.locator('a[href^="#"]').evaluateAll((links) =>
     links.map((link) => link.getAttribute("href") || "")
       .filter((href) => href.length < 2 || !document.getElementById(decodeURIComponent(href.slice(1))))
   );
   expect(invalidLinks).toEqual([]);
-
-  const firstJourneyLink = page.locator('main a[href^="#"]').first();
-  const target = await firstJourneyLink.getAttribute("href");
-  await firstJourneyLink.click();
-  await expect(page).toHaveURL(new RegExp(`${target}$`));
+  await startLesson.click();
+  await expect(page).toHaveURL(/\/aprender\/primeiros-passos$/);
+  await expect(page.getByRole("heading", { level: 1 })).toContainText("Encontrar o texto");
   expect(pageErrors).toEqual([]);
-  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
 });
 
-test("jornada permite explorar temas e navegar com o teclado", async ({ page }) => {
-  await page.goto("/#jornada");
-  const first = page.getByRole("tab", { name: /O princípio/ });
-  const last = page.getByRole("tab", { name: /A fé através do tempo/ });
-  await expect(page.getByRole("tab")).toHaveCount(6);
-  expect(await page.getByRole("tab").evaluateAll((tabs) => tabs.every((tab) =>
-    Boolean(document.getElementById(tab.getAttribute("aria-controls") || ""))
-  ))).toBe(true);
-  await last.click();
-  await expect(last).toHaveAttribute("aria-selected", "true");
-  await expect(page.getByRole("tabpanel")).toContainText("história do Cristianismo");
-  await last.press("Home");
-  await expect(first).toBeFocused();
-  await expect(first).toHaveAttribute("aria-selected", "true");
-  await expect(page.getByRole("tabpanel")).toContainText("Abraão e a promessa");
-  await first.press("ArrowRight");
-  await expect(page.getByRole("tab", { name: /Um povo em caminho/ })).toBeFocused();
-  await expect(page.getByRole("tabpanel")).toContainText("Libertação e aliança");
+test("navegação de app funciona por teclado e mantém a área atual identificada", async ({ page, isMobile }) => {
+  await page.goto("/");
+  const navigation = page.getByRole("navigation", { name: isMobile ? "Navegação no celular" : "Navegação principal", exact: true });
+  const learn = navigation.getByRole("link", { name: "Aprender", exact: true });
+  await expect(navigation).toBeVisible();
+  await expect(navigation.getByRole("link", { name: "Início", exact: true })).toHaveAttribute("aria-current", "page");
+  await learn.focus();
+  await expect(learn).toBeFocused();
+  await learn.press("Enter");
+  await expect(page).toHaveURL(/\/aprender$/);
+  await expect(learn).toHaveAttribute("aria-current", "page");
+  await navigation.getByRole("link", { name: "Bíblia", exact: true }).click();
+  await expect(page).toHaveURL(/\/biblia$/);
+  await expect(navigation.getByRole("link", { name: "Bíblia", exact: true })).toHaveAttribute("aria-current", "page");
+  await expect(page.getByLabel("Livro", { exact: true })).toHaveValue("JHN");
+  await expect(page.getByRole("heading", { name: "João 1", exact: true })).toBeVisible();
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
 });
 
 test("manifesto, ícones e fallback offline estão funcionais", async ({ page, context, request }) => {
@@ -67,5 +63,6 @@ test("manifesto, ícones e fallback offline estão funcionais", async ({ page, c
   await page.getByRole("button", { name: "Tentar novamente" }).click();
   await expect(page.getByRole("status")).toContainText("Ainda não conseguimos acessar o aplicativo.");
   await context.setOffline(false);
-  await expect(page.getByRole("heading", { level: 1 })).toContainText("Conhecer a Palavra.", { timeout: 20000 });
+  await expect(page).toHaveURL(/\/$/, { timeout: 20000 });
+  await expect(page.getByRole("link", { name: "Começar a primeira aula", exact: true })).toBeVisible();
 });

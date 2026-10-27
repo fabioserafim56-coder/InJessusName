@@ -1,0 +1,51 @@
+.app-shell { --app-topbar-height:80px; min-height:100dvh; background:var(--background); color:var(--foreground); font-size:17px; }
+.app-shell svg { width:24px; height:24px; flex-shrink:0; }
+.app-sidebar { position:fixed; z-index:35; inset:0 auto 0 0; width:250px; display:flex; flex-direction:column; padding:32px 18px 22px; background:#fff; border-right:1px solid #e1e9e3; }
+.app-logo { display:flex; align-items:center; gap:10px; padding:0 9px; margin-bottom:49px; font-weight:750; font-size:18px; letter-spacing:-.65px; }
+.app-logo-mark { width:39px; height:42px; display:grid; place-items:center; border-radius:12px; background:#24533d; color:#fff; }
+.app-logo-mark svg { width:24px; height:24px; }
+.app-logo small { display:block; font-size:6.7px; font-weight:650; letter-spacing:1.05px; color:#66796b; margin-top:5px; }
+.app-nav-label { font-size:10px; letter-spacing:1.6px; font-weight:700; color:#7a8b80; padding-left:16px; margin-bottom:17px; }
+.app-side-nav { display:grid; gap:7px; }
+.app-side-nav>a { position:relative; display:flex; align-items:center; gap:13px; min-height:52px; padding:12px 16px; border-radius:12px; font-size:14px; font-weight:550; color:#5a6c62; transition:background .15s,color .15s; }
+.app-side-nav>a:hover { background:#f0f5f1; color:#204d36; }
+.app-side-nav>a[aria-current] { background:#e5f2e9; color:#24573b; font-weight:700; }
+.app-nav-icon { display:inline-flex; }.app-nav-icon svg{width:21px;height:21px}
+.app-nav-current { width:6px; height:6px; border-radius:50%; background:#3c8055; margin-left:auto; }
+.app-side-invitation { margin:43px 8px 28px; padding:20px 16px; background:linear-gradient(145deg,#f0f6ed,#e9f1e6); border:1px solid #dfebd7; border-radius:15px; }
+.app-side-symbol { display:grid; place-items:center; width:36px; height:36px; border-radius:11px; background:#fff; color:#567a3c; margin-bottom:14px; }
+.app-side-symbol svg { width:21px;height:21px; }
+.app-side-invitation strong { font-size:14px; line-height:1.6; font-weight:650; display:block; }
+.app-side-invitation p { margin:9px 0 15px; font-size:12px; line-height:1.8; color:#66795e; }
+.app-side-invitation a { display:flex; gap:9px; align-items:center; font-size:11px; line-height:1.7; font-weight:700; color:#355b32; }
+.app-side-invitation a svg { width:16px;height:16px; }
+.app-sidebar-footer { margin-top:auto; padding:16px 12px 0; display:grid; gap:12px; border-top:1px solid #edf1ea; font-size:11px; line-height:1.8; color:#6d7d71; }
+.app-sidebar-footer a { font-weight:550; }.app-sidebar-footer span{font-size:10px;color:#849187}
+.app-workspace { margin-left:250px; min-width:0; }
+.app-topbar { height:var(--app-topbar-height); position:sticky; z-index:30; top:0; padding:14px 36px; background:#ffffffed; backdrop-filter:blur(16px); border-bottom:1px solid #e2e9e3; display:flex; justify-content:space-between; align-items:center; gap:20px; }
+.app-topbar-location{display:flex;align-items:center;gap:12px;min-width:0}
+.app-topbar-title { font-size:16px; line-height:1.5; font-weight:650; color:#1d332b; }
+.app-topbar-subtitle { color:#7a877f; font-size:11px; line-height:1.6; margin-top:2px; }
+.app-topbar-actions{display:flex;align-items:center;gap:21px}
+.app-topbar-bible { display:flex; align-items:center; gap:8px; font-size:12px; font-weight:550; color:#496454; }.app-topbar-bible svg{width:18px;height:18px}
+.app-account-link { display:grid;place-items:center; width:37px;height:37px;border:1px solid #dce6df;border-radius:12px;background:#f5f8f3;color:#506b57; }.app-account-link svg{width:19px;height:19px}
+.app-mobile-mark,.app-bottom-nav { display:none; }
+.app-content { width:100%; max-width:1510px; margin:auto; padding:32px 36px 60px; min-height:calc(100dvh - var(--app-topbar-height)); }
+.app-content h1 { font-family:var(--font-sans); font-weight:700; font-size:clamp(27px,2.8vw,39px); line-height:1.22; letter-spacing:-1.1px; margin:0; }
+.app-content h2 { font-family:var(--font-sans);font-weight:650;letter-spacing:-.5px; }
+.app-content h3 { font-family:var(--font-sans);font-weight:650;letter-spacing:-.3px; }
+.app-content a:focus-visible,.app-shell button:focus-visible { outline:3px solid #53986e;outline-offset:4px; }
+.app-eyebrow { font-size:11px; letter-spacing:1.5px; font-weight:700; color:#63806b; text-transform:uppercase; }
+.app-primary-button,.app-secondary-button { display:inline-flex; align-items:center; justify-content:center; gap:10px; min-height:48px; padding:12px 19px; border-radius:11px; font-size:14px; line-height:1.6; font-weight:650; border:1px solid #265b3f; cursor:pointer; }
+.app-primary-button { background:#285e42;color:#fff;box-shadow:0 4px 8px #2253370c; }.app-primary-button:hover{background:#1c4731}
+.app-secondary-button { color:#315740;background:#fff;border-color:#d9e5da; }.app-secondary-button:hover{background:#f2f7f2}
+.app-primary-button svg,.app-secondary-button svg { width:18px;height:18px; }
+.app-secondary-link { display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:#54755b; }.app-secondary-link svg{width:16px;height:16px}
+.app-side-nav>a { font-size:15px; }
+.app-side-invitation strong { font-size:15px; }
+.app-side-invitation p { font-size:13px; }
+.app-topbar-title { font-size:17px; }
+@media(min-width:1500px){.app-sidebar{width:270px;padding-inline:24px}.app-workspace{margin-left:270px}.app-content{padding:40px 48px 65px}.app-topbar{padding-inline:48px}}
+@media(max-width:1050px){.app-sidebar{width:220px;padding-inline:12px}.app-workspace{margin-left:220px}.app-logo{font-size:16px;gap:8px;padding-inline:6px}.app-logo small{font-size:6px}.app-logo-mark{width:35px;height:39px}.app-content{padding:28px 24px 45px}.app-topbar{padding-inline:24px}.app-side-invitation{margin-inline:4px;padding:18px 14px}}
+@media(max-width:760px){.app-shell{--app-topbar-height:72px}.app-sidebar{display:none}.app-workspace{margin-left:0}.app-topbar{padding:13px 20px}.app-topbar-title{font-size:15px}.app-topbar-subtitle{font-size:10px}.app-mobile-mark{display:grid;place-items:center;background:#2a5d42;color:white;width:35px;height:37px;border-radius:10px;flex-shrink:0}.app-mobile-mark svg{width:22px;height:22px}.app-topbar-actions{gap:12px}.app-topbar-bible{display:none}.app-account-link{height:34px;width:34px}.app-content{padding:24px 20px calc(102px + env(safe-area-inset-bottom))}.app-content h1{font-size:29px;letter-spacing:-.9px}.app-bottom-nav{display:grid;grid-template-columns:repeat(4,1fr);position:fixed;z-index:40;bottom:0;left:0;right:0;background:#fffffffa;backdrop-filter:blur(16px);border-top:1px solid #e0e9e0;padding:9px 10px calc(9px + env(safe-area-inset-bottom));box-shadow:0 -3px 20px #22382b05}.app-bottom-nav>a{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;min-height:48px;color:#728076;font-size:10px;font-weight:550;line-height:1.5}.app-bottom-nav .app-nav-icon{padding:3px 15px;border-radius:9px}.app-bottom-nav a[aria-current]{color:#275e3d;font-weight:700}.app-bottom-nav a[aria-current] .app-nav-icon{background:#e8f2e6}.app-bottom-nav svg{width:22px;height:22px}.app-primary-button,.app-secondary-button{font-size:14px;min-height:48px;padding:12px 17px}}
+@media(prefers-reduced-motion:reduce){.app-shell *{scroll-behavior:auto!important;transition:none!important}}

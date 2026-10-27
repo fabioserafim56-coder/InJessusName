@@ -71,7 +71,13 @@ test("leitor abre livros e capítulos reais, destaca uma referência e oferece l
   await expect(page.locator("#versiculo-12 span")).not.toBeEmpty();
   await page.getByRole("button", { name: "Aumentar tamanho do texto" }).click();
   await expect(page.getByRole("group", { name: "Tamanho do texto bíblico" })).toContainText("23 px");
+  await expect(page.locator("#br-source")).not.toBeVisible();
+  await page.getByRole("button", { name: "Edição e fontes", exact: true }).click();
+  await expect(page.locator("#br-source")).toBeVisible();
   await expect(page.locator("#br-source")).toContainText("Licença:");
+  await expect(page.locator("#br-source")).toContainText("deuterocanônicos");
+  await page.getByRole("button", { name: "Voltar à leitura", exact: true }).click();
+  await expect(page.locator("#br-source")).not.toBeVisible();
   await expect(page.getByRole("link", { name: /Consultar a fonte da edição/ })).toHaveAttribute("href", /^https:\/\//);
   await page.getByRole("link", { name: "Próximo capítulo" }).click();
   await expect(page.getByRole("heading", { name: "Atos 18", exact: true })).toBeVisible();
@@ -112,10 +118,13 @@ test("aula oferece exemplo, correção e retomada sem confundir ajuda com lembra
   await diagnosticCard.getByRole("button", { name: "Conferir resposta", exact: true }).click();
   await diagnosticCard.getByRole("button", { name: "Seguir com o estudo", exact: true }).click();
   await page.getByRole("button", { name: "Ir para o contexto", exact: true }).click();
-  await expect(page.getByRole("heading", { name: firstLesson.workedExample.title, exact: true })).toBeVisible();
+  await page.getByText("Explorar as seis lentes", { exact: true }).click();
   await page.getByRole("button", { name: "Histórica", exact: true }).click();
   await expect(page.getByRole("button", { name: "Histórica", exact: true })).toHaveAttribute("aria-pressed", "true");
   await expect(page.getByText(firstLesson.lenses[2].limit, { exact: true })).toBeVisible();
+  await page.getByRole("button", { name: "Ver exemplo resolvido", exact: true }).click();
+  await expect(page.getByRole("heading", { name: firstLesson.workedExample.title, exact: true })).toBeVisible();
+  await page.getByRole("button", { name: "Fazer uma observação", exact: true }).click();
   await page.getByRole("button", { name: "Ir para a prática", exact: true }).click();
 
   const answerPositions: number[] = [];

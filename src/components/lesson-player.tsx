@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useRef, useState } from "react";
 import { firstLesson as lesson, type LessonQuestion } from "@/content/lessons/primeiros-passos";
 import { calculateStudySummary, type StudyAnswer } from "@/lib/study-progress";
+import { AppShell } from "@/components/app-shell";
 import "./lesson-player.css";
 
 export type LessonPassage = {
@@ -16,10 +17,9 @@ export type LessonEdition = { name: string; attribution: string; license: string
 
 function Passage({ passage, edition }: { passage: LessonPassage; edition: LessonEdition }) {
   return <section className="study-passage" aria-label={`Texto de ${passage.label}`}>
-    <p className="study-kicker">CONFIRA NA BÍBLIA</p><h3>{passage.label}</h3>
-    {passage.verses.map((verse) => <p className="study-verse" key={verse.number}><sup>{verse.number}</sup> {verse.text}</p>)}
-    <p className="study-attribution">{edition.name} · {edition.license}<br />{edition.attribution} <a href={edition.sourceUrl} target="_blank" rel="noreferrer">Fonte da edição ↗</a></p>
-    <Link className="study-text-link" href={`/biblia?livro=${passage.book}&capitulo=${passage.chapter}`}>Ler o capítulo completo →</Link>
+    <div className="study-passage-heading"><h3>{passage.label}</h3><Link href={`/biblia?livro=${passage.book}&capitulo=${passage.chapter}`} target="_blank" rel="noreferrer" aria-label={`Ler o capítulo completo de ${passage.label} em outra aba`}>Abrir capítulo <span aria-hidden="true">↗</span></Link></div>
+    <div className="study-verses" tabIndex={0} aria-label={`Leitura de ${passage.label}`}>{passage.verses.map((verse) => <p className="study-verse" key={verse.number}><sup>{verse.number}</sup> {verse.text}</p>)}</div>
+    <details className="study-edition"><summary><span>BLIVRE · TR 2018 · CC BY 3.0 BR</span><span>Edição e fontes</span></summary><div><p><strong>{edition.name}</strong></p><p>{edition.attribution}</p><p>{edition.license}</p><a href={edition.sourceUrl} target="_blank" rel="noreferrer">Consultar a fonte original</a><p>A edição contém 66 livros e não inclui deuterocanônicos. Comentários da aula são autorais.</p></div></details>
   </section>;
 }
 
@@ -59,11 +59,11 @@ function QuestionCard({ question, passage, edition, onAnswer, onContinue, previo
   return <div className="study-question" data-question-id={question.id}>
     <p className="study-kicker">{diagnostic ? "SEU PONTO DE PARTIDA · SEM NOTA" : withoutLooking ? "TENTE LEMBRAR PRIMEIRO" : question.kind === "transfer" ? "APLIQUE EM OUTRO TEXTO" : "PRÁTICA COM CONSULTA"}</p>
     {withoutLooking && <p className="study-note">A passagem fica recolhida nesta etapa. Responda em voz baixa ou no seu caderno antes de abrir as alternativas. A consulta e as dicas serão identificadas no resultado.</p>}
-    {!withoutLooking && !diagnostic && <Passage passage={passage} edition={edition} />}
     {question.kind === "transfer" && <p className="study-note">Antes de escolher uma alternativa, explique em voz baixa ou no caderno como o diálogo inicial ajuda a compreender esta nova passagem. Depois compare sua justificativa com o comentário da resposta.</p>}
     <form onSubmit={submit}>
       <fieldset disabled={feedback !== null}>
         <legend>{question.prompt}</legend>
+        {!withoutLooking && !diagnostic && <Passage passage={passage} edition={edition} />}
         {showChoices && orderedOptions(question).map((option) => <label className="study-option" key={option.id}>
           <input type="radio" name={question.id} value={option.id} checked={selected === option.id} disabled={wrongChoices.includes(option.id)} onChange={() => setSelected(option.id)} />
           <span>{option.text}</span>
@@ -102,6 +102,7 @@ export function LessonPlayer({ mainPassage, transferPassage, edition }: { mainPa
   const [phase, setPhase] = useState(0);
   const [diagnosticDone, setDiagnosticDone] = useState(false);
   const [lens, setLens] = useState(0);
+  const [contextCard, setContextCard] = useState(0);
   const [answers, setAnswers] = useState<StudyAnswer[]>([]);
   const [activity, setActivity] = useState(0);
   const [finished, setFinished] = useState(false);
@@ -150,24 +151,100 @@ export function LessonPlayer({ mainPassage, transferPassage, edition }: { mainPa
       setSaved(null); setSaveState("idle"); setSaveMessage("Progresso desta aula apagado da conta. Para recomeçar as atividades, recarregue a página.");
     } catch (error) { setSaveMessage(error instanceof Error ? error.message : "Não foi possível confirmar a exclusão."); }
   };
-  const titles = ["Prepare sua mesa", "Leia com contexto", "Pratique e confira", "Leve para a vida e retome"];
-  return <div className="study-page">
-    <a className="skip-link" href="#aula">Pular para a aula</a>
-    <header className="study-header"><Link className="study-brand" href="/">InJessusName<span>CONHECER · COMPREENDER · VIVER</span></Link><nav aria-label="Navegação do estudo"><Link href="/aprender">Estudos</Link><Link href="/biblia">Bíblia</Link><Link href="/meu-percurso">Meu percurso</Link></nav></header>
-    <main className="study-container" id="aula">
-      <div className="study-introduction"><Link className="study-text-link" href="/aprender">← Voltar aos estudos</Link><p className="study-kicker">PRIMEIROS PASSOS · AULA 01</p><h1>{lesson.title}</h1><p>{lesson.subtitle}</p><div className="study-tags"><span>15–20 min sugeridos</span><span>{lesson.editorialLabel}</span></div><p className="study-fine">{lesson.pacingNote} {lesson.perspective}</p></div>
-      {!started ? <section className="study-welcome" aria-labelledby="study-objectives"><div><p className="study-kicker">AO FINAL, VOCÊ VAI PRATICAR</p><h2 id="study-objectives">Ler, conferir e explicar o seu caminho.</h2><ul>{lesson.objectives.map((objective) => <li key={objective.id}>{objective.statement}</li>)}</ul><button className="study-primary" onClick={() => preparationDialog.current?.showModal()}>Preparar minha mesa</button><p className="study-fine">Quer guardar a conclusão? <Link className="study-text-link" href="/entrar?next=/aprender/primeiros-passos">Entre antes de começar.</Link> Sem conta, você pode estudar com respostas apenas nesta sessão.</p></div><aside><span className="study-symbol" aria-hidden="true">✧</span><h3>Uma descoberta de cada vez.</h3><p>Um exemplo resolvido, seis missões, três perguntas de lembrança e uma nova passagem para aplicar o procedimento.</p><p>Não há corrida nem classificação da sua fé. Você pode pedir ajuda e tentar de novo.</p></aside></section> : <>
+  const titles = ["Seu ponto de partida", "Aprenda o procedimento", "Pratique e confira", "Seu próximo passo"];
+  const coach = currentQuestion?.skill === "locate"
+    ? "Procure o livro, depois o capítulo e o intervalo de versículos."
+    : currentQuestion?.skill === "observe"
+      ? "Observe quem participa e o que acontece, sem completar lacunas."
+      : "Encontre na passagem o que sustenta a sua resposta.";
+  const focusCard = () => requestAnimationFrame(() => sectionHeading.current?.focus());
+
+  return <AppShell active="learn" title="Primeiros passos" subtitle="Fundamentos da leitura bíblica">
+    <div className="study-page" id="aula">
+      <header className="study-lesson-heading">
+        <Link className="study-back" href="/aprender"><span aria-hidden="true">←</span> Todos os estudos</Link>
+        <div className="study-heading-meta"><span>Aula 01</span><span>15–20 min · no seu ritmo</span><details className="study-about"><summary>Piloto educacional</summary><div><p>{lesson.evaluationNote}</p><p>{lesson.perspective}</p><p>{lesson.pacingNote}</p></div></details></div>
+        <h1>{lesson.title}</h1>
+        {!started && <p className="study-subtitle">Encontre uma passagem, confira uma afirmação e use o procedimento em outro texto.</p>}
+      </header>
+
+      {!started ? <section className="study-welcome" aria-labelledby="study-objectives">
+        <div className="study-welcome-heading"><span className="study-welcome-icon" aria-hidden="true">01</span><div><p className="study-kicker">SUA PRIMEIRA PRÁTICA</p><h2 id="study-objectives">Aprenda fazendo, uma descoberta por vez.</h2></div></div>
+        <div className="study-start-actions"><button className="study-primary" onClick={() => preparationDialog.current?.showModal()}>Preparar minha mesa <span aria-hidden="true">→</span></button><p>Sem cronômetro. Você pode pausar, pedir ajuda e retomar.</p></div>
+        <div className="study-learning-route">
+          <div><span aria-hidden="true">1</span><h3>Veja como fazer</h3><p>Acompanhe um exemplo curto com a Bíblia aberta.</p></div>
+          <div><span aria-hidden="true">2</span><h3>Investigue o texto</h3><p>Faça seis missões, com dicas e explicação de cada resposta.</p></div>
+          <div><span aria-hidden="true">3</span><h3>Use o que aprendeu</h3><p>Tente lembrar e aplique o procedimento a outra passagem.</p></div>
+        </div>
+
+        <details className="study-objectives"><summary>O que vou conseguir praticar?</summary><ul>{lesson.objectives.map((objective) => <li key={objective.id}>{objective.statement}</li>)}</ul></details>
+      </section> : <>
         <nav className="study-phases" aria-label="Etapas da aula">{["Preparar", "Entender", "Praticar", "Retomar"].map((title, index) => <button key={title} disabled={index === 3 && !finished} aria-current={phase === index ? "step" : undefined} onClick={() => changePhase(index)}><span>{index + 1}</span>{title}</button>)}</nav>
-        <div className="study-layout"><section className="study-main"><p className="study-kicker">ETAPA {phase + 1} DE 4</p><h2 tabIndex={-1} ref={sectionHeading}>{titles[phase]}</h2>
-          {phase === 0 && <><p>{lesson.preparation.message}</p><ul className="study-checklist">{lesson.preparation.checklist.map((item) => <li key={item}>{item}</li>)}</ul>{!diagnosticDone ? <QuestionCard question={lesson.preparation.diagnostic} previousAnswers={answers} passage={mainPassage} edition={edition} onAnswer={addAnswer} onContinue={() => setDiagnosticDone(true)} /> : <div className="study-callout"><h3>Seu ponto de partida foi registrado nesta sessão.</h3><p>A pergunta inicial orienta o estudo e fica fora do resultado. Vamos aprender o procedimento com um exemplo.</p></div>}<button className="study-primary" disabled={!diagnosticDone} onClick={() => changePhase(1)}>Ir para o contexto</button></>}
-          {phase === 1 && <><div className="study-prose">{lesson.context.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}</div><figure className="study-diagram"><figcaption>{lesson.context.diagram.title}</figcaption><ol>{lesson.context.diagram.items.map((item, index) => <li key={item}><span>{index + 1}</span>{item}</li>)}</ol><p>{lesson.context.diagram.caption}</p></figure><article className="study-worked"><p className="study-kicker">EU MOSTRO COMO FAZER</p><h3>{lesson.workedExample.title}</h3><div className="study-reference-key">{lesson.workedExample.referenceKey.map((item) => <div key={item.label}><strong>{item.label}</strong><span>{item.meaning}</span></div>)}</div><h4>{lesson.workedExample.question}</h4><ol>{lesson.workedExample.thinkAloud.map((item) => <li key={item}>{item}</li>)}</ol><p><strong>Observação:</strong> {lesson.workedExample.observation}</p><p>{lesson.workedExample.evidence}</p><p className="study-note">{lesson.workedExample.interpretationBoundary}</p></article><section className="study-lenses" aria-labelledby="study-lenses-title"><p className="study-kicker">ABRA UMA PERGUNTA POR VEZ</p><h3 id="study-lenses-title">Seis lentes de contexto</h3><div className="study-lens-buttons" role="group" aria-label="Lentes de contexto">{lesson.lenses.map((item, index) => <button key={item.id} aria-pressed={lens === index} onClick={() => setLens(index)}>{item.title}</button>)}</div><div className="study-lens"><h4>{lesson.lenses[lens].question}</h4><p>{lesson.lenses[lens].explanation}</p><p><strong>Experimente:</strong> {lesson.lenses[lens].task}</p><p className="study-fine">{lesson.lenses[lens].limit}</p></div></section><section className="study-guided"><p className="study-kicker">AGORA, COM APOIO</p><h3>{lesson.guidedPractice.title}</h3><p>{lesson.guidedPractice.prompt}</p><details><summary>Ver pistas graduais</summary><ol>{lesson.guidedPractice.hints.map((hint) => <li key={hint}>{hint}</li>)}</ol></details><details><summary>Conferir uma resposta comentada</summary><p>{lesson.guidedPractice.modelResponse}</p><p>{lesson.guidedPractice.selfCheck}</p></details></section><button className="study-primary" onClick={() => changePhase(2)}>Ir para a prática</button></>}
-          {phase === 2 && (!finished ? <><div className="study-activity-heading"><h3>{activity < 6 ? lesson.game.title : activity < 9 ? "O que você consegue lembrar?" : "Um novo texto, o mesmo cuidado"}</h3><p>{activity < 6 ? `Missão ${activity + 1} de 6 · consulta permitida` : activity < 9 ? `Lembrança ${activity - 5} de 3 · tente antes de consultar` : "Aplicação em Lucas 10:25–37 · consulta permitida"}</p></div><QuestionCard key={currentQuestion.id} question={currentQuestion} passage={activity === 9 ? transferPassage : mainPassage} edition={edition} support={supportByQuestion[currentQuestion.id]} onSupport={(flags) => recordSupport(currentQuestion.id, flags)} previousAnswers={answers} onAnswer={addAnswer} onContinue={continueActivity} last={activity === questions.length - 1} /><p className="study-fine">{lesson.game.evidenceNote}</p></> : <><p>Você já percorreu as atividades desta sessão. Seu resultado e as próximas ações estão na etapa Retomar.</p><button className="study-primary" onClick={() => changePhase(3)}>Ver minha retomada</button></>)}
-          {phase === 3 && finished && <><section className="study-results" aria-labelledby="study-results-title"><p className="study-kicker">EVIDÊNCIAS DESTA SESSÃO</p><h3 id="study-results-title">Veja como chegou às respostas.</h3><dl><div><dt>Prática: acertos na primeira tentativa</dt><dd>{summary.guidedFirstAttemptCorrect} / 6</dd></div><div><dt>Lembrança: primeira tentativa sem ajuda</dt><dd>{summary.retrievalFirstAttemptCorrect} / 3</dd></div><div><dt>Respostas que precisaram de nova tentativa</dt><dd>{summary.retryCorrect}</dd></div><div><dt>Aplicação em outra passagem</dt><dd>{summary.transferFirstAttemptCorrect ? "Primeira tentativa" : summary.transferCorrect ? "Com apoio ou correção" : "Retomar"}</dd></div></dl><p className="study-note">São perguntas de reconhecimento nesta sessão. Corrigir uma resposta não comprova retenção em outro dia, e selecionar uma alternativa não substitui explicar seu raciocínio. Estes resultados não medem fé ou valor espiritual.</p></section><section className="study-soap"><h3>{lesson.soap.title}</h3><p>{lesson.soap.introduction}</p><ol>{lesson.soap.prompts.map((prompt) => <li key={prompt.id}><strong>{prompt.dimensions.join(" e ")}</strong><p>{prompt.prompt}</p></li>)}</ol><a className="study-primary" href="/resumos/primeiros-passos-v1.pdf" download>Baixar resumo em PDF (1 página)</a><Link className="study-text-link" href="/aprender/primeiros-passos/resumo" target="_blank">Abrir versão para impressão →</Link></section><section className="study-review-plan"><p className="study-kicker">APRENDER TAMBÉM É VOLTAR</p><h3>Retome em outro dia.</h3>{lesson.review.schedule.map((review) => <article key={review.afterDays}><span>+{review.afterDays} dia{review.afterDays > 1 ? "s" : ""}</span><div><h4>{review.title}</h4><p>{review.task}</p></div></article>)}<p className="study-fine">{lesson.review.scheduleNote} Não enviamos notificações.</p></section><details className="study-rubric"><summary>Como avaliar seu próximo passo</summary>{lesson.review.selfAssessment.map((item) => <div key={item.skill}><h4>{item.skill}</h4><p><strong>Com apoio:</strong> {item.withHelp}</p><p><strong>Com autonomia:</strong> {item.independently}</p></div>)}<p>{lesson.review.assessmentNote}</p></details><section className="study-save"><h3>Quer retomar pela sua conta?</h3><p>Salvar é opcional e exige uma conta adulta com autorização de personalização ativa. Serão guardados somente as alternativas, as tentativas, o uso de ajuda e as datas desta atividade. Orações e notas pessoais ficam no seu caderno.</p><label><input type="checkbox" checked={saveConsent} onChange={(event) => setSaveConsent(event.target.checked)} /> Quero guardar o progresso desta aula e as datas de retomada na minha conta.</label><button className="study-primary" disabled={!saveConsent || saveState === "saving" || saveState === "saved"} onClick={saveProgress}>{saveState === "saving" ? "Salvando…" : saveState === "saved" ? "Progresso salvo" : "Salvar meu progresso"}</button><Link className="study-text-link" href="/entrar?next=/aprender/primeiros-passos">Entrar na minha conta →</Link></section></>}
-        </section><aside className="study-sidebar">{phase === 2 && currentQuestion?.evidenceMode === "without-looking" && !finished ? <div className="study-recall-note"><span aria-hidden="true">✧</span><h3>Um momento para lembrar.</h3><p>O texto está recolhido. Use o botão de consulta se precisar; pedir ajuda faz parte do aprendizado.</p></div> : phase === 2 && !finished ? <div className="study-recall-note"><span aria-hidden="true">✧</span><h3>Leia e justifique.</h3><p>A passagem desta atividade aparece junto da pergunta. Antes de escolher, procure o trecho que sustenta sua resposta. Dicas e novas tentativas ajudam a praticar.</p><Link className="study-text-link" href={`/biblia?livro=${currentQuestion?.kind === "transfer" ? transferPassage.book : mainPassage.book}&capitulo=${currentQuestion?.kind === "transfer" ? transferPassage.chapter : mainPassage.chapter}`}>Conferir o capítulo completo →</Link></div> : <Passage passage={mainPassage} edition={edition} />}<div className="study-sidebar-note"><h3>Seu ritmo importa.</h3><p>Pare e releia quando precisar. Ao sair ou recarregar, esta sessão será descartada até que você escolha salvar a conclusão.</p></div></aside></div>
+        <div className="study-session-progress"><progress max={10} value={finished ? 10 : phase === 2 ? activity : 0} aria-label="Atividades concluídas nesta sessão" /><span>{finished ? "Prática concluída" : phase === 2 ? `Atividade ${activity + 1} de 10` : "Prepare-se para praticar"}</span></div>
+
+        <div className={`study-layout ${phase === 3 ? "study-layout-complete" : ""}`}>
+          <section className="study-main" aria-labelledby="study-phase-title">
+            <div className="study-step-heading"><p className="study-kicker">ETAPA {phase + 1} DE 4</p><h2 id="study-phase-title" tabIndex={-1} ref={sectionHeading}>{titles[phase]}</h2></div>
+            {phase === 0 && <>
+              <p className="study-lead">Antes do exemplo, escolha como você começaria. Esta pergunta orienta o estudo e não recebe nota.</p>
+              {!diagnosticDone ? <QuestionCard question={lesson.preparation.diagnostic} previousAnswers={answers} passage={mainPassage} edition={edition} onAnswer={addAnswer} onContinue={() => setDiagnosticDone(true)} /> : <div className="study-callout"><h3>Agora vamos experimentar o procedimento.</h3><p>Você vai localizar a passagem e observar como conferir uma afirmação.</p></div>}
+              <button className="study-primary" disabled={!diagnosticDone} onClick={() => changePhase(1)}>Ir para o contexto <span aria-hidden="true">→</span></button>
+            </>}
+
+            {phase === 1 && <>
+              <div className="study-card-progress" aria-label="Cartões de explicação"><span className={contextCard === 0 ? "is-current" : ""}>1. Localize</span><span className={contextCard === 1 ? "is-current" : ""}>2. Acompanhe</span><span className={contextCard === 2 ? "is-current" : ""}>3. Experimente</span></div>
+              {contextCard === 0 && <article className="study-teaching-card">
+                <p className="study-kicker">COMECE POR UMA UNIDADE CURTA</p><h3>Uma referência é um endereço para encontrar o texto.</h3>
+                <div className="study-reference-key">{lesson.workedExample.referenceKey.map((item) => <div key={item.label}><strong>{item.label}</strong><span>{item.meaning}</span></div>)}</div>
+                <p>{lesson.context.paragraphs[0]}</p>
+                <div className="study-action-prompt"><strong>Experimente agora</strong><p>Encontre Atos 17:10–12 na Bíblia. Leia os três versículos e procure os nomes dos participantes.</p></div>
+                <div className="study-card-actions"><button className="study-primary" onClick={() => { setContextCard(1); focusCard(); }}>Ver exemplo resolvido <span aria-hidden="true">→</span></button></div>
+              </article>}
+              {contextCard === 1 && <article className="study-teaching-card study-worked">
+                <p className="study-kicker">ACOMPANHE O RACIOCÍNIO</p><h3>{lesson.workedExample.title}</h3><p className="study-example-question">{lesson.workedExample.question}</p>
+                <ol className="study-thinking-steps">{lesson.workedExample.thinkAloud.map((item, index) => <li key={item}><span aria-hidden="true">{index + 1}</span><p>{item}</p></li>)}</ol>
+                <div className="study-example-answer"><strong>O que encontramos</strong><p>{lesson.workedExample.observation}</p><span>Conferir: Atos 17:11</span></div>
+                <details className="study-note-details"><summary>Reconheça o limite da conclusão</summary><p>{lesson.workedExample.interpretationBoundary}</p></details>
+                <div className="study-card-actions"><button className="study-secondary" onClick={() => { setContextCard(0); focusCard(); }}>Voltar ao cartão anterior</button><button className="study-primary" onClick={() => { setContextCard(2); focusCard(); }}>Fazer uma observação <span aria-hidden="true">→</span></button></div>
+              </article>}
+              {contextCard === 2 && <article className="study-teaching-card study-guided">
+                <p className="study-kicker">AGORA É SUA VEZ</p><h3>{lesson.guidedPractice.title}</h3><p>{lesson.guidedPractice.prompt}</p>
+                <div className="study-action-prompt"><strong>Responda antes de conferir</strong><p>Diga sua observação em voz baixa ou escreva no caderno. Aponte o versículo que a sustenta.</p></div>
+                <details><summary>Ver pistas graduais</summary><ol>{lesson.guidedPractice.hints.map((hint) => <li key={hint}>{hint}</li>)}</ol></details>
+                <details><summary>Conferir uma resposta comentada</summary><p>{lesson.guidedPractice.modelResponse}</p><p>{lesson.guidedPractice.selfCheck}</p></details>
+                <div className="study-card-actions"><button className="study-secondary" onClick={() => { setContextCard(1); focusCard(); }}>Voltar ao cartão anterior</button><button className="study-primary" onClick={() => changePhase(2)}>Ir para a prática <span aria-hidden="true">→</span></button></div>
+              </article>}
+              <details className="study-tools"><summary>Explorar as seis lentes</summary><div className="study-lens-buttons" role="group" aria-label="Lentes de contexto">{lesson.lenses.map((item, index) => <button key={item.id} aria-pressed={lens === index} onClick={() => setLens(index)}>{item.title}</button>)}</div><section className="study-lens"><h3>{lesson.lenses[lens].question}</h3><p>{lesson.lenses[lens].explanation}</p><p><strong>Experimente:</strong> {lesson.lenses[lens].task}</p><p className="study-fine">{lesson.lenses[lens].limit}</p></section></details>
+            </>}
+
+            {phase === 2 && (!finished ? <>
+              <div className="study-activity-heading"><h3>{activity < 6 ? lesson.game.title : activity < 9 ? "O que você consegue lembrar?" : "Um novo texto, o mesmo cuidado"}</h3><p>{activity < 6 ? `Missão ${activity + 1} de 6 · consulta permitida` : activity < 9 ? `Lembrança ${activity - 5} de 3 · tente antes de consultar` : "Aplicação em Lucas 10:25–37 · consulta permitida"}</p></div>
+              <QuestionCard key={currentQuestion.id} question={currentQuestion} passage={activity === 9 ? transferPassage : mainPassage} edition={edition} support={supportByQuestion[currentQuestion.id]} onSupport={(flags) => recordSupport(currentQuestion.id, flags)} previousAnswers={answers} onAnswer={addAnswer} onContinue={continueActivity} last={activity === questions.length - 1} />
+            </> : <><p>Você percorreu as atividades desta sessão. Veja seu resultado e escolha um próximo passo.</p><button className="study-primary" onClick={() => changePhase(3)}>Ver minha retomada</button></>)}
+
+            {phase === 3 && finished && <>
+              <section className="study-results" aria-labelledby="study-results-title"><h3 id="study-results-title">Veja como chegou às respostas.</h3><dl>
+                <div><dt>Prática: acertos na primeira tentativa</dt><dd>{summary.guidedFirstAttemptCorrect}<small> / 6</small></dd></div>
+                <div><dt>Lembrança: primeira tentativa sem ajuda</dt><dd>{summary.retrievalFirstAttemptCorrect}<small> / 3</small></dd></div>
+                <div><dt>Respostas que precisaram de nova tentativa</dt><dd>{summary.retryCorrect}</dd></div>
+                <div><dt>Aplicação em outra passagem</dt><dd className="study-result-text">{summary.transferFirstAttemptCorrect ? "Primeira tentativa" : summary.transferCorrect ? "Com apoio ou correção" : "Retomar"}</dd></div>
+              </dl><p className="study-fine">Corrigir uma resposta não comprova retenção em outro dia. A retomada ajuda a descobrir o que você consegue lembrar e explicar.</p></section>
+              <section className="study-soap"><h3>{lesson.soap.title}</h3><p>Reserve uma pequena anotação no caderno. Suas reflexões e orações não são enviadas ao aplicativo.</p><ol>{lesson.soap.prompts.map((prompt) => <li key={prompt.id}><strong>{prompt.dimensions.join(" e ")}</strong><p>{prompt.prompt}</p></li>)}</ol><div className="study-card-actions"><a className="study-secondary" href="/resumos/primeiros-passos-v1.pdf" download>Baixar resumo em PDF</a><Link className="study-text-link" href="/aprender/primeiros-passos/resumo" target="_blank">Versão para impressão</Link></div></section>
+              <section className="study-review-plan"><h3>Retome em outro dia.</h3>{lesson.review.schedule.map((review) => <article key={review.afterDays}><span>+{review.afterDays} dia{review.afterDays > 1 ? "s" : ""}</span><div><h4>{review.title}</h4><p>{review.task}</p></div></article>)}<details><summary>Sobre as datas e a autoavaliação</summary><p>{lesson.review.scheduleNote}</p>{lesson.review.selfAssessment.map((item) => <div key={item.skill}><h4>{item.skill}</h4><p><strong>Com apoio:</strong> {item.withHelp}</p><p><strong>Com autonomia:</strong> {item.independently}</p></div>)}<p>{lesson.review.assessmentNote}</p></details></section>
+              <section className="study-save"><h3>Guardar meu progresso</h3><p>Opcional, para uma conta adulta com autorização ativa. Guardamos respostas, tentativas, ajuda e datas; suas reflexões ficam no caderno.</p><label><input type="checkbox" checked={saveConsent} onChange={(event) => setSaveConsent(event.target.checked)} /> Quero guardar o progresso desta aula e as datas de retomada na minha conta.</label><button className="study-primary" disabled={!saveConsent || saveState === "saving" || saveState === "saved"} onClick={saveProgress}>{saveState === "saving" ? "Salvando…" : saveState === "saved" ? "Progresso salvo" : "Salvar meu progresso"}</button><Link className="study-text-link" href="/entrar?next=/aprender/primeiros-passos">Entrar na minha conta</Link></section>
+            </>}
+          </section>
+
+          {phase !== 3 && <aside className="study-sidebar">
+            {phase === 1 ? <Passage passage={mainPassage} edition={edition} /> : phase === 2 && currentQuestion?.evidenceMode === "without-looking" && !finished ? <div className="study-coach"><span className="study-coach-symbol" aria-hidden="true">◎</span><h3>Um momento para lembrar.</h3><p>Tente responder antes de consultar. Se precisar de ajuda, use os botões da atividade.</p></div> : <div className="study-coach"><span className="study-coach-symbol" aria-hidden="true">↗</span><h3>{phase === 0 ? "Um passo de cada vez." : "Procure a evidência."}</h3><p>{phase === 0 ? "Você vai ver um exemplo, praticar com apoio e usar o procedimento em outra passagem." : coach}</p><div className="study-coach-route"><span>Ler</span><span>Observar</span><span>Conferir</span></div></div>}
+          </aside>}
+        </div>
       </>}
-      <section className="study-account-summary" aria-label="Progresso guardado"><button className="study-secondary" onClick={readProgress}>Consultar meu progresso salvo</button>{saved?.completed && <div><p>Conclusão: {saved.completedAt ? dateLabel(saved.completedAt) : "registrada"}.</p>{saved.reviewDates?.map((date) => <p key={date}>Retomada sugerida: {dateLabel(date)}.</p>)}<button className="study-secondary" onClick={clearProgress}>Apagar progresso desta aula</button></div>}{saveMessage && <p role="status">{saveMessage}</p>}<p className="study-fine">{lesson.evaluationNote}</p></section>
-    </main>
-    <footer className="study-footer"><p>Plataforma educacional independente, sem vínculo institucional oficial com as igrejas mencionadas.</p><Link href="/privacidade">Privacidade e escolhas</Link></footer>
-    <dialog className="study-preparation-dialog" ref={preparationDialog} aria-labelledby="preparation-dialog-title"><p className="study-kicker">MODO MESA DE ESTUDO</p><h2 id="preparation-dialog-title">Vamos preparar este momento?</h2><p>Recomendamos fortemente que você estude com a sua Bíblia física aberta ao lado para conferir cada passagem e um caderno de papel para fazer suas anotações pessoais.</p><p>Se não os tiver agora, use o leitor do app. Você pode retomar com calma depois.</p><button className="study-primary" onClick={() => { preparationDialog.current?.close(); setStarted(true); requestAnimationFrame(() => sectionHeading.current?.focus()); }}>Começar a aula</button><button className="study-secondary" onClick={() => preparationDialog.current?.close()}>Voltar</button></dialog>
-  </div>;
+
+      {saveMessage && <p className={`study-save-message ${saveState === "error" ? "is-error" : ""}`} role="status">{saveMessage}</p>}
+      <details className="study-account-summary"><summary>Progresso na conta</summary><div><p>Enquanto você estuda, as respostas ficam apenas nesta sessão. Ao sair ou recarregar, elas são descartadas até você escolher salvar a conclusão.</p><button className="study-secondary" onClick={readProgress}>Consultar meu progresso salvo</button>{saved?.completed && <div className="study-saved-dates"><p>Conclusão: {saved.completedAt ? dateLabel(saved.completedAt) : "registrada"}.</p>{saved.reviewDates?.map((date) => <p key={date}>Retomada sugerida: {dateLabel(date)}.</p>)}<button className="study-secondary" onClick={clearProgress}>Apagar progresso desta aula</button></div>}<Link className="study-text-link" href="/privacidade">Privacidade e escolhas</Link></div></details>
+
+      <dialog className="study-preparation-dialog" ref={preparationDialog} aria-labelledby="preparation-dialog-title"><span className="study-dialog-icon" aria-hidden="true">✦</span><h2 id="preparation-dialog-title">Vamos preparar este momento?</h2><p>Recomendamos estudar com a sua <strong>Bíblia física aberta ao lado</strong> e um caderno para conferir e anotar.</p><p>Se não os tiver agora, acompanhe pelo leitor do app. Siga no seu ritmo.</p><div className="study-card-actions"><button className="study-primary" onClick={() => { preparationDialog.current?.close(); setStarted(true); requestAnimationFrame(() => sectionHeading.current?.focus()); }}>Começar a aula <span aria-hidden="true">→</span></button><button className="study-secondary" onClick={() => preparationDialog.current?.close()}>Voltar</button></div></dialog>
+    </div>
+  </AppShell>;
 }

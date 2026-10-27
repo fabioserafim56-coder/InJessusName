@@ -117,3 +117,29 @@
 @media (prefers-reduced-motion: reduce) {
   .learning-path-page { scroll-behavior: auto; }
 }
+
+/* Public and saved paths live inside the same app workspace. */
+.app-content .learning-path-page{background:transparent;color:var(--foreground)}
+.app-content .lp-container{width:100%;margin:0}
+.app-content .lp-hero{padding:4px 0 30px;gap:28px;grid-template-columns:minmax(0,1.4fr) minmax(250px,.8fr)}
+.app-content .lp-hero h1{font-size:34px;line-height:1.3;letter-spacing:-.9px;font-weight:650}
+.app-content .lp-greeting{font-size:17px;margin-top:14px}
+.app-content .lp-introduction{font-size:17px;line-height:1.8;color:#4f6758}
+.app-content .lp-study-card{background:#edf4e9;border-color:#dce7d5;border-radius:17px;padding:24px}
+.app-content .lp-study-art{display:none}
+.app-content .lp-study-card h2{font-size:22px;font-weight:650;line-height:1.4}
+.app-content .lp-study-card>p:last-child{font-size:15px;line-height:1.8}
+.app-content .lp-overview{gap:17px}
+.app-content .lp-overview article{padding:23px 20px;border-radius:16px;background:#fff}
+.app-content .lp-overview h2{font-size:21px;font-weight:650}
+.app-content .lp-overview article>p:last-child,.app-content .lp-topic-list p{font-size:15px;line-height:1.8;color:#526b59}
+.app-content .lp-topic-list li{padding:23px;border-radius:15px;background:#fff;gap:16px}
+.app-content .lp-topic-list h3{font-size:21px;font-weight:650;line-height:1.5}
+.app-content .lp-topics-section{padding-top:32px}
+.app-content .lp-section-heading h2{font-size:28px;font-weight:650}
+.app-content .lp-planning-note{font-size:15px;line-height:1.8}
+.app-content .lp-focus{border-radius:15px;margin-top:22px;margin-bottom:26px}
+.app-content .lp-focus h2{font-size:22px;font-weight:650}.app-content .lp-focus p{font-size:16px;line-height:1.8}
+.app-content .lp-footer{margin-top:30px;padding:18px 0 0;font-size:11px;line-height:1.8}.app-content .lp-footer span{display:none}
+@media(max-width:1000px){.app-content .lp-overview{grid-template-columns:1fr}.app-content .lp-hero{grid-template-columns:1fr}.app-content .lp-study-card{padding:22px}.app-content .lp-hero h1{font-size:30px}}
+@media(max-width:520px){.app-content .lp-hero h1{font-size:28px}.app-content .lp-introduction{font-size:16px}.app-content .lp-section-heading{align-items:flex-start;flex-direction:column;gap:13px}.app-content .lp-topic-list li{grid-template-columns:34px minmax(0,1fr);padding:18px;gap:12px}.app-content .lp-topic-number{height:32px;width:32px;font-size:14px}.app-content .lp-topic-list h3{font-size:18px}.app-content .lp-topic-list p{font-size:15px}.app-content .lp-topic-mark{display:none}}

@@ -53,7 +53,7 @@ Critérios de conclusão: edição e fonte identificáveis; referências correta
 
 ## Etapa 4 — Aulas e formação cristã
 
-**Estado: primeira aula e jogo implementados como piloto educacional; cursos completos, revisão especializada e avaliação com estudantes pendentes.**
+**Estado: seis aulas introdutórias implementadas como pilotos educacionais; cursos completos, revisão especializada e avaliação com estudantes pendentes.**
 
 Disponível em `/aprender/primeiros-passos`: preparação, contexto autoral, seis lentes introdutórias, exemplo e prática guiada, seis missões do Detetive do Contexto, três perguntas de recuperação e uma de aplicação em outra passagem; S.O.A.P. físico e resumo imprimível. O resultado diferencia primeira tentativa, dica/consulta e correção; não declara retenção tardia. Progresso opcional protegido por RLS e consentimento adulto, com datas sugeridas D+1/D+7. A bibliografia, as adaptações e o protocolo de avaliação estão em [revisao-metodo-aprendizagem.md](revisao-metodo-aprendizagem.md).
 
@@ -78,3 +78,11 @@ Critérios de conclusão: ausência de texto e chaves privadas em claro no servi
 O desenvolvimento pode ocorrer neste ambiente. Publicar exige um destino de hospedagem, configuração segura, banco autorizado, validações no destino e acompanhamento operacional. Vercel e Supabase são o caminho inicial proposto; GitHub preserva o código e seu histórico.
 
 Antes do lançamento público, concluir o escopo escolhido para a primeira versão, revisar direitos e conteúdo, definir proteção de dados e de menores, validar segurança e acessibilidade e estabelecer processos de correção, suporte, backup e controle de custos. A publicação não está implícita na criação do projeto.
+
+## Iteração de experiência e conteúdo — 27/10/2026
+
+O início agora é um painel de estudo com navegação lateral ou inferior, catálogo pesquisável e acesso ao leitor. A fonte Inter é distribuída pelo próprio aplicativo; a leitura bíblica começa em 21px. Créditos identificam a edição em linha compacta e oferecem atribuição completa sob demanda. O indicador de aula adapta CircleProgress do repositório oficial MIT do 21st.dev, com avisos preservados.
+
+Foram acrescentadas cinco aulas ao primeiro piloto: panorama bíblico, criação e cuidado, Jesus e o próximo, oração e compartilhar a fé com respeito. São 20 cartões de ensino, cinco exemplos, cinco práticas guiadas e 15 atividades variadas. Toda consulta aponta o intervalo específico pedido pelo conteúdo. Os estados de ajuda e correção são preservados ao voltar de etapa.
+
+As novas aulas mantêm respostas somente na sessão; o progresso opcional da primeira aula e seus controles de consentimento permanecem. A eficácia com estudantes ainda precisa ser medida. Evidências, fontes e pendências estão em [referencias-redesign.md](referencias-redesign.md) e [revisao-editorial-bloco-2.md](revisao-editorial-bloco-2.md).

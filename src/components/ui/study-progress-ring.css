@@ -1,0 +1,6 @@
+.study-progress-ring { position:relative; display:inline-grid; place-items:center; flex-shrink:0; }
+.study-progress-ring>svg { position:absolute; inset:0; }
+.study-progress-ring>.study-ring-track,.study-ring-track { color:#dfebdf; }
+.study-ring-value { color:#4b8559; transition:stroke-dashoffset .25s ease; }
+.study-progress-ring>span { font-size:10px; font-weight:650; line-height:1; color:#436e47; }
+@media(prefers-reduced-motion:reduce){.study-ring-value{transition:none}}

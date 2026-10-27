@@ -1,9 +1,19 @@
 import Link from "next/link";
-import { firstLesson } from "@/content/lessons/primeiros-passos";
-import "@/components/lesson-player.css";
+import { AppShell, AppIcon } from "@/components/app-shell";
+import { CourseCatalog } from "@/components/course-catalog";
+import { getCourseCatalog } from "@/lib/course-catalog";
+import { courseEditorialNote } from "@/content/courses/introductory-course";
+import "@/components/learning-home.css";
 
-export const metadata = { title: "Estudos bíblicos — InJessusName" };
+export const metadata = { title: "Aprender — InJessusName", description: "Estudos bíblicos com exemplos, atividades e aplicação à vida." };
 
 export default function LearningPage() {
-  return <div className="study-page"><a className="skip-link" href="#estudos">Pular para os estudos</a><header className="study-header"><Link className="study-brand" href="/">InJessusName<span>CONHECER · COMPREENDER · VIVER</span></Link><nav aria-label="Navegação dos estudos"><Link href="/biblia">Bíblia</Link><Link href="/meu-percurso">Meu percurso</Link></nav></header><main id="estudos" className="study-container"><div className="study-introduction"><p className="study-kicker">APRENDER COM CONTEXTO</p><h1>Abra o texto.<br />Dê o primeiro passo.</h1><p>Comece com uma prática de leitura e conferência. O currículo de teologia, história e vida cristã será ampliado por etapas, com fontes e revisão.</p></div><article className="study-welcome"><div><p className="study-kicker">FUNDAMENTOS · AULA 01</p><h2>{firstLesson.title}</h2><ul>{firstLesson.objectives.map((objective) => <li key={objective.id}>{objective.statement}</li>)}</ul><Link className="study-primary" href="/aprender/primeiros-passos">Abrir a primeira aula →</Link></div><aside><span className="study-symbol" aria-hidden="true">✧</span><h3>Detetive do Contexto</h3><p>Seis missões com feedback, três perguntas de lembrança e uma aplicação em outra passagem. Sem cronômetro ou punição por errar.</p><p>{firstLesson.editorialLabel}. A eficácia com estudantes ainda será avaliada.</p></aside></article><section className="study-account-summary"><p>Leitura bíblica: uma edição aberta disponível no leitor. Esta aula é um piloto introdutório; os cursos completos e as trilhas confessionais estão em preparação.</p><Link className="study-text-link" href="/biblia">Explorar o leitor bíblico →</Link><Link className="study-text-link" href="/comecar">Conhecer o percurso sugerido →</Link></section></main><footer className="study-footer"><p>Plataforma educacional independente, sem vínculo institucional oficial com as igrejas mencionadas.</p><Link href="/privacidade">Privacidade</Link></footer></div>;
+  const lessons = getCourseCatalog();
+  const activities = lessons.reduce((sum, lesson) => sum + lesson.activityCount, 0);
+  return <AppShell active="learn" title="Aprender" subtitle="Leia, descubra e pratique">
+    <section className="catalog-intro"><p className="app-eyebrow">PRIMEIRO PERCURSO · FUNDAMENTOS CRISTÃOS</p><h1>Conhecer é só o começo.<br />Praticar faz parte do caminho.</h1><p>Da leitura do texto ao cuidado com as pessoas: aulas curtas, exemplos explicados e atividades para você participar.</p><div className="catalog-intro-meta"><span><AppIcon name="learn" />{lessons.length} aulas completas</span><span><AppIcon name="layers" />{activities} atividades</span><span><AppIcon name="clock" />Ritmo livre</span></div></section>
+    <CourseCatalog lessons={lessons} />
+    <section className="catalog-method"><div className="catalog-method-symbol"><AppIcon name="spark" /></div><div><h2>Não entendeu? Vamos por outro caminho.</h2><p>Cada atividade oferece explicação e novas tentativas. Comece com apoio, tente lembrar antes de consultar e aplique o procedimento em outro texto.</p></div><Link className="app-secondary-button" href="/aprender/primeiros-passos">Experimentar o estudo <AppIcon name="arrow" /></Link></section>
+    <details className="catalog-editorial-note"><summary>Sobre este primeiro percurso</summary><p>{courseEditorialNote} As aulas são introdutórias para jovens e adultos; o curso infantil, as adaptações por idade e as formações confessionais completas continuam em preparação.</p><p>O resultado de uma atividade orienta o próximo estudo. Aprendizagem duradoura será acompanhada com estudantes em tarefas novas, em outros dias.</p></details>
+  </AppShell>;
 }

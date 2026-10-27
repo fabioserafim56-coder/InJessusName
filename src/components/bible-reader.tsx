@@ -1,7 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { useState, type CSSProperties } from "react";
+import { useRef, useState, type CSSProperties } from "react";
+import { AppShell } from "@/components/app-shell";
 import "./bible-reader.css";
 
 type Book = { id: string; name: string; chapters: number };
@@ -28,12 +29,18 @@ type ReaderChapter = {
 };
 
 function chapterUrl(location: Location) {
-  const query = new URLSearchParams({ livro: location.bookId, capitulo: String(location.chapter) });
-  return `/biblia?${query}`;
+  return `/biblia?${new URLSearchParams({ livro: location.bookId, capitulo: String(location.chapter) })}`;
 }
 
-function ReaderBookIcon() {
-  return <svg aria-hidden="true" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M16 9c-4-3-8-3-12-1v18c4-2 8-2 12 1 4-3 8-3 12-1V8c-4-2-8-2-12 1Zm0 0v18M16 2v4M9 3l2 3m12-3-2 3" /></svg>;
+function ReaderIcon({ kind }: { kind: "book" | "info" | "copy" | "arrow-left" | "arrow-right" | "close" }) {
+  return <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
+    {kind === "book" && <><path d="M12 5C8 2 4 3 2 4v15c3-1 7-1 10 1 3-2 7-2 10-1V4c-3-1-7-2-10 1Z" /><path d="M12 5v15" /></>}
+    {kind === "info" && <><circle cx="12" cy="12" r="9" /><path d="M12 11v6m0-10h.01" /></>}
+    {kind === "copy" && <><rect x="8" y="8" width="12" height="13" rx="2" /><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3" /></>}
+    {kind === "arrow-left" && <path d="m14 6-6 6 6 6M8 12h12" />}
+    {kind === "arrow-right" && <path d="m10 6 6 6-6 6M16 12H4" />}
+    {kind === "close" && <path d="m6 6 12 12M18 6 6 18" />}
+  </svg>;
 }
 
 export function BibleReader({ books, chapter, highlightedVerse }: {
@@ -44,7 +51,9 @@ export function BibleReader({ books, chapter, highlightedVerse }: {
   const [selectedBook, setSelectedBook] = useState(chapter.book.id);
   const [selectedChapter, setSelectedChapter] = useState(chapter.chapter);
   const [fontSize, setFontSize] = useState(21);
+  const [readingMode, setReadingMode] = useState<"verses" | "continuous">("verses");
   const [copyMessage, setCopyMessage] = useState("");
+  const sourceDialog = useRef<HTMLDialogElement>(null);
   const selectedBookData = books.find((book) => book.id === selectedBook) ?? chapter.book;
   const reference = `${chapter.book.name} ${chapter.chapter}${highlightedVerse ? `:${highlightedVerse}` : ""}`;
 
@@ -58,104 +67,94 @@ export function BibleReader({ books, chapter, highlightedVerse }: {
     }
   }
 
-  return (
+  return <AppShell active="bible" title="Bíblia" subtitle="Leia com contexto">
     <div className="bible-reader-page">
       <a className="skip-link" href="#bible-chapter">Pular para o texto bíblico</a>
-      <header className="br-site-header">
-        <div className="br-shell br-header-inner">
-          <Link className="br-brand" href="/" aria-label="InJessusName, página inicial">
-            <span className="br-brand-icon"><ReaderBookIcon /></span>
-            <span>InJessusName<small>CONHECER · COMPREENDER · VIVER</small></span>
-          </Link>
-          <nav aria-label="Navegação principal">
-            <Link href="/aprender">Aprender</Link>
-            <Link href="/meu-percurso">Meu percurso</Link>
-          </nav>
-        </div>
-      </header>
 
-      <main className="br-shell">
-        <section className="br-introduction" aria-labelledby="br-title">
-          <div>
-            <p className="br-eyebrow">BÍBLIA · LEITURA COM CONTEXTO</p>
-            <h1 id="br-title">Abra o texto.<br /><em>Leia com atenção.</em></h1>
-            <p>Encontre uma passagem, acompanhe o capítulo e confira a edição que está lendo. Os números ajudam a localizar; o contexto ajuda a compreender.</p>
-            <p className="br-edition-note">Edição disponível: Bíblia Livre TR, fevereiro de 2018 · 66 livros. A cobertura católica de 73 livros ainda está em preparação.</p>
+      <section className="br-toolbar" aria-label="Encontre uma passagem">
+        <form action="/biblia" method="get" className="br-location-form">
+          <div className="br-field br-book-field">
+            <label htmlFor="br-book">Livro</label>
+            <select id="br-book" name="livro" value={selectedBook} onChange={(event) => { setSelectedBook(event.target.value); setSelectedChapter(1); }}>
+              {books.map((book) => <option key={book.id} value={book.id}>{book.name}</option>)}
+            </select>
           </div>
-          <aside className="br-study-note">
-            <ReaderBookIcon />
-            <p>Uma Bíblia aberta.<br /><strong>Boas perguntas ao lado.</strong></p>
-            <Link href="/aprender/primeiros-passos">Praticar na primeira aula <span aria-hidden="true">↗</span></Link>
-          </aside>
-        </section>
+          <div className="br-field br-chapter-field">
+            <label htmlFor="br-chapter-select">Capítulo</label>
+            <select id="br-chapter-select" name="capitulo" value={selectedChapter} onChange={(event) => setSelectedChapter(Number(event.target.value))}>
+              {Array.from({ length: selectedBookData.chapters }, (_, index) => <option key={index + 1} value={index + 1}>{index + 1}</option>)}
+            </select>
+          </div>
+          <button className="br-primary-button" type="submit">Abrir capítulo <ReaderIcon kind="arrow-right" /></button>
+        </form>
+        <button className="br-edition-button" type="button" onClick={() => sourceDialog.current?.showModal()}>
+          <ReaderIcon kind="info" /><span>Edição e fontes</span>
+        </button>
+      </section>
 
-        <div className="br-workspace">
-          <aside className="br-selection" aria-labelledby="br-selection-title">
-            <p className="br-eyebrow">ENCONTRE A PASSAGEM</p>
-            <h2 id="br-selection-title">Por onde vamos ler?</h2>
-            <form action="/biblia" method="get">
-              <label htmlFor="br-book">Livro</label>
-              <select id="br-book" name="livro" value={selectedBook} onChange={(event) => { setSelectedBook(event.target.value); setSelectedChapter(1); }}>
-                {books.map((book) => <option key={book.id} value={book.id}>{book.name}</option>)}
-              </select>
-              <label htmlFor="br-chapter-select">Capítulo</label>
-              <select id="br-chapter-select" name="capitulo" value={selectedChapter} onChange={(event) => setSelectedChapter(Number(event.target.value))}>
-                {Array.from({ length: selectedBookData.chapters }, (_, index) => <option key={index + 1} value={index + 1}>{index + 1}</option>)}
-              </select>
-              <button className="br-primary-button" type="submit">Abrir capítulo <span aria-hidden="true">→</span></button>
-            </form>
-            <div className="br-edition-note">
-              <p className="br-eyebrow">EDIÇÃO DESTE LEITOR</p>
-              <h3>{chapter.edition.name}</h3>
-              <p>{books.length} livros disponíveis. Outras edições e diferenças entre cânones ainda serão incorporadas e identificadas.</p>
-              <a href="#br-source">Consultar fonte e direitos <span aria-hidden="true">↓</span></a>
+      <div className="br-workspace">
+        <article id="bible-chapter" className="br-reading" aria-labelledby="br-chapter-title" tabIndex={-1}>
+          <header className="br-chapter-header">
+            <div className="br-chapter-icon"><ReaderIcon kind="book" /></div>
+            <div className="br-chapter-heading">
+              <p className="br-edition-label">BLIVRE · TR 2018</p>
+              <h1 id="br-chapter-title">{chapter.book.name} <span>{chapter.chapter}</span></h1>
+              <p className="br-chapter-counter">Capítulo {chapter.chapter} de {chapter.book.chapters} · {chapter.verses.length} versículos</p>
             </div>
-          </aside>
+            <button className="br-copy-reference" type="button" aria-label="Copiar referência" onClick={copyReference}><ReaderIcon kind="copy" /><span>Copiar referência</span></button>
+          </header>
 
-          <article id="bible-chapter" className="br-reading" aria-labelledby="br-chapter-title" tabIndex={-1}>
-            <header className="br-chapter-header">
-              <div><p className="br-eyebrow">{chapter.edition.name}</p><h2 id="br-chapter-title">{chapter.book.name} <span>{chapter.chapter}</span></h2></div>
-              <span className="br-chapter-counter">Capítulo {chapter.chapter} de {chapter.book.chapters}</span>
-            </header>
-            <div className="br-reading-tools">
-              <div className="br-size-tools" role="group" aria-label="Tamanho do texto bíblico">
-                <button type="button" aria-label="Diminuir tamanho do texto" disabled={fontSize <= 18} onClick={() => setFontSize((size) => Math.max(18, size - 2))}>A−</button>
-                <span aria-live="polite">{fontSize} px</span>
-                <button type="button" aria-label="Aumentar tamanho do texto" disabled={fontSize >= 29} onClick={() => setFontSize((size) => Math.min(29, size + 2))}>A+</button>
-              </div>
-              <button className="br-copy-reference" type="button" onClick={copyReference}>Copiar referência</button>
+          <div className="br-reading-tools">
+            <div className="br-mode-tools" role="group" aria-label="Modo de leitura">
+              <button type="button" aria-pressed={readingMode === "verses"} onClick={() => setReadingMode("verses")}>Versículos</button>
+              <button type="button" aria-pressed={readingMode === "continuous"} onClick={() => setReadingMode("continuous")}>Leitura corrida</button>
             </div>
-            <p className="br-copy-message" role="status">{copyMessage}</p>
-            {highlightedVerse ? <p className="br-highlight-note">Versículo {highlightedVerse} destacado. Leia também o que vem antes e depois.</p> : null}
-            <ol className="br-verses" style={{ "--br-text-size": `${fontSize}px` } as CSSProperties}>
-              {chapter.verses.map((verse) => {
-                const verseLocation = `${chapterUrl({ bookId: chapter.book.id, chapter: chapter.chapter })}&versiculo=${verse.number}#versiculo-${verse.number}`;
-                return (
-                  <li key={verse.number} value={verse.number} id={`versiculo-${verse.number}`} className={verse.number === highlightedVerse ? "br-verse-highlighted" : undefined}>
-                    <a className="br-verse-number" href={verseLocation} aria-label={`${chapter.book.name} ${chapter.chapter}:${verse.number}, destacar versículo`}>{verse.number}</a>
-                    <span>{verse.text}</span>
-                  </li>
-                );
-              })}
-            </ol>
-            <nav className="br-chapter-navigation" aria-label="Navegar entre capítulos">
-              {chapter.prev ? <Link href={chapterUrl(chapter.prev)} prefetch={false}><span aria-hidden="true">←</span> Capítulo anterior</Link> : <span>Início desta edição</span>}
-              {chapter.next ? <Link href={chapterUrl(chapter.next)} prefetch={false}>Próximo capítulo <span aria-hidden="true">→</span></Link> : <span>Fim desta edição</span>}
-            </nav>
-            <footer className="br-source" id="br-source">
-              <p className="br-eyebrow">FONTE E DIREITOS</p>
-              <h3>{chapter.edition.name}</h3>
-              <p>{chapter.edition.attribution}</p>
-              <p>Licença: {chapter.edition.license}.</p>
-              <p>{chapter.edition.canonNote} {chapter.edition.editorialNote}</p>
-              <p><a href={chapter.edition.licenseUrl} target="_blank" rel="noreferrer">Ler a licença ↗</a> · <a href={chapter.edition.rightsEvidenceUrl} target="_blank" rel="noreferrer">Declaração do projeto original ↗</a></p>
-              <a href={chapter.edition.sourceUrl} target="_blank" rel="noreferrer">Consultar a fonte da edição <span className="br-sr-only">(abre em outra aba)</span><span aria-hidden="true"> ↗</span></a>
-            </footer>
-          </article>
-        </div>
-        <section className="br-bottom-invitation" aria-labelledby="br-learn-title"><div><p className="br-eyebrow">DA LEITURA À PRÁTICA</p><h2 id="br-learn-title">Aprenda a conferir uma descoberta.</h2><p>A primeira aula apresenta um exemplo, prática com ajuda e perguntas para tentar sem consultar.</p></div><Link className="br-primary-button" href="/aprender/primeiros-passos">Abrir a primeira aula <span aria-hidden="true">→</span></Link></section>
-      </main>
-      <footer className="br-site-footer"><div className="br-shell"><p>InJessusName · Conhecimento bíblico com contexto, fontes e cuidado.</p><Link href="/privacidade">Privacidade</Link></div></footer>
+            <div className="br-size-tools" role="group" aria-label="Tamanho do texto bíblico">
+              <button type="button" aria-label="Diminuir tamanho do texto" disabled={fontSize <= 18} onClick={() => setFontSize((size) => Math.max(18, size - 2))}>A−</button>
+              <span aria-live="polite">{fontSize} px</span>
+              <button type="button" aria-label="Aumentar tamanho do texto" disabled={fontSize >= 29} onClick={() => setFontSize((size) => Math.min(29, size + 2))}>A+</button>
+            </div>
+          </div>
+          {copyMessage && <p className="br-copy-message" role="status">{copyMessage}</p>}
+          {highlightedVerse ? <p className="br-highlight-note"><span aria-hidden="true" />Versículo {highlightedVerse} destacado. Leia também o que vem antes e depois.</p> : null}
+
+          <ol className={`br-verses${readingMode === "continuous" ? " br-flow" : ""}`} style={{ "--br-text-size": `${fontSize}px` } as CSSProperties}>
+            {chapter.verses.map((verse) => <li key={verse.number} value={verse.number} id={`versiculo-${verse.number}`} className={verse.number === highlightedVerse ? "br-verse-highlighted" : undefined}>
+              <a className="br-verse-number" href={`${chapterUrl({ bookId: chapter.book.id, chapter: chapter.chapter })}&versiculo=${verse.number}#versiculo-${verse.number}`} aria-label={`${chapter.book.name} ${chapter.chapter}:${verse.number}, destacar versículo`}>{verse.number}</a>
+              <span>{verse.text}</span>{" "}
+            </li>)}
+          </ol>
+
+          <nav className="br-chapter-navigation" aria-label="Navegar entre capítulos">
+            {chapter.prev ? <Link href={chapterUrl(chapter.prev)} prefetch={false}><ReaderIcon kind="arrow-left" /><span>Capítulo anterior</span></Link> : <span>Início desta edição</span>}
+            {chapter.next ? <Link href={chapterUrl(chapter.next)} prefetch={false}><span>Próximo capítulo</span><ReaderIcon kind="arrow-right" /></Link> : <span>Fim desta edição</span>}
+          </nav>
+
+          <footer className="br-compact-source">
+            <p>Bíblia Livre · Diego Santos, Mario Sérgio e Marco Teles · <a href={chapter.edition.licenseUrl} target="_blank" rel="noreferrer">CC BY 3.0 BR</a></p>
+            <a href={chapter.edition.sourceUrl} target="_blank" rel="noreferrer">Consultar a fonte da edição<span className="br-sr-only"> (abre em outra aba)</span></a>
+          </footer>
+        </article>
+
+        <aside className="br-study-card" aria-labelledby="br-study-title">
+          <span className="br-study-symbol" aria-hidden="true"><ReaderIcon kind="book" /></span>
+          <p className="br-small-label">DA LEITURA À DESCOBERTA</p>
+          <h3 id="br-study-title">O que você observa?</h3>
+          <p>Escolha um trecho. Procure quem participa, o que acontece e qual frase sustenta a sua conclusão.</p>
+          <Link href="/aprender">Praticar nos estudos <ReaderIcon kind="arrow-right" /></Link>
+          <div className="br-study-tip"><strong>Uma pergunta por vez.</strong><p>Você pode ajustar o texto e mudar o modo de leitura. Anote dúvidas no seu caderno.</p></div>
+        </aside>
+      </div>
+
+      <dialog className="br-source-dialog" id="br-source" ref={sourceDialog} aria-labelledby="br-source-title">
+        <div className="br-dialog-heading"><p className="br-small-label">EDIÇÃO E FONTES</p><button type="button" onClick={() => sourceDialog.current?.close()} aria-label="Fechar edição e fontes"><ReaderIcon kind="close" /></button></div>
+        <h2 id="br-source-title">{chapter.edition.name}</h2>
+        <p className="br-dialog-intro">{books.length} livros disponíveis nesta edição. A versão e a origem ajudam você a conferir cada leitura.</p>
+        <section><h3>Créditos e licença</h3><p>{chapter.edition.attribution}</p><p>Licença: {chapter.edition.license}.</p><a href={chapter.edition.licenseUrl} target="_blank" rel="noreferrer">Ler a licença completa</a></section>
+        <section><h3>Cobertura e versão</h3><p>{chapter.edition.canonNote}</p><p>{chapter.edition.editorialNote}</p></section>
+        <section><h3>Conferir a origem</h3><p><a href={chapter.edition.sourceUrl} target="_blank" rel="noreferrer">Release original da edição</a></p><p><a href={chapter.edition.rightsEvidenceUrl} target="_blank" rel="noreferrer">Declaração de licença do projeto original</a></p></section>
+        <button className="br-primary-button" type="button" onClick={() => sourceDialog.current?.close()}>Voltar à leitura</button>
+      </dialog>
     </div>
-  );
+  </AppShell>;
 }

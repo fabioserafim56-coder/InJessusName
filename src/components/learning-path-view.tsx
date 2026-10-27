@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { AppShell } from "@/components/app-shell";
 import type { ReactNode } from "react";
 import type { LearningPath } from "@/lib/learning-path";
 import "./learning-path.css";
@@ -21,22 +22,8 @@ export function LearningPathView({
   children?: ReactNode;
 }) {
   return (
-    <div className={`learning-path-page lp-${path.experience}`}>
-      <a className="skip-link" href="#learning-path-content">Pular para o seu roteiro</a>
-      <header className="lp-header">
-        <div className="lp-container lp-header-inner">
-          <Link className="lp-brand" href="/" aria-label="InJessusName, página inicial">
-            <span className="lp-brand-icon"><PathBook /></span>
-            <span>InJessusName<small>CONHECER · COMPREENDER · VIVER</small></span>
-          </Link>
-          <nav aria-label="Navegação do percurso">
-            <Link href="/biblia">Bíblia</Link>
-            <Link href="/comecar">{saved ? "Rever minhas escolhas" : "Conhecer a pré-entrevista"}<PathArrow /></Link>
-          </nav>
-        </div>
-      </header>
-
-      <main id="learning-path-content" className="lp-container">
+    <AppShell active="profile" title={saved ? "Meu percurso" : "Conhecer meu percurso"} subtitle="Um caminho que respeita a sua história"><div className={`learning-path-page lp-${path.experience}`}>
+      <div id="learning-path-content" className="lp-container">
         <section className="lp-hero" aria-labelledby="learning-path-title">
           <div className="lp-hero-copy">
             <p className="lp-kicker"><span aria-hidden="true" />{saved ? "PERCURSO SALVO NA SUA CONTA" : "UM CAMINHO PARA EXPLORAR"}</p>
@@ -104,9 +91,9 @@ export function LearningPathView({
         </section>
 
         {children ? <section className="lp-account-actions" aria-label="Gerenciar seu percurso">{children}</section> : null}
-      </main>
+      </div>
 
       <footer className="lp-footer"><div className="lp-container"><p>Plataforma educacional independente, sem vínculo institucional oficial com a Congregação Cristã no Brasil ou com as demais igrejas mencionadas.</p><span>Aprender com contexto. Viver com cuidado.</span></div></footer>
-    </div>
+    </div></AppShell>
   );
 }

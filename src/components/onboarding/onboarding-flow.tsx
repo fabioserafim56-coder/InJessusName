@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { AppShell } from "@/components/app-shell";
 import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState, type FormEvent } from "react";
 
@@ -216,14 +217,11 @@ export function OnboardingFlow({ authenticated = false }: { authenticated?: bool
   ];
 
   return (
-    <div className="onboarding-page">
+    <AppShell active="profile" title="Seu percurso" subtitle="Um caminho para a sua fase da vida"><div className="onboarding-page">
       <a className="skip-link" href="#sua-conversa">Pular para a conversa</a>
-      <header className="onboarding-header">
-        <Link className="onboarding-brand" href="/" aria-label="InJessusName, início"><span className="onboarding-brand-icon"><BookIcon /></span><span>InJessusName<small>CONHECER · COMPREENDER · VIVER</small></span></Link>
-        <Link className="onboarding-account-link" href={authenticated ? "/meu-percurso" : "/entrar?next=/comecar"}>{authenticated ? "Meu percurso" : "Entrar na minha conta"}<Arrow /></Link>
-      </header>
 
-      <main className="onboarding-shell" id="sua-conversa">
+
+      <div className="onboarding-shell" id="sua-conversa">
         <aside className="onboarding-introduction">
           <span className="onboarding-eyebrow">SEU PRIMEIRO PASSO</span>
           <h1>Vamos encontrar<br />{" "}o seu caminho<br />{" "}<em>de estudo.</em></h1>
@@ -274,9 +272,9 @@ export function OnboardingFlow({ authenticated = false }: { authenticated?: bool
             </form>
           )}
         </section>
-      </main>
+      </div>
 
       <footer className="onboarding-footer"><p>Plataforma educacional cristã independente. Aprender aqui não confere cargo nem reconhecimento ministerial.</p><Link href="/">Voltar ao início</Link></footer>
-    </div>
+    </div></AppShell>
   );
 }

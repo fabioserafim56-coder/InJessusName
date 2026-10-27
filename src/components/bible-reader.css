@@ -1,125 +1,82 @@
-.bible-reader-page { min-height: 100vh; background: #f8f7f1; color: #233e32; }
-.br-shell { width: min(1180px, calc(100% - 88px)); margin-inline: auto; }
-.br-site-header { border-bottom: 1px solid #e1e4d9; }
-.br-header-inner { display: flex; align-items: center; justify-content: space-between; min-height: 94px; gap: 30px; }
-.br-brand { display: inline-flex; align-items: center; gap: 11px; font: 25px/1.1 var(--font-serif); letter-spacing: -.8px; }
-.br-brand small { display: block; font: 7px/1.7 var(--font-sans); letter-spacing: 1.3px; color: #66745b; margin-top: 5px; }
-.br-brand-icon { width: 41px; height: 44px; display: grid; place-items: center; background: #35523d; color: #faf7e9; border-radius: 7px 7px 12px 7px; }
-.br-brand-icon svg { width: 29px; height: 29px; }
-.br-header-inner nav { display: flex; gap: 30px; font-size: 13px; color: #52634a; }
-.br-header-inner nav a { padding-block: 15px; }
-.br-header-inner nav a:hover { color: #926f2e; }
-.br-introduction { display: grid; grid-template-columns: 1fr 280px; align-items: center; gap: 70px; padding-block: 55px 43px; }
-.br-eyebrow { font: 600 10px/1.8 var(--font-sans); letter-spacing: 1.6px; color: #687952; }
-.br-introduction h1 { font-size: 50px; margin-block: 15px 18px; line-height: 1.13; letter-spacing: -1.8px; }
-.br-introduction h1 em { color: #7d8b66; }
-.br-introduction > div > p:not(.br-eyebrow) { max-width: 550px; font-size: 14px; line-height: 1.95; color: #65715c; }
-.br-introduction > div > .br-edition-note { font-size: 12px; margin-top: 14px; }
-.br-study-note { border-left: 1px solid #dce2cf; padding: 16px 0 16px 30px; }
-.br-study-note > svg { width: 37px; height: 37px; color: #85976b; margin-bottom: 15px; }
-.br-study-note > p { font: 21px/1.5 var(--font-serif); color: #6c7c57; }
-.br-study-note strong { color: #3f5c3d; font-weight: 400; }
-.br-study-note a { display: inline-block; margin-top: 18px; font-size: 12px; color: #526b43; line-height: 1.8; text-decoration: underline; text-underline-offset: 4px; }
-.br-workspace { display: grid; grid-template-columns: 235px minmax(0, 1fr); gap: 27px; align-items: start; }
-.br-selection { border: 1px solid #dce2d1; background: #eef1e6; border-radius: 9px; padding: 25px 22px; }
-.br-selection h2 { font: 25px/1.25 var(--font-serif); color: #3f5a39; margin: 11px 0 25px; letter-spacing: -.5px; }
-.br-selection form { display: grid; gap: 9px; }
-.br-selection label { font-size: 12px; color: #4c6242; margin-top: 7px; }
-.br-selection select { appearance: auto; width: 100%; min-height: 45px; padding: 10px; border-radius: 5px; border: 1px solid #ccd6bf; background: #fafbf5; color: #2c4634; font-size: 14px; }
-.br-selection select:focus-visible { outline: 3px solid #ad8843; outline-offset: 3px; }
-.br-primary-button { display: inline-flex; justify-content: center; align-items: center; gap: 18px; min-height: 46px; padding: 12px 17px; border: 0; border-radius: 5px; background: #2e4c39; color: #fffdf3; cursor: pointer; font: 600 12px/1.6 var(--font-sans); }
-.br-primary-button:hover { background: #203d2c; }
-.br-selection .br-primary-button { margin-top: 14px; }
-.br-edition-note { border-top: 1px solid #d7dfcb; margin-top: 26px; padding-top: 22px; }
-.br-edition-note .br-eyebrow { font-size: 9px; letter-spacing: 1.1px; }
-.br-edition-note h3 { font: 19px/1.4 var(--font-serif); margin-top: 9px; }
-.br-edition-note > p:not(.br-eyebrow) { color: #627155; font-size: 12px; line-height: 1.9; margin-top: 10px; }
-.br-edition-note a { display: inline-block; margin-top: 15px; font-size: 11px; text-decoration: underline; text-underline-offset: 4px; line-height: 1.8; }
-.br-reading { background: #fefdf8; border: 1px solid #e0e4d6; border-radius: 9px; padding: 34px 42px 29px; box-shadow: 0 5px 24px #2e453205; scroll-margin-top: 24px; min-width: 0; }
-.br-chapter-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 20px; border-bottom: 1px solid #e4e7dc; padding-bottom: 23px; }
-.br-chapter-header .br-eyebrow { font-size: 9px; letter-spacing: 1.1px; }
-.br-chapter-header h2 { font: 38px/1.3 var(--font-serif); letter-spacing: -1.1px; color: #304e37; margin-top: 9px; }
-.br-chapter-header h2 > span { color: #8a966e; }
-.br-chapter-counter { font-size: 11px; color: #68775c; line-height: 1.8; padding-bottom: 7px; white-space: nowrap; }
-.br-reading-tools { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding-top: 16px; }
-.br-size-tools { display: flex; align-items: center; gap: 9px; }
-.br-size-tools > span { font-size: 10px; color: #6c775f; min-width: 32px; text-align: center; }
-.br-size-tools button { width: 38px; height: 36px; border: 1px solid #dfe5d6; border-radius: 4px; background: #f3f5eb; cursor: pointer; color: #415b36; font-family: var(--font-serif); }
-.br-size-tools button:disabled { opacity: .45; cursor: default; }
-.br-copy-reference { background: transparent; border: 0; padding: 9px 0 9px 9px; font-size: 11px; color: #536b43; text-decoration: underline; text-underline-offset: 4px; cursor: pointer; }
-.br-copy-message { min-height: 24px; font-size: 11px; line-height: 1.8; padding-top: 4px; color: #596c48; overflow-wrap: anywhere; }
-.br-highlight-note { font-size: 12px; color: #6b623e; background: #f5f0df; border-radius: 4px; padding: 11px 14px; line-height: 1.8; margin-bottom: 17px; }
-.br-verses { list-style: none; padding: 0; margin: 11px 0 28px; font: var(--br-text-size, 21px)/1.95 var(--font-serif); color: #364a35; }
-.br-verses li { display: flex; align-items: baseline; gap: 13px; padding: 6px 8px 6px 0; border-radius: 5px; scroll-margin-top: 28px; }
-.br-verse-number { align-self: baseline; flex: 0 0 22px; font: 11px/1.7 var(--font-sans); color: #7c8b68; text-align: center; padding-block: 4px; border-radius: 4px; }
-.br-verse-number:hover { background: #e9efdf; color: #36522e; }
-.br-verse-highlighted { background: #f3efd9; box-shadow: -5px 0 0 #b5a46a; }
-.br-chapter-navigation { display: flex; justify-content: space-between; align-items: center; gap: 20px; border-top: 1px solid #e3e7da; border-bottom: 1px solid #e3e7da; padding-block: 20px; font-size: 12px; color: #526b41; }
-.br-chapter-navigation > a { display: inline-flex; align-items: center; gap: 8px; min-height: 36px; }
-.br-chapter-navigation > a:hover { color: #8e6e30; }
-.br-chapter-navigation > span { color: #778268; font-size: 11px; }
-.br-source { padding-top: 24px; scroll-margin-top: 24px; }
-.br-source h3 { font: 20px/1.4 var(--font-serif); margin-top: 8px; }
-.br-source > p:not(.br-eyebrow) { font-size: 11px; line-height: 1.9; color: #67755b; margin-top: 9px; overflow-wrap: anywhere; }
-.br-source > a { display: inline-block; margin-top: 14px; font-size: 11px; text-decoration: underline; text-underline-offset: 4px; line-height: 1.8; color: #526b41; }
-.br-bottom-invitation { display: flex; justify-content: space-between; align-items: center; gap: 45px; padding: 36px; border: 1px solid #dce2cf; border-radius: 8px; background: #edf0e4; margin-block: 35px 50px; }
-.br-bottom-invitation h2 { font: 27px/1.3 var(--font-serif); color: #45613c; margin-top: 10px; }
-.br-bottom-invitation > div > p:last-child { font-size: 13px; line-height: 1.8; color: #627253; max-width: 600px; margin-top: 12px; }
-.br-bottom-invitation > a { flex-shrink: 0; }
-.br-site-footer { border-top: 1px solid #e0e5d7; padding-block: 25px; }
-.br-site-footer > div { display: flex; justify-content: space-between; gap: 25px; font-size: 11px; line-height: 1.8; color: #6b775f; }
-.br-sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
-
-@media (min-width: 1050px) { .br-selection { position: sticky; top: 25px; } }
-@media (max-width: 1000px) {
-  .br-shell { width: calc(100% - 56px); }
-  .br-workspace { grid-template-columns: 205px minmax(0, 1fr); gap: 20px; }
-  .br-selection { padding-inline: 18px; }
-  .br-reading { padding-inline: 27px; }
-  .br-introduction { gap: 35px; grid-template-columns: 1fr 240px; }
-  .br-introduction h1 { font-size: 44px; }
-  .br-chapter-header { display: block; }
-  .br-chapter-counter { display: block; margin-top: 9px; padding: 0; }
-  .br-bottom-invitation { padding: 28px; gap: 25px; }
-}
-@media (max-width: 730px) {
-  .br-shell { width: calc(100% - 40px); }
-  .br-header-inner { min-height: 82px; gap: 15px; }
-  .br-header-inner nav { gap: 16px; font-size: 11px; }
-  .br-header-inner nav a:last-child { display: none; }
-  .br-brand { font-size: 22px; }
-  .br-brand small { font-size: 6px; letter-spacing: 1px; }
-  .br-brand-icon { width: 35px; height: 39px; }
-  .br-brand-icon svg { width: 26px; height: 26px; }
-  .br-introduction { display: block; padding-block: 35px 28px; }
-  .br-introduction h1 { font-size: 40px; }
-  .br-introduction > div > p:last-child { font-size: 14px; }
-  .br-study-note { display: none; }
-  .br-workspace { display: block; }
-  .br-selection { padding: 21px; margin-bottom: 20px; }
-  .br-selection > .br-eyebrow { font-size: 9px; }
-  .br-selection h2 { font-size: 25px; margin-block: 8px 17px; }
-  .br-selection form { grid-template-columns: minmax(0, 1fr) 88px; gap: 7px 11px; }
-  .br-selection label[for="br-book"] { grid-column: 1; grid-row: 1; }
-  .br-selection label[for="br-chapter-select"] { grid-column: 2; grid-row: 1; }
-  .br-selection #br-book { grid-column: 1; grid-row: 2; }
-  .br-selection #br-chapter-select { grid-column: 2; grid-row: 2; }
-  .br-selection .br-primary-button { grid-column: 1 / -1; margin-top: 8px; }
-  .br-edition-note { margin-top: 18px; padding-top: 17px; }
-  .br-edition-note h3 { font-size: 18px; }
-  .br-edition-note > p:not(.br-eyebrow) { font-size: 11px; margin-top: 7px; }
-  .br-edition-note a { margin-top: 9px; }
-  .br-reading { padding: 26px 21px 24px; }
-  .br-chapter-header h2 { font-size: 35px; }
-  .br-chapter-header { padding-bottom: 17px; }
-  .br-verses { line-height: 1.9; }
-  .br-verses li { gap: 8px; padding-right: 3px; }
-  .br-verse-number { flex-basis: 19px; }
-  .br-chapter-navigation { gap: 15px; font-size: 11px; padding-block: 16px; }
-  .br-chapter-navigation > a { gap: 5px; }
-  .br-bottom-invitation { display: block; margin-block: 24px 35px; padding: 25px 22px; }
-  .br-bottom-invitation h2 { font-size: 27px; }
-  .br-bottom-invitation > a { margin-top: 21px; }
-  .br-site-footer > div { display: block; font-size: 10px; }
-  .br-site-footer a { display: inline-block; margin-top: 9px; }
-}
+.bible-reader-page { color: #172c29; min-width: 0; font-family: var(--font-sans, Arial, sans-serif); }
+.bible-reader-page button,.bible-reader-page select { font-family: inherit; }
+.br-toolbar { position: sticky; top: var(--app-topbar-height, 72px); z-index: 8; display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 16px 0; background: #f4f7f5; border-bottom: 1px solid #e0e7e5; margin-bottom: 24px; }
+.br-location-form { display: flex; align-items: flex-end; gap: 10px; min-width: 0; }
+.br-field { display: grid; gap: 6px; min-width: 0; }
+.br-field label { font-size: 12px; font-weight: 650; color: #52625f; }
+.br-field select { appearance: auto; min-height: 46px; padding: 10px 32px 10px 12px; background: #fff; color: #172c29; border: 1px solid #cfdad6; border-radius: 10px; font-size: 15px; font-weight: 550; cursor: pointer; }
+.br-field select:focus-visible { outline: 3px solid #5c9d8b; outline-offset: 3px; }
+.br-book-field { width: min(260px, 28vw); }
+.br-chapter-field { width: 96px; }
+.br-primary-button { display: inline-flex; align-items: center; justify-content: center; gap: 9px; border: 1px solid #245b4b; background: #245b4b; color: #fff; border-radius: 10px; min-height: 46px; padding: 11px 16px; cursor: pointer; font-size: 14px; font-weight: 650; line-height: 1.4; white-space: nowrap; }
+.br-primary-button:hover { background: #174b3d; border-color: #174b3d; }
+.bible-reader-page svg { width: 20px; height: 20px; flex-shrink: 0; }
+.br-edition-button { display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: #fff; color: #415951; min-height: 44px; border: 1px solid #dce5e1; border-radius: 10px; padding: 10px 13px; font-size: 13px; font-weight: 550; cursor: pointer; margin-top: 19px; white-space: nowrap; }
+.br-edition-button:hover { border-color: #7da698; color: #1b4b3e; }
+.br-workspace { display: grid; grid-template-columns: minmax(0, 1fr) 244px; align-items: start; gap: 24px; }
+.br-reading { background: #fff; border: 1px solid #e0e7e4; border-radius: 16px; padding: 28px 32px 20px; min-width: 0; scroll-margin-top: 180px; }
+.br-chapter-header { display: flex; align-items: center; gap: 16px; padding-bottom: 22px; }
+.br-chapter-icon { height: 48px; width: 48px; flex-shrink: 0; display: grid; place-items: center; color: #2c6754; background: #eaf3ed; border-radius: 13px; }
+.br-chapter-icon svg { width: 25px; height: 25px; }
+.br-chapter-heading { min-width: 0; }
+.br-edition-label { font-size: 11px; font-weight: 650; letter-spacing: .5px; color: #65736e; margin: 0 0 5px; }
+.br-chapter-header h1 { font-family: var(--font-sans, Arial, sans-serif); color: #172c29; font-size: 28px; font-weight: 720; letter-spacing: -.8px; margin: 0; line-height: 1.3; }
+.br-chapter-header h1 span { color: #536e63; }
+.br-chapter-counter { font-size: 12px; color: #62736a; margin: 6px 0 0; line-height: 1.5; }
+.br-copy-reference { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; margin-left: auto; padding: 9px 0 9px 9px; background: transparent; color: #52675e; border: 0; cursor: pointer; font-size: 12px; font-weight: 550; }
+.br-copy-reference:hover { color: #1b4f3f; }
+.br-copy-reference svg { width: 18px; height: 18px; }
+.br-reading-tools { display: flex; align-items: center; justify-content: space-between; gap: 14px; border-top: 1px solid #e8edea; border-bottom: 1px solid #e8edea; padding-block: 13px; }
+.br-mode-tools { display: flex; align-items: center; padding: 3px; background: #f0f4f2; border-radius: 9px; gap: 2px; }
+.br-mode-tools button { font-size: 12px; font-weight: 600; padding: 9px 11px; border: 0; border-radius: 7px; cursor: pointer; background: transparent; color: #60736a; min-height: 44px; white-space: nowrap; }
+.br-mode-tools button[aria-pressed=true] { color: #1e4f3e; background: #fff; box-shadow: 0 1px 3px #213c3015; }
+.br-size-tools { display: flex; align-items: center; gap: 5px; }
+.br-size-tools button { display: grid; place-items: center; width: 44px; height: 44px; background: transparent; border: 1px solid #e0e7e2; border-radius: 8px; color: #345946; cursor: pointer; font-size: 15px; font-weight: 600; }
+.br-size-tools button:hover { background: #edf5ee; }
+.br-size-tools button:disabled { opacity: .4; cursor: default; }
+.br-size-tools>span { min-width: 35px; text-align: center; color: #65756a; font-size: 11px; }
+.br-copy-message { color: #286347; background: #ecf6ef; border-radius: 8px; font-size: 13px; line-height: 1.6; padding: 11px 13px; margin: 14px 0 0; overflow-wrap: anywhere; }
+.br-highlight-note { display: flex; align-items: baseline; gap: 9px; color: #4f6048; background: #f0f5e6; border: 1px solid #e4ebd7; border-radius: 8px; font-size: 12px; line-height: 1.7; padding: 12px 14px; margin: 18px 0 0; }
+.br-highlight-note>span { flex: 0 0 6px; width: 6px; height: 6px; border-radius: 50%; background: #82914a; }
+.br-verses { list-style: none; padding: 0; margin: 24px auto 30px; max-width: 68ch; color: #172c29; font: 420 var(--br-text-size, 21px)/1.85 var(--font-sans, Arial, sans-serif); letter-spacing: -.12px; }
+.br-verses>li { display: flex; align-items: baseline; gap: 13px; margin: 0; padding: 10px 8px 10px 0; border-radius: 6px; scroll-margin-top: 200px; }
+.br-verses>li>span { min-width: 0; overflow-wrap: break-word; }
+.br-verse-number { display: inline-flex; justify-content: center; align-items: baseline; align-self: baseline; min-width: 25px; flex: 0 0 25px; padding: 5px 2px; color: #637a69; border-radius: 6px; font: 600 11px/1.7 var(--font-sans, Arial, sans-serif); }
+.br-verse-number:hover { background: #e5f0e5; color: #225232; }
+.br-verse-highlighted { background: #f1f5df; box-shadow: -4px 0 0 #9eac5f; }
+.br-flow { line-height: 2; }
+.br-flow>li { display: inline; padding: 3px 2px; }
+.br-flow .br-verse-number { vertical-align: super; display: inline; padding: 1px 3px 1px 4px; font-size: 10px; line-height: 1; }
+.br-chapter-navigation { display: flex; align-items: center; justify-content: space-between; gap: 20px; border-top: 1px solid #e4ebe5; padding: 18px 0; font-size: 13px; font-weight: 600; color: #2e6147; }
+.br-chapter-navigation>a { display: inline-flex; align-items: center; min-height: 44px; gap: 9px; border: 1px solid #dce7de; border-radius: 9px; padding: 10px 13px; }
+.br-chapter-navigation>a:hover { background: #f0f7f1; }
+.br-chapter-navigation>a svg { width: 17px; height: 17px; }
+.br-chapter-navigation>span { font-size: 12px; color: #6a786b; font-weight: 450; }
+.br-compact-source { border-top: 1px solid #e4ebe5; padding-top: 16px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 16px; color: #69766c; }
+.br-compact-source p,.br-compact-source>a { font-size: 11px; line-height: 1.8; margin: 0; }
+.br-compact-source a { color: #46674d; text-decoration: underline; text-underline-offset: 3px; }
+.br-study-card { position: sticky; top: calc(var(--app-topbar-height, 72px) + 116px); background: #eaf3ee; border: 1px solid #dae8de; border-radius: 15px; padding: 22px; }
+.br-study-symbol { display: grid; place-items: center; width: 42px; height: 42px; background: #d9eadd; color: #437d50; border-radius: 12px; margin-bottom: 22px; }
+.br-study-symbol svg { width: 23px; height: 23px; }
+.br-small-label { color: #637c68; font-size: 10px; letter-spacing: 1.1px; font-weight: 650; line-height: 1.8; }
+.br-study-card h3 { font-family: var(--font-sans, Arial, sans-serif); font-size: 20px; line-height: 1.4; letter-spacing: -.45px; font-weight: 650; color: #254e37; margin: 10px 0 12px; }
+.br-study-card>p:not(.br-small-label),.br-study-tip p { font-size: 13px; line-height: 1.85; color: #506c57; margin: 0; }
+.br-study-card>a { display: inline-flex; align-items: center; gap: 8px; min-height: 42px; color: #2c6341; font-size: 13px; font-weight: 650; margin-top: 17px; }
+.br-study-card>a svg { width: 17px; height: 17px; }
+.br-study-tip { border-top: 1px solid #d4e2d6; margin-top: 23px; padding-top: 19px; }
+.br-study-tip strong { display: block; color: #3c6248; font-size: 12px; font-weight: 650; margin-bottom: 9px; }
+.br-source-dialog { width: min(620px,calc(100% - 32px)); max-height: min(800px,calc(100dvh - 48px)); overflow: auto; border: 1px solid #d7e2da; border-radius: 18px; padding: 27px; margin: auto; background: #fff; color: #172c29; box-shadow: 0 25px 100px #16372a35; font-family: var(--font-sans,Arial,sans-serif); }
+.br-source-dialog::backdrop { background: #11271f9c; backdrop-filter: blur(3px); }
+.br-dialog-heading { display: flex; align-items: center; justify-content: space-between; gap: 15px; margin-bottom: 18px; }
+.br-dialog-heading button { display: grid; place-items: center; width: 38px; height: 38px; border: 1px solid #e0e8e2; border-radius: 10px; background: #f8faf8; color: #35523d; cursor: pointer; }
+.br-source-dialog h2 { font-family: inherit; font-weight: 700; font-size: 23px; letter-spacing: -.5px; line-height: 1.4; margin: 0 0 13px; }
+.br-source-dialog p { font-size: 14px; line-height: 1.85; color: #53685b; margin: 10px 0; overflow-wrap: anywhere; }
+.br-source-dialog .br-dialog-intro { margin-bottom: 25px; }
+.br-source-dialog section { margin: 22px 0; border-top: 1px solid #e2e9e3; padding-top: 20px; }
+.br-source-dialog h3 { font-size: 15px; font-weight: 650; line-height: 1.5; color: #2b4e35; }
+.br-source-dialog a { font-size: 13px; line-height: 1.7; color: #2a6444; text-decoration: underline; text-underline-offset: 3px; }
+.br-source-dialog .br-primary-button { margin-top: 6px; }
+.br-sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+@media(max-width:1180px) { .br-workspace { grid-template-columns: minmax(0,1fr); }.br-study-card { display: none; }.br-reading { padding-inline: 32px; }.br-book-field { width: 230px; } }
+@media(max-width:760px) { .br-toolbar { top: var(--app-topbar-height,64px); display: block; padding-block: 12px; margin-bottom: 16px; }.br-location-form { display: grid; grid-template-columns: minmax(0,1fr) 80px 50px; align-items: end; gap: 8px; }.br-book-field,.br-chapter-field { width: auto; }.br-field select { min-height: 46px; font-size: 14px; padding-left: 10px; padding-right: 24px; }.br-location-form>.br-primary-button { width: 50px; padding: 10px 0; font-size: 0; gap: 0; }.br-location-form>.br-primary-button svg { width: 21px; height: 21px; }.br-edition-button { font-size: 12px; margin-top: 10px; padding: 6px 0; border: 0; min-height: 44px; background: transparent; }.br-edition-button svg { width: 16px; height: 16px; }.br-reading { padding: 23px 18px 18px; border-radius: 13px; }.br-chapter-header { gap: 12px; align-items: start; padding-bottom: 18px; }.br-chapter-icon { width: 40px; height: 40px; border-radius: 11px; margin-top: 2px; }.br-chapter-icon svg { width: 22px; height: 22px; }.br-chapter-header h1 { font-size: 25px; }.br-chapter-counter { font-size: 11px; line-height: 1.7; max-width: 170px; }.br-edition-label { font-size: 10px; margin-bottom: 4px; }.br-copy-reference { padding: 10px 0 10px 5px; min-height: 44px; }.br-copy-reference span { display: none; }.br-copy-reference svg { width: 18px; height: 18px; }.br-reading-tools { flex-wrap: wrap; gap: 12px; padding-block: 12px; }.br-mode-tools button { font-size: 11px; padding: 8px 9px; min-height: 44px; }.br-size-tools { gap: 2px; margin-left: auto; }.br-size-tools button { width: 44px; height: 44px; font-size: 13px; }.br-size-tools>span { font-size: 10px; min-width: 29px; }.br-verses { line-height: 1.85; letter-spacing: -.15px; margin: 20px auto; }.br-verses>li { gap: 8px; padding-block: 9px; scroll-margin-top: 240px; }.br-verses .br-verse-number { flex-basis: 20px; min-width: 20px; font-size: 10px; }.br-chapter-navigation { gap: 9px; font-size: 11px; padding-block: 17px; }.br-chapter-navigation>a { padding: 10px 8px; gap: 5px; }.br-chapter-navigation>a svg { width: 15px; height: 15px; }.br-compact-source p,.br-compact-source>a { font-size: 10px; line-height: 1.8; }.br-source-dialog { padding: 22px; border-radius: 14px; }.br-source-dialog h2 { font-size: 21px; }.br-source-dialog p { font-size: 14px; } }
+@media(prefers-reduced-motion:reduce) { .bible-reader-page * { scroll-behavior: auto !important; } }

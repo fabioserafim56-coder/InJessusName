@@ -6,13 +6,13 @@ O projeto começa pelo Cristianismo, com um núcleo comum e percursos identifica
 
 ## Estado do projeto
 
-As Etapas 1 e 2 têm uma implementação local funcional: apresentação responsiva, PWA, banco, cadastro/login de adultos e pré-entrevista com personalização salva. Agora há também um leitor com a Bíblia Livre TR completa e uma primeira aula com jogo e progresso opcional. A aula é um piloto com revisão humana especializada e avaliação com estudantes pendentes. Cursos completos e recursos avançados seguem no [roteiro de construção](docs/roadmap.md). Visitantes e menores têm percursos públicos; o cadastro por responsável ainda não está disponível.
+As Etapas 1 e 2 têm uma implementação local funcional: apresentação responsiva, PWA, banco, cadastro/login de adultos e pré-entrevista com personalização salva. A interface agora usa navegação de app, fonte Inter hospedada localmente, leitor com créditos sob demanda e seis aulas introdutórias completas. A primeira mantém progresso opcional; cinco novas combinam escolha, classificação e ordenação com estado somente na sessão. Todas são pilotos com revisão humana especializada e avaliação com estudantes pendentes. Cursos completos e recursos avançados seguem no [roteiro de construção](docs/roadmap.md). Visitantes e menores têm percursos públicos; o cadastro por responsável ainda não está disponível.
 
 A [proposta de arquitetura](docs/arquitetura-etapa-1.md) registra o modelo de dados, as fronteiras entre serviços, as regras de privacidade e as fontes pesquisadas. Ela é a referência do desenho inicial; não comprova que todos os recursos descritos já estejam implementados.
 
 ## Desenvolver neste ambiente ou em sua máquina
 
-Este repositório pode ser desenvolvido no ambiente de nuvem do Codex e também em uma máquina local. A hospedagem pública é uma etapa separada.
+Este repositório pode ser desenvolvido no ambiente de nuvem do Codex e também em uma máquina local. A hospedagem pública é separada do ambiente de desenvolvimento; o usuário já confirmou acesso à versão inicial em https://in-jessus-name.vercel.app/.
 
 Requisitos para o frontend:
 
@@ -105,7 +105,7 @@ Chaves administrativas ou secretas do Supabase nunca podem receber o prefixo `NE
 - `/jornada/infantil`, `/jornada/ponte`, `/jornada/jovens`, `/jornada/adultos`: exploração pública sem perfil religioso salvo. Os temas são propostas; as aulas ainda estão em preparação.
 - `/privacidade`: finalidade dos dados, escolhas disponíveis e limites desta etapa.
 - `/biblia`: leitura de 66 livros da Bíblia Livre TR (fevereiro de 2018), licença CC BY 3.0 Brasil. Esta edição não inclui deuterocanônicos nem notas editoriais.
-- `/aprender` e `/aprender/primeiros-passos`: aula piloto em quatro etapas, exemplo, jogo de seis missões, recuperação e transferência, reflexão física e resumo imprimível. As respostas ficam em memória; salvar conclusão é opcional e exige conta adulta com consentimento ativo. A revogação apaga também esse progresso.
+- `/aprender` e `/aprender/primeiros-passos`: catálogo de seis aulas; a primeira inclui quatro etapas, jogo de seis missões, recuperação e transferência, reflexão física e resumo imprimível. As respostas ficam em memória; salvar conclusão é opcional e exige conta adulta com consentimento ativo. A revogação apaga também esse progresso.
 
 As gravações usam RPCs transacionais `SECURITY INVOKER`, sob RLS e com identidade da sessão; o cliente não escolhe `user_id`. A autorização religiosa é separada da criação da conta e pode ser retirada. Menor conhecido não pode se promover a adulto pelo salvamento. A idade inicial continua autodeclarada; não foi implementada verificação documental nem aprovação por responsável.
 
@@ -181,3 +181,16 @@ Os testes de contas só criam fixtures em Supabase e aplicativo de loopback, rem
 - Desenvolvimento isolado em `.next-workspace`; após corrigir conflito de saída com o build, a geração do PDF e a navegação pararam de recarregar continuamente.
 
 Não houve avaliação com estudantes nem revisão humana especializada do conteúdo. Parte da bibliografia original ficou bloqueada pelo proxy; fontes efetivamente consultadas e referências pendentes estão identificadas na revisão pedagógica. As datas de retomada não constituem um motor de avaliação tardia. A prévia externa e a publicação pública continuam sem confirmação.
+
+## Redesign e expansão introdutória em 27/10/2026
+
+- Layout de app: painel inicial, navegação lateral e barra inferior no celular; biblioteca e estudos ficam ao alcance sem uma capa de marketing.
+- Fonte Inter hospedada no próprio app, com licença OFL distribuída; leitura bíblica inicia em 21px e mantém ajuste de tamanho.
+- Créditos completos disponíveis em diálogo ou painel expansível; edição e licença permanecem identificadas em linha compacta.
+- Seis aulas utilizáveis: cinco novas com 20 cartões, cinco exemplos, cinco práticas guiadas e 15 atividades de escolha, classificação e ordenação; soma de 25 atividades avaliadas na sessão, além do diagnóstico sem nota.
+- Conteúdo novo usa 83 referências verificadas; exemplos e práticas guiadas têm localizadores próprios para abrir o texto correto.
+- CircleProgress adaptado da fonte oficial MIT do 21st.dev, com avisos preservados em [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md). Fontes dos padrões de ensino e interface em [referencias-redesign.md](docs/referencias-redesign.md).
+
+As cinco aulas novas não simulam persistência na conta: suas respostas ficam apenas na memória da página. O modelo v1 e o salvamento da primeira aula foram preservados. A melhoria da interface e testes técnicos não substituem avaliação de aprendizagem com estudantes.
+
+Validação desta iteração: lint, tipos, build e integridade da Bíblia passaram; 26 cenários de navegador passaram em computador, celular e desenvolvimento. A versão sem variáveis Supabase passou no build e em nove grupos de verificações reais, incluindo fonte local, seis aulas, busca, atividade com correção, leitor, créditos e indisponibilidade explícita de contas. Não houve alteração de esquema do banco. O teste de cadastro agora aguarda o pathname real, evitando confundir o parâmetro `next` com uma navegação concluída; as verificações de cookies e isolamento foram preservadas.

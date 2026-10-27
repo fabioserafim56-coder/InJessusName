@@ -16,3 +16,15 @@
 @media(max-width:820px){.auth-page-grid{grid-template-columns:1fr;gap:35px;padding:40px 0 55px}.auth-introduction{max-width:580px}.auth-introduction h1 br{display:none}.auth-introduction h1{font-size:45px;max-width:550px}.auth-introduction>p{max-width:580px;font-size:16px}.auth-intro-detail{margin-top:20px}.auth-introduction>a{margin-top:20px}.auth-card{width:100%;max-width:580px;justify-self:center}.auth-footer{gap:18px}.auth-footer p{max-width:460px}.privacy-article{padding:42px 0 55px}}
 @media(max-width:520px){.auth-page{padding-inline:20px}.auth-page-header{min-height:86px;gap:16px}.auth-brand{font-size:24px}.auth-brand span{font-size:7px;letter-spacing:1.2px}.auth-page-header>.auth-quiet-link{font-size:11px;max-width:112px;line-height:1.6;text-align:right}.auth-page-header>.auth-quiet-link span{display:none}.auth-introduction h1,.privacy-article h1{font-size:42px;letter-spacing:-1.5px;margin-top:17px}.auth-eyebrow{font-size:9px;letter-spacing:1.25px}.auth-card{padding:23px 20px;border-radius:11px}.auth-card h2{font-size:27px}.auth-footer{flex-direction:column;gap:10px;padding-top:20px}.auth-footer p{font-size:11px}.auth-card-links{flex-direction:column;gap:14px}.account-controls{padding:20px}.account-controls-heading{align-items:flex-start;flex-direction:column;gap:15px}.account-controls-heading h2{font-size:23px}.privacy-lead{font-size:17px}.privacy-article h2{font-size:25px}.privacy-article section p{font-size:14px}.privacy-actions{align-items:stretch;flex-direction:column;gap:17px}.privacy-actions .auth-submit{width:100%}}
 @media(prefers-reduced-motion:reduce){.auth-page *{scroll-behavior:auto}}
+
+.app-content .app-auth-page{padding:0;min-height:auto;max-width:1100px}
+.app-auth-page .auth-page-grid{padding:35px 0 45px;grid-template-columns:minmax(0,1fr) minmax(340px,450px);gap:42px}
+.app-content .app-auth-page .auth-introduction h1{font-size:36px;font-weight:700;line-height:1.25;letter-spacing:-1px;margin:16px 0 20px}
+.app-auth-page .auth-introduction>p{font-size:17px;line-height:1.85;color:#526e5a}
+.app-auth-page .auth-introduction>a{font-size:15px;margin-top:24px}
+.app-auth-page .auth-card{background:#fff;border-radius:17px;box-shadow:none;border-color:#dde7dd}
+.app-auth-page .auth-card h2{font-size:26px;font-weight:650}
+.app-auth-page .auth-card-intro,.app-auth-page .auth-notice{font-size:15px;line-height:1.8}
+.app-auth-page .auth-field label,.app-auth-page .auth-submit,.app-auth-page .auth-switch button{font-size:15px}
+.app-auth-page .auth-privacy-note{font-size:13px;line-height:1.8}
+@media(max-width:1000px){.app-auth-page .auth-page-grid{grid-template-columns:1fr;padding-top:5px;gap:30px}.app-auth-page .auth-card{max-width:620px;width:100%;justify-self:stretch}.app-auth-page .auth-introduction>p{max-width:600px}.app-content .app-auth-page .auth-introduction h1{font-size:30px}}

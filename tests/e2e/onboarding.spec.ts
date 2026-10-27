@@ -40,7 +40,7 @@ async function fillAdultInterview(page: Page, perspective: "ccb" | "catholic") {
   await expect(page.getByRole("button", { name: "Salvar meu percurso", exact: true })).toBeDisabled();
   await consent.check();
   await page.getByRole("button", { name: "Salvar meu percurso", exact: true }).click();
-  await expect(page).toHaveURL(/\/meu-percurso$/);
+  await expect(page).toHaveURL((url) => url.pathname === "/meu-percurso" && url.search === "");
 }
 
 async function signUpViaApi(request: APIRequestContext, account: SyntheticAccount, origin: string) {
@@ -92,7 +92,7 @@ test("adulto cria conta, salva, revisa e revoga seu percurso com persistência r
   await expect(page.getByRole("button", { name: "Criar minha conta", exact: true })).toBeDisabled();
   await page.getByRole("checkbox", { name: "Declaro que tenho 18 anos ou mais." }).check();
   await page.getByRole("button", { name: "Criar minha conta", exact: true }).click();
-  await expect(page).toHaveURL(/\/comecar$/);
+  await expect(page).toHaveURL((url) => url.pathname === "/comecar" && url.search === "");
   await expect(page.getByRole("link", { name: "Meu percurso", exact: true })).toBeVisible();
 
   const sessionCookies = (await context.cookies()).filter((cookie) => cookie.name.startsWith("sb-"));
@@ -138,7 +138,7 @@ test("adulto cria conta, salva, revisa e revoga seu percurso com persistência r
   await page.getByLabel("E-mail", { exact: true }).fill(account.email);
   await page.getByLabel("Senha", { exact: true }).fill(account.password);
   await page.getByRole("button", { name: "Entrar", exact: true }).click();
-  await expect(page).toHaveURL(/\/meu-percurso$/);
+  await expect(page).toHaveURL((url) => url.pathname === "/meu-percurso" && url.search === "");
   await expect(page.getByRole("main")).toContainText("Você ainda não tem uma personalização salva.");
   await page.getByRole("button", { name: "Sair da conta", exact: true }).click();
   await expect(page).toHaveURL(/\/$/);
