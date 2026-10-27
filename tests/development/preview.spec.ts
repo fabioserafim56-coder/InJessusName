@@ -8,7 +8,7 @@ test("a prévia de desenvolvimento pode renderizar dentro de um iframe", async (
   await page.setContent(`<iframe title="Prévia do InJessusName" src="${baseURL}/" width="1100" height="800"></iframe>`);
   const preview = page.frameLocator('iframe[title="Prévia do InJessusName"]');
   await expect(preview.getByRole("main").getByRole("heading", { level: 1 })).toBeVisible();
-  await expect(preview.getByRole("link", { name: "Começar a primeira aula", exact: true })).toBeVisible();
+  await expect(preview.getByRole("main").locator('a[href="/aprender/primeiros-passos"]').first()).toBeVisible();
 });
 
 test("o desenvolvimento remove o worker antigo do app e preserva caches e registros alheios", async ({ page }) => {
@@ -70,7 +70,7 @@ test("o desenvolvimento remove o worker antigo do app e preserva caches e regist
     expect(state).toEqual({ ownWorkers: 0, ownCaches: [], controlledByOldWorker: false });
   }).toPass({ timeout: 10000 });
 
-  await expect(page.getByRole("link", { name: "Começar a primeira aula", exact: true })).toBeVisible();
+  await expect(page.getByRole("main").locator('a[href="/aprender/primeiros-passos"]').first()).toBeVisible();
   const preserved = await page.evaluate(async () => ({
     content: await (await (await caches.open("other-app-preserve")).match("/other-app/fixture"))?.text(),
     unrelatedWorkers: (await navigator.serviceWorker.getRegistrations()).filter((registration) =>

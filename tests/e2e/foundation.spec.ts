@@ -1,4 +1,5 @@
 import { test, expect } from "@playwright/test";
+import { firstLesson } from "../../src/content/lessons/primeiros-passos";
 
 test("painel de estudo carrega com navegação e entrada real na primeira aula", async ({ page }) => {
   const pageErrors: string[] = [];
@@ -8,7 +9,7 @@ test("painel de estudo carrega com navegação e entrada real na primeira aula",
   expect(response?.headers()["x-frame-options"]).toBe("DENY");
   await expect(page.locator("html")).toHaveAttribute("lang", "pt-BR");
   await expect(page.getByRole("main").getByRole("heading", { level: 1 })).toBeVisible();
-  const startLesson = page.getByRole("link", { name: "Começar a primeira aula", exact: true });
+  const startLesson = page.getByRole("main").locator('a[href="/aprender/primeiros-passos"]').first();
   await expect(startLesson).toHaveAttribute("href", "/aprender/primeiros-passos");
 
   const invalidLinks = await page.locator('a[href^="#"]').evaluateAll((links) =>
@@ -18,7 +19,7 @@ test("painel de estudo carrega com navegação e entrada real na primeira aula",
   expect(invalidLinks).toEqual([]);
   await startLesson.click();
   await expect(page).toHaveURL(/\/aprender\/primeiros-passos$/);
-  await expect(page.getByRole("heading", { level: 1 })).toContainText("Encontrar o texto");
+  await expect(page.getByRole("heading", { level: 1 })).toHaveText(firstLesson.title);
   expect(pageErrors).toEqual([]);
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
 });
@@ -64,5 +65,5 @@ test("manifesto, ícones e fallback offline estão funcionais", async ({ page, c
   await expect(page.getByRole("status")).toContainText("Ainda não conseguimos acessar o aplicativo.");
   await context.setOffline(false);
   await expect(page).toHaveURL(/\/$/, { timeout: 20000 });
-  await expect(page.getByRole("link", { name: "Começar a primeira aula", exact: true })).toBeVisible();
+  await expect(page.getByRole("main").locator('a[href="/aprender/primeiros-passos"]').first()).toBeVisible();
 });

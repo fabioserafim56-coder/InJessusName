@@ -81,7 +81,7 @@ async function advanceToActivity(page: Page, activityId: string) {
   const activity = page.locator(`[data-activity-id="${activityId}"]`);
   for (let step = 0; step < 30; step++) {
     if (await activity.isVisible()) return activity;
-    const reveal = page.getByRole("button", { name: "Mostrar próximo passo", exact: true });
+    const reveal = page.getByRole("button", { name: "Acompanhar o próximo passo", exact: true });
     if (await reveal.isVisible()) await reveal.click();
     else await page.locator("[data-course-next]").click();
   }
@@ -103,7 +103,7 @@ async function putItemsInOrder(activity: Locator, desired: readonly string[]) {
 }
 
 async function prepareActivity(activity: Locator) {
-  const open = activity.getByRole("button", { name: "Abrir atividade", exact: true });
+  const open = activity.getByRole("button", { name: "Estou pronto para conversar", exact: true });
   if (await open.isVisible()) await open.click();
 }
 
@@ -121,7 +121,7 @@ async function answerActivity(activity: Locator, question: CourseActivity, corre
     if (!correct) [desired[0], desired[1]] = [desired[1], desired[0]];
     await putItemsInOrder(activity, desired);
   }
-  await activity.getByRole("button", { name: "Conferir atividade", exact: true }).click();
+  await activity.getByRole("button", { name: "Vamos conferir juntos", exact: true }).click();
 }
 
 test("novo estudo ensina em etapas e combina escolha, classificação e ordenação com correção", async ({ page }) => {
@@ -135,23 +135,26 @@ test("novo estudo ensina em etapas e combina escolha, classificação e ordenaç
   });
   await page.goto(`/aprender/${lesson.id}`);
   await expect(page.getByRole("heading", { level: 1 })).toHaveText(lesson.title);
-  await page.getByRole("button", { name: "Começar estudo", exact: true }).click();
+  await page.getByRole("button", { name: "Vamos abrir a Palavra", exact: true }).click();
   for (const question of lesson.activities) {
     const activity = await advanceToActivity(page, question.id);
     await prepareActivity(activity);
     if (question.kind !== "classify") {
       await answerActivity(activity, question, false);
-      await expect(activity.getByRole("heading", { name: "Vamos ajustar", exact: true })).toBeVisible();
-      await activity.getByRole("button", { name: "Ajustar resposta", exact: true }).click();
+      await expect(activity.getByRole("heading", { name: "Vamos reler com calma.", exact: true })).toBeVisible();
+      await activity.getByRole("button", { name: "Olhar outra vez", exact: true }).click();
     }
     await answerActivity(activity, question, true);
-    await expect(activity.getByRole("heading", { name: "Boa conferência", exact: true })).toBeVisible();
+    await expect(activity.getByRole("heading", { name: "Vamos guardar esse cuidado.", exact: true })).toBeVisible();
     await activity.locator("[data-course-next]").click();
   }
-  for (let step = 0; step < 8 && !(await page.getByRole("heading", { name: "Estudo concluído", exact: true }).isVisible()); step++) {
+  for (let step = 0; step < 8 && !(await page.getByRole("heading", { name: "A leitura continua na vida.", exact: true }).isVisible()); step++) {
     await page.locator("[data-course-next]").click();
   }
-  await expect(page.getByRole("heading", { name: "Estudo concluído", exact: true })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "A leitura continua na vida.", exact: true })).toBeVisible();
+  const learningPath = page.locator("details.cl-learning-path");
+  await expect(learningPath).not.toHaveAttribute("open", "");
+  await learningPath.getByText("Meu caminho neste estudo", { exact: true }).click();
   const result = (label: string) => page.locator(".cl-results > div")
     .filter({ has: page.getByText(label, { exact: true }) }).locator("dd");
   await expect(result("Primeira tentativa sem ajuda")).toHaveText("1 / 3");
@@ -160,6 +163,6 @@ test("novo estudo ensina em etapas e combina escolha, classificação e ordenaç
   expect(await page.evaluate(() => ({ local: Object.keys(localStorage), session: Object.keys(sessionStorage) }))).toEqual({ local: [], session: [] });
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
   await page.reload();
-  await expect(page.getByRole("button", { name: "Começar estudo", exact: true })).toBeVisible();
-  await expect(page.getByRole("heading", { name: "Estudo concluído", exact: true })).toHaveCount(0);
+  await expect(page.getByRole("button", { name: "Vamos abrir a Palavra", exact: true })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "A leitura continua na vida.", exact: true })).toHaveCount(0);
 });

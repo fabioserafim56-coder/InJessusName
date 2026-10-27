@@ -107,25 +107,27 @@ test("aula oferece exemplo, correção e retomada sem confundir ajuda com lembra
   await page.getByRole("button", { name: "Preparar minha mesa", exact: true }).click();
   const preparation = page.getByRole("dialog", { name: "Vamos preparar este momento?" });
   await expect(preparation).toBeVisible();
-  await expect(preparation).toContainText("Bíblia física aberta ao lado");
+  await expect(preparation).toContainText("Bíblia");
+  await expect(preparation).toContainText("caderno");
   await preparation.getByRole("button", { name: "Começar a aula", exact: true }).click();
   await expect(preparation).not.toBeVisible();
 
   const diagnostic = firstLesson.preparation.diagnostic;
   const diagnosticCard = page.locator(`[data-question-id="${diagnostic.id}"]`);
-  await expect(diagnosticCard).toContainText("SEM NOTA");
+  await expect(diagnosticCard).toBeVisible();
+  await expect(page.locator(".study-lead")).toContainText("sem nota ou cobrança");
   await diagnosticCard.locator(`input[value="${diagnostic.correctOptionId}"]`).check();
-  await diagnosticCard.getByRole("button", { name: "Conferir resposta", exact: true }).click();
-  await diagnosticCard.getByRole("button", { name: "Seguir com o estudo", exact: true }).click();
-  await page.getByRole("button", { name: "Ir para o contexto", exact: true }).click();
-  await page.getByText("Explorar as seis lentes", { exact: true }).click();
+  await diagnosticCard.getByRole("button", { name: "Vamos conferir juntos", exact: true }).click();
+  await diagnosticCard.getByRole("button", { name: "Seguimos juntos", exact: true }).click();
+  await page.getByRole("button", { name: "Vamos abrir este trecho", exact: true }).click();
+  await page.getByText("Seis maneiras de olhar para esta passagem", { exact: true }).click();
   await page.getByRole("button", { name: "Histórica", exact: true }).click();
   await expect(page.getByRole("button", { name: "Histórica", exact: true })).toHaveAttribute("aria-pressed", "true");
   await expect(page.getByText(firstLesson.lenses[2].limit, { exact: true })).toBeVisible();
-  await page.getByRole("button", { name: "Ver exemplo resolvido", exact: true }).click();
+  await page.getByRole("button", { name: "Acompanhar esta leitura", exact: true }).click();
   await expect(page.getByRole("heading", { name: firstLesson.workedExample.title, exact: true })).toBeVisible();
-  await page.getByRole("button", { name: "Fazer uma observação", exact: true }).click();
-  await page.getByRole("button", { name: "Ir para a prática", exact: true }).click();
+  await page.getByRole("button", { name: "Pensar juntos sobre a passagem", exact: true }).click();
+  await page.getByRole("button", { name: "Conversar sobre esta Palavra", exact: true }).click();
 
   const answerPositions: number[] = [];
   for (const [index, question] of scoredQuestions.entries()) {
@@ -133,9 +135,9 @@ test("aula oferece exemplo, correção e retomada sem confundir ajuda com lembra
     await expect(card).toBeVisible();
     if (question.evidenceMode === "without-looking") {
       await expect(card.locator('input[type="radio"]')).toHaveCount(0);
-      await card.getByRole("button", { name: "Tentei lembrar; mostrar alternativas", exact: true }).click();
+      await card.getByRole("button", { name: "Já pensei; vamos conversar", exact: true }).click();
     }
-    await expect(card.getByRole("button", { name: "Conferir resposta", exact: true })).toBeDisabled();
+    await expect(card.getByRole("button", { name: "Vamos conferir juntos", exact: true })).toBeDisabled();
     const optionIds = await card.locator('input[type="radio"]').evaluateAll((inputs) =>
       inputs.map((input) => (input as HTMLInputElement).value)
     );
@@ -143,21 +145,21 @@ test("aula oferece exemplo, correção e retomada sem confundir ajuda com lembra
     if (index === 0) {
       const wrong = question.options.find((option) => option.id !== question.correctOptionId)!;
       await card.locator(`input[value="${wrong.id}"]`).check();
-      await card.getByRole("button", { name: "Conferir resposta", exact: true }).click();
-      await expect(card.getByRole("heading", { name: "Vamos conferir a evidência.", exact: true })).toBeVisible();
+      await card.getByRole("button", { name: "Vamos conferir juntos", exact: true }).click();
+      await expect(card.getByRole("heading", { name: "Vamos olhar juntos outra vez.", exact: true })).toBeVisible();
       await expect(card).toContainText(wrong.explanation);
       // Revisiting teaching must preserve the failed attempt and its feedback.
-      await page.getByRole("button", { name: /2.*Entender/ }).click();
-      await page.getByRole("button", { name: /3.*Praticar/ }).click();
+      await page.getByRole("button", { name: /2.*Ouvir/ }).click();
+      await page.getByRole("button", { name: /3.*Conversar/ }).click();
       await expect(card).toContainText(wrong.explanation);
-      await card.getByRole("button", { name: "Tentar novamente", exact: true }).click();
+      await card.getByRole("button", { name: "Olhar outra vez", exact: true }).click();
       await expect(card.locator(`input[value="${wrong.id}"]`)).toBeDisabled();
     }
     if (question.evidenceMode === "without-looking") {
       // Both the question and the adjacent reader must hide the passage initially.
       await expect(page.locator(".study-passage")).toHaveCount(0);
       if (index === 6) {
-        await card.getByRole("button", { name: "Consultar texto (registra ajuda)", exact: true }).click();
+        await card.getByRole("button", { name: "Reler a passagem", exact: true }).click();
         await expect(card.locator(".study-passage")).toHaveCount(1);
       }
       if (index === 8) {
@@ -170,19 +172,24 @@ test("aula oferece exemplo, correção e retomada sem confundir ajuda com lembra
       await expect(card.locator(".study-passage")).toContainText(firstLesson.passages.transfer.label);
     }
     await card.locator(`input[value="${question.correctOptionId}"]`).check();
-    await card.getByRole("button", { name: "Conferir resposta", exact: true }).click();
-    await expect(card.getByRole("heading", { name: "Resposta conferida.", exact: true })).toBeVisible();
-    await card.getByRole("button", { name: index === scoredQuestions.length - 1 ? "Ver minha retomada" : "Próxima atividade", exact: true }).click();
+    await card.getByRole("button", { name: "Vamos conferir juntos", exact: true }).click();
+    await expect(card.getByRole("heading", { name: "Vamos guardar essa descoberta.", exact: true })).toBeVisible();
+    await card.getByRole("button", { name: index === scoredQuestions.length - 1 ? "Levar esta Palavra comigo" : "Seguir com nossa conversa", exact: true }).click();
   }
   expect(new Set(answerPositions).size).toBeGreaterThan(1);
-  await expect(page.getByRole("heading", { name: "Veja como chegou às respostas.", exact: true })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Antes de seguir, guarde um cuidado.", exact: true })).toBeVisible();
+  const learningPath = page.locator("details.study-results-details");
+  await expect(learningPath).not.toHaveAttribute("open", "");
+  await expect(page.locator(".study-results")).not.toBeVisible();
+  await learningPath.getByText("Meu caminho neste estudo", { exact: true }).click();
+  await expect(page.getByRole("heading", { name: "Como foi nosso caminho na leitura", exact: true })).toBeVisible();
   const result = (title: string) => page.locator(".study-results dl > div")
     .filter({ has: page.getByText(title, { exact: true }) }).locator("dd");
   await expect(result("Prática: acertos na primeira tentativa")).toHaveText("5 / 6");
   await expect(result("Lembrança: primeira tentativa sem ajuda")).toHaveText("1 / 3");
   await expect(result("Respostas que precisaram de nova tentativa")).toHaveText("1");
   await expect(result("Aplicação em outra passagem")).toHaveText("Primeira tentativa");
-  await expect(page.getByText(/Corrigir uma resposta não comprova retenção em outro dia/)).toBeVisible();
+  await expect(page.locator(".study-results")).toContainText("não mede sua fé");
   await expect(page.locator("textarea")).toHaveCount(0);
   expect(saves).toEqual([]);
   const consent = page.getByRole("checkbox", { name: /^Quero guardar o progresso/ });
@@ -198,7 +205,7 @@ test("aula oferece exemplo, correção e retomada sem confundir ajuda com lembra
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
   await page.reload();
   await expect(page.getByRole("button", { name: "Preparar minha mesa", exact: true })).toBeVisible();
-  await expect(page.getByRole("heading", { name: "Veja como chegou às respostas.", exact: true })).toHaveCount(0);
+  await expect(page.getByRole("heading", { name: "Como foi nosso caminho na leitura", exact: true })).toHaveCount(0);
 });
 
 test("progresso recalcula evidências, preserva erros e fica restrito ao próprio adulto que autorizou", async ({ page, browser, baseURL, accounts }) => {

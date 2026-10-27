@@ -21,7 +21,7 @@ export default async function SignInPage({ searchParams }: { searchParams: Promi
   return (
     <AppShell active="profile" title="Sua conta" subtitle="Seu percurso e suas escolhas"><div className="auth-page app-auth-page">
       <div className="auth-page-grid">
-        <section className="auth-introduction" aria-labelledby="auth-page-title"><span className="auth-eyebrow">SEU ESPAÇO DE ESTUDO</span><h1 id="auth-page-title">Seu lugar de aprender.</h1><p>Entre para guardar seu percurso. Você também pode explorar a Bíblia e todas as aulas disponíveis sem criar uma conta.</p><Link href="/aprender">Explorar os estudos sem conta →</Link></section>
+        <section className="auth-introduction" aria-labelledby="auth-page-title"><span className="auth-eyebrow">SEU CAMINHO TEM CONTINUIDADE</span><h1 id="auth-page-title">Que bom ter você por aqui.</h1><p>Entre para guardar seu percurso e voltar ao que está cultivando. A Palavra e os estudos também estão abertos para quem prefere chegar sem uma conta.</p><Link href="/aprender">Conhecer os estudos sem conta →</Link></section>
         <AuthForm configured={configured} next={next} />
       </div>
       <footer className="auth-footer"><p>Uma iniciativa educacional cristã independente, sem vínculo institucional oficial com igrejas ou denominações.</p><Link href="/privacidade">Privacidade e escolhas</Link></footer>

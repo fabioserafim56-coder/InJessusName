@@ -67,7 +67,7 @@ export function BibleReader({ books, chapter, highlightedVerse }: {
     }
   }
 
-  return <AppShell active="bible" title="Bíblia" subtitle="Leia com contexto">
+  return <AppShell active="bible" title="Bíblia" subtitle="Abra a Palavra com o coração atento">
     <div className="bible-reader-page">
       <a className="skip-link" href="#bible-chapter">Pular para o texto bíblico</a>
 
@@ -138,11 +138,11 @@ export function BibleReader({ books, chapter, highlightedVerse }: {
 
         <aside className="br-study-card" aria-labelledby="br-study-title">
           <span className="br-study-symbol" aria-hidden="true"><ReaderIcon kind="book" /></span>
-          <p className="br-small-label">DA LEITURA À DESCOBERTA</p>
-          <h3 id="br-study-title">O que você observa?</h3>
-          <p>Escolha um trecho. Procure quem participa, o que acontece e qual frase sustenta a sua conclusão.</p>
-          <Link href="/aprender">Praticar nos estudos <ReaderIcon kind="arrow-right" /></Link>
-          <div className="br-study-tip"><strong>Uma pergunta por vez.</strong><p>Você pode ajustar o texto e mudar o modo de leitura. Anote dúvidas no seu caderno.</p></div>
+          <p className="br-small-label">UM TEMPO COM A PALAVRA</p>
+          <h3 id="br-study-title">Vamos escutar esta passagem?</h3>
+          <p>Leia devagar. Há uma palavra que pede sua atenção? Permaneça um pouco nela e procure compreender o que essa passagem nos revela sobre Deus e a vida.</p>
+          <Link href="/aprender">Ler com uma explicação ao lado <ReaderIcon kind="arrow-right" /></Link>
+          <div className="br-study-tip"><strong>Suas perguntas têm lugar aqui.</strong><p>Se algo parecer difícil, você pode reler, anotar e voltar depois. Não é preciso transformar esse encontro em uma corrida.</p></div>
         </aside>
       </div>
 

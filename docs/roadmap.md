@@ -67,7 +67,7 @@ Critérios de conclusão: quatro passos e seis lentes presentes nas aulas comple
 
 **Estado: planejada.**
 
-Construir o caderno pessoal com criptografia no dispositivo, recuperação de chaves definida e sincronização testada. Implementar memorial privado de oração, pausa de um minuto, notificações opcionais e perguntas com moderação.
+Construir o caderno pessoal com criptografia no dispositivo, recuperação de chaves definida e sincronização testada. Implementar memorial privado de oração, notificações opcionais e perguntas com moderação. Os estudos já oferecem um convite opcional ao recolhimento, sem duração imposta nem coleta de oração; isso não equivale a um memorial persistente.
 
 Integrar Firebase somente nas responsabilidades previstas. O tutor recuperará conteúdo publicado e autorizado, indicará suas fontes e perspectiva e reconhecerá quando não houver base suficiente para responder. Notas pessoais ficam fora de seu acesso por padrão.
 
@@ -86,3 +86,17 @@ O início agora é um painel de estudo com navegação lateral ou inferior, cat�
 Foram acrescentadas cinco aulas ao primeiro piloto: panorama bíblico, criação e cuidado, Jesus e o próximo, oração e compartilhar a fé com respeito. São 20 cartões de ensino, cinco exemplos, cinco práticas guiadas e 15 atividades variadas. Toda consulta aponta o intervalo específico pedido pelo conteúdo. Os estados de ajuda e correção são preservados ao voltar de etapa.
 
 As novas aulas mantêm respostas somente na sessão; o progresso opcional da primeira aula e seus controles de consentimento permanecem. A eficácia com estudantes ainda precisa ser medida. Evidências, fontes e pendências estão em [referencias-redesign.md](referencias-redesign.md) e [revisao-editorial-bloco-2.md](revisao-editorial-bloco-2.md).
+
+
+## Acompanhamento pastoral — 27/10/2026
+
+Os seis estudos introdutórios foram reescritos com acolhimento específico para as passagens, explicações próximas, cuidado ao corrigir e oração opcional. O caminho visível é ouvir, compreender, conversar e viver. Exemplos, recuperação, correção e aplicação continuam presentes; os indicadores ficam em “Meu caminho neste estudo”. O caderno e a oração não são enviados ao aplicativo. As cinco aulas adicionais continuam somente na sessão e a primeira mantém seu consentimento de progresso.
+
+A [voz pastoral](voz-pastoral.md) orienta essa escrita sem atribuir ao sistema autoridade ministerial ou revelação pessoal. A revisão humana especializada e a avaliação com estudantes permanecem etapas necessárias para ampliar o currículo com qualidade.
+
+
+## Museu inicial e ferramentas abertas — 27/10/2026
+
+Disponível em `/museu`: Merneptah, Mesa, Obelisco Negro e Roseta, cada peça com fotografia histórica da edição de 1917, contexto, leitura bíblica, pergunta de reflexão e limites históricos. Há galeria, linha do tempo, filtros, busca com Fuse.js e ampliação com PhotoSwipe. Imagens e metadados são locais; direitos e aquisição estão em [fontes-museu.md](fontes-museu.md). Fotografias atuais com maior resolução e revisão arqueológica especializada são próximos aprimoramentos do acervo.
+
+A [pesquisa de ferramentas e modelos](ferramentas-abertas-pastoral-museu.md) registra alternativas de mapas, imagens de alta resolução, narração e acompanhante de estudo. PhotoSwipe e Fuse estão ativos; os modelos de voz e linguagem permanecem em avaliação, sem pesos incorporados ou transmissão de orações.

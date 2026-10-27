@@ -11,6 +11,7 @@ Inventário da entrega local. Conteúdo disponível em arquivos versionáveis é
 | Aulas autorais utilizáveis | 6 pilotos: primeiros passos, panorama bíblico, criação e cuidado, Jesus e o próximo, oração e compartilhar a fé com respeito |
 | Atividades pedagógicas | Detetive do Contexto, perguntas de recuperação e transferência; mais 15 atividades de escolha, classificação e ordenação nas cinco novas aulas |
 | Atividades avaliadas na sessão | 25 unidades: dez da primeira aula e 15 das novas; o diagnóstico inicial fica fora do resultado. Classificações incluem 20 itens no bloco novo |
+| Museu da história bíblica | 4 peças com fotografias históricas locais de uma edição de 1917: Merneptah, Mesa, Obelisco Negro e Roseta; galeria, linha do tempo, filtros, busca, ampliação e ligações ao leitor |
 | Resumo para o caderno | 1 PDF autoral de página única para download e fonte imprimível |
 | Progresso opcional | Primeira aula: conclusão, tentativas, ajuda e datas D+1/D+7 na conta adulta com consentimento ativo. Novas cinco aulas: estado apenas na sessão, sem simular salvamento |
 
@@ -21,6 +22,12 @@ A primeira aula contém quatro etapas, seis lentes introdutórias, exemplo resol
 As cinco aulas adicionais têm 20 cartões curtos, cinco exemplos resolvidos, cinco práticas guiadas e três formatos de atividade por aula. As consultas abrem os intervalos específicos do exemplo e do exercício. Referências e limites estão em [revisao-editorial-bloco-2.md](revisao-editorial-bloco-2.md).
 
 A interface usa fonte Inter hospedada no próprio app, navegação lateral/inferior e créditos completos sob demanda. A adaptação de CircleProgress do 21st.dev tem fonte e licença MIT preservadas em `THIRD_PARTY_NOTICES.md`; a comparação com sistemas de ensino está em [referencias-redesign.md](referencias-redesign.md).
+
+Os seis estudos agora usam acolhimento específico para cada passagem, explicações próximas, reflexão e oração opcional. O caminho visível é ouvir, compreender, conversar e viver. Resultados de atividades ficam recolhidos em “Meu caminho neste estudo”; não há formulário nem envio de oração. As práticas de aprendizagem e o contrato de progresso da primeira aula foram preservados. [voz-pastoral.md](voz-pastoral.md) registra a revisão.
+
+O museu usa quatro fotografias históricas reais sem retoques, com identificação de 1917, dimensões, SHA-256 e domínio público delimitado ao Brasil/EUA. São reproduções pequenas de um exemplar antigo, não fotografias atuais em alta resolução. [fontes-museu.md](fontes-museu.md) documenta a cadeia de aquisição, créditos e o que foi efetivamente consultado. As fichas distinguem observação, contexto, conexão bíblica e limites da pesquisa.
+
+PhotoSwipe 5.4.4 abre as fotografias; Fuse.js 7.5.0 faz busca aproximada local no museu e nos estudos. Licenças originais acompanham a distribuição. Modelos de voz e linguagem foram pesquisados, mas não foram instalados: [ferramentas-abertas-pastoral-museu.md](ferramentas-abertas-pastoral-museu.md).
 
 ## O que ainda não compõe um curso publicado
 

@@ -6,7 +6,7 @@ O projeto começa pelo Cristianismo, com um núcleo comum e percursos identifica
 
 ## Estado do projeto
 
-As Etapas 1 e 2 têm uma implementação local funcional: apresentação responsiva, PWA, banco, cadastro/login de adultos e pré-entrevista com personalização salva. A interface agora usa navegação de app, fonte Inter hospedada localmente, leitor com créditos sob demanda e seis aulas introdutórias completas. A primeira mantém progresso opcional; cinco novas combinam escolha, classificação e ordenação com estado somente na sessão. Todas são pilotos com revisão humana especializada e avaliação com estudantes pendentes. Cursos completos e recursos avançados seguem no [roteiro de construção](docs/roadmap.md). Visitantes e menores têm percursos públicos; o cadastro por responsável ainda não está disponível.
+As Etapas 1 e 2 têm uma implementação local funcional: apresentação responsiva, PWA, banco, cadastro/login de adultos e pré-entrevista com personalização salva. A interface usa navegação de app, fonte Inter hospedada localmente, leitor com créditos sob demanda e seis estudos introdutórios. A linguagem autoral desses estudos foi reescrita para acompanhar a leitura com acolhimento, reflexão cristã e oração opcional; resultados das atividades aparecem sob demanda. A primeira mantém progresso opcional; cinco novas combinam escolha, classificação e ordenação com estado somente na sessão. Todas são pilotos com revisão humana especializada e avaliação com estudantes pendentes. Cursos completos e recursos avançados seguem no [roteiro de construção](docs/roadmap.md). Visitantes e menores têm percursos públicos; o cadastro por responsável ainda não está disponível.
 
 A [proposta de arquitetura](docs/arquitetura-etapa-1.md) registra o modelo de dados, as fronteiras entre serviços, as regras de privacidade e as fontes pesquisadas. Ela é a referência do desenho inicial; não comprova que todos os recursos descritos já estejam implementados.
 
@@ -45,7 +45,7 @@ npm run build
 npm run test:e2e
 ```
 
-O runner usa Chromium do sistema quando disponível em `/usr/bin/chromium`; em outras máquinas, instale o navegador com `npx playwright install chromium` ou informe `PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH`. A suíte cobre navegação, teclado, celular, manifesto, ícones, reconexão automática, iframe de desenvolvimento e remoção seletiva de cache antigo.
+O runner usa Chromium do sistema quando disponível em `/usr/bin/chromium`; em outras máquinas, instale o navegador com `npx playwright install chromium` ou informe `PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH`. A suíte cobre navegação, teclado, celular, leitor, estudos, consentimento, isolamento entre contas, oração opcional, museu com fotografias locais, ampliação, manifesto, reconexão automática, iframe de desenvolvimento e remoção seletiva de cache antigo.
 
 Os testes iniciam produção na porta 3100 e desenvolvimento na 3101, com saída isolada em `.next-preview-tests`; o servidor de trabalho pode continuar na porta 3000. O desenvolvimento normal usa `.next-workspace`, separado de `.next` de produção, para builds e testes não substituírem seus arquivos durante a navegação. Para executar somente as duas regressões de desenvolvimento, use `npm run test:e2e -- --project development`.
 
@@ -104,6 +104,7 @@ Chaves administrativas ou secretas do Supabase nunca podem receber o prefixo `NE
 - `/meu-percurso`: roteiro a partir das próprias escolhas salvas; revisão da entrevista, saída e revogação real da personalização. A revogação remove respostas e mantém a conta e o histórico de consentimento.
 - `/jornada/infantil`, `/jornada/ponte`, `/jornada/jovens`, `/jornada/adultos`: exploração pública sem perfil religioso salvo. Os temas são propostas; as aulas ainda estão em preparação.
 - `/privacidade`: finalidade dos dados, escolhas disponíveis e limites desta etapa.
+- `/museu`: quatro peças com fotografias históricas reais, linha do tempo, filtros, busca aproximada, ampliação e conexões bíblicas. [Fontes e direitos](docs/fontes-museu.md).
 - `/biblia`: leitura de 66 livros da Bíblia Livre TR (fevereiro de 2018), licença CC BY 3.0 Brasil. Esta edição não inclui deuterocanônicos nem notas editoriais.
 - `/aprender` e `/aprender/primeiros-passos`: catálogo de seis aulas; a primeira inclui quatro etapas, jogo de seis missões, recuperação e transferência, reflexão física e resumo imprimível. As respostas ficam em memória; salvar conclusão é opcional e exige conta adulta com consentimento ativo. A revogação apaga também esse progresso.
 
@@ -137,6 +138,8 @@ A publicação exigirá configurar os projetos e variáveis, revisar as migraç�
 O projeto não utiliza a API pública `abibliadigital.com.br`.
 
 O [inventário do acervo](docs/estado-do-acervo.md) distingue a edição e a aula em arquivos locais do catálogo editorial ainda sem aulas publicadas no Supabase. Não foram preenchidos estados de revisão humana fictícios. A [revisão pedagógica](docs/revisao-metodo-aprendizagem.md) explica as fontes e como testar compreensão, retenção e aplicação com pessoas; software funcionando não comprova eficácia do método.
+
+A [voz pastoral](docs/voz-pastoral.md) registra os princípios da escrita, a relação entre escuta, compreensão, conversa e vida, e os limites de revisão desta entrega. A [pesquisa de ferramentas abertas](docs/ferramentas-abertas-pastoral-museu.md) separa bibliotecas realmente integradas de modelos de voz e linguagem ainda em avaliação.
 
 O resumo PDF autoral de uma página está incluído em `public/resumos/primeiros-passos-v1.pdf`. Para regenerar com o servidor de desenvolvimento local em execução, use `node scripts/build-lesson-handout.mjs` e confira a contagem com `pdfinfo`; a fonte imprimível fica em `/aprender/primeiros-passos/resumo`. O script usa o Chromium já usado pelos testes e não acessa sessão autenticada.
 
@@ -194,3 +197,17 @@ Não houve avaliação com estudantes nem revisão humana especializada do conte
 As cinco aulas novas não simulam persistência na conta: suas respostas ficam apenas na memória da página. O modelo v1 e o salvamento da primeira aula foram preservados. A melhoria da interface e testes técnicos não substituem avaliação de aprendizagem com estudantes.
 
 Validação desta iteração: lint, tipos, build e integridade da Bíblia passaram; 26 cenários de navegador passaram em computador, celular e desenvolvimento. A versão sem variáveis Supabase passou no build e em nove grupos de verificações reais, incluindo fonte local, seis aulas, busca, atividade com correção, leitor, créditos e indisponibilidade explícita de contas. Não houve alteração de esquema do banco. O teste de cadastro agora aguarda o pathname real, evitando confundir o parâmetro `next` com uma navegação concluída; as verificações de cookies e isolamento foram preservadas.
+
+
+## Voz pastoral e museu — 27/10/2026
+
+- Seis estudos reescritos com acolhimento específico para cada passagem, perguntas acompanhadas, reflexão e oração opcional. O leitor, o início, o catálogo e o resumo para o caderno acompanham essa linguagem. Nenhuma oração ou anotação é recolhida.
+- Indicadores de atividade ficam em “Meu caminho neste estudo”; exemplos, pistas, correção, lembrança e aplicação continuam presentes. IDs, gabaritos e contrato de progresso da primeira aula foram preservados. Revisão humana e avaliação com estudantes continuam pendentes.
+- Museu inicial com quatro fotografias históricas reais da edição de 1917: Merneptah, Mesa, Obelisco Negro e Roseta. Cada ficha apresenta contexto, limites, referência bíblica, reflexão e crédito completo sob demanda. Há linha do tempo, filtros, busca e ampliação. [Proveniência e direitos](docs/fontes-museu.md).
+- PhotoSwipe 5.4.4 e Fuse.js 7.5.0 integrados, com licenças originais distribuídas. Alternativas de narração e modelos de linguagem foram pesquisadas, sem pesos incorporados ou transmissão de orações. [Pesquisa](docs/ferramentas-abertas-pastoral-museu.md).
+
+Validação desta iteração: lint, TypeScript e build passaram; integridade bíblica conferida; `node scripts/verify-museum.mjs` aprovou quatro imagens, SHA-256, dimensões e quatro conexões bíblicas; PDF regenerado e confirmado com uma página A4. Na suíte de 32 cenários, 28 passaram inicialmente; após corrigir Escape durante a abertura da fotografia e o seletor acessível dos filtros, os seis cenários específicos de oração/museu passaram em desktop e celular. Assim, os 32 cenários tiveram aprovação, sem casos pulados. As verificações de consentimento, cookies e isolamento permaneceram; nenhuma conta sintética ficou no banco. Não houve alteração de esquema.
+
+Um build público separado, sem arquivos de ambiente nem variáveis Supabase, passou junto com dez grupos de verificações reais em desktop/celular: início, seis estudos, oração opcional, leitor, fotos, busca, zoom/Escape/foco, fontes, PDF e indisponibilidade explícita de contas. Capturas de início, estudo, galeria, detalhe e ampliação foram inspecionadas. O teste encontrou a falha de Escape durante a animação; a abertura agora é imediata, sem inserir espera artificial no teste.
+
+A publicação externa continua sendo uma verificação separada do build e do envio à branch conectada. Os testes locais não confirmam o estado atual do domínio Vercel.

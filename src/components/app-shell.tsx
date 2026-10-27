@@ -2,7 +2,7 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 import "./app-shell.css";
 
-export type AppSection = "home" | "learn" | "bible" | "profile";
+export type AppSection = "home" | "learn" | "bible" | "museum" | "profile";
 export type AppIconName = AppSection | "arrow" | "spark" | "check" | "layers" | "heart" | "search" | "clock" | "compass";
 
 export function AppIcon({ name, className = "" }: { name: AppIconName; className?: string }) {
@@ -11,6 +11,7 @@ export function AppIcon({ name, className = "" }: { name: AppIconName; className
     {name === "learn" && <><path d="m2 8 10-5 10 5-10 5L2 8Z" /><path d="M6 10v7c4 3 8 3 12 0v-7m4-2v7" /></>}
     {name === "bible" && <><path d="M12 5C8 3 5 3 2 5v15c3-2 6-2 10 0 4-2 7-2 10 0V5c-3-2-6-2-10 0Zm0 0v15M6 8h2m-2 4h2m8-4h2m-2 4h2" /></>}
     {name === "profile" && <><circle cx="12" cy="8" r="4" /><path d="M4 21v-2a8 8 0 0 1 16 0v2" /></>}
+    {name === "museum" && <><path d="m3 8 9-5 9 5H3Zm0 12h18M5 10v7m4-7v7m6-7v7m4-7v7M2 22h20" /></>}
     {name === "arrow" && <path d="M4 12h16m-6-6 6 6-6 6" />}
     {name === "spark" && <><path d="m12 3 2.5 6.5L21 12l-6.5 2.5L12 21l-2.5-6.5L3 12l6.5-2.5L12 3Z" /><path d="m20 2 .6 1.4L22 4l-1.4.6L20 6l-.6-1.4L18 4l1.4-.6L20 2Z" /></>}
     {name === "check" && <path d="m5 12 4 4L19 6" />}
@@ -26,6 +27,7 @@ const destinations = [
   { id: "home", label: "Início", href: "/" },
   { id: "learn", label: "Aprender", href: "/aprender" },
   { id: "bible", label: "Bíblia", href: "/biblia" },
+  { id: "museum", label: "Museu", href: "/museu" },
   { id: "profile", label: "Meu percurso", href: "/meu-percurso" }
 ] as const;
 
@@ -40,9 +42,9 @@ export function AppShell({ active, title, subtitle, children }: { active: AppSec
     <a className="skip-link" href="#app-main">Pular para o conteúdo</a>
     <aside className="app-sidebar">
       <Link className="app-logo" href="/" aria-label="InJessusName, início"><span className="app-logo-mark"><AppIcon name="bible" /></span><span>InJessusName<small>CONHECER. COMPREENDER. VIVER.</small></span></Link>
-      <p className="app-nav-label">SEU ESPAÇO DE ESTUDO</p>
+      <p className="app-nav-label">SEU CAMINHO NA PALAVRA</p>
       <Navigation active={active} />
-      <div className="app-side-invitation"><span className="app-side-symbol"><AppIcon name="spark" /></span><strong>Profundidade, um passo de cada vez.</strong><p>Leia, pratique e leve o aprendizado para a vida.</p><Link href="/aprender/primeiros-passos">Começar pelos fundamentos <AppIcon name="arrow" /></Link></div>
+      <div className="app-side-invitation"><span className="app-side-symbol"><AppIcon name="heart" /></span><strong>Você pode chegar com suas perguntas.</strong><p>Vamos abrir a Bíblia com calma, cultivar a fé e aprender a cuidar uns dos outros.</p><Link href="/aprender/primeiros-passos">Dar o primeiro passo <AppIcon name="arrow" /></Link></div>
       <div className="app-sidebar-footer"><Link href="/privacidade">Privacidade e escolhas</Link><span>Um projeto educacional independente.</span></div>
     </aside>
     <div className="app-workspace">

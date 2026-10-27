@@ -1,0 +1,294 @@
+[
+  {
+    "id": "estela-merneptah",
+    "title": "Estela de Merneptah",
+    "subtitle": "Um nome conhecido da Bíblia em um monumento do Egito antigo.",
+    "period": "Egito: final do século XIII a.C.",
+    "approxDate": "Final do século XIII a.C.",
+    "era": "Egito antigo",
+    "startYear": -1210,
+    "endYear": -1200,
+    "place": "Tebas, Egito",
+    "coordinates": {
+      "lat": 25.72,
+      "lng": 32.61
+    },
+    "collection": "Museu Egípcio, Cairo; fotografia da edição de 1917",
+    "objectType": "Estela",
+    "image": {
+      "src": "/museum/estela-merneptah-1917.jpg",
+      "alt": "Fotografia histórica em preto e branco da Estela de Merneptah, com topo arredondado, figuras e linhas de hieróglifos.",
+      "credit": "Fotografia histórica reproduzida em George A. Barton, Archæology and the Bible (2ª edição, junho de 1917; copyright da obra: 1916), fig. 15. Digitalização do exemplar impresso; fotógrafo não identificado na legenda.",
+      "license": "Domínio público no Brasil e nos EUA — publicação de 1917",
+      "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "sourceUrl": "https://github.com/GITenberg/Arch-ology-and-the-Bible_43070/blob/b35df991a834e244de8df456348e0f16eae32641/43070-h/images/fig015.jpg",
+      "width": 270,
+      "height": 500,
+      "sha256": "9165ac12c23b86363a1ed033605e20a2ed6c4557bd5e73dba39d2ea1e69ab89a"
+    },
+    "introduction": "Pare um instante diante dessas linhas. Um governante egípcio quis gravar na pedra a lembrança de suas vitórias. Entre os nomes de povos e lugares aparece Israel. Para quem ama as Escrituras, esse encontro desperta atenção — e também pede uma leitura paciente.",
+    "story": [
+      "A estela pertence ao reinado do faraó Merneptah. Seu texto celebra campanhas e apresenta os acontecimentos pela voz do poder egípcio. Não é um relato neutro da vida dos povos que menciona.",
+      "A referência a Israel é importante para estudar a presença de um grupo com esse nome em Canaã no final do século XIII a.C. O monumento nos aproxima de um período antigo da história de Israel; não conta, sozinho, como esse povo se formou.",
+      "Esta imagem é uma fotografia histórica publicada em 1917. A textura, o contraste e a resolução pertencem à reprodução impressa preservada. Ela permite observar a peça, mas não substitui fotografias atuais nem o exame da inscrição."
+    ],
+    "whatItShows": [
+      "O emprego do nome Israel em uma inscrição real egípcia, fora dos textos bíblicos.",
+      "A maneira como reis do mundo antigo apresentavam suas campanhas e seus adversários.",
+      "Um testemunho material que ajuda a formular perguntas sobre Israel e Canaã naquele período."
+    ],
+    "limits": [
+      "A estela não identifica o faraó do Êxodo nem estabelece a data do acontecimento bíblico.",
+      "Uma declaração real de vitória não deve ser tratada como prova da destruição total de um povo.",
+      "A conexão com o Êxodo é uma comparação para estudo; a peça não demonstra cada episódio da narrativa."
+    ],
+    "bibleConnections": [
+      {
+        "book": "EXO",
+        "chapter": 1,
+        "startVerse": 8,
+        "endVerse": 14,
+        "label": "Êxodo 1:8–14",
+        "explanation": "Leia sobre Israel e o poder do faraó. Compare os temas de domínio e vulnerabilidade, sem atribuir esta passagem a Merneptah por causa da fotografia."
+      }
+    ],
+    "sources": [
+      {
+        "label": "Fac-símile de 1917: identificação da figura 15 (fonte histórica da fotografia)",
+        "url": "https://raw.githubusercontent.com/GITenberg/Arch-ology-and-the-Bible_43070/b35df991a834e244de8df456348e0f16eae32641/43070-h/43070-h.htm#fig15"
+      },
+      {
+        "label": "Barton, edição de 1917, p. 311 (história da pesquisa; não representa uma revisão atual)",
+        "url": "https://raw.githubusercontent.com/GITenberg/Arch-ology-and-the-Bible_43070/b35df991a834e244de8df456348e0f16eae32641/43070-h/43070-h.htm#Page_311"
+      },
+      {
+        "label": "Registro bibliográfico e direitos da edição digital consultada",
+        "url": "https://github.com/GITenberg/Arch-ology-and-the-Bible_43070/blob/b35df991a834e244de8df456348e0f16eae32641/metadata.yaml"
+      },
+      {
+        "label": "Acervo custodiante — consulta complementar",
+        "url": "https://egyptianmuseumcairo.eg/"
+      }
+    ],
+    "reflectionPrompt": "Ao ler sobre um povo pequeno diante de um grande poder, a quem você deseja oferecer cuidado e lembrar em oração hoje?"
+  },
+  {
+    "id": "estela-mesha",
+    "title": "Estela de Mesa",
+    "subtitle": "A voz de um rei de Moabe e o cuidado de ouvir fontes diferentes.",
+    "period": "Moabe: século IX a.C.",
+    "approxDate": "Século IX a.C.",
+    "era": "Reinos de Israel e Moabe",
+    "startYear": -850,
+    "endYear": -830,
+    "place": "Dibom, atual Jordânia",
+    "coordinates": {
+      "lat": 31.5,
+      "lng": 35.78
+    },
+    "collection": "Museu do Louvre, Paris (AO 5066); fotografia de 1917",
+    "objectType": "Estela",
+    "image": {
+      "src": "/museum/estela-mesha-1917.jpg",
+      "alt": "Fotografia histórica da Estela de Mesa restaurada, com inscrição e áreas de recomposição em uma pedra de topo arredondado.",
+      "credit": "Fotografia histórica reproduzida em George A. Barton, Archæology and the Bible (2ª edição, junho de 1917; copyright da obra: 1916), fig. 300. Digitalização do exemplar impresso; fotógrafo não identificado na legenda.",
+      "license": "Domínio público no Brasil e nos EUA — publicação de 1917",
+      "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "sourceUrl": "https://github.com/GITenberg/Arch-ology-and-the-Bible_43070/blob/b35df991a834e244de8df456348e0f16eae32641/43070-h/images/fig300.jpg",
+      "width": 287,
+      "height": 500,
+      "sha256": "693b5a124264b7ab73c0412eb362a871a5d02e5ac315ef0939c07aaec0b069da"
+    },
+    "introduction": "A Bíblia nos apresenta Mesa, rei de Moabe. Nesta pedra, encontramos uma narrativa feita em seu próprio nome. Vamos ouvir esse testemunho com atenção, lembrando que uma inscrição real também escolhe o que deseja celebrar.",
+    "story": [
+      "A estela, encontrada em Dibom no século XIX, registra a perspectiva de Mesa sobre conflitos, construções e sua relação com a divindade moabita Quemós. O texto menciona Israel e a casa de Onri.",
+      "Ela oferece um ponto de comparação com 2 Reis 3, onde Mesa aparece no relato bíblico. Os documentos têm propósitos, ênfases e formas de narrar diferentes. Aproximá-los pode enriquecer a leitura sem exigir que cada linha descreva o mesmo momento.",
+      "A peça foi quebrada depois de sua descoberta. Fragmentos e um registro da inscrição feito antes da destruição ajudaram na recomposição. A fotografia publicada em 1917 mostra uma apresentação restaurada; nem toda a superfície visível corresponde a pedra original preservada."
+    ],
+    "whatItShows": [
+      "Um registro em língua moabita associado a Mesa e ao reino de Moabe.",
+      "Nomes e relações políticas que permitem comparar esse testemunho com a história narrada em Reis.",
+      "A importância de documentar uma descoberta e distinguir fragmentos preservados de reconstruções."
+    ],
+    "limits": [
+      "A estela apresenta a perspectiva religiosa e política de um rei; seu relato precisa ser lido nesse contexto.",
+      "Trechos danificados, nomes e propostas de leitura continuam sujeitos a discussão; esta visita não apresenta uma reconstrução disputada como certeza.",
+      "Não é possível igualar todos os episódios ou as cronologias das duas narrativas apenas por elas mencionarem Mesa."
+    ],
+    "bibleConnections": [
+      {
+        "book": "2KI",
+        "chapter": 3,
+        "startVerse": 4,
+        "endVerse": 5,
+        "label": "2 Reis 3:4–5",
+        "explanation": "Encontre Mesa na narrativa bíblica e perceba como o texto introduz sua relação com Israel. Depois, volte à ficha da peça e observe de quem é a voz em cada fonte."
+      }
+    ],
+    "sources": [
+      {
+        "label": "Fac-símile de 1917: identificação da figura 300 (fonte histórica da fotografia)",
+        "url": "https://raw.githubusercontent.com/GITenberg/Arch-ology-and-the-Bible_43070/b35df991a834e244de8df456348e0f16eae32641/43070-h/43070-h.htm#fig300"
+      },
+      {
+        "label": "Barton, edição de 1917, p. 363 (história da pesquisa; não representa uma revisão atual)",
+        "url": "https://raw.githubusercontent.com/GITenberg/Arch-ology-and-the-Bible_43070/b35df991a834e244de8df456348e0f16eae32641/43070-h/43070-h.htm#Page_363"
+      },
+      {
+        "label": "Registro bibliográfico e direitos da edição digital consultada",
+        "url": "https://github.com/GITenberg/Arch-ology-and-the-Bible_43070/blob/b35df991a834e244de8df456348e0f16eae32641/metadata.yaml"
+      },
+      {
+        "label": "Acervo custodiante — consulta complementar",
+        "url": "https://collections.louvre.fr/"
+      }
+    ],
+    "reflectionPrompt": "Quando você encontra um relato diferente do que já conhecia, como pode cultivar paciência para escutar e humildade para continuar aprendendo?"
+  },
+  {
+    "id": "obelisco-negro",
+    "title": "Obelisco Negro de Salmaneser III",
+    "subtitle": "Tributos, reis e a vida sob a força do Império Assírio.",
+    "period": "Assíria: século IX a.C.",
+    "approxDate": "Século IX a.C.",
+    "era": "Império Assírio",
+    "startYear": -830,
+    "endYear": -820,
+    "place": "Nimrud, atual Iraque",
+    "coordinates": {
+      "lat": 36.1,
+      "lng": 43.33
+    },
+    "collection": "British Museum, Londres (1848,1104.1); detalhe em fotografia de 1917",
+    "objectType": "Obelisco",
+    "image": {
+      "src": "/museum/obelisco-negro-1917.jpg",
+      "alt": "Fotografia histórica da parte superior do Obelisco Negro, com topo em degraus, escrita cuneiforme e registros de figuras em relevo.",
+      "credit": "Fotografia histórica reproduzida em George A. Barton, Archæology and the Bible (2ª edição, junho de 1917; copyright da obra: 1916), fig. 295. Digitalização do exemplar impresso; fotógrafo não identificado na legenda.",
+      "license": "Domínio público no Brasil e nos EUA — publicação de 1917",
+      "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "sourceUrl": "https://github.com/GITenberg/Arch-ology-and-the-Bible_43070/blob/b35df991a834e244de8df456348e0f16eae32641/43070-h/images/fig295.jpg",
+      "width": 366,
+      "height": 500,
+      "sha256": "8b78259d582886c374897cba68345710689918164dc878bf7d6f63760f41983f"
+    },
+    "introduction": "Olhe para as figuras e para a escrita. Este monumento foi feito para mostrar a grandeza de um rei assírio. Ao seu redor havia outros reis, famílias e povos vivendo com as consequências desse poder. A história bíblica acontece também nesse mundo.",
+    "story": [
+      "O Obelisco Negro pertence ao reinado de Salmaneser III. Relevos e inscrições apresentam povos que entregam tributos ao rei. A peça foi encontrada em Nimrud e integra o acervo do British Museum.",
+      "Uma das legendas menciona o tributo de Jeú, de Israel, identificado na linguagem assíria como ligado a Onri. Essa designação política não demonstra, por si, que Jeú fosse descendente biológico de Onri.",
+      "A fotografia histórica desta visita mostra apenas a parte superior do monumento. Ela não oferece uma visão completa das faces nem um retrato individual seguro de um personagem bíblico. Para entender uma cena, é necessário examinar sua posição e sua inscrição em conjunto."
+    ],
+    "whatItShows": [
+      "A representação assíria de tributos e de relações desiguais entre reinos.",
+      "Uma menção a Jeú e Israel em um monumento real do século IX a.C.",
+      "Como texto e imagem trabalham juntos para comunicar a autoridade de um governante."
+    ],
+    "limits": [
+      "As cenas foram produzidas para celebrar o rei assírio; não são fotografias dos acontecimentos.",
+      "A identificação do personagem prostrado como Jeú ou um representante requer cuidado; o relevo não é um retrato verificável.",
+      "A menção ao tributo não confirma todas as ações de Jeú narradas em Reis nem avalia sua fidelidade a Deus."
+    ],
+    "bibleConnections": [
+      {
+        "book": "2KI",
+        "chapter": 9,
+        "startVerse": 1,
+        "endVerse": 6,
+        "label": "2 Reis 9:1–6",
+        "explanation": "Conheça o início do relato sobre a realeza de Jeú. A inscrição assíria oferece outro testemunho de seu nome e de seu contexto político; não narra essa unção."
+      }
+    ],
+    "sources": [
+      {
+        "label": "Fac-símile de 1917: identificação da figura 295 (fonte histórica da fotografia)",
+        "url": "https://raw.githubusercontent.com/GITenberg/Arch-ology-and-the-Bible_43070/b35df991a834e244de8df456348e0f16eae32641/43070-h/43070-h.htm#fig295"
+      },
+      {
+        "label": "Barton, edição de 1917, p. 362 (história da pesquisa; não representa uma revisão atual)",
+        "url": "https://raw.githubusercontent.com/GITenberg/Arch-ology-and-the-Bible_43070/b35df991a834e244de8df456348e0f16eae32641/43070-h/43070-h.htm#Page_362"
+      },
+      {
+        "label": "Registro bibliográfico e direitos da edição digital consultada",
+        "url": "https://github.com/GITenberg/Arch-ology-and-the-Bible_43070/blob/b35df991a834e244de8df456348e0f16eae32641/metadata.yaml"
+      },
+      {
+        "label": "Acervo custodiante — consulta complementar",
+        "url": "https://www.britishmuseum.org/collection/object/W_1848-1104-1"
+      }
+    ],
+    "reflectionPrompt": "Ao ver o poder retratado como domínio sobre outros, o que o caminho de Jesus lhe ensina sobre servir e cuidar de quem está vulnerável?"
+  },
+  {
+    "id": "pedra-roseta",
+    "title": "Pedra de Roseta",
+    "subtitle": "Três formas de escrita e um caminho para voltar a ler o Egito antigo.",
+    "period": "Egito helenístico: século II a.C.",
+    "approxDate": "Início do século II a.C.",
+    "era": "Egito helenístico",
+    "startYear": -200,
+    "endYear": -190,
+    "place": "Roseta, atual Egito",
+    "coordinates": {
+      "lat": 31.4,
+      "lng": 30.42
+    },
+    "collection": "British Museum, Londres (EA24); fotografia de 1917",
+    "objectType": "Estela",
+    "image": {
+      "src": "/museum/pedra-roseta-1917.jpg",
+      "alt": "Fotografia histórica da Pedra de Roseta, fragmentada, com três áreas de inscrição visíveis.",
+      "credit": "Fotografia histórica reproduzida em George A. Barton, Archæology and the Bible (2ª edição, junho de 1917; copyright da obra: 1916), fig. 14. Digitalização do exemplar impresso; fotógrafo não identificado na legenda. A publicação credita a reprodução a Thomas Nelson & Sons.",
+      "license": "Domínio público no Brasil e nos EUA — publicação de 1917",
+      "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "sourceUrl": "https://github.com/GITenberg/Arch-ology-and-the-Bible_43070/blob/b35df991a834e244de8df456348e0f16eae32641/43070-h/images/fig014.jpg",
+      "width": 347,
+      "height": 500,
+      "sha256": "96af036e6635deff8716a1081a4e646b13f05b77a1ed22080456ed8ad67dcebb"
+    },
+    "introduction": "Às vezes, compreender começa com a disposição de aprender uma língua que não é a nossa. Esta pedra ajudou estudiosos a voltar a ler inscrições egípcias. Venha conhecer esse caminho de paciência, comparação e descoberta.",
+    "story": [
+      "A Pedra de Roseta preserva parte de um decreto do tempo de Ptolomeu V. O conteúdo foi registrado em hieróglifos egípcios, escrita demótica e grego. São três sistemas de escrita, com o egípcio apresentado de duas maneiras e o grego de outra.",
+      "A comparação entre as inscrições teve papel importante no desenvolvimento da leitura dos hieróglifos. Esse trabalho reuniu pesquisas de diferentes estudiosos e abriu acesso a muitos documentos do Egito antigo.",
+      "A pedra não é uma inscrição sobre o Êxodo nem um objeto mencionado pela Bíblia. Sua presença aqui ajuda a compreender como pesquisadores leem fontes do mundo egípcio, tão importante para o contexto de várias passagens das Escrituras."
+    ],
+    "whatItShows": [
+      "A convivência de tradições de escrita egípcias e gregas em um documento do período helenístico.",
+      "O valor de comparar inscrições e trabalhar com línguas para estudar o passado.",
+      "Uma das ferramentas históricas que ampliaram o acesso a registros do Egito antigo."
+    ],
+    "limits": [
+      "A Pedra de Roseta foi produzida muito depois do período em que se situa o relato do Êxodo.",
+      "Ela não prova nem refuta, por si, os acontecimentos bíblicos relacionados ao Egito.",
+      "A ligação com Atos 7 é temática: conhecer a cultura e a escrita do Egito. O discurso bíblico não menciona esta pedra."
+    ],
+    "bibleConnections": [
+      {
+        "book": "ACT",
+        "chapter": 7,
+        "startVerse": 20,
+        "endVerse": 22,
+        "label": "Atos 7:20–22",
+        "explanation": "Leia a referência à formação de Moisés no Egito. Depois, observe como uma fonte de outro período nos ajuda a fazer perguntas sobre escrita e educação, sem identificar os dois contextos como se fossem iguais."
+      }
+    ],
+    "sources": [
+      {
+        "label": "Fac-símile de 1917: identificação da figura 14 (fonte histórica da fotografia)",
+        "url": "https://raw.githubusercontent.com/GITenberg/Arch-ology-and-the-Bible_43070/b35df991a834e244de8df456348e0f16eae32641/43070-h/43070-h.htm#fig14"
+      },
+      {
+        "label": "Barton, edição de 1917, p. 21 (história da pesquisa; não representa uma revisão atual)",
+        "url": "https://raw.githubusercontent.com/GITenberg/Arch-ology-and-the-Bible_43070/b35df991a834e244de8df456348e0f16eae32641/43070-h/43070-h.htm#Page_21"
+      },
+      {
+        "label": "Registro bibliográfico e direitos da edição digital consultada",
+        "url": "https://github.com/GITenberg/Arch-ology-and-the-Bible_43070/blob/b35df991a834e244de8df456348e0f16eae32641/metadata.yaml"
+      },
+      {
+        "label": "Acervo custodiante — consulta complementar",
+        "url": "https://www.britishmuseum.org/collection/object/Y_EA24"
+      }
+    ],
+    "reflectionPrompt": "Há alguma passagem da Palavra diante da qual você precisa permanecer mais um pouco, pedir ajuda e aprender com paciência?"
+  }
+]

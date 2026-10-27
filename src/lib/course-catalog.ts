@@ -28,7 +28,7 @@ const lessonAppearance: { color: CatalogLesson["color"]; icon: AppIconName }[] =
 export function getCourseCatalog(): CatalogLesson[] {
   return [
     {
-      id: "primeiros-passos", number: 1, title: "Leia com contexto", description: "Aprenda a encontrar uma passagem, conferir uma ideia e fazer boas perguntas.",
+      id: "primeiros-passos", number: 1, title: "Primeiros passos na Palavra", description: "Vamos abrir a Bíblia juntos, acolher suas perguntas e aprender a ler com amor e atenção.",
       minutes: firstLesson.estimatedMinutes.maximum, category: "Fundamentos", reference: "Atos 17:10–12", activityCount: firstLesson.game.missions.length + firstLesson.retrievalQuestions.length + 1,
       color: "mint", icon: "bible", href: "/aprender/primeiros-passos"
     },
