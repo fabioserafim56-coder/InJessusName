@@ -291,3 +291,163 @@ Apache License
 The four unmodified photographs are reproduced from George A. Barton, Archæology and the Bible, second edition, June 1917 (work copyright 1916), figures 15, 300, 295 and 14. The photographer is not identified in the original captions; figure 14 credits the historical reproduction to Thomas Nelson & Sons. This does not imply a new permission or endorsement from a present-day museum.
 
 The files were obtained from the GITenberg mirror at commit b35df991a834e244de8df456348e0f16eae32641. Public-domain status, scope, original links, dimensions, checksums and historical limitations are recorded in docs/fontes-museu.md. These photographs are independent of the software licenses above. Complete credits remain available in each exhibit’s “Imagem e fontes” panel.
+
+
+## Motion 14.7.1
+
+Package: motion. Source: https://github.com/motiondivision/motion.
+
+Original license is also distributed in public/licenses/motion-MIT.txt.
+
+```text
+The MIT License (MIT)
+
+Copyright (c) 2024 [Motion](https://motion.dev) B.V.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
+
+
+## StPageFlip 2.0.7
+
+Package: page-flip. Source: https://github.com/Nodlik/StPageFlip.git.
+
+Original license is also distributed in public/licenses/page-flip-MIT.txt.
+
+```text
+MIT License
+
+Copyright (c) 2020 Nodlik
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
+
+
+## Phosphor Icons 2.1.10
+
+Package: @phosphor-icons/react. Source: phosphor-icons/react.
+
+Original license is also distributed in public/licenses/phosphor-MIT.txt.
+
+```text
+MIT License
+
+Copyright (c) 2020 Phosphor Icons
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
+
+
+## Canvas Confetti 1.9.4
+
+Package: canvas-confetti. Source: git+https://github.com/catdad/canvas-confetti.git.
+
+Original license is also distributed in public/licenses/canvas-confetti-ISC.txt.
+
+```text
+ISC License
+
+Copyright (c) 2020, Kiril Vatev
+
+Permission to use, copy, modify, and/or distribute this software for any
+purpose with or without fee is hereby granted, provided that the above
+copyright notice and this permission notice appear in all copies.
+
+THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+```
+
+
+## Embla Carousel 8.6.0
+
+Source: https://github.com/davidjerleke/embla-carousel/tree/v8.6.0. Embla and its React adapter provide the keyboard/touch learning journey; autoplay is disabled. Full original license also distributed in public/licenses/embla-MIT.txt.
+
+```text
+MIT License
+
+Copyright (c) David Jerleke.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
+
+
+### StPageFlip local maintenance change
+
+The explicit postinstall script scripts/patch-page-flip.mjs updates the pinned 2.0.7 browser/module distributions: it records and cancels the renderer animation-frame handle when destroy() runs. This prevents a closed Bible from continuing its rendering loop. The script verifies the version and exact original patterns, is idempotent, and fails on an unexpected upstream distribution. The original npm package integrity check remains active. Original MIT copyright and license remain distributed above.
+
+## Kokoro-generated authorial welcome
+
+A static Portuguese welcome is generated with Kokoro-82M v1.0 and its pm_alex voice, retrieved from pinned Hugging Face revisions. No model weights or runtime are shipped to the browser. Exact sources, voice comparison, checksums, generation settings and authorial transcript are in public/audio/bem-vindo-proveniencia.json; full model and generation-runtime licenses are distributed in public/audio/. The synthetic narration is identified beside its optional player. Model licensing does not automatically license the authorial script or recorded output.
+
+## Original interface illustrations
+
+The Galilee-inspired landscape and contemporary study-desk image were generated for this project. They are labeled artistic illustrations and are separate from the authentic historical photographs in the museum. Dimensions and file checksums are in public/visuals/proveniencia.json.

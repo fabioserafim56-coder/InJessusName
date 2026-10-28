@@ -1,13 +1,13 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f4f7f5;
-  --foreground: #162d29;
-  --muted: #566b60;
-  --green: #2e654c;
-  --green-dark: #204e37;
-  --gold: #9d8045;
-  --border: #dfe7e1;
+  --background: #f7f5ef;
+  --foreground: #172d28;
+  --muted: #596c60;
+  --green: #2d5940;
+  --green-dark: #153b2a;
+  --gold: #a5894f;
+  --border: #e2dfd1;
   --font-sans: var(--font-inter), "Segoe UI", Arial, sans-serif;
   --font-serif: var(--font-sans);
 }
@@ -25,7 +25,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 button { touch-action: manipulation; }
 button:disabled { cursor: not-allowed; }
 button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible, summary:focus-visible, [tabindex]:focus-visible { outline: 3px solid #4c8e65; outline-offset: 4px; }
-::selection { background: #cfe8d6; color: #163b26; }
+::selection { background: #e8d9b3; color: #193c2a; }
 h1,h2,h3,h4,p { margin:0; }
 h1,h2,h3,h4 { font-family:var(--font-sans); font-weight:650; }
 h1 { font-size:clamp(30px,4vw,46px); line-height:1.2; letter-spacing:-1.2px; }

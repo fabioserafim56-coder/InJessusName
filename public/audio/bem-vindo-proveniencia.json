@@ -1,0 +1,63 @@
+{
+  "title": "Uma palavra de acolhimento",
+  "generatedOn": "2026-10-28",
+  "language": "pt-BR",
+  "syntheticVoice": true,
+  "transcript": "Que bom ter você aqui. Vamos abrir a Palavra juntos. Você pode chegar com sua fé, suas perguntas e o que ainda não compreende. Não precisamos correr. Leia uma passagem, escute com atenção e guarde um ensinamento para levar à vida. Se desejar, faça uma oração com suas próprias palavras. Que este tempo nos ajude a conhecer melhor as Escrituras e a cuidar uns dos outros.",
+  "audioTextKind": "Comentário autoral, sem reprodução de tradução bíblica.",
+  "durationSeconds": 25.396,
+  "sampleRate": 24000,
+  "model": {
+    "name": "Kokoro-82M v1.0",
+    "source": "https://huggingface.co/hexgrad/Kokoro-82M",
+    "revision": "f3ff3571791e39611d31c381e3a41a3af07b4987",
+    "declaredLicense": "Apache-2.0"
+  },
+  "conversion": {
+    "source": "https://huggingface.co/onnx-community/Kokoro-82M-v1.0-ONNX",
+    "revision": "1939ad2a8e416c0acfeecc08a694d14ef25f2231",
+    "file": "onnx/model_quantized.onnx",
+    "sha256": "fbae9257e1e05ffc727e951ef9b9c98418e6d79f1c9b6b13bd59f5c9028a1478",
+    "declaredLicense": "Apache-2.0",
+    "gitLfsExpectedHashVerified": true
+  },
+  "voice": {
+    "name": "pm_alex",
+    "source": "https://huggingface.co/hexgrad/Kokoro-82M/blob/f3ff3571791e39611d31c381e3a41a3af07b4987/voices/pm_alex.pt",
+    "originalSha256": "cf0ba8c573c2480fc54123683a35cf1e2ae130428e441eb91f9149bdb188a526",
+    "onnxBinarySha256": "0175c753f59c54e7fd5a995bedef0c5ff2fb67e0043dd3dcb2ae74ec2acbeb2a",
+    "convertedEmbeddingMatchesOriginalStorage": true,
+    "voiceDocumentation": "https://huggingface.co/hexgrad/Kokoro-82M/blob/f3ff3571791e39611d31c381e3a41a3af07b4987/VOICES.md",
+    "gitLfsExpectedHashVerified": true
+  },
+  "generation": {
+    "runtime": "kokoro-onnx 0.6.1",
+    "runtimeLicense": "MIT",
+    "onnxruntime": "1.31.1",
+    "phonemizer": "3.4.0",
+    "espeakngLoader": "0.2.4",
+    "soundfile": "0.14.0",
+    "numpy": "2.5.4",
+    "speed": 0.91,
+    "sentenceJoinPauseSeconds": 0.42,
+    "device": "CPU",
+    "intraOpThreads": 2,
+    "telemetryDisabled": true,
+    "vocabularyConfigSha256": "5abb01e2403b072bf03d04fde160443e209d7a0dad49a423be15196b9b43c17f"
+  },
+  "files": [
+    {
+      "path": "/audio/bem-vindo-kokoro-ptbr.wav",
+      "sha256": "b48a2910adc166312ab7f5d3b50f4075049e406e40f0f05f8356b1614b23ca3c",
+      "bytes": 1219052
+    },
+    {
+      "path": "/audio/bem-vindo-kokoro-ptbr.mp3",
+      "sha256": "5bde969da98dc42d1308a50e537234837d4698fcc207944f555109de5d31b091",
+      "bytes": 305900
+    }
+  ],
+  "privacy": "Áudio estático produzido com texto autoral, sem dados de visitantes. O aplicativo não envia orações ou textos pessoais para um modelo. Os pesos não são carregados no navegador.",
+  "rightsNote": "O modelo original e a conversão declaram Apache-2.0. A voz pm_alex é listada no repositório original; a cópia ONNX foi comparada byte a byte com seu tensor original. A licença do modelo não é apresentada como licença automática do texto autoral ou do arquivo de áudio.",
+  "review": "Integridade, duração, amplitude e ausência de amostras inválidas verificadas tecnicamente. Revisão humana de naturalidade e adequação pastoral continua pendente."
+}

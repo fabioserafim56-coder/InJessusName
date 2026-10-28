@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useId, useRef, useState } from "react";
 import { AppShell } from "@/components/app-shell";
 import { StudyProgressRing } from "@/components/ui/study-progress-ring";
+import { StudyCelebration, StudyChapterArt, StudyTransition } from "@/components/ui/study-celebration";
 import { courseEditorialNote, type CourseActivity, type CourseLesson, type ScriptureReference } from "@/content/courses";
 import "./course-lesson-player.css";
 
@@ -166,8 +167,9 @@ export function CourseLessonPlayer({ lesson, passages, edition, nextLesson }: { 
   return <AppShell active="learn" title="Aprender" subtitle={lesson.theme}>
     <div className="course-study">
       <div className="cl-topline"><Link href="/aprender"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14 6-6 6 6 6" /></svg>Todos os estudos</Link><span>cerca de {lesson.estimatedMinutes} min · no seu ritmo</span></div>
-      <header className="cl-lesson-header"><div className="cl-theme"><span aria-hidden="true" />{lesson.theme}</div><h1>{lesson.title}</h1><p>{lesson.subtitle}</p></header>
+      <header className="cl-lesson-header"><div className="cl-lesson-title"><div className="cl-theme"><span aria-hidden="true" />{lesson.theme}</div><h1>{lesson.title}</h1><p>{lesson.subtitle}</p></div><StudyChapterArt /></header>
 
+      <StudyTransition marker={`${started}-${finished}-${stepIndex}`}>
       {!started ? <section className="cl-start" aria-labelledby="cl-start-title">
         <div className="cl-start-illustration" aria-hidden="true"><svg viewBox="0 0 72 72"><path d="M36 20c-9-6-19-6-28-2v39c9-4 19-4 28 2 9-6 19-6 28-2V18c-9-4-19-4-28 2Zm0 0v39M16 28l11 2m-11 8 11 2m18-10 11-2m-11 12 11-2" /></svg></div>
         <p className="cl-eyebrow">UM TEMPO NA PALAVRA</p>
@@ -184,6 +186,7 @@ export function CourseLessonPlayer({ lesson, passages, edition, nextLesson }: { 
         <h2 id="cl-completion-title" tabIndex={-1} ref={heading}>A leitura continua na vida.</h2>
         <p>Chegamos ao fim deste encontro. Antes de seguir, acolha uma descoberta que mereça acompanhar seus passos. Não precisa ser muita coisa: um ensino compreendido e vivido já merece nossa atenção.</p>
         <section className="cl-next-care" aria-labelledby="cl-next-care-title"><h3 id="cl-next-care-title">Um pequeno passo para hoje</h3><p>{nextCare}</p></section>
+        <StudyCelebration />
         <div className="cl-recap"><h3>Guarde o que esta leitura lhe ensinou</h3><ul>{lesson.recap.map((item) => <li key={item}>{item}</li>)}</ul></div>
         {lesson.closingPrayer && <section className="cl-closing-prayer" aria-labelledby="cl-prayer-title"><h3 id="cl-prayer-title">Se desejar, encerre em oração</h3><blockquote>{lesson.closingPrayer}</blockquote><p>Você também pode orar com suas próprias palavras. Não é preciso escrever nem enviar nada ao aplicativo.</p></section>}
         <div className="cl-return"><span aria-hidden="true"><ReviewIcon /></span><div><h3>Há palavras que pedem um reencontro.</h3><p>{lesson.reviewPrompt}</p></div></div>
@@ -202,6 +205,7 @@ export function CourseLessonPlayer({ lesson, passages, edition, nextLesson }: { 
           {step.kind === "reflection" && <><p className="cl-lead">Antes de encerrar, pense em como esta Palavra pode encontrar lugar no seu dia. Se desejar, converse com Deus sobre isso. Seu caderno é um espaço seu, e suas orações não precisam ser compartilhadas aqui.</p><ol className="cl-reflections">{[["A Palavra que li", lesson.reflection.scripture], ["O que merece permanecer comigo", lesson.reflection.observation], ["Um passo para viver", lesson.reflection.application], ["Minha oração, se desejar", lesson.reflection.prayer]].map(([label, prompt], index) => <li key={label}><span>{String(index + 1).padStart(2, "0")}</span><div><h3>{label}</h3><p>{prompt}</p></div></li>)}</ol><div className="cl-step-actions"><button className="cl-secondary" onClick={() => goTo(stepIndex - 1)}>Voltar</button><button className="cl-primary" data-course-next onClick={next}>Levar este ensino comigo <ForwardIcon /></button></div></>}
         </article>
       </>}
+      </StudyTransition>
       <div className="cl-resources"><EditionDetails edition={edition} /><details className="cl-about-lesson"><summary>Sobre este encontro <span>Aula piloto</span></summary><p>{courseEditorialNote}</p><p>Comentários e atividades autorais. As referências bíblicas permitem conferir o estudo. Os resultados não classificam fé, salvação ou aptidão ministerial.</p></details></div>
       <dialog ref={passageDialog} className="cl-passage-dialog" aria-labelledby="cl-passage-dialog-title"><header><div><p className="cl-eyebrow">VOLTANDO À PALAVRA</p><h2 id="cl-passage-dialog-title">Bíblia ao lado</h2></div><button className="cl-close-dialog" aria-label="Fechar passagem" onClick={() => passageDialog.current?.close()}><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18" /></svg></button></header>{passages.length > 1 && <label className="cl-passage-select">Escolher passagem<select value={activePassageKey} onChange={(event) => { setActivePassageKey(event.target.value); const selected = passages.find((passage) => referenceKey(passage) === event.target.value); if (selected) setRequestedReference(selected); }}>{passages.map((passage) => <option key={referenceKey(passage)} value={referenceKey(passage)}>{passage.label}</option>)}</select></label>}<>{activePassage ? <PassageText passage={activePassage} /> : <div className="cl-small-task"><p>O trecho {requestedReference.label} pode ser conferido no leitor completo.</p><Link className="cl-source-button" href={`/biblia?livro=${requestedReference.book}&capitulo=${requestedReference.chapter}&versiculo=${requestedReference.startVerse}`} target="_blank">Abrir a passagem no leitor</Link></div>}</><EditionDetails edition={edition} /><button className="cl-primary" onClick={() => passageDialog.current?.close()}>Voltar ao estudo</button></dialog>
     </div>

@@ -1,6 +1,8 @@
 # Ferramentas abertas para acolher, ensinar e explorar o mundo bíblico
 
-Pesquisa: 27 de outubro de 2026. Foram consultados os repositórios oficiais, documentos de licença e metadados dos pacotes indicados abaixo. A escolha procura servir a uma experiência concreta: ler com atenção, encontrar uma peça, ampliar sua fotografia e ser acompanhado por uma linguagem cristã cuidadosa. Uma biblioteca ou modelo não fornece, por si, discernimento pastoral, veracidade histórica ou qualidade de ensino.
+**Atualização de 28/10/2026:** a renovação visual e uma narração real com Kokoro foram implementadas depois desta pesquisa inicial. Consulte [ferramentas-visuais-abertas.md](ferramentas-visuais-abertas.md) para versões, fontes e proveniência atualizadas.
+
+Pesquisa inicial: 27 de outubro de 2026. Foram consultados os repositórios oficiais, documentos de licença e metadados dos pacotes indicados abaixo. A escolha procura servir a uma experiência concreta: ler com atenção, encontrar uma peça, ampliar sua fotografia e ser acompanhado por uma linguagem cristã cuidadosa. Uma biblioteca ou modelo não fornece, por si, discernimento pastoral, veracidade histórica ou qualidade de ensino.
 
 ## Escolhas para esta entrega
 
@@ -60,4 +62,4 @@ Aplicação possível: ajudar a encontrar explicações em um acervo curado e re
 
 Rodrigo Silva foi indicado pelo usuário como uma referência para tornar a arqueologia bíblica próxima das pessoas. Esta pesquisa não consultou, reproduziu ou licenciou um curso, vídeo, voz ou acervo particular dele e não indica vínculo institucional. As peças do museu precisam de fontes arqueológicas e direitos próprios, registrados em `docs/fontes-museu.md`.
 
-Não foram instalados nem executados os modelos de voz ou linguagem. A pesquisa amplia as possibilidades do projeto; as funções efetivamente entregues e validadas devem permanecer distintas das opções para uma próxima etapa.
+Na entrega de 27/10, não foram instalados nem executados os modelos de voz ou linguagem. Em 28/10, Kokoro foi usado para gerar antecipadamente uma mensagem autoral fixa de boas-vindas; o app distribui apenas o áudio. Piper, Qwen e tutor generativo continuam em avaliação. A pesquisa e as funções entregues estão distinguidas no registro atualizado.

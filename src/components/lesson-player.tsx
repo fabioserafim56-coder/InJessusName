@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { StudyCelebration, StudyChapterArt, StudyTransition } from "@/components/ui/study-celebration";
 import { useId, useRef, useState } from "react";
 import { firstLesson as lesson, type LessonQuestion } from "@/content/lessons/primeiros-passos";
 import { calculateStudySummary, type StudyAnswer } from "@/lib/study-progress";
@@ -174,12 +175,15 @@ export function LessonPlayer({ mainPassage, transferPassage, edition }: { mainPa
   return <AppShell active="learn" title="Primeiros passos" subtitle="Fundamentos da leitura bíblica">
     <div className="study-page" id="aula">
       <header className="study-lesson-heading">
+        <div className="study-heading-copy">
         <Link className="study-back" href="/aprender"><span aria-hidden="true">←</span> Todos os estudos</Link>
         <div className="study-heading-meta"><span>Aula 01</span><span>15–20 min · no seu ritmo</span><details className="study-about"><summary>Piloto educacional</summary><div><p>{lesson.evaluationNote}</p><p>{lesson.perspective}</p><p>{lesson.pacingNote}</p></div></details></div>
         <h1>{lesson.title}</h1>
         {!started && <p className="study-subtitle">{lesson.subtitle}</p>}
+        </div><StudyChapterArt />
       </header>
 
+      <StudyTransition marker={`${started}-${finished}-${phase}-${contextCard}-${activity}`}>
       {!started ? <section className="study-welcome" aria-labelledby="study-objectives">
         <div className="study-welcome-heading"><span className="study-welcome-icon" aria-hidden="true">01</span><div><p className="study-kicker">NOSSO PRIMEIRO ENCONTRO NA PALAVRA</p><h2 id="study-objectives">Há tempo para ouvir e compreender.</h2></div></div>
         <p className="study-pastoral-invitation">{lesson.pastoralInvitation}</p>
@@ -238,6 +242,7 @@ export function LessonPlayer({ mainPassage, transferPassage, edition }: { mainPa
 
             {phase === 3 && finished && <>
               <section className="study-pastoral-completion" aria-labelledby="study-completion-title"><p className="study-kicker">PARA LEVAR NO CORAÇÃO</p><h3 id="study-completion-title">Antes de seguir, guarde um cuidado.</h3><p>Chegamos ao fim deste encontro, mas a Palavra continua a nos acompanhar. Que lugar este ensino pode encontrar na sua vida hoje?</p><div className="study-next-care"><h4>Um pequeno passo para hoje</h4><p>{nextCare}</p></div></section>
+              <StudyCelebration />
               <details className="study-results-details"><summary>Meu caminho neste estudo</summary><section className="study-results" aria-labelledby="study-results-title"><h3 id="study-results-title">Como foi nosso caminho na leitura</h3><dl>
                 <div><dt>Prática: acertos na primeira tentativa</dt><dd>{summary.guidedFirstAttemptCorrect}<small> / 6</small></dd></div>
                 <div><dt>Lembrança: primeira tentativa sem ajuda</dt><dd>{summary.retrievalFirstAttemptCorrect}<small> / 3</small></dd></div>
@@ -256,6 +261,7 @@ export function LessonPlayer({ mainPassage, transferPassage, edition }: { mainPa
           </aside>}
         </div>
       </>}
+      </StudyTransition>
 
       {saveMessage && <p className={`study-save-message ${saveState === "error" ? "is-error" : ""}`} role="status">{saveMessage}</p>}
       <details className="study-account-summary"><summary>Progresso na conta</summary><div><p>Enquanto você estuda, as respostas ficam apenas nesta sessão. Ao sair ou recarregar, elas são descartadas até você escolher salvar a conclusão.</p><button className="study-secondary" onClick={readProgress}>Consultar meu progresso salvo</button>{saved?.completed && <div className="study-saved-dates"><p>Conclusão: {saved.completedAt ? dateLabel(saved.completedAt) : "registrada"}.</p>{saved.reviewDates?.map((date) => <p key={date}>Retomada sugerida: {dateLabel(date)}.</p>)}<button className="study-secondary" onClick={clearProgress}>Apagar progresso desta aula</button></div>}<Link className="study-text-link" href="/privacidade">Privacidade e escolhas</Link></div></details>

@@ -12,6 +12,8 @@ Inventário da entrega local. Conteúdo disponível em arquivos versionáveis é
 | Atividades pedagógicas | Detetive do Contexto, perguntas de recuperação e transferência; mais 15 atividades de escolha, classificação e ordenação nas cinco novas aulas |
 | Atividades avaliadas na sessão | 25 unidades: dez da primeira aula e 15 das novas; o diagnóstico inicial fica fora do resultado. Classificações incluem 20 itens no bloco novo |
 | Museu da história bíblica | 4 peças com fotografias históricas locais de uma edição de 1917: Merneptah, Mesa, Obelisco Negro e Roseta; galeria, linha do tempo, filtros, busca, ampliação e ligações ao leitor |
+| Acolhimento por áudio | 1 mensagem autoral de ~25s em português, gerada com Kokoro/pm_alex do Hugging Face; player opcional, transcrição e identificação sintética |
+| Modo livro da Bíblia | Capítulo integral com capa e folhas físicas, medição por fonte/tela, teclado, movimento reduzido e leitor simples completo |
 | Resumo para o caderno | 1 PDF autoral de página única para download e fonte imprimível |
 | Progresso opcional | Primeira aula: conclusão, tentativas, ajuda e datas D+1/D+7 na conta adulta com consentimento ativo. Novas cinco aulas: estado apenas na sessão, sem simular salvamento |
 
@@ -44,3 +46,8 @@ As aulas estão identificadas como **pilotos educacionais com revisão humana es
 ## Visualização e publicação
 
 O código inicial foi enviado ao GitHub e o usuário confirmou acesso à hospedagem em https://in-jessus-name.vercel.app/. As publicações partem da branch `main` do repositório conectado à Vercel; a conclusão da publicação externa precisa ser confirmada separadamente do envio do código. A consulta HTTP externa dessa hospedagem foi bloqueada pelo proxy do ambiente; testes locais e arquivos PNG não substituem a verificação da nova publicação no endereço externo.
+
+
+## Renovação visual de 28/10/2026
+
+Artes originais e capas editoriais, percurso Embla, Motion em etapas, ícones Phosphor, StPageFlip e celebração opcional foram integrados. São recursos de experiência; não ampliam por si o número de aulas nem demonstram eficácia de aprendizagem. A narração fixa é uma primeira integração real de geração com modelo do Hugging Face, sem tutor generativo ou Bíblia inteira narrada. [Proveniência e ferramentas](ferramentas-visuais-abertas.md).

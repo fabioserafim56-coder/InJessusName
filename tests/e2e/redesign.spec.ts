@@ -159,6 +159,12 @@ test("novo estudo ensina em etapas e combina escolha, classificação e ordenaç
     .filter({ has: page.getByText(label, { exact: true }) }).locator("dd");
   await expect(result("Primeira tentativa sem ajuda")).toHaveText("1 / 3");
   await expect(result("Corrigidas ou com apoio")).toHaveText("2");
+  const resultsBeforeCelebration = await page.locator(".cl-results").innerText();
+  await page.getByRole("button", { name: "Celebrar este encontro", exact: true }).click();
+  await expect(page.getByRole("button", { name: "Encontro celebrado com carinho", exact: true })).toBeDisabled();
+  await expect(page.locator(".study-celebration-message"))
+    .toHaveText("Que o cuidado desta leitura acompanhe seus passos.");
+  await expect(page.locator(".cl-results")).toHaveText(resultsBeforeCelebration, { useInnerText: true });
   expect(writes).toEqual([]);
   expect(await page.evaluate(() => ({ local: Object.keys(localStorage), session: Object.keys(sessionStorage) }))).toEqual({ local: [], session: [] });
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);

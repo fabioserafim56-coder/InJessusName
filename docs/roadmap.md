@@ -100,3 +100,10 @@ A [voz pastoral](voz-pastoral.md) orienta essa escrita sem atribuir ao sistema a
 Disponível em `/museu`: Merneptah, Mesa, Obelisco Negro e Roseta, cada peça com fotografia histórica da edição de 1917, contexto, leitura bíblica, pergunta de reflexão e limites históricos. Há galeria, linha do tempo, filtros, busca com Fuse.js e ampliação com PhotoSwipe. Imagens e metadados são locais; direitos e aquisição estão em [fontes-museu.md](fontes-museu.md). Fotografias atuais com maior resolução e revisão arqueológica especializada são próximos aprimoramentos do acervo.
 
 A [pesquisa de ferramentas e modelos](ferramentas-abertas-pastoral-museu.md) registra alternativas de mapas, imagens de alta resolução, narração e acompanhante de estudo. PhotoSwipe e Fuse estão ativos; os modelos de voz e linguagem permanecem em avaliação, sem pesos incorporados ou transmissão de orações.
+
+
+## Experiência visual e acolhimento por áudio — 28/10/2026
+
+Entregues início/catálogo ilustrados, capas editoriais, percurso Embla por toque/teclado, ícones Phosphor, transições Motion, Bíblia com capa e páginas físicas StPageFlip e celebração opcional com canvas-confetti. Leitura e conteúdo essenciais permanecem acessíveis sem JavaScript; a preferência por movimento reduzido é respeitada. O livro preserva o capítulo completo e oferece retorno ao leitor simples.
+
+Kokoro v1.0 com voz brasileira pm_alex foi usado em CPU para gerar uma mensagem autoral fixa de boas-vindas, com fontes/revisões/hashes e identificação sintética. O app serve o áudio estático; tutor generativo e narração integral da Bíblia continuam em avaliação. [Ferramentas e proveniência](ferramentas-visuais-abertas.md). As seis aulas e os controles de privacidade/progresso permanecem os mesmos; a reforma visual não equivale a um currículo completo nem a eficácia pedagógica validada.

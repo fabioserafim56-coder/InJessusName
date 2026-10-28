@@ -1,0 +1,20 @@
+{
+  "createdFor": "InJessusName",
+  "method": "Geração de imagens original por descrição, sem edição de fotos históricas.",
+  "images": [
+    {
+      "file": "/visuals/galilee-dawn.png",
+      "sha256": "33f78cd44b0ef62f055bdb87207ae1b35f8f0c1358954c6de9617b1be7337608",
+      "width": 1672,
+      "height": 941,
+      "kind": "Ilustração artística original produzida para o projeto; não é evidência arqueológica."
+    },
+    {
+      "file": "/visuals/scripture-study.png",
+      "sha256": "bac28aecb14f37397002a49e36affef8d655868d745e4880972277fb1182d87e",
+      "width": 1672,
+      "height": 941,
+      "kind": "Ilustração artística original produzida para o projeto; não é evidência arqueológica."
+    }
+  ]
+}

@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useRef, useState, type CSSProperties } from "react";
 import { AppShell } from "@/components/app-shell";
+import { ScriptureBook } from "@/components/bible/scripture-book";
 import "./bible-reader.css";
 
 type Book = { id: string; name: string; chapters: number };
@@ -54,8 +55,35 @@ export function BibleReader({ books, chapter, highlightedVerse }: {
   const [readingMode, setReadingMode] = useState<"verses" | "continuous">("verses");
   const [copyMessage, setCopyMessage] = useState("");
   const sourceDialog = useRef<HTMLDialogElement>(null);
+  const bookDialog = useRef<HTMLDialogElement>(null);
+  const bookTrigger = useRef<HTMLButtonElement>(null);
+  const simpleRequested = useRef(false);
+  const [bookOpen, setBookOpen] = useState(false);
   const selectedBookData = books.find((book) => book.id === selectedBook) ?? chapter.book;
   const reference = `${chapter.book.name} ${chapter.chapter}${highlightedVerse ? `:${highlightedVerse}` : ""}`;
+
+  function openBook() {
+    simpleRequested.current = false;
+    setBookOpen(true);
+    bookDialog.current?.showModal();
+  }
+
+  function closeBook(simple = false) {
+    simpleRequested.current = simple;
+    bookDialog.current?.close();
+  }
+
+  function returnFromBook() {
+    setBookOpen(false);
+    requestAnimationFrame(() => {
+      if (simpleRequested.current) {
+        const passage = document.getElementById("bible-chapter");
+        passage?.focus({ preventScroll: true });
+        passage?.scrollIntoView({ block: "start", behavior: "instant" });
+        simpleRequested.current = false;
+      } else bookTrigger.current?.focus({ preventScroll: true });
+    });
+  }
 
   async function copyReference() {
     const citation = `${reference} — ${chapter.edition.name}`;
@@ -70,6 +98,11 @@ export function BibleReader({ books, chapter, highlightedVerse }: {
   return <AppShell active="bible" title="Bíblia" subtitle="Abra a Palavra com o coração atento">
     <div className="bible-reader-page">
       <a className="skip-link" href="#bible-chapter">Pular para o texto bíblico</a>
+
+      <section className="br-book-invitation" aria-labelledby="br-book-invitation-title">
+        <div className="br-book-invitation-copy"><p className="br-book-kicker">UM ENCONTRO COM A PALAVRA</p><h2 id="br-book-invitation-title">Há uma Palavra<br /><span>esperando por você.</span></h2><p>Abra sua Bíblia, vire as páginas e permaneça um pouco. Há tempo para escutar, fazer perguntas e levar um ensino ao coração.</p><div className="br-book-invitation-actions"><button type="button" className="br-open-book" ref={bookTrigger} onClick={openBook}>Abrir minha Bíblia <ReaderIcon kind="arrow-right" /></button><a href="#bible-chapter">Ir direto ao texto</a></div><span className="br-book-invitation-edition">Bíblia Livre · 66 livros · Texto ajustável</span></div>
+        <div className="br-tactile-scene" aria-hidden="true"><div className="br-tactile-book"><span className="br-tactile-pages" /><span className="br-tactile-spine" /><div className="br-tactile-cover"><div className="br-tactile-frame"><span className="br-tactile-symbol">✦</span><strong>BÍBLIA</strong><span>SAGRADA</span><small>PALAVRA · VIDA · ESPERANÇA</small></div></div><span className="br-tactile-ribbon" /></div><span className="br-tactile-caption">Abra. Escute. Permaneça.</span></div>
+      </section>
 
       <section className="br-toolbar" aria-label="Encontre uma passagem">
         <form action="/biblia" method="get" className="br-location-form">
@@ -145,6 +178,11 @@ export function BibleReader({ books, chapter, highlightedVerse }: {
           <div className="br-study-tip"><strong>Suas perguntas têm lugar aqui.</strong><p>Se algo parecer difícil, você pode reler, anotar e voltar depois. Não é preciso transformar esse encontro em uma corrida.</p></div>
         </aside>
       </div>
+
+      <dialog className="br-book-dialog" ref={bookDialog} aria-labelledby="br-book-dialog-title" onClose={returnFromBook}>
+        <header className="br-book-dialog-header"><div><p className="br-small-label">{chapter.book.name} {chapter.chapter} · BÍBLIA LIVRE</p><h2 id="br-book-dialog-title">Sua Bíblia aberta</h2></div><button type="button" className="br-book-close" aria-label="Fechar modo livro" onClick={() => closeBook()}><ReaderIcon kind="close" /></button></header>
+        {bookOpen && <ScriptureBook bookName={chapter.book.name} chapterNumber={chapter.chapter} verses={chapter.verses} fontSize={fontSize} highlightedVerse={highlightedVerse} onSimpleReading={() => closeBook(true)} />}
+      </dialog>
 
       <dialog className="br-source-dialog" id="br-source" ref={sourceDialog} aria-labelledby="br-source-title">
         <div className="br-dialog-heading"><p className="br-small-label">EDIÇÃO E FONTES</p><button type="button" onClick={() => sourceDialog.current?.close()} aria-label="Fechar edição e fontes"><ReaderIcon kind="close" /></button></div>
