@@ -69,8 +69,10 @@ test("leitor abre livros e capítulos reais, destaca uma referência e oferece l
   await expect(page.getByText("Versículo 11 destacado.", { exact: false })).toBeVisible();
   await expect(page.locator("#versiculo-10 span")).not.toBeEmpty();
   await expect(page.locator("#versiculo-12 span")).not.toBeEmpty();
+  const previousTextSize = await page.locator("#versiculo-11 > span").evaluate((element) => parseFloat(getComputedStyle(element).fontSize));
   await page.getByRole("button", { name: "Aumentar tamanho do texto" }).click();
-  await expect(page.getByRole("group", { name: "Tamanho do texto bíblico" })).toContainText("23 px");
+  await expect.poll(() => page.locator("#versiculo-11 > span").evaluate((element) => parseFloat(getComputedStyle(element).fontSize))).toBe(previousTextSize + 2);
+  await expect(page.getByRole("group", { name: "Tamanho do texto bíblico" })).toContainText(`${previousTextSize + 2} px`);
   await expect(page.locator("#br-source")).not.toBeVisible();
   await page.getByRole("button", { name: "Edição e fontes", exact: true }).click();
   await expect(page.locator("#br-source")).toBeVisible();

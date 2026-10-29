@@ -1,0 +1,13 @@
+# Percurso bíblico conectado
+
+Implementação de 28 de outubro de 2026: 24 encontros de panorama bíblico em `/percurso/[stageId]`, ligados a um mapa público em `/meu-percurso`. Os 66 livros da Bíblia Livre TR2018 aparecem em um índice de leitura. A ordenação é pedagógica: blocos poéticos e proféticos não são datados como se todos os livros tivessem sido escritos na ordem dos cartões.
+
+Cada encontro contém um objetivo, contexto literário/histórico, três passagens conferíveis, três explicações autorais com exemplos cotidianos, recuperação ativa por pergunta com feedback e conexão explícita com a próxima etapa. O trecho bíblico exibido é recuperado da edição local, com número, atribuição e link ao capítulo; nenhuma paráfrase é apresentada como citação.
+
+As respostas da prática permanecem somente no estado da página e são descartadas ao sair. Após conferir uma resposta correta, o ID da etapa recebe um marco de prática no contexto React em memória compartilhado pela navegação, sem gravar respostas. Não existe gravação em banco, cookies, localStorage ou sessionStorage; não há avaliação de fé, conclusão automática de curso, pontos, bloqueio artificial ou percentagem inventada. O mapa mostra contagem explícita de leituras praticadas “nesta visita” e permite limpar esses marcos; recarregar ou fechar o app também os limpa. A etapa em foco corresponde à última etapa aberta ou à URL de retorno, nunca a um dado persistido. A personalização existente exige a conta e o consentimento anteriores; visitantes recebem o roteiro público.
+
+A cobertura do índice não equivale a um comentário de cada versículo nem a formação teológica completa. As explicações são panoramas introdutórios autorais e aguardam revisão humana especializada. Livros de cânones católico e ortodoxos adicionais aos 66 não integram a edição disponível. A distinção é explicitada no índice; não se declara uma edição de 66 livros como universal.
+
+Cuidados editoriais específicos: não se fixa uma data para a criação, reconhecendo diferentes leituras cristãs de Gênesis; guerras antigas não legitimam violência religiosa atual; a paixão não atribui culpa coletiva a judeus; sofrimento não é tratado como nota de fé; textos de escravidão não a justificam; profecia/apocalipse não são usados para inventar datas; divergências confessionais são identificadas onde relevantes.
+
+Fontes de conteúdo: passagens primárias da Bíblia Livre TR2018 e seu conjunto narrativo/literário, identificadas em cada encontro. Explicações, perguntas e exemplos são composições do aplicativo, não transcrições de comentários protegidos. As conexões para `/historias` e `/igrejas` distinguem narrativa bíblica de história posterior das comunidades.

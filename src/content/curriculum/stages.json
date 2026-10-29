@@ -1,0 +1,1734 @@
+[
+  {
+    "id": "criacao-e-comecos",
+    "number": 1,
+    "era": "Os começos",
+    "title": "Criação, dignidade e cuidado",
+    "subtitle": "Gênesis 1–11 · O mundo, a humanidade e a ruptura",
+    "books": [
+      "GEN"
+    ],
+    "objective": "Reconhecer criação, dignidade humana, responsabilidade e ruptura nas primeiras narrativas de Gênesis.",
+    "context": "Gênesis abre a Bíblia com perguntas sobre Deus, a humanidade e o mundo. Leia as sequências de criação, jardim, violência, dilúvio e Babel observando suas diferenças; tradições cristãs interpretam de modos distintos sua relação com as origens do mundo. Aqui não fixamos uma data para a criação nem a usamos como autorização para desprezar a vida.",
+    "passages": [
+      {
+        "book": "GEN",
+        "chapter": 1,
+        "verse": 26,
+        "label": "Gênesis 1:26–31"
+      },
+      {
+        "book": "GEN",
+        "chapter": 3,
+        "verse": 9,
+        "label": "Gênesis 3:1–13"
+      },
+      {
+        "book": "GEN",
+        "chapter": 9,
+        "verse": 12,
+        "label": "Gênesis 9:8–17"
+      }
+    ],
+    "teaching": [
+      {
+        "title": "Antes da tarefa, a dignidade",
+        "text": "A humanidade é apresentada como imagem de Deus. A dignidade vem antes de produtividade, riqueza ou prestígio; conhecer esse começo orienta como olhamos para cada pessoa.",
+        "example": "Uma pessoa idosa que precisa de auxílio não vale menos porque já não consegue trabalhar."
+      },
+      {
+        "title": "A ruptura alcança as relações",
+        "text": "Em Gênesis 3, a desconfiança é seguida por medo e acusações. Nos relatos seguintes, a violência cresce; a Bíblia nos convida a perceber também nossas responsabilidades, sem culpar quem sofre.",
+        "example": "Depois de ferir alguém, reconhecer o que fizemos é um passo diferente de dizer que a culpa foi inteiramente do outro."
+      },
+      {
+        "title": "Cuidar faz parte do chamado",
+        "text": "O jardim é confiado ao ser humano para cultivar e guardar. A aliança após o dilúvio inclui seres vivos: o cuidado não termina na porta da nossa casa.",
+        "example": "Evitar desperdício de água e tratar um trabalhador com respeito são exemplos cotidianos de responsabilidade."
+      }
+    ],
+    "question": {
+      "prompt": "Qual atitude combina com a dignidade apresentada em Gênesis 1?",
+      "options": [
+        {
+          "text": "Cuidar de alguém mesmo quando essa pessoa não pode oferecer algo em troca.",
+          "feedback": "Sim. A dignidade não depende de utilidade; a imagem de Deus orienta o cuidado com todas as pessoas.",
+          "correct": true
+        },
+        {
+          "text": "Valorizar as pessoas principalmente pelo que produzem.",
+          "feedback": "Volte a Gênesis 1:26–27: a dignidade é apresentada antes das diferenças de trabalho ou posição social.",
+          "correct": false
+        },
+        {
+          "text": "Usar a criação sem considerar consequências.",
+          "feedback": "Cultivar e guardar em Gênesis 2:15 sugere responsabilidade, e não uso sem cuidado.",
+          "correct": false
+        }
+      ]
+    },
+    "connection": "Da humanidade inteira, a narrativa passa a uma família chamada a ser bênção para outras famílias."
+  },
+  {
+    "id": "promessa-e-alianca",
+    "number": 2,
+    "era": "Os patriarcas",
+    "title": "Uma promessa que alcança famílias",
+    "subtitle": "Gênesis 12–50 · Abraão, Sara, Isaque, Jacó e José",
+    "books": [
+      "GEN"
+    ],
+    "objective": "Acompanhar promessa, aliança e reconciliação sem transformar os personagens em exemplos perfeitos.",
+    "context": "A história dos patriarcas reúne deslocamentos, esperas, conflitos familiares e preservação da vida. O narrador registra tanto a fé quanto os erros dos personagens; descrever uma ação não significa aprová-la.",
+    "passages": [
+      {
+        "book": "GEN",
+        "chapter": 12,
+        "verse": 1,
+        "label": "Gênesis 12:1–9"
+      },
+      {
+        "book": "GEN",
+        "chapter": 15,
+        "verse": 6,
+        "label": "Gênesis 15:1–6"
+      },
+      {
+        "book": "GEN",
+        "chapter": 50,
+        "verse": 20,
+        "label": "Gênesis 50:15–21"
+      }
+    ],
+    "teaching": [
+      {
+        "title": "Bênção para além de si",
+        "text": "O chamado de Abraão inclui outras famílias da terra. A promessa não é apenas uma vantagem particular; abre uma responsabilidade de ser bênção.",
+        "example": "Ao receber ajuda para estudar, você pode também ajudar alguém a ler uma passagem difícil."
+      },
+      {
+        "title": "Fé durante a espera",
+        "text": "Abraão e Sara vivem períodos de incerteza. A narrativa acolhe a espera e mostra os danos de tentar controlar pessoas para apressar resultados.",
+        "example": "Esperar uma resposta não autoriza pressionar alguém vulnerável para obter o que desejamos."
+      },
+      {
+        "title": "Perdão e proteção da vida",
+        "text": "José reconhece o mal praticado pelos irmãos e escolhe preservar vidas. Perdão não apaga o que aconteceu nem transforma violência em algo bom.",
+        "example": "É possível interromper uma vingança e, ao mesmo tempo, manter limites para que o dano não se repita."
+      }
+    ],
+    "question": {
+      "prompt": "Como ler os conflitos da família de Abraão?",
+      "options": [
+        {
+          "text": "Observando promessa e falhas, sem supor que toda atitude narrada deve ser imitada.",
+          "feedback": "Isso mesmo. A narrativa descreve seres humanos reais em sua complexidade; nem tudo o que registra é uma ordem.",
+          "correct": true
+        },
+        {
+          "text": "Imitando qualquer decisão, porque todos os personagens agiram perfeitamente.",
+          "feedback": "O texto também expõe engano, favoritismo e medo. Essas falhas pedem discernimento.",
+          "correct": false
+        },
+        {
+          "text": "Concluindo que a promessa beneficiava apenas uma família.",
+          "feedback": "Gênesis 12:3 amplia o horizonte para as famílias da terra.",
+          "correct": false
+        }
+      ]
+    },
+    "connection": "A família de Jacó chega ao Egito. É nesse cenário que Êxodo contará a opressão e a libertação."
+  },
+  {
+    "id": "exodo-e-libertacao",
+    "number": 3,
+    "era": "A libertação",
+    "title": "Deus ouve o clamor",
+    "subtitle": "Êxodo · Da escravidão à aliança",
+    "books": [
+      "EXO"
+    ],
+    "objective": "Relacionar libertação, memória e responsabilidade comunitária no relato de Êxodo.",
+    "context": "Êxodo começa com opressão e termina com a presença de Deus no meio do povo. Moisés é chamado em meio ao sofrimento coletivo. A Páscoa, a travessia e o Sinai pertencem à mesma história de libertação e compromisso.",
+    "passages": [
+      {
+        "book": "EXO",
+        "chapter": 3,
+        "verse": 7,
+        "label": "Êxodo 3:7–12"
+      },
+      {
+        "book": "EXO",
+        "chapter": 12,
+        "verse": 26,
+        "label": "Êxodo 12:24–28"
+      },
+      {
+        "book": "EXO",
+        "chapter": 20,
+        "verse": 1,
+        "label": "Êxodo 20:1–17"
+      }
+    ],
+    "teaching": [
+      {
+        "title": "O clamor é ouvido",
+        "text": "O chamado de Moisés nasce da atenção de Deus ao sofrimento do povo. O cuidado cristão não deve tornar invisível quem enfrenta opressão.",
+        "example": "Antes de aconselhar alguém exausto, procure compreender as condições injustas que essa pessoa enfrenta."
+      },
+      {
+        "title": "Lembrar para ensinar",
+        "text": "A memória da Páscoa é transmitida também por perguntas das crianças. A aprendizagem bíblica pode começar por uma pergunta sincera, sem humilhar quem ainda não sabe.",
+        "example": "Quando uma criança pergunta o sentido de uma celebração, contar sua história ajuda mais do que apenas exigir silêncio."
+      },
+      {
+        "title": "Liberdade e aliança",
+        "text": "Os mandamentos aparecem depois da apresentação do Deus que libertou. Eles orientam a relação com Deus e com o próximo em uma comunidade que precisa aprender a viver livre.",
+        "example": "Não furtar envolve também respeitar o tempo, o trabalho e os bens de outra pessoa."
+      }
+    ],
+    "question": {
+      "prompt": "Na sequência de Êxodo, o que vem antes dos mandamentos do Sinai?",
+      "options": [
+        {
+          "text": "A libertação da escravidão e a apresentação do Deus que libertou.",
+          "feedback": "Sim. Êxodo 20 começa lembrando a saída do Egito antes de apresentar os mandamentos.",
+          "correct": true
+        },
+        {
+          "text": "Uma exigência de enriquecer antes de se aproximar de Deus.",
+          "feedback": "Essa exigência não aparece na abertura de Êxodo 20. O texto recorda a libertação.",
+          "correct": false
+        },
+        {
+          "text": "A obrigação de nunca fazer perguntas sobre a Páscoa.",
+          "feedback": "Êxodo 12 prevê que as crianças perguntarão e orienta a comunidade a explicar.",
+          "correct": false
+        }
+      ]
+    },
+    "connection": "Libertação é o começo de uma caminhada. Os próximos livros mostram como aprender a viver em aliança no deserto."
+  },
+  {
+    "id": "alianca-no-deserto",
+    "number": 4,
+    "era": "O deserto",
+    "title": "Aprender a viver em aliança",
+    "subtitle": "Levítico, Números e Deuteronômio",
+    "books": [
+      "LEV",
+      "NUM",
+      "DEU"
+    ],
+    "objective": "Ler leis e jornadas no contexto de Israel, distinguindo aliança antiga e aplicações cristãs atuais.",
+    "context": "Levítico trata de culto, santidade e convivência; Números acompanha a jornada do povo; Deuteronômio recorda a aliança antes da entrada na terra. Cristãos divergem sobre a aplicação de algumas leis; é necessário considerar o gênero e a leitura que o Novo Testamento faz delas.",
+    "passages": [
+      {
+        "book": "LEV",
+        "chapter": 19,
+        "verse": 18,
+        "label": "Levítico 19:9–18"
+      },
+      {
+        "book": "NUM",
+        "chapter": 6,
+        "verse": 24,
+        "label": "Números 6:22–27"
+      },
+      {
+        "book": "DEU",
+        "chapter": 6,
+        "verse": 4,
+        "label": "Deuteronômio 6:4–9"
+      }
+    ],
+    "teaching": [
+      {
+        "title": "Santidade no cotidiano",
+        "text": "Levítico aproxima culto e justiça: cuidado com o pobre, honestidade e amor ao próximo. A vida diante de Deus não é separada das relações diárias.",
+        "example": "Pagar corretamente alguém que trabalhou para você também é uma questão de convivência diante de Deus."
+      },
+      {
+        "title": "Memória que acompanha a vida",
+        "text": "Deuteronômio convida a falar da aliança no cotidiano. Repetir pode ajudar a aprender quando a repetição tem sentido, diálogo e exemplos.",
+        "example": "Relembrar uma passagem durante uma refeição pode abrir uma conversa, sem transformar cada encontro em uma prova."
+      },
+      {
+        "title": "Ler com contexto",
+        "text": "Uma instrução sobre sacerdócio levítico não deve ser transferida automaticamente para uma função de igreja atual. Primeiro pergunte a quem foi dirigida e em qual aliança se situa.",
+        "example": "Antes de aplicar uma regra alimentar a outra pessoa, compare seu contexto com Marcos 7 e Atos 10."
+      }
+    ],
+    "question": {
+      "prompt": "Qual é um primeiro passo responsável ao ler uma lei de Levítico?",
+      "options": [
+        {
+          "text": "Identificar destinatários, contexto e relação com o conjunto das Escrituras.",
+          "feedback": "Exato. Contexto e leitura do conjunto ajudam a evitar aplicações isoladas.",
+          "correct": true
+        },
+        {
+          "text": "Aplicá-la automaticamente a qualquer igreja atual.",
+          "feedback": "A lei pertence ao contexto da aliança de Israel; a aplicação cristã pede estudo do conjunto.",
+          "correct": false
+        },
+        {
+          "text": "Ignorar toda ligação entre culto e cuidado com o próximo.",
+          "feedback": "Levítico 19 conecta explicitamente vida diante de Deus e justiça nas relações.",
+          "correct": false
+        }
+      ]
+    },
+    "connection": "A caminhada chega à terra. Josué e Juízes apresentam fidelidade, conflitos e perguntas difíceis sobre a vida coletiva."
+  },
+  {
+    "id": "terra-e-responsabilidade",
+    "number": 5,
+    "era": "Na terra",
+    "title": "Escolhas que alcançam a comunidade",
+    "subtitle": "Josué e Juízes",
+    "books": [
+      "JOS",
+      "JDG"
+    ],
+    "objective": "Observar memória, compromisso e os ciclos de violência nos relatos de entrada e vida na terra.",
+    "context": "Josué e Juízes narram a vida de Israel na terra sob perspectivas diferentes. As guerras antigas exigem leitura cuidadosa; seus relatos não autorizam violência religiosa contra pessoas ou povos atuais.",
+    "passages": [
+      {
+        "book": "JOS",
+        "chapter": 24,
+        "verse": 14,
+        "label": "Josué 24:14–24"
+      },
+      {
+        "book": "JDG",
+        "chapter": 2,
+        "verse": 10,
+        "label": "Juízes 2:10–19"
+      },
+      {
+        "book": "JDG",
+        "chapter": 21,
+        "verse": 25,
+        "label": "Juízes 21:25"
+      }
+    ],
+    "teaching": [
+      {
+        "title": "Uma escolha consciente",
+        "text": "Josué chama a comunidade a recordar sua história e considerar a quem servirá. Compromisso é mais profundo que repetir palavras sem compreender.",
+        "example": "Ao assumir um compromisso de serviço, procure entender o que ele exige de cuidado, tempo e responsabilidade."
+      },
+      {
+        "title": "Ciclos que precisam ser reconhecidos",
+        "text": "Juízes mostra repetição de abandono, sofrimento e livramento. Reconhecer padrões ajuda a perguntar o que precisa mudar em uma comunidade.",
+        "example": "Se uma equipe sempre exclui as mesmas pessoas, pedir desculpas é importante, mas mudar a forma de decidir também é necessário."
+      },
+      {
+        "title": "Relatos difíceis pedem cuidado",
+        "text": "Juízes também expõe violência e abuso, sem oferecer uma comunidade ideal. Quem foi ferido precisa ser acolhido; o sofrimento não deve ser transformado em espetáculo.",
+        "example": "Ao estudar um relato de violência, não peça que o aluno revele experiências pessoais para participar."
+      }
+    ],
+    "question": {
+      "prompt": "As guerras narradas em Josué autorizam violência religiosa hoje?",
+      "options": [
+        {
+          "text": "Não; é preciso compreender seu contexto antigo e lê-las no conjunto das Escrituras.",
+          "feedback": "Correto. Um relato antigo não é uma licença para atacar pessoas atuais; a leitura cristã considera também o ensino de Jesus.",
+          "correct": true
+        },
+        {
+          "text": "Sim, sempre que outra pessoa discordar de nossa fé.",
+          "feedback": "Discordância religiosa não autoriza agressão. Essa aplicação retira o relato de seu contexto.",
+          "correct": false
+        },
+        {
+          "text": "Sim, porque toda descrição bíblica é uma ordem direta ao leitor.",
+          "feedback": "Descrição e mandamento são coisas diferentes; observar o gênero e o contexto é essencial.",
+          "correct": false
+        }
+      ]
+    },
+    "connection": "Dentro do tempo dos juízes, Rute oferece um olhar próximo sobre lealdade, acolhimento e preservação da vida."
+  },
+  {
+    "id": "rute-e-acolhimento",
+    "number": 6,
+    "era": "Uma história de cuidado",
+    "title": "Fidelidade nos pequenos caminhos",
+    "subtitle": "Rute · Estrangeiridade, trabalho e esperança",
+    "books": [
+      "RUT"
+    ],
+    "objective": "Perceber como o cuidado cotidiano participa da história maior da Bíblia.",
+    "context": "Rute situa sua história no tempo dos juízes. Uma família atravessa fome, migração e luto. A narrativa se concentra em mulheres vulneráveis e em gestos de lealdade que levam à genealogia de Davi.",
+    "passages": [
+      {
+        "book": "RUT",
+        "chapter": 1,
+        "verse": 16,
+        "label": "Rute 1:14–18"
+      },
+      {
+        "book": "RUT",
+        "chapter": 2,
+        "verse": 8,
+        "label": "Rute 2:8–16"
+      },
+      {
+        "book": "RUT",
+        "chapter": 4,
+        "verse": 17,
+        "label": "Rute 4:13–22"
+      }
+    ],
+    "teaching": [
+      {
+        "title": "Permanecer com quem sofre",
+        "text": "A decisão de Rute envolve lealdade a Noemi em uma situação sem soluções fáceis. Presença amorosa não exige ter resposta para toda dor.",
+        "example": "Levar uma refeição e escutar alguém enlutado pode ser um gesto de cuidado mais necessário que oferecer uma explicação apressada."
+      },
+      {
+        "title": "Proteção concreta",
+        "text": "Boaz dá orientações para que Rute trabalhe em segurança e encontre sustento. Acolhimento aparece em condições reais de proteção e dignidade.",
+        "example": "Uma comunidade acolhedora adapta acesso e horários para que pessoas vulneráveis realmente consigam participar."
+      },
+      {
+        "title": "Uma vida ligada a outras vidas",
+        "text": "A genealogia final conecta uma história familiar à história de Israel. Pequenos gestos importam mesmo quando não sabemos quais serão seus desdobramentos.",
+        "example": "Quem ensina uma criança a ler participa de uma história cujo alcance talvez nunca consiga medir."
+      }
+    ],
+    "question": {
+      "prompt": "Que forma de cuidado aparece em Rute 2?",
+      "options": [
+        {
+          "text": "Acolhimento acompanhado de proteção e acesso ao sustento.",
+          "feedback": "Sim. O relato mostra cuidado traduzido em condições concretas de trabalho e proteção.",
+          "correct": true
+        },
+        {
+          "text": "Apenas palavras, sem qualquer atenção às condições de vida.",
+          "feedback": "Observe as orientações de Boaz aos trabalhadores e a provisão de alimento.",
+          "correct": false
+        },
+        {
+          "text": "Rejeição de Rute por sua origem estrangeira como solução ideal.",
+          "feedback": "A narrativa valoriza a lealdade de Rute e o acolhimento que ela recebe.",
+          "correct": false
+        }
+      ]
+    },
+    "connection": "A genealogia de Rute chega a Davi. Samuel apresenta a passagem para a monarquia e suas responsabilidades."
+  },
+  {
+    "id": "samuel-e-davi",
+    "number": 7,
+    "era": "A monarquia",
+    "title": "Quem governa também responde",
+    "subtitle": "1 e 2 Samuel",
+    "books": [
+      "1SA",
+      "2SA"
+    ],
+    "objective": "Distinguir vocação, poder e responsabilidade nas histórias de Samuel, Saul e Davi.",
+    "context": "Os livros de Samuel acompanham a formação da monarquia. O texto preserva a esperança ligada a Davi e também expõe seus graves abusos; prestígio religioso não coloca uma liderança acima da responsabilidade.",
+    "passages": [
+      {
+        "book": "1SA",
+        "chapter": 8,
+        "verse": 10,
+        "label": "1 Samuel 8:10–18"
+      },
+      {
+        "book": "1SA",
+        "chapter": 16,
+        "verse": 7,
+        "label": "1 Samuel 16:1–13"
+      },
+      {
+        "book": "2SA",
+        "chapter": 12,
+        "verse": 7,
+        "label": "2 Samuel 12:1–13"
+      }
+    ],
+    "teaching": [
+      {
+        "title": "Poder tem consequências",
+        "text": "Samuel descreve o que o poder real poderá tomar do povo. Uma comunidade precisa considerar como suas estruturas protegem os vulneráveis.",
+        "example": "Uma liderança que não aceita perguntas sobre recursos ou decisões exige atenção, não admiração automática."
+      },
+      {
+        "title": "Além das aparências",
+        "text": "A escolha de Davi questiona julgamentos baseados apenas em aparência. Isso não elimina a necessidade de avaliar atitudes reais ao longo do tempo.",
+        "example": "Uma fala impressionante não substitui coerência, respeito e prestação de contas."
+      },
+      {
+        "title": "Nenhum líder está acima do cuidado",
+        "text": "Natã confronta Davi pelo mal praticado. Reconhecer pecado não desfaz as consequências nem exige que pessoas feridas abandonem sua proteção.",
+        "example": "Ao denunciar abuso, uma pessoa precisa ser escutada e protegida; a reputação do líder não deve silenciá-la."
+      }
+    ],
+    "question": {
+      "prompt": "O confronto de Natã com Davi ensina que:",
+      "options": [
+        {
+          "text": "Uma liderança também deve responder pelo dano que pratica.",
+          "feedback": "Sim. O texto não esconde o abuso de poder nem coloca Davi acima da responsabilidade.",
+          "correct": true
+        },
+        {
+          "text": "A posição religiosa torna qualquer ato de um líder aceitável.",
+          "feedback": "Natã confronta exatamente essa ideia: a posição de Davi não desculpa o mal.",
+          "correct": false
+        },
+        {
+          "text": "A pessoa ferida deve ser silenciada para preservar a instituição.",
+          "feedback": "Essa conclusão protege o poder e ignora a denúncia que o próprio relato preserva.",
+          "correct": false
+        }
+      ]
+    },
+    "connection": "Depois de Davi e Salomão, os relatos dos reis mostram divisão, injustiça e o caminho que levará ao exílio."
+  },
+  {
+    "id": "reis-e-divisao",
+    "number": 8,
+    "era": "Reinos e memória",
+    "title": "Fidelidade em tempos de poder",
+    "subtitle": "1 e 2 Reis; 1 e 2 Crônicas",
+    "books": [
+      "1KI",
+      "2KI",
+      "1CH",
+      "2CH"
+    ],
+    "objective": "Acompanhar divisão dos reinos e comparar os propósitos de Reis e Crônicas.",
+    "context": "Reis acompanha a monarquia até as quedas de Samaria e Jerusalém; Crônicas retoma a memória com atenção à dinastia davídica e ao culto. Perspectivas literárias distintas não devem ser apagadas em uma leitura apressada.",
+    "passages": [
+      {
+        "book": "1KI",
+        "chapter": 12,
+        "verse": 13,
+        "label": "1 Reis 12:1–19"
+      },
+      {
+        "book": "1KI",
+        "chapter": 21,
+        "verse": 1,
+        "label": "1 Reis 21:1–19"
+      },
+      {
+        "book": "2CH",
+        "chapter": 34,
+        "verse": 27,
+        "label": "2 Crônicas 34:14–33"
+      }
+    ],
+    "teaching": [
+      {
+        "title": "Escutar antes de decidir",
+        "text": "A dureza de Roboão participa da ruptura do reino. A história ajuda a perguntar como decisões autoritárias afetam quem já carrega fardos.",
+        "example": "Ao organizar um serviço comunitário, ouvir quem executará as tarefas pode revelar dificuldades que a coordenação não percebe."
+      },
+      {
+        "title": "Fé e justiça não se separam",
+        "text": "A vinha de Nabote expõe abuso de poder e apropriação injusta. Um ato religioso não apaga a exploração do próximo.",
+        "example": "Uma doação generosa não justifica pagar salários injustos ou tomar o bem de outra pessoa."
+      },
+      {
+        "title": "Comparar é aprender",
+        "text": "Reis e Crônicas selecionam e organizam acontecimentos segundo seus propósitos. Compare passagens perguntando o que cada narrador destaca.",
+        "example": "Ao ler duas memórias sobre o mesmo acontecimento familiar, você pode perceber ênfases diferentes sem inventar detalhes ausentes."
+      }
+    ],
+    "question": {
+      "prompt": "Por que comparar Reis e Crônicas?",
+      "options": [
+        {
+          "text": "Para perceber seus contextos e ênfases literárias.",
+          "feedback": "Isso ajuda a ler cada livro com atenção ao que realmente comunica.",
+          "correct": true
+        },
+        {
+          "text": "Para preencher livremente detalhes que nenhum dos textos fornece.",
+          "feedback": "É melhor reconhecer o que não sabemos do que completar a história com suposições.",
+          "correct": false
+        },
+        {
+          "text": "Para concluir que a injustiça não importa quando há culto.",
+          "feedback": "O relato de Nabote e a crítica profética mostram precisamente o contrário.",
+          "correct": false
+        }
+      ]
+    },
+    "connection": "No meio de crises e decisões, os livros de sabedoria e oração oferecem linguagem para alegria, sofrimento e discernimento."
+  },
+  {
+    "id": "sabedoria-e-oracao",
+    "number": 9,
+    "era": "A sabedoria de Israel",
+    "title": "Palavras para a vida inteira",
+    "subtitle": "Jó, Salmos, Provérbios, Eclesiastes e Cântico",
+    "books": [
+      "JOB",
+      "PSA",
+      "PRO",
+      "ECC",
+      "SNG"
+    ],
+    "objective": "Distinguir poesia, provérbio, lamento e sabedoria ao ler experiências humanas diante de Deus.",
+    "context": "Esses livros não formam uma sequência cronológica única. São uma biblioteca de oração e reflexão: Jó contesta explicações simplistas do sofrimento; Salmos inclui louvor e lamento; Provérbios, Eclesiastes e Cântico exploram aspectos distintos da vida.",
+    "passages": [
+      {
+        "book": "JOB",
+        "chapter": 2,
+        "verse": 13,
+        "label": "Jó 2:11–13"
+      },
+      {
+        "book": "PSA",
+        "chapter": 13,
+        "verse": 1,
+        "label": "Salmo 13"
+      },
+      {
+        "book": "PRO",
+        "chapter": 15,
+        "verse": 1,
+        "label": "Provérbios 15:1–4"
+      }
+    ],
+    "teaching": [
+      {
+        "title": "Lamento também é oração",
+        "text": "Os salmos acolhem perguntas e dor na presença de Deus. Não é necessário esconder o sofrimento para parecer fiel.",
+        "example": "Uma oração pode começar com “não sei como atravessar este dia” e ainda ser uma busca sincera por Deus."
+      },
+      {
+        "title": "Provérbios pedem discernimento",
+        "text": "Um provérbio oferece sabedoria condensada; não funciona como garantia automática de um resultado em toda circunstância. Leia também as tensões que Jó e Eclesiastes apresentam.",
+        "example": "Diligência costuma ajudar no trabalho, mas não permite culpar toda pessoa desempregada por falta de esforço."
+      },
+      {
+        "title": "Presença antes da explicação",
+        "text": "Os amigos de Jó inicialmente se sentam com ele em silêncio. Depois, suas acusações mostram o perigo de explicar a dor alheia sem conhecimento.",
+        "example": "Ao visitar alguém enfermo, pergunte de que ajuda precisa em vez de atribuir sua doença a uma falha espiritual."
+      }
+    ],
+    "question": {
+      "prompt": "Como ler um provérbio sobre diligência?",
+      "options": [
+        {
+          "text": "Como sabedoria que pede discernimento, e não como explicação automática de toda pobreza.",
+          "feedback": "Sim. O conjunto bíblico também fala de injustiça, sofrimento e situações que fogem ao controle individual.",
+          "correct": true
+        },
+        {
+          "text": "Como prova de que toda pessoa que sofre é culpada.",
+          "feedback": "Jó questiona esse tipo de explicação; cuidado para não transformar sabedoria em acusação.",
+          "correct": false
+        },
+        {
+          "text": "Como uma fórmula que dispensa observar contexto e outras passagens.",
+          "feedback": "A leitura sábia considera gênero, contexto e o conjunto das Escrituras.",
+          "correct": false
+        }
+      ]
+    },
+    "connection": "Os profetas levam essas perguntas para a vida pública: aliança, justiça, juízo e esperança em meio às crises."
+  },
+  {
+    "id": "profetas-e-esperanca",
+    "number": 10,
+    "era": "As vozes proféticas",
+    "title": "Justiça, lamento e nova esperança",
+    "subtitle": "Isaías, Jeremias, Lamentações, Ezequiel e Daniel",
+    "books": [
+      "ISA",
+      "JER",
+      "LAM",
+      "EZK",
+      "DAN"
+    ],
+    "objective": "Situar a palavra profética em crises históricas e reconhecer esperança sem adivinhação apressada.",
+    "context": "Os profetas falam a comunidades concretas. Invasões, exílio, culto e injustiça fazem parte de seus contextos. Daniel combina narrativas e visões; Lamentações é poesia de uma cidade ferida. Gêneros distintos pedem perguntas distintas.",
+    "passages": [
+      {
+        "book": "ISA",
+        "chapter": 1,
+        "verse": 17,
+        "label": "Isaías 1:10–20"
+      },
+      {
+        "book": "JER",
+        "chapter": 29,
+        "verse": 7,
+        "label": "Jeremias 29:4–14"
+      },
+      {
+        "book": "EZK",
+        "chapter": 37,
+        "verse": 1,
+        "label": "Ezequiel 37:1–14"
+      }
+    ],
+    "teaching": [
+      {
+        "title": "A denúncia busca transformação",
+        "text": "Isaías relaciona culto e defesa do vulnerável. A crítica profética não é apenas previsão do futuro; chama a comunidade a mudar sua vida.",
+        "example": "Uma comunidade que ora por justiça pode também rever se trata trabalhadores e visitantes com dignidade."
+      },
+      {
+        "title": "Esperança em um lugar difícil",
+        "text": "Jeremias orienta exilados a buscar o bem da cidade onde estão. A promessa deve ser lida com seu tempo, destinatários e experiência coletiva.",
+        "example": "Jeremias 29:11 não é uma garantia de que qualquer projeto pessoal terminará exatamente como planejado."
+      },
+      {
+        "title": "Imagens que devolvem fôlego",
+        "text": "A visão dos ossos em Ezequiel fala à casa de Israel em desespero. Imagens proféticas precisam ser lidas primeiro no sentido explicado pelo próprio livro.",
+        "example": "Antes de usar a visão como metáfora pessoal, leia Ezequiel 37:11, onde a comunidade é identificada."
+      }
+    ],
+    "question": {
+      "prompt": "Antes de aplicar Jeremias 29:11 à própria vida, vale:",
+      "options": [
+        {
+          "text": "Ler a carta aos exilados e considerar a promessa dirigida àquela comunidade.",
+          "feedback": "Exato. Conhecer o contexto não diminui a esperança; ajuda a recebê-la sem promessas que o texto não faz.",
+          "correct": true
+        },
+        {
+          "text": "Ignorar o exílio e prometer sucesso imediato em qualquer plano.",
+          "feedback": "A carta trata de uma espera longa e de uma comunidade real; sucesso imediato não é sua promessa.",
+          "correct": false
+        },
+        {
+          "text": "Transformar toda imagem profética em uma data atual exata.",
+          "feedback": "Isso pode impor ao texto uma informação que ele não oferece.",
+          "correct": false
+        }
+      ]
+    },
+    "connection": "Os doze profetas ampliam esse chamado com vozes de épocas distintas: misericórdia, justiça e fidelidade."
+  },
+  {
+    "id": "os-doze-profetas",
+    "number": 11,
+    "era": "As vozes proféticas",
+    "title": "Misericórdia que alcança o próximo",
+    "subtitle": "De Oseias a Malaquias",
+    "books": [
+      "HOS",
+      "JOL",
+      "AMO",
+      "OBA",
+      "JON",
+      "MIC",
+      "NAM",
+      "HAB",
+      "ZEP",
+      "HAG",
+      "ZEC",
+      "MAL"
+    ],
+    "objective": "Conhecer a diversidade dos doze profetas e relacionar fidelidade, justiça e misericórdia.",
+    "context": "A expressão “profetas menores” se refere ao tamanho dos livros, não à sua importância. Esses textos abrangem períodos diferentes: não são doze episódios seguidos nem uma única situação histórica.",
+    "passages": [
+      {
+        "book": "AMO",
+        "chapter": 5,
+        "verse": 24,
+        "label": "Amós 5:21–24"
+      },
+      {
+        "book": "JON",
+        "chapter": 4,
+        "verse": 10,
+        "label": "Jonas 4"
+      },
+      {
+        "book": "MIC",
+        "chapter": 6,
+        "verse": 8,
+        "label": "Miqueias 6:6–8"
+      }
+    ],
+    "teaching": [
+      {
+        "title": "Justiça além da cerimônia",
+        "text": "Amós denuncia uma religiosidade que convive com exploração. A adoração perde coerência quando o próximo é tratado como descartável.",
+        "example": "Organizar uma celebração bonita e impedir o acesso de quem tem deficiência são atitudes que precisam ser examinadas juntas."
+      },
+      {
+        "title": "Misericórdia além das fronteiras",
+        "text": "Jonas questiona o desconforto do profeta diante da misericórdia oferecida a outros. Leia a narrativa percebendo também perguntas que ficam abertas.",
+        "example": "Você consegue desejar o bem de uma pessoa com quem discorda, sem aprovar tudo o que ela faz?"
+      },
+      {
+        "title": "Caminhar com humildade",
+        "text": "Miqueias reúne justiça, misericórdia e humildade diante de Deus. Essa síntese convida a uma vida coerente, não a superioridade sobre os outros.",
+        "example": "Antes de corrigir alguém publicamente, considere uma conversa respeitosa e a possibilidade de você não conhecer toda a situação."
+      }
+    ],
+    "question": {
+      "prompt": "Por que os doze são chamados de “profetas menores”?",
+      "options": [
+        {
+          "text": "Por serem livros mais curtos, e não menos importantes.",
+          "feedback": "Correto. A designação tradicional trata da extensão dos livros.",
+          "correct": true
+        },
+        {
+          "text": "Porque sua mensagem de justiça vale menos.",
+          "feedback": "O tamanho não define a importância; Amós e Miqueias têm mensagens centrais sobre justiça.",
+          "correct": false
+        },
+        {
+          "text": "Porque todos viveram no mesmo ano e local.",
+          "feedback": "Os doze pertencem a diferentes épocas e contextos.",
+          "correct": false
+        }
+      ]
+    },
+    "connection": "Após o exílio, reconstruir uma cidade e uma comunidade exigirá memória, justiça e esperança compartilhada."
+  },
+  {
+    "id": "retorno-e-reconstrucao",
+    "number": 12,
+    "era": "O retorno",
+    "title": "Reconstruir sem esquecer as pessoas",
+    "subtitle": "Esdras, Neemias e Ester",
+    "books": [
+      "EZR",
+      "NEH",
+      "EST"
+    ],
+    "objective": "Observar retorno, reconstrução e preservação da vida em contextos pós-exílicos e da diáspora.",
+    "context": "Esdras e Neemias acompanham projetos de reconstrução e reorganização; Ester se passa na diáspora persa. Algumas decisões desses livros geram questões difíceis sobre pertencimento; não devem ser usadas para justificar hostilidade contra grupos atuais.",
+    "passages": [
+      {
+        "book": "NEH",
+        "chapter": 5,
+        "verse": 1,
+        "label": "Neemias 5:1–13"
+      },
+      {
+        "book": "NEH",
+        "chapter": 8,
+        "verse": 8,
+        "label": "Neemias 8:1–12"
+      },
+      {
+        "book": "EST",
+        "chapter": 4,
+        "verse": 14,
+        "label": "Ester 4:10–17"
+      }
+    ],
+    "teaching": [
+      {
+        "title": "Muros não bastam",
+        "text": "Neemias enfrenta a exploração econômica no interior da própria comunidade. Reconstrução material sem cuidado com as pessoas permanece incompleta.",
+        "example": "Um prédio religioso reformado não resolve sozinho a falta de acolhimento de quem chega."
+      },
+      {
+        "title": "Entender o que se lê",
+        "text": "A leitura em Neemias 8 é acompanhada de explicação. Aprender não é apenas ouvir palavras; é construir compreensão.",
+        "example": "Depois de uma passagem, explique uma palavra difícil e peça ao aluno que conte com suas próprias palavras o que percebeu."
+      },
+      {
+        "title": "Coragem acompanhada de comunidade",
+        "text": "Ester enfrenta uma decisão arriscada e pede solidariedade. A narrativa não obriga vítimas a se expor sem proteção; seu risco precisa ser compreendido em seu contexto.",
+        "example": "Ajudar alguém ameaçado pode incluir procurar apoio qualificado e planejar medidas reais de segurança."
+      }
+    ],
+    "question": {
+      "prompt": "O que Neemias 8 destaca sobre a leitura?",
+      "options": [
+        {
+          "text": "A leitura acompanhada de explicação para que o povo compreendesse.",
+          "feedback": "Sim. Compreensão faz parte do encontro com a Palavra; perguntas têm lugar no aprendizado.",
+          "correct": true
+        },
+        {
+          "text": "Que entender o texto é desnecessário.",
+          "feedback": "O texto enfatiza exatamente o esforço para dar sentido e ajudar o povo a entender.",
+          "correct": false
+        },
+        {
+          "text": "Que reconstruir um edifício elimina toda injustiça.",
+          "feedback": "Neemias 5 mostra problemas sociais dentro da comunidade em reconstrução.",
+          "correct": false
+        }
+      ]
+    },
+    "connection": "Entre esses contextos antigos e os Evangelhos há mudanças históricas. Os Evangelhos apresentam Jesus no mundo judaico sob domínio romano."
+  },
+  {
+    "id": "chegada-de-jesus",
+    "number": 13,
+    "era": "Os Evangelhos",
+    "title": "A esperança se aproxima",
+    "subtitle": "Mateus e Lucas · Nascimento e preparação",
+    "books": [
+      "MAT",
+      "LUK"
+    ],
+    "objective": "Reconhecer as perspectivas de Mateus e Lucas e situar Jesus em seu contexto judaico.",
+    "context": "Mateus e Lucas apresentam relatos de nascimento com ênfases próprias. Não acrescente detalhes de um ao outro sem avisar. Jesus nasce no mundo judaico do primeiro século; costumes e poder político ajudam a compreender o cenário.",
+    "passages": [
+      {
+        "book": "MAT",
+        "chapter": 1,
+        "verse": 21,
+        "label": "Mateus 1:18–25"
+      },
+      {
+        "book": "LUK",
+        "chapter": 1,
+        "verse": 46,
+        "label": "Lucas 1:46–55"
+      },
+      {
+        "book": "LUK",
+        "chapter": 2,
+        "verse": 10,
+        "label": "Lucas 2:1–20"
+      }
+    ],
+    "teaching": [
+      {
+        "title": "Ler cada testemunho",
+        "text": "Mateus destaca José e a ligação com as Escrituras de Israel; Lucas dá amplo espaço a Maria e a outras vozes. Compare sem apagar o modo como cada relato foi construído.",
+        "example": "Os pastores aparecem em Lucas; os magos, em Mateus. Dizer de onde vem cada cena ajuda o aluno a encontrar o texto."
+      },
+      {
+        "title": "Esperança que alcança os pequenos",
+        "text": "O cântico de Maria fala de misericórdia e reversão de posições. A esperança do Evangelho tem consequências para nosso olhar sobre quem é ignorado.",
+        "example": "Ao organizar uma atividade, pergunte se pessoas sem recursos conseguem participar com dignidade."
+      },
+      {
+        "title": "Deus se aproxima na vida concreta",
+        "text": "Os relatos de nascimento situam a esperança em famílias, cidades e situações vulneráveis. A fé pode acolher a fragilidade sem romantizar a falta de cuidado.",
+        "example": "Acolher uma família recém-chegada inclui escutar suas necessidades de moradia, alimento e companhia."
+      }
+    ],
+    "question": {
+      "prompt": "Onde encontramos a visita dos pastores ao menino Jesus?",
+      "options": [
+        {
+          "text": "Em Lucas 2; a visita dos magos é narrada em Mateus 2.",
+          "feedback": "Isso mesmo. Identificar a fonte de cada cena ajuda a ler os Evangelhos com atenção.",
+          "correct": true
+        },
+        {
+          "text": "Em Mateus 2, no mesmo relato dos magos.",
+          "feedback": "Mateus narra os magos; Lucas narra os pastores. Confira cada relato em seu livro.",
+          "correct": false
+        },
+        {
+          "text": "Em todos os Evangelhos com os mesmos detalhes.",
+          "feedback": "Os Evangelhos têm seleções e ênfases diferentes; Marcos e João não narram o nascimento dessa forma.",
+          "correct": false
+        }
+      ]
+    },
+    "connection": "O anúncio do nascimento conduz ao ministério de Jesus: palavras e gestos que convidam a seguir seu caminho."
+  },
+  {
+    "id": "jesus-e-seu-reino",
+    "number": 14,
+    "era": "Os Evangelhos",
+    "title": "Aprender aos pés de Jesus",
+    "subtitle": "Marcos e João · Sinais, encontros e ensino",
+    "books": [
+      "MRK",
+      "JHN"
+    ],
+    "objective": "Relacionar anúncio do Reino, acolhimento e discipulado sem reduzir os Evangelhos a frases isoladas.",
+    "context": "Marcos organiza uma narrativa concentrada na ação e no caminho da cruz; João desenvolve encontros e sinais ligados à identidade de Jesus. Esses livros dialogam com Mateus e Lucas, preservando suas particularidades.",
+    "passages": [
+      {
+        "book": "MRK",
+        "chapter": 1,
+        "verse": 14,
+        "label": "Marcos 1:14–20"
+      },
+      {
+        "book": "MRK",
+        "chapter": 10,
+        "verse": 45,
+        "label": "Marcos 10:35–45"
+      },
+      {
+        "book": "JHN",
+        "chapter": 4,
+        "verse": 7,
+        "label": "João 4:1–26"
+      }
+    ],
+    "teaching": [
+      {
+        "title": "Seguir envolve aprender",
+        "text": "O chamado dos discípulos inicia uma caminhada em que ainda há incompreensão. Ter perguntas não significa estar fora do caminho do aprendizado.",
+        "example": "Se uma passagem ainda não ficou clara, volte ao texto e compare suas perguntas com o que vem antes e depois."
+      },
+      {
+        "title": "Grandeza como serviço",
+        "text": "Jesus questiona a busca por posição e apresenta o serviço. Isso não autoriza explorar pessoas em nome da humildade; servir também exige cuidado com quem serve.",
+        "example": "Dividir tarefas e respeitar o descanso de voluntários expressa serviço de maneira mais coerente que elogiar seu esgotamento."
+      },
+      {
+        "title": "Encontros que atravessam barreiras",
+        "text": "A conversa com a mulher samaritana acontece em um contexto de diferenças religiosas e sociais. Jesus escuta e ensina sem tratar a pessoa como um número.",
+        "example": "Ao conversar sobre fé, pergunte o que a pessoa já conhece e escute sua história, sem pressionar uma resposta."
+      }
+    ],
+    "question": {
+      "prompt": "O que Marcos 10:45 relaciona à missão de Jesus?",
+      "options": [
+        {
+          "text": "Serviço e entrega, em contraste com a disputa por posição.",
+          "feedback": "Sim. O contexto é a discussão dos discípulos sobre honra e grandeza.",
+          "correct": true
+        },
+        {
+          "text": "Domínio sem responsabilidade sobre as outras pessoas.",
+          "feedback": "Jesus questiona esse modo de exercer poder e aponta para o serviço.",
+          "correct": false
+        },
+        {
+          "text": "A ideia de que perguntas impedem alguém de aprender.",
+          "feedback": "Os discípulos fazem perguntas e são ensinados durante a caminhada.",
+          "correct": false
+        }
+      ]
+    },
+    "connection": "As palavras e os encontros de Jesus conduzem à entrega que os quatro Evangelhos narram em sua paixão."
+  },
+  {
+    "id": "cruz-e-entrega",
+    "number": 15,
+    "era": "Páscoa",
+    "title": "A cruz e o amor que se entrega",
+    "subtitle": "Os quatro Evangelhos · Paixão de Jesus",
+    "books": [
+      "MAT",
+      "MRK",
+      "LUK",
+      "JHN"
+    ],
+    "objective": "Acompanhar a paixão com reverência, situando personagens e recusando acusações coletivas contra povos.",
+    "context": "A paixão acontece sob poder romano e envolve autoridades e personagens concretos do relato. Culpar coletivamente judeus de qualquer tempo contraria uma leitura responsável e alimenta antissemitismo. Jesus e seus primeiros discípulos eram judeus.",
+    "passages": [
+      {
+        "book": "MRK",
+        "chapter": 14,
+        "verse": 32,
+        "label": "Marcos 14:32–42"
+      },
+      {
+        "book": "LUK",
+        "chapter": 23,
+        "verse": 33,
+        "label": "Lucas 23:33–49"
+      },
+      {
+        "book": "JHN",
+        "chapter": 19,
+        "verse": 25,
+        "label": "João 19:25–30"
+      }
+    ],
+    "teaching": [
+      {
+        "title": "Há lugar para a angústia",
+        "text": "No Getsêmani, Jesus ora em profunda aflição. A presença da angústia no relato impede tratar toda tristeza como falta de fé.",
+        "example": "Acompanhar alguém em sofrimento pode incluir oração, escuta e ajuda profissional quando necessária."
+      },
+      {
+        "title": "Ler sem transformar povos em culpados",
+        "text": "Identifique as autoridades e ações descritas em cada Evangelho. O texto não autoriza hostilidade contra judeus ou qualquer grupo atual.",
+        "example": "Ao explicar a crucificação, diga que ela era uma execução romana e não atribua culpa a uma criança ou família por sua origem."
+      },
+      {
+        "title": "Permanecer perto de quem sofre",
+        "text": "As pessoas junto à cruz revelam diferentes formas de presença e fragilidade. A entrega de Jesus é central para a fé cristã; sua profundidade não precisa ser convertida em imagens chocantes.",
+        "example": "Em uma aula, é possível falar seriamente da cruz sem usar cenas gráficas para provocar medo."
+      }
+    ],
+    "question": {
+      "prompt": "Qual é uma leitura responsável da paixão?",
+      "options": [
+        {
+          "text": "Considerar seus personagens e contexto, sem culpar coletivamente o povo judeu.",
+          "feedback": "Sim. Jesus e seus discípulos eram judeus; culpa coletiva e hostilidade não são conclusões legítimas.",
+          "correct": true
+        },
+        {
+          "text": "Atribuir culpa a todas as pessoas judias de todas as épocas.",
+          "feedback": "Essa generalização é injusta, historicamente inadequada e alimenta antissemitismo.",
+          "correct": false
+        },
+        {
+          "text": "Tratar toda angústia como ausência de fé.",
+          "feedback": "A oração de Jesus no Getsêmani mostra a inadequação dessa conclusão.",
+          "correct": false
+        }
+      ]
+    },
+    "connection": "O luto dos discípulos não encerra os Evangelhos. O testemunho da ressurreição abre uma esperança e uma missão."
+  },
+  {
+    "id": "ressurreicao-e-missao",
+    "number": 16,
+    "era": "Páscoa",
+    "title": "Esperança que volta a caminhar",
+    "subtitle": "Os quatro Evangelhos · Ressurreição e envio",
+    "books": [
+      "MAT",
+      "MRK",
+      "LUK",
+      "JHN"
+    ],
+    "objective": "Conhecer o testemunho cristão da ressurreição e sua ligação com paz, missão e cuidado.",
+    "context": "Os relatos pascais apresentam testemunhas, surpresa, dúvidas e encontros. São textos centrais da fé cristã; compare suas ênfases com atenção, sem preencher todas as diferenças com detalhes inventados.",
+    "passages": [
+      {
+        "book": "LUK",
+        "chapter": 24,
+        "verse": 13,
+        "label": "Lucas 24:13–35"
+      },
+      {
+        "book": "JHN",
+        "chapter": 20,
+        "verse": 19,
+        "label": "João 20:19–29"
+      },
+      {
+        "book": "MAT",
+        "chapter": 28,
+        "verse": 18,
+        "label": "Mateus 28:16–20"
+      }
+    ],
+    "teaching": [
+      {
+        "title": "Jesus encontra pessoas em caminho",
+        "text": "No relato de Emaús, há escuta e explicação das Escrituras. A companhia faz parte da aprendizagem: o caminho não é apenas transmissão de respostas.",
+        "example": "Ao estudar com alguém desanimado, primeiro escute o que essa pessoa entendeu e o que a entristeceu."
+      },
+      {
+        "title": "A paz acolhe perguntas",
+        "text": "João apresenta discípulos com medo e Tomé com suas perguntas. A narrativa permite tratar a dúvida com seriedade, sem ridicularizar quem pergunta.",
+        "example": "Uma pergunta difícil sobre fé merece uma conversa honesta, inclusive quando ainda não temos uma resposta completa."
+      },
+      {
+        "title": "Ensinar a guardar",
+        "text": "O envio em Mateus envolve fazer discípulos, batizar e ensinar. A missão inclui formação e vida compartilhada, não somente obter uma decisão rápida.",
+        "example": "Depois de convidar alguém a um estudo, ofereça continuidade, espaço para perguntas e liberdade para decidir."
+      }
+    ],
+    "question": {
+      "prompt": "No envio de Mateus 28, ensinar está ligado a:",
+      "options": [
+        {
+          "text": "Uma caminhada de discipulado e prática do que Jesus ensinou.",
+          "feedback": "Correto. O texto fala de ensinar a guardar; há continuidade e vida, além de informação.",
+          "correct": true
+        },
+        {
+          "text": "Pressionar uma decisão sem permitir perguntas.",
+          "feedback": "O envio não justifica coerção; discipulado envolve ensino e acompanhamento.",
+          "correct": false
+        },
+        {
+          "text": "Dispensar todo estudo depois de uma primeira conversa.",
+          "feedback": "O próprio envio inclui ensinar; aprender continua fazendo parte do caminho.",
+          "correct": false
+        }
+      ]
+    },
+    "connection": "Atos continua a narrativa de Lucas, acompanhando o testemunho dos discípulos e a formação das primeiras comunidades."
+  },
+  {
+    "id": "pentecostes-e-comunidade",
+    "number": 17,
+    "era": "As primeiras comunidades",
+    "title": "Uma comunidade aprende a repartir",
+    "subtitle": "Atos 1–12 · Espírito, testemunho e cuidado",
+    "books": [
+      "ACT"
+    ],
+    "objective": "Ligar Pentecostes, testemunho e partilha, observando também conflitos reais da comunidade.",
+    "context": "Atos apresenta o testemunho de Jesus se expandindo desde Jerusalém. Seus resumos da vida comunitária convivem com relatos de tensões e decisões; a igreja nascente não é retratada como um grupo sem problemas.",
+    "passages": [
+      {
+        "book": "ACT",
+        "chapter": 2,
+        "verse": 1,
+        "label": "Atos 2:1–21"
+      },
+      {
+        "book": "ACT",
+        "chapter": 2,
+        "verse": 42,
+        "label": "Atos 2:42–47"
+      },
+      {
+        "book": "ACT",
+        "chapter": 6,
+        "verse": 1,
+        "label": "Atos 6:1–7"
+      }
+    ],
+    "teaching": [
+      {
+        "title": "O testemunho se torna compreensível",
+        "text": "Pentecostes apresenta pessoas de diferentes origens ouvindo as grandezas de Deus em suas línguas. Comunicar exige atenção a quem escuta.",
+        "example": "Explicar uma palavra religiosa pode ser um gesto de acolhimento para quem entra em um estudo pela primeira vez."
+      },
+      {
+        "title": "Aprender e repartir",
+        "text": "O ensino dos apóstolos é acompanhado de convivência, oração e cuidado material. Conhecimento e atenção às necessidades caminham juntos.",
+        "example": "Um grupo pode estudar um texto sobre partilha e também organizar apoio respeitoso a quem está com fome."
+      },
+      {
+        "title": "Conflitos podem exigir nova organização",
+        "text": "Atos 6 registra que algumas viúvas estavam sendo negligenciadas. A resposta inclui reconhecer o problema e reorganizar responsabilidades.",
+        "example": "Se um grupo de visitantes sempre fica sem atendimento, boa intenção não basta: é preciso corrigir o processo."
+      }
+    ],
+    "question": {
+      "prompt": "O que a comunidade faz diante da queixa em Atos 6?",
+      "options": [
+        {
+          "text": "Reconhece a necessidade e organiza responsabilidades para atendê-la.",
+          "feedback": "Sim. O relato não esconde o problema nem reduz a solução a culpar quem reclamou.",
+          "correct": true
+        },
+        {
+          "text": "Declara que apontar uma falha sempre é falta de fé.",
+          "feedback": "A queixa recebe atenção e leva a uma reorganização concreta.",
+          "correct": false
+        },
+        {
+          "text": "Abandona definitivamente o ensino para cuidar apenas de tarefas.",
+          "feedback": "O texto busca uma organização que permita atender necessidades diferentes.",
+          "correct": false
+        }
+      ]
+    },
+    "connection": "A comunidade atravessará fronteiras geográficas e culturais. O restante de Atos acompanha viagens, encontros e debates sobre acolhimento."
+  },
+  {
+    "id": "viagens-e-encontros",
+    "number": 18,
+    "era": "A expansão do testemunho",
+    "title": "A Palavra encontra novas cidades",
+    "subtitle": "Atos 13–28 · Viagens, diálogo e discernimento",
+    "books": [
+      "ACT"
+    ],
+    "objective": "Ler a expansão missionária com atenção às pessoas, cidades e decisões comunitárias.",
+    "context": "As viagens de Paulo pertencem a redes de cidades do Mediterrâneo sob domínio romano. Atos seleciona episódios de pregação, trabalho, conflito e cooperação; não é um diário completo de toda a missão cristã antiga.",
+    "passages": [
+      {
+        "book": "ACT",
+        "chapter": 15,
+        "verse": 6,
+        "label": "Atos 15:6–21"
+      },
+      {
+        "book": "ACT",
+        "chapter": 17,
+        "verse": 11,
+        "label": "Atos 17:10–12"
+      },
+      {
+        "book": "ACT",
+        "chapter": 18,
+        "verse": 24,
+        "label": "Atos 18:24–28"
+      }
+    ],
+    "teaching": [
+      {
+        "title": "Discernir em comunidade",
+        "text": "Atos 15 apresenta um debate sobre a entrada de gentios. As diferenças são ouvidas e discutidas em relação ao testemunho e às Escrituras.",
+        "example": "Quando há uma divergência de prática, primeiro identifique a pergunta real e escute os argumentos, em vez de presumir má intenção."
+      },
+      {
+        "title": "Conferir com a Bíblia aberta",
+        "text": "Os bereanos examinam as Escrituras ao receber a mensagem. Rever uma explicação não é desrespeito ao professor; faz parte do aprendizado.",
+        "example": "Depois de uma aula, localize a passagem citada e leia também o parágrafo anterior e o seguinte."
+      },
+      {
+        "title": "Ensinar com humildade",
+        "text": "Priscila e Áquila acolhem Apolo e lhe explicam o caminho com mais precisão. A correção aparece como cuidado e cooperação.",
+        "example": "Se alguém confundir dois personagens bíblicos, mostre os textos com gentileza e permita que a pessoa compare."
+      }
+    ],
+    "question": {
+      "prompt": "O exemplo dos bereanos convida o aluno a:",
+      "options": [
+        {
+          "text": "Examinar as passagens e conferir o que foi ensinado.",
+          "feedback": "Sim. Atos 17:11 valoriza essa atenção ao texto.",
+          "correct": true
+        },
+        {
+          "text": "Aceitar toda explicação sem consultar o contexto.",
+          "feedback": "A narrativa elogia justamente o exame das Escrituras.",
+          "correct": false
+        },
+        {
+          "text": "Ridicularizar quem ainda está aprendendo.",
+          "feedback": "Conferir e aprender não exigem humilhar alguém; Atos 18 mostra uma correção acolhedora.",
+          "correct": false
+        }
+      ]
+    },
+    "connection": "As cartas se ligam a comunidades como essas. Romanos e Gálatas ajudam a compreender graça, fé e acolhimento."
+  },
+  {
+    "id": "graca-e-fe",
+    "number": 19,
+    "era": "As cartas",
+    "title": "Graça que abre espaço para uma vida nova",
+    "subtitle": "Romanos e Gálatas",
+    "books": [
+      "ROM",
+      "GAL"
+    ],
+    "objective": "Relacionar graça, fé e vida no Espírito, lendo argumentos completos das cartas.",
+    "context": "Romanos e Gálatas respondem a questões de suas comunidades, incluindo a relação entre judeus e gentios e o lugar da lei. Tradições cristãs interpretam alguns aspectos de modo distinto; acompanhe o argumento antes de comparar conclusões confessionais.",
+    "passages": [
+      {
+        "book": "ROM",
+        "chapter": 5,
+        "verse": 1,
+        "label": "Romanos 5:1–11"
+      },
+      {
+        "book": "ROM",
+        "chapter": 12,
+        "verse": 1,
+        "label": "Romanos 12:1–18"
+      },
+      {
+        "book": "GAL",
+        "chapter": 5,
+        "verse": 22,
+        "label": "Gálatas 5:13–26"
+      }
+    ],
+    "teaching": [
+      {
+        "title": "Receber antes de se exibir",
+        "text": "A graça questiona a ideia de construir superioridade diante de Deus por prestígio. Isso não elimina a responsabilidade; muda o fundamento de uma vida agradecida.",
+        "example": "Uma boa ação não precisa virar propaganda sobre a bondade de quem a fez."
+      },
+      {
+        "title": "A fé alcança a convivência",
+        "text": "Romanos 12 desdobra a reflexão em serviço, hospitalidade e paz. O argumento teológico chega a atitudes concretas.",
+        "example": "Ao discordar de alguém, é possível manter clareza sem abandonar o respeito ou desejar sua humilhação."
+      },
+      {
+        "title": "Fruto amadurece na vida",
+        "text": "Gálatas apresenta o fruto do Espírito em contraste com práticas que ferem a comunidade. O texto não é um instrumento para medir a fé alheia por uma pontuação.",
+        "example": "Paciência pode aparecer quando você escuta novamente uma pergunta que já respondeu, sem tratar o aluno como incômodo."
+      }
+    ],
+    "question": {
+      "prompt": "Em Romanos 12, a reflexão sobre a fé se desdobra em:",
+      "options": [
+        {
+          "text": "Serviço, cuidado e responsabilidade nas relações.",
+          "feedback": "Sim. A carta conecta reflexão e vida cotidiana; leia especialmente Romanos 12:9–18.",
+          "correct": true
+        },
+        {
+          "text": "Superioridade que permite desprezar outras pessoas.",
+          "feedback": "O trecho fala de humildade, hospitalidade e paz, não de desprezo.",
+          "correct": false
+        },
+        {
+          "text": "Uma nota capaz de medir a fé de cada pessoa.",
+          "feedback": "O texto não oferece uma escala de pontuação espiritual.",
+          "correct": false
+        }
+      ]
+    },
+    "connection": "A graça é vivida em comunidades reais. As próximas cartas abordam unidade, conflitos, serviço e a centralidade de Cristo."
+  },
+  {
+    "id": "corpo-e-comunhao",
+    "number": 20,
+    "era": "As cartas",
+    "title": "Muitos dons, um cuidado compartilhado",
+    "subtitle": "Coríntios, Efésios, Filipenses e Colossenses",
+    "books": [
+      "1CO",
+      "2CO",
+      "EPH",
+      "PHP",
+      "COL"
+    ],
+    "objective": "Compreender diversidade de dons, unidade e cuidado sem uniformizar todas as comunidades.",
+    "context": "Essas cartas tratam de contextos e destinatários distintos. Em Corinto há divisões e desigualdades; Filipenses inclui gratidão e cooperação; Efésios e Colossenses desenvolvem a vida comunitária em relação a Cristo.",
+    "passages": [
+      {
+        "book": "1CO",
+        "chapter": 12,
+        "verse": 22,
+        "label": "1 Coríntios 12:12–27"
+      },
+      {
+        "book": "PHP",
+        "chapter": 2,
+        "verse": 3,
+        "label": "Filipenses 2:1–11"
+      },
+      {
+        "book": "COL",
+        "chapter": 3,
+        "verse": 12,
+        "label": "Colossenses 3:12–17"
+      }
+    ],
+    "teaching": [
+      {
+        "title": "Quem parece frágil importa",
+        "text": "A imagem do corpo ressalta a necessidade de membros que parecem mais fracos. A comunidade não deve valorizar apenas quem ocupa o palco.",
+        "example": "Quem prepara uma sala ou acompanha alguém com dificuldade de mobilidade participa de modo real, mesmo sem visibilidade."
+      },
+      {
+        "title": "Amor dá sentido aos dons",
+        "text": "O capítulo 13 de 1 Coríntios pertence à discussão sobre vida e dons comunitários. Conhecimento sem amor pode se tornar instrumento de exibição.",
+        "example": "Saber uma resposta não autoriza interromper e constranger quem está tentando formulá-la."
+      },
+      {
+        "title": "Unidade inclui responsabilidade",
+        "text": "Humildade e compaixão não significam aceitar abuso. Procure formas de convivência em que todos possam ser ouvidos e danos sejam enfrentados.",
+        "example": "Em uma equipe, dividir a fala e criar um canal seguro para relatar problemas favorece comunhão mais concreta."
+      }
+    ],
+    "question": {
+      "prompt": "A imagem do corpo em 1 Coríntios 12 ensina que:",
+      "options": [
+        {
+          "text": "As pessoas com menos visibilidade também são necessárias e merecem cuidado.",
+          "feedback": "Exato. O texto questiona a hierarquia de valor entre os membros.",
+          "correct": true
+        },
+        {
+          "text": "Só quem ensina em público tem importância.",
+          "feedback": "O corpo depende de membros diferentes; visibilidade não define dignidade.",
+          "correct": false
+        },
+        {
+          "text": "Todos precisam exercer exatamente a mesma tarefa.",
+          "feedback": "A imagem combina unidade e diversidade de funções.",
+          "correct": false
+        }
+      ]
+    },
+    "connection": "Viver em comunidade também envolve espera e esperança. Tessalonicenses e Hebreus ajudam a perseverar sem previsões apressadas."
+  },
+  {
+    "id": "esperanca-e-perseveranca",
+    "number": 21,
+    "era": "As cartas",
+    "title": "Esperar sem abandonar o presente",
+    "subtitle": "Tessalonicenses e Hebreus",
+    "books": [
+      "1TH",
+      "2TH",
+      "HEB"
+    ],
+    "objective": "Acolher esperança e perseverança sem transformar textos sobre o futuro em cálculos de datas.",
+    "context": "As cartas aos tessalonicenses respondem a inquietações de uma comunidade sobre morte e esperança. Hebreus encoraja perseverança por meio de uma apresentação de Cristo em relação às Escrituras de Israel; seu autor não é identificado no texto.",
+    "passages": [
+      {
+        "book": "1TH",
+        "chapter": 4,
+        "verse": 13,
+        "label": "1 Tessalonicenses 4:13–18"
+      },
+      {
+        "book": "1TH",
+        "chapter": 5,
+        "verse": 11,
+        "label": "1 Tessalonicenses 5:1–11"
+      },
+      {
+        "book": "HEB",
+        "chapter": 12,
+        "verse": 1,
+        "label": "Hebreus 12:1–3"
+      }
+    ],
+    "teaching": [
+      {
+        "title": "Consolar quem está de luto",
+        "text": "A esperança cristã não exige fingir que uma perda não dói. Paulo escreve para consolar, não para transformar o luto em uma competição de força.",
+        "example": "Estar ao lado de uma pessoa enlutada pode envolver silêncio, ajuda prática e o respeito ao seu tempo."
+      },
+      {
+        "title": "Vigilância com sobriedade",
+        "text": "Os textos chamam a uma vida atenta e solidária. Eles não dão ao leitor autorização para anunciar uma data exata do fim.",
+        "example": "Antes de compartilhar uma previsão alarmante, confira se a passagem realmente afirma o que o anúncio diz."
+      },
+      {
+        "title": "Perseverar em companhia",
+        "text": "Hebreus usa imagens de caminhada e corrida para encorajar constância. Perseverança não é isolamento: a carta também destaca encorajamento mútuo.",
+        "example": "Voltar a estudar uma passagem difícil com outra pessoa pode ser mais fecundo que desistir por vergonha de perguntar."
+      }
+    ],
+    "question": {
+      "prompt": "Qual é um cuidado ao estudar a esperança futura?",
+      "options": [
+        {
+          "text": "Ler para consolar e perseverar, sem inventar datas que o texto não oferece.",
+          "feedback": "Sim. Sobriedade, encorajamento e esperança pertencem ao contexto dessas cartas.",
+          "correct": true
+        },
+        {
+          "text": "Marcar uma data exata sempre que surgir uma crise mundial.",
+          "feedback": "Crises não autorizam acrescentar uma data ao texto.",
+          "correct": false
+        },
+        {
+          "text": "Exigir que quem está de luto pare imediatamente de sentir tristeza.",
+          "feedback": "O consolo cristão pode acolher a tristeza; não precisa negá-la.",
+          "correct": false
+        }
+      ]
+    },
+    "connection": "A esperança se traduz em vida responsável. As cartas a colaboradores tratam do ensino, do cuidado comunitário e das relações pessoais."
+  },
+  {
+    "id": "ensino-e-responsabilidade",
+    "number": 22,
+    "era": "As cartas",
+    "title": "Cuidar de quem aprende e de quem serve",
+    "subtitle": "Timóteo, Tito e Filemom",
+    "books": [
+      "1TI",
+      "2TI",
+      "TIT",
+      "PHM"
+    ],
+    "objective": "Observar responsabilidade no ensino e situar orientações antigas sem justificar exploração atual.",
+    "context": "As cartas a Timóteo e Tito apresentam orientações a colaboradores e comunidades. Filemom é uma carta pessoal ligada à situação de Onésimo em um mundo escravista; descrever esse contexto não justifica a escravidão.",
+    "passages": [
+      {
+        "book": "1TI",
+        "chapter": 4,
+        "verse": 12,
+        "label": "1 Timóteo 4:12–16"
+      },
+      {
+        "book": "2TI",
+        "chapter": 2,
+        "verse": 24,
+        "label": "2 Timóteo 2:22–26"
+      },
+      {
+        "book": "PHM",
+        "chapter": 1,
+        "verse": 16,
+        "label": "Filemom 1:8–21"
+      }
+    ],
+    "teaching": [
+      {
+        "title": "Exemplo antes da posição",
+        "text": "O ensino é relacionado à conduta e ao cuidado. A autoridade pedagógica cresce com coerência e responsabilidade, não com intimidação.",
+        "example": "Um professor que reconhece e corrige um erro mostra ao aluno como continuar aprendendo."
+      },
+      {
+        "title": "Gentileza ao corrigir",
+        "text": "A orientação para ensinar com paciência questiona disputas que apenas humilham. Ser gentil não exige abandonar a precisão.",
+        "example": "Se alguém cita uma frase que não está na Bíblia, ajude a procurar sua origem em vez de expor a pessoa ao ridículo."
+      },
+      {
+        "title": "Relações precisam ser transformadas",
+        "text": "Filemom convida a receber Onésimo como irmão. A leitura atual deve reconhecer também a violência da escravidão, sem usar a carta para legitimar sua continuidade.",
+        "example": "Conhecer um contexto antigo ajuda a compreender o texto; não torna aceitável explorar uma pessoa hoje."
+      }
+    ],
+    "question": {
+      "prompt": "Ao corrigir um erro de compreensão, o ensino dessas cartas favorece:",
+      "options": [
+        {
+          "text": "Paciência, precisão e respeito pela pessoa que aprende.",
+          "feedback": "Correto. Gentileza e clareza podem caminhar juntas.",
+          "correct": true
+        },
+        {
+          "text": "Intimidação para que ninguém volte a perguntar.",
+          "feedback": "Esse método bloqueia a aprendizagem e contraria a orientação de ensinar com paciência.",
+          "correct": false
+        },
+        {
+          "text": "Preservar o erro apenas para evitar qualquer conversa.",
+          "feedback": "Respeito não exige abandonar a verdade; permite corrigi-la de forma cuidadosa.",
+          "correct": false
+        }
+      ]
+    },
+    "connection": "Outras cartas insistem na coerência entre palavra e vida: fé, hospitalidade, justiça e amor vivido."
+  },
+  {
+    "id": "fe-que-cuida",
+    "number": 23,
+    "era": "As cartas",
+    "title": "O amor ganha forma na vida",
+    "subtitle": "Tiago, Pedro, João e Judas",
+    "books": [
+      "JAS",
+      "1PE",
+      "2PE",
+      "1JN",
+      "2JN",
+      "3JN",
+      "JUD"
+    ],
+    "objective": "Relacionar fé e prática, discernimento e amor sem colocar as cartas em oposição simplista.",
+    "context": "As chamadas cartas gerais pertencem a contextos distintos e usam imagens e argumentos próprios. Tiago denuncia favoritismo e exploração; João insiste no amor; Pedro trata de esperança e vida em contextos difíceis; Judas alerta para práticas destrutivas.",
+    "passages": [
+      {
+        "book": "JAS",
+        "chapter": 2,
+        "verse": 15,
+        "label": "Tiago 2:14–18"
+      },
+      {
+        "book": "1PE",
+        "chapter": 3,
+        "verse": 15,
+        "label": "1 Pedro 3:13–17"
+      },
+      {
+        "book": "1JN",
+        "chapter": 3,
+        "verse": 17,
+        "label": "1 João 3:16–18"
+      }
+    ],
+    "teaching": [
+      {
+        "title": "Palavras precisam de cuidado concreto",
+        "text": "Tiago pergunta pelo sentido de desejar bem a alguém sem ajudar em sua necessidade. A fé não é reduzida a um discurso desconectado da vida.",
+        "example": "Se alguém não tem o que comer, uma conversa respeitosa pode ser acompanhada de alimento e apoio concreto."
+      },
+      {
+        "title": "Explicar com mansidão",
+        "text": "Primeira Pedro relaciona defesa da esperança com mansidão e respeito. Uma conversa sobre fé não precisa se tornar uma disputa para vencer o outro.",
+        "example": "Pergunte se a pessoa deseja conversar antes de iniciar uma explicação religiosa em um momento de vulnerabilidade."
+      },
+      {
+        "title": "Amar com ações",
+        "text": "Primeira João aproxima amor e partilha. Isso não cria uma nota para medir a fé, mas convida a examinar a coerência de nossas escolhas.",
+        "example": "Uma comunidade pode revisar suas prioridades para que o cuidado com pessoas não fique sempre em último lugar."
+      }
+    ],
+    "question": {
+      "prompt": "Tiago 2 e 1 João 3 convidam a:",
+      "options": [
+        {
+          "text": "Unir palavras de fé a ações concretas de cuidado.",
+          "feedback": "Sim. Os dois textos perguntam pela coerência entre o que dizemos e como tratamos pessoas necessitadas.",
+          "correct": true
+        },
+        {
+          "text": "Usar uma pontuação para classificar a fé das pessoas.",
+          "feedback": "Essas passagens não oferecem um sistema de nota espiritual; convidam à responsabilidade.",
+          "correct": false
+        },
+        {
+          "text": "Substituir toda ajuda por uma frase de despedida.",
+          "feedback": "Tiago questiona justamente desejar bem sem considerar uma necessidade concreta.",
+          "correct": false
+        }
+      ]
+    },
+    "connection": "O último livro da edição reúne visão, perseverança e esperança. Apocalipse pede leitura de seus símbolos com contexto e reverência."
+  },
+  {
+    "id": "nova-criacao",
+    "number": 24,
+    "era": "A esperança cristã",
+    "title": "Eis que faço novas todas as coisas",
+    "subtitle": "Apocalipse · Perseverança e nova criação",
+    "books": [
+      "REV"
+    ],
+    "objective": "Ler Apocalipse como revelação dirigida a comunidades reais, reconhecendo símbolos e a esperança de restauração.",
+    "context": "Apocalipse se apresenta como revelação, profecia e carta a sete igrejas da Ásia. Suas imagens dialogam amplamente com o Antigo Testamento. Tradições cristãs divergem em sua interpretação; o aplicativo não apresenta um único esquema do futuro como consenso.",
+    "passages": [
+      {
+        "book": "REV",
+        "chapter": 1,
+        "verse": 9,
+        "label": "Apocalipse 1:9–20"
+      },
+      {
+        "book": "REV",
+        "chapter": 21,
+        "verse": 1,
+        "label": "Apocalipse 21:1–7"
+      },
+      {
+        "book": "REV",
+        "chapter": 22,
+        "verse": 1,
+        "label": "Apocalipse 22:1–5"
+      }
+    ],
+    "teaching": [
+      {
+        "title": "Uma carta para comunidades reais",
+        "text": "As sete igrejas recebem mensagens específicas. Antes de aplicar uma imagem ao presente, considere o que ela comunica a seus primeiros destinatários.",
+        "example": "Leia a mensagem a uma igreja inteira e identifique primeiro o elogio, a advertência e a promessa."
+      },
+      {
+        "title": "Símbolos têm raízes",
+        "text": "Cordeiro, Babilônia, números e imagens de criação participam de uma linguagem bíblica. Interpretar exige comparar contextos, não associar qualquer notícia a um símbolo.",
+        "example": "Ao encontrar a árvore da vida em Apocalipse 22, volte também a Gênesis 2–3 para perceber a conexão literária."
+      },
+      {
+        "title": "Esperança que orienta o cuidado",
+        "text": "A visão de um mundo sem morte e dor sustenta a esperança cristã. Ela não convida à indiferença diante do sofrimento presente.",
+        "example": "Aguardar restauração pode alimentar hoje o compromisso com consolo, justiça e proteção da vida."
+      }
+    ],
+    "question": {
+      "prompt": "Qual conexão une o começo e o fim deste percurso?",
+      "options": [
+        {
+          "text": "A criação e a árvore da vida reaparecem na esperança de nova criação.",
+          "feedback": "Sim. Gênesis 2–3 e Apocalipse 21–22 formam uma conexão importante no conjunto da leitura cristã.",
+          "correct": true
+        },
+        {
+          "text": "A certeza de uma data atual exata para o fim.",
+          "feedback": "O percurso não fornece essa data; o texto pede interpretação responsável de seus símbolos.",
+          "correct": false
+        },
+        {
+          "text": "A ideia de que cuidar do próximo deixou de importar.",
+          "feedback": "A esperança de restauração pode fortalecer, e não cancelar, o cuidado no presente.",
+          "correct": false
+        }
+      ]
+    },
+    "connection": "A leitura bíblica continua. Agora você pode investigar como comunidades cristãs transmitiram, interpretaram e viveram essa fé ao longo da história, inclusive no Brasil."
+  }
+]

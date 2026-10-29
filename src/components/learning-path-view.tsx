@@ -3,6 +3,7 @@ import { AppShell } from "@/components/app-shell";
 import type { ReactNode } from "react";
 import type { LearningPath } from "@/lib/learning-path";
 import "./learning-path.css";
+import { JourneyMap } from "./journey-map";
 
 function PathBook() {
   return <svg aria-hidden="true" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M16 9c-4-3-8-3-12-1v18c4-2 8-2 12 1 4-3 8-3 12-1V8c-4-2-8-2-12 1Zm0 0v18M16 2v4M9 3l2 3m12-3-2 3" /></svg>;
@@ -15,11 +16,13 @@ function PathArrow() {
 export function LearningPathView({
   path,
   saved = false,
-  children
+  children,
+  currentStageId
 }: {
   path: LearningPath;
   saved?: boolean;
   children?: ReactNode;
+  currentStageId?: string;
 }) {
   return (
     <AppShell active="profile" title={saved ? "Meu percurso" : "Conhecer meu percurso"} subtitle="Um caminho que respeita a sua história"><div className={`learning-path-page lp-${path.experience}`}>
@@ -40,7 +43,11 @@ export function LearningPathView({
           </aside>
         </section>
 
-        {path.experience === "adult" && <aside className="lp-focus" aria-labelledby="lp-first-lesson-title"><div className="lp-focus-icon" aria-hidden="true">✧</div><div><h2 id="lp-first-lesson-title">Um primeiro estudo para experimentar.</h2><p>Pratique como localizar e conferir uma passagem. Esta aula introdutória é um piloto com revisão humana especializada pendente; as trilhas completas abaixo continuam em preparação.</p><Link className="lp-primary-link" href="/aprender/primeiros-passos">Abrir a aula piloto <PathArrow /></Link></div></aside>}
+        {path.experience === "adult" && <JourneyMap currentStageId={currentStageId} />}
+
+        {path.experience === "adult" && <div className="lp-connected-resources" aria-label="Outras companhias para o percurso"><Link href="/biblioteca">Conhecer os livros <PathArrow /></Link><Link href="/historias">Acompanhar as histórias <PathArrow /></Link><Link href="/aprender">Praticar a leitura <PathArrow /></Link></div>}
+
+        <details className="lp-path-notes" open={path.experience !== "adult" ? true : undefined}><summary>Como este caminho foi pensado para você</summary>
 
         <section className="lp-overview" aria-label="Como este roteiro foi organizado">
           <article>
@@ -68,7 +75,7 @@ export function LearningPathView({
             <div><p className="lp-small-label">UMA PROPOSTA PARA OS PRÓXIMOS PASSOS</p><h2 id="lp-topics-title">Temas do seu roteiro.</h2></div>
             <span className="lp-preparation-badge">Aulas em preparação</span>
           </div>
-          <p className="lp-planning-note">Estes temas organizam o caminho de estudo. As aulas ainda serão preparadas e revisadas; os cartões abaixo apresentam o planejamento.</p>
+          <p className="lp-planning-note">{path.experience === "adult" ? "O mapa acima já oferece um panorama para estudar. Estes temas organizam aprofundamentos futuros e a personalização por objetivo e tradição." : "Estes temas organizam o roteiro. As aulas específicas para esta faixa etária ainda serão preparadas e revisadas; os cartões apresentam o planejamento."}</p>
           <ol className="lp-topic-list">
             {path.topics.map((topic, index) => (
               <li key={topic.id}>
@@ -89,6 +96,8 @@ export function LearningPathView({
           <p>{saved ? path.privacyNote : "Você está explorando um roteiro público. Nenhuma escolha de igreja, batismo ou objetivo é salva por esta página."}</p>
           <Link className="lp-primary-link" href="/comecar">{saved ? "Rever minhas escolhas" : "Voltar à conversa inicial"}<PathArrow /></Link>
         </section>
+
+        </details>
 
         {children ? <section className="lp-account-actions" aria-label="Gerenciar seu percurso">{children}</section> : null}
       </div>

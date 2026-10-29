@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useRef, useState, type CSSProperties } from "react";
+import { useRef, useState, type CSSProperties, type ReactNode } from "react";
 import { AppShell } from "@/components/app-shell";
 import { ScriptureBook } from "@/components/bible/scripture-book";
 import "./bible-reader.css";
@@ -44,14 +44,15 @@ function ReaderIcon({ kind }: { kind: "book" | "info" | "copy" | "arrow-left" | 
   </svg>;
 }
 
-export function BibleReader({ books, chapter, highlightedVerse }: {
+export function BibleReader({ books, chapter, highlightedVerse, searchPanel }: {
   books: readonly Book[];
   chapter: ReaderChapter;
   highlightedVerse?: number;
+  searchPanel?: ReactNode;
 }) {
   const [selectedBook, setSelectedBook] = useState(chapter.book.id);
   const [selectedChapter, setSelectedChapter] = useState(chapter.chapter);
-  const [fontSize, setFontSize] = useState(21);
+  const [fontSize, setFontSize] = useState(24);
   const [readingMode, setReadingMode] = useState<"verses" | "continuous">("verses");
   const [copyMessage, setCopyMessage] = useState("");
   const sourceDialog = useRef<HTMLDialogElement>(null);
@@ -104,6 +105,8 @@ export function BibleReader({ books, chapter, highlightedVerse }: {
         <div className="br-tactile-scene" aria-hidden="true"><div className="br-tactile-book"><span className="br-tactile-pages" /><span className="br-tactile-spine" /><div className="br-tactile-cover"><div className="br-tactile-frame"><span className="br-tactile-symbol">✦</span><strong>BÍBLIA</strong><span>SAGRADA</span><small>PALAVRA · VIDA · ESPERANÇA</small></div></div><span className="br-tactile-ribbon" /></div><span className="br-tactile-caption">Abra. Escute. Permaneça.</span></div>
       </section>
 
+      {searchPanel}
+
       <section className="br-toolbar" aria-label="Encontre uma passagem">
         <form action="/biblia" method="get" className="br-location-form">
           <div className="br-field br-book-field">
@@ -145,7 +148,7 @@ export function BibleReader({ books, chapter, highlightedVerse }: {
             <div className="br-size-tools" role="group" aria-label="Tamanho do texto bíblico">
               <button type="button" aria-label="Diminuir tamanho do texto" disabled={fontSize <= 18} onClick={() => setFontSize((size) => Math.max(18, size - 2))}>A−</button>
               <span aria-live="polite">{fontSize} px</span>
-              <button type="button" aria-label="Aumentar tamanho do texto" disabled={fontSize >= 29} onClick={() => setFontSize((size) => Math.min(29, size + 2))}>A+</button>
+              <button type="button" aria-label="Aumentar tamanho do texto" disabled={fontSize >= 36} onClick={() => setFontSize((size) => Math.min(36, size + 2))}>A+</button>
             </div>
           </div>
           {copyMessage && <p className="br-copy-message" role="status">{copyMessage}</p>}

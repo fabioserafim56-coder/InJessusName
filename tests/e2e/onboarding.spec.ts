@@ -43,6 +43,12 @@ async function fillAdultInterview(page: Page, perspective: "ccb" | "catholic") {
   await expect(page).toHaveURL((url) => url.pathname === "/meu-percurso" && url.search === "");
 }
 
+async function openPathNotes(page: Page) {
+  const notes = page.locator("details.lp-path-notes");
+  if (await notes.getAttribute("open") === null) await notes.locator(":scope > summary").click();
+  await expect(notes).toHaveAttribute("open", "");
+}
+
 async function signUpViaApi(request: APIRequestContext, account: SyntheticAccount, origin: string) {
   const response = await request.post("/api/auth", {
     headers: { Origin: origin },
@@ -102,6 +108,7 @@ test("adulto cria conta, salva, revisa e revoga seu percurso com persistência r
 
   await fillAdultInterview(page, "ccb");
   await expect(page.getByRole("heading", { level: 1 })).toHaveText("Conhecer para servir com cuidado.");
+  await openPathNotes(page);
   await expect(page.getByRole("heading", { name: "Perspectiva CCB", exact: true })).toBeVisible();
   await expect(page.getByRole("heading", { name: "Guia de Zelo Doutrinário, Bom Testemunho e Conhecimento dos Santos Serviços", exact: true })).toBeVisible();
   let response = await page.request.get("/api/onboarding");
@@ -110,9 +117,11 @@ test("adulto cria conta, salva, revisa e revoga seu percurso com persistência r
   expect(await response.json()).toEqual({ profile: adultProfile });
 
   await page.reload();
+  await openPathNotes(page);
   await expect(page.getByRole("heading", { name: "Perspectiva CCB", exact: true })).toBeVisible();
   await page.getByRole("link", { name: "Rever minhas escolhas", exact: true }).first().click();
   await fillAdultInterview(page, "catholic");
+  await openPathNotes(page);
   await expect(page.getByRole("heading", { name: "Perspectiva católica", exact: true })).toBeVisible();
   response = await page.request.get("/api/onboarding");
   expect(await response.json()).toEqual({

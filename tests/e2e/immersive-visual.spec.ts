@@ -216,8 +216,10 @@ test("capítulo longo mantém todo o texto e a leitura simples com movimento red
   await page.goto("/biblia?livro=PSA&capitulo=119&versiculo=176");
   const expected = await originalVerses(page);
   expect(expected).toHaveLength(176);
+  const previousTextSize = await page.locator("#versiculo-176 > span").evaluate((element) => parseFloat(getComputedStyle(element).fontSize));
   for (let index = 0; index < 4; index++) await page.getByRole("button", { name: "Aumentar tamanho do texto", exact: true }).click();
-  await expect(page.getByRole("group", { name: "Tamanho do texto bíblico", exact: true })).toContainText("29 px");
+  await expect.poll(() => page.locator("#versiculo-176 > span").evaluate((element) => parseFloat(getComputedStyle(element).fontSize))).toBe(previousTextSize + 8);
+  await expect(page.getByRole("group", { name: "Tamanho do texto bíblico", exact: true })).toContainText(`${previousTextSize + 8} px`);
   const { dialog, host } = await openBook(page);
   await expectCompleteChapter(host, expected);
   await expectPaperFits(host);

@@ -64,6 +64,19 @@
 .app-topbar-title { font-size: 17px; line-height: 1.5; font-weight: 650; letter-spacing: -.25px; color: #20382d; }
 .app-topbar-subtitle { color: #657164; font-size: 12px; line-height: 1.6; margin-top: 3px; }
 .app-topbar-actions { display: flex; align-items: center; gap: 15px; }
+.app-global-search{display:grid;place-items:center;min-width:42px;min-height:44px;border:1px solid #d6d6c5;border-radius:50%;color:#3e5940;background:#fffdf5}
+.app-global-search:hover{background:#ebeede}
+.app-more-menu{position:relative;min-width:0}
+.app-more-menu summary{list-style:none;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;min-height:59px;font-size:11px;color:#e8dbbc;cursor:pointer}
+.app-more-menu summary::-webkit-details-marker{display:none}
+.app-more-menu summary:focus-visible{outline:3px solid #f2d49a;outline-offset:2px;border-radius:10px}
+.app-more-menu[open] summary{background:#d8ba7424;border-radius:14px}
+.app-more-menu:has(a[aria-current])>summary{color:#f0dba7;font-weight:650}
+.app-more-panel{position:absolute;bottom:calc(100% + 15px);right:0;width:min(300px,calc(100vw - 30px));padding:14px;border:1px solid #8e865d;background:#15362d;border-radius:18px;box-shadow:0 14px 50px #08291e55}
+.app-more-panel>p{padding:8px 10px;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:#d9bf87}
+.app-more-panel>a{display:flex;align-items:center;gap:13px;padding:14px 10px;min-height:49px;color:#fff8e9;font-size:15px;border-radius:9px}
+.app-more-panel>a:hover,.app-more-panel>a[aria-current]{background:#ffffff12}
+.app-more-panel svg{width:23px;height:23px}
 .app-topbar-bible { display: flex; align-items: center; gap: 9px; min-height: 42px; padding: 9px 15px; font-size: 12px; font-weight: 550; color: #304c37; border: 1px solid #d6d6c5; border-radius: 10px; background: #fffdf5; box-shadow: 0 2px 5px #50452b04; transition: background .18s, border-color .18s; }
 .app-topbar-bible:hover { background: #f1eddf; border-color: #baa577; }
 .app-topbar-bible svg { width: 19px; height: 19px; color: #8e743f; }
@@ -112,3 +125,4 @@
   .app-primary-button, .app-secondary-button { font-size: 14px; min-height: 48px; padding: 12px 17px; }
 }
 @media (prefers-reduced-motion: reduce) { .app-shell * { scroll-behavior: auto !important; transition: none !important; } }
+@media(max-width:380px){.app-topbar{padding-inline:14px;gap:8px}.app-topbar-actions{gap:6px}.app-global-search{min-width:36px;min-height:39px}.app-global-search svg{width:19px;height:19px}.app-topbar-subtitle{font-size:10px}.app-topbar-title{font-size:13px}.app-content{padding-inline:14px}}

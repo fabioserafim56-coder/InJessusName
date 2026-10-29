@@ -36,7 +36,9 @@ test("museu apresenta fotografias reais que carregam e permite encontrar uma pe�
   expect(response?.status()).toBe(200);
   await expect(page.getByRole("heading", { level: 1 })).toHaveText("Museu da história bíblica", { useInnerText: true });
   const navigation = page.getByRole("navigation", { name: isMobile ? "Navegação no celular" : "Navegação principal", exact: true });
+  if (isMobile) await navigation.getByLabel("Mais áreas do aplicativo", { exact: true }).click();
   await expect(navigation.getByRole("link", { name: "Museu", exact: true })).toHaveAttribute("aria-current", "page");
+  if (isMobile) await navigation.getByLabel("Mais áreas do aplicativo", { exact: true }).click();
 
   const cards = page.locator(".museum-exhibit-card");
   const count = await cards.count();

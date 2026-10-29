@@ -1,0 +1,120 @@
+{
+  "collection": "Histórias bíblicas: ilustrações narrativas contextuais",
+  "createdAtUTC": "2026-10-29T02:11:06.576194+00:00",
+  "generator": "OpenAI image_gen tool",
+  "status": "Original AI-generated editorial illustration; not a historical photograph or an exact reconstruction.",
+  "editorialUse": "Cada arte acompanha uma história inteira. Os recortes das quatro cenas preservam a mesma ilustração; não equivalem a quatro registros do acontecimento.",
+  "visualReview": "Imagens vistas na saída da ferramenta: sem violência gráfica, sem figura humana de Deus, sem personagem moderno reconhecível; vestuários, arquitetura e rostos são interpretações artísticas.",
+  "sources": "As referências indicam o tema bíblico da composição, não autenticam aparência, roupa, edifício ou paisagem.",
+  "rights": "Artes geradas para uso editorial deste projeto. Não são fotografias de terceiros nem imagens de domínio público verificadas.",
+  "files": [
+    {
+      "storyId": "noe",
+      "path": "/visuals/story-noe.png",
+      "originalFile": "exec-283989ba-cb5d-4641-ade2-15f5f86d902f.png",
+      "description": "Uma família, animais e uma arca em terra após a chuva",
+      "reference": "Gênesis 8–9",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 3364768,
+      "sha256": "96a5ea13b538c1f1f1e409cc4fef2a45b1b8a68f6d52d7716e1a175df531bdb6",
+      "copiedWithoutPixelEdits": true
+    },
+    {
+      "storyId": "abraao",
+      "path": "/visuals/story-abraao.png",
+      "originalFile": "exec-f1e6b616-3523-4b94-9856-fc27c87d915f.png",
+      "description": "Um viajante diante de estrelas junto a um acampamento antigo",
+      "reference": "Gênesis 15:1–6",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 3217757,
+      "sha256": "8df8f6c371771f3ec18dd9e9234cdc568f763a42bb54eec9ea5d77c5aff19198",
+      "copiedWithoutPixelEdits": true
+    },
+    {
+      "storyId": "jose",
+      "path": "/visuals/story-jose.png",
+      "originalFile": "exec-2c4f9638-c25a-40b7-a9e3-f34e3b8f95fc.png",
+      "description": "Armazenamento e distribuição de grãos no Egito antigo",
+      "reference": "Gênesis 41:25–57",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 2895361,
+      "sha256": "9d4c71f878849d0afd5b25cb1c77a089c8f318ab5d7708f8851dd08b16a35109",
+      "copiedWithoutPixelEdits": true
+    },
+    {
+      "storyId": "rute",
+      "path": "/visuals/story-rute.png",
+      "originalFile": "exec-c9c25e30-537d-439a-99dd-279f5fffdbb2.png",
+      "description": "Duas mulheres e feixes de cereal em um campo de colheita",
+      "reference": "Rute 1–2",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 3438804,
+      "sha256": "0e8c6a8a71704b39fe6d5838b89aae7fd0691126a3c78ab05be4f04a02089ea7",
+      "copiedWithoutPixelEdits": true
+    },
+    {
+      "storyId": "davi",
+      "path": "/visuals/story-davi.png",
+      "originalFile": "exec-370bb628-2ac3-4d89-b800-d1f04657b7f8.png",
+      "description": "Um pastor com ovelhas numa paisagem de colinas",
+      "reference": "1 Samuel 16–17",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 3499340,
+      "sha256": "96a2002058a18f9472622ce12c86f40761e3b5f5e716a5cfe060ff14876a374a",
+      "copiedWithoutPixelEdits": true
+    },
+    {
+      "storyId": "nascimento-de-jesus",
+      "path": "/visuals/story-nascimento-de-jesus.png",
+      "originalFile": "exec-73be1a53-b8dc-42fa-906b-6f0de2a7d3d2.png",
+      "description": "Uma família acolhe um bebê num ambiente modesto",
+      "reference": "Lucas 2:1–20",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 3227996,
+      "sha256": "bedc2ebe8b818b5472f09d07db85dbb448b53f6156382b477702a894b5446a27",
+      "copiedWithoutPixelEdits": true
+    },
+    {
+      "storyId": "bom-samaritano",
+      "path": "/visuals/story-bom-samaritano.png",
+      "originalFile": "exec-4c8d49e9-438c-4f08-b2f6-bb3aa336bcfb.png",
+      "description": "Um viajante oferece água e cuidado a outro na estrada",
+      "reference": "Lucas 10:25–37",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 3595327,
+      "sha256": "e20c4042b3b8bfc27b88b6433c0090243c0a2ce9aede621e3a22d3562b56cd25",
+      "copiedWithoutPixelEdits": true
+    },
+    {
+      "storyId": "pentecostes",
+      "path": "/visuals/story-pentecostes.png",
+      "originalFile": "exec-255d5fef-1d52-4bea-8a3e-529e10c24d8a.png",
+      "description": "Comunidade antiga com símbolos de luz na reunião",
+      "reference": "Atos 2:1–47",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 3249349,
+      "sha256": "8cedb458c239f164cd6c10045c81eefc411ecd6c3a00c17233ba8de45eb3aa05",
+      "copiedWithoutPixelEdits": true
+    },
+    {
+      "storyId": "daniel",
+      "path": "/visuals/story-daniel.png",
+      "originalFile": "exec-abd68158-be87-4b24-9b9f-9950cd2f44ae.png",
+      "description": "Um homem em oração diante de uma janela numa cidade antiga",
+      "reference": "Daniel 6:10",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 2899327,
+      "sha256": "1bb7f097f4d0065fdc16eb719fa3f952bec5b6fe72ce56fddda8f004e6a86210",
+      "copiedWithoutPixelEdits": true
+    }
+  ]
+}

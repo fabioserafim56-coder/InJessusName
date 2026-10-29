@@ -1,0 +1,2378 @@
+[
+  {
+    "id": "GEN",
+    "number": 1,
+    "genre": "Narrativas de origens e histórias de família",
+    "themes": [
+      "Criação",
+      "Aliança",
+      "Responsabilidade"
+    ],
+    "category": "Lei e origens",
+    "testament": "Antigo Testamento",
+    "overview": [
+      "Gênesis começa com criação, humanidade, ruptura e dispersão. Depois acompanha Abraão e Sara, Isaque, Jacó e José. O movimento vai de um horizonte que inclui toda a humanidade para uma família chamada a ser bênção. Observe como as relações são atravessadas por medo, ciúme, hospitalidade, promessas e recomeços; os personagens não são apresentados como pessoas sem falhas.",
+      "As histórias de José levam essa família ao Egito e preparam o cenário de Êxodo. Ler Gênesis pede atenção à linguagem narrativa e às diferentes interpretações cristãs de suas origens. Em vez de procurar uma resposta apressada para cada pergunta moderna, acompanhe o que o relato diz sobre Deus, a dignidade humana e a responsabilidade pelo próximo."
+    ],
+    "connection": "A promessa a Abraão ajuda a acompanhar Israel e será retomada na reflexão cristã sobre bênção para as nações.",
+    "example": "Se dois irmãos disputam reconhecimento, compare o conflito de José com seus irmãos: favoritismo e inveja têm consequências, mas o relato também abre espaço para responsabilidade e reconciliação.",
+    "question": {
+      "prompt": "Por que o livro passa de toda a humanidade para uma família?",
+      "answer": "A história concentra o olhar em uma família para acompanhar uma promessa que conserva um horizonte amplo: outras famílias da terra também aparecem como destinatárias da bênção."
+    },
+    "readings": [
+      {
+        "chapter": 1,
+        "verse": 26,
+        "endVerse": 28,
+        "note": "Observe a relação entre dignidade humana e responsabilidade pela criação."
+      },
+      {
+        "chapter": 12,
+        "verse": 1,
+        "endVerse": 3,
+        "note": "O chamado de Abrão conecta deslocamento, promessa e bênção para outras famílias."
+      }
+    ]
+  },
+  {
+    "id": "EXO",
+    "number": 2,
+    "genre": "Narrativa de libertação e instrução de aliança",
+    "themes": [
+      "Libertação",
+      "Aliança",
+      "Presença de Deus"
+    ],
+    "category": "Lei e origens",
+    "testament": "Antigo Testamento",
+    "overview": [
+      "Êxodo começa com os descendentes de Israel submetidos ao poder do faraó. A narrativa apresenta Moisés, o chamado diante da sarça, o confronto com a opressão e a saída do Egito. O texto não termina na travessia: a liberdade precisa tornar-se uma forma de vida compartilhada, e o caminho pelo deserto revela dificuldades, reclamações e aprendizado.",
+      "No Sinai, mandamentos e orientações organizam a relação do povo com Deus e com as outras pessoas. A construção do tabernáculo expressa a presença divina no meio da comunidade. Leia também o episódio do bezerro de ouro: receber uma aliança não elimina a possibilidade de ruptura, nem dispensa a necessidade de recomeçar com responsabilidade."
+    ],
+    "connection": "Retoma a família de Gênesis e prepara as instruções de Levítico: libertação, convivência e culto pertencem à mesma caminhada.",
+    "example": "Uma turma pode sair de uma situação injusta e ainda precisar aprender a conviver. Êxodo ajuda a perceber por que liberdade e responsabilidade não são assuntos separados.",
+    "question": {
+      "prompt": "Por que os mandamentos aparecem depois da saída do Egito?",
+      "answer": "O relato apresenta primeiro a libertação e depois a vida da aliança. Os mandamentos orientam um povo que precisa aprender a viver sua liberdade diante de Deus e do próximo."
+    },
+    "readings": [
+      {
+        "chapter": 3,
+        "verse": 7,
+        "endVerse": 12,
+        "note": "Leia o chamado de Moisés a partir do sofrimento que Deus declara ter ouvido."
+      },
+      {
+        "chapter": 20,
+        "verse": 1,
+        "endVerse": 17,
+        "note": "Observe a memória da libertação antes de acompanhar os Dez Mandamentos."
+      }
+    ]
+  },
+  {
+    "id": "LEV",
+    "number": 3,
+    "genre": "Instruções rituais, sacerdotais e éticas",
+    "themes": [
+      "Santidade",
+      "Reconciliação",
+      "Cuidado comunitário"
+    ],
+    "category": "Lei e origens",
+    "testament": "Antigo Testamento",
+    "overview": [
+      "Levítico pode parecer distante quando descreve ofertas, sacerdotes, alimentos e condições de pureza. Seu cenário é uma comunidade que procura viver perto da presença de Deus. As distinções rituais pertencem ao mundo do texto; não devem ser usadas para chamar pessoas atuais de inferiores, nem confundidas automaticamente com noções modernas de higiene ou culpa individual.",
+      "O livro também organiza relações de justiça: trabalho, colheita, tratamento do estrangeiro, honestidade e amor ao próximo. A santidade atravessa o culto e a convivência. Na leitura cristã, sacrifícios e sacerdócio serão retomados de maneiras específicas, especialmente em Hebreus; comparar essas releituras exige primeiro compreender o propósito das instruções em seu próprio contexto."
+    ],
+    "connection": "Continua o cenário do tabernáculo de Êxodo e oferece o vocabulário de santidade e reconciliação retomado por outros livros.",
+    "example": "Ao estudar uma regra sobre a colheita, pergunte quem pode comer e quem corre o risco de ficar sem alimento. Uma instrução antiga pode revelar uma preocupação concreta com vulneráveis.",
+    "question": {
+      "prompt": "Santidade significa apenas cumprir rituais?",
+      "answer": "Não. O livro também exige justiça nas relações e cuidado com o próximo. Seus rituais e orientações sociais pertencem a uma mesma visão de vida diante de Deus."
+    },
+    "readings": [
+      {
+        "chapter": 19,
+        "verse": 9,
+        "endVerse": 18,
+        "note": "Acompanhe colheita, honestidade, justiça e amor ao próximo na mesma sequência."
+      },
+      {
+        "chapter": 19,
+        "verse": 33,
+        "endVerse": 34,
+        "note": "O cuidado com o estrangeiro é relacionado à memória de ter vivido no Egito."
+      }
+    ]
+  },
+  {
+    "id": "NUM",
+    "number": 4,
+    "genre": "Narrativa de peregrinação com censos e instruções",
+    "themes": [
+      "Caminhada",
+      "Confiança",
+      "Responsabilidade coletiva"
+    ],
+    "category": "Lei e origens",
+    "testament": "Antigo Testamento",
+    "overview": [
+      "Números acompanha Israel entre o Sinai e a aproximação da terra prometida. Censos, organização do acampamento e instruções aparecem junto de episódios de medo, reclamação e conflito. A comunidade precisa caminhar em conjunto, mas seus membros nem sempre enxergam o futuro da mesma maneira; o relato dos exploradores mostra como uma notícia pode produzir coragem ou paralisar um povo.",
+      "Moisés também enfrenta limites e precisa repartir responsabilidades. Uma nova geração se prepara para continuar uma história que não começou com ela. O livro permite estudar as consequências das escolhas coletivas sem concluir que toda dificuldade atual seja castigo. Leia cada episódio no desenvolvimento da narrativa e observe as oportunidades de escuta, intercessão e reorganização."
+    ],
+    "connection": "Leva as instruções do Sinai para a experiência do caminho e prepara a renovação da aliança em Deuteronômio.",
+    "example": "Diante de um desafio escolar, um grupo pode compartilhar informações com responsabilidade ou espalhar pânico. O episódio dos exploradores ajuda a observar essa diferença sem negar os obstáculos reais.",
+    "question": {
+      "prompt": "Por que há listas e histórias no mesmo livro?",
+      "answer": "As listas mostram um povo organizado para caminhar; as histórias mostram como esse povo enfrenta a vida concreta. Estrutura e experiência fazem parte do mesmo percurso."
+    },
+    "readings": [
+      {
+        "chapter": 11,
+        "verse": 16,
+        "endVerse": 17,
+        "note": "Observe a partilha de responsabilidades diante do peso de conduzir a comunidade."
+      },
+      {
+        "chapter": 13,
+        "verse": 25,
+        "endVerse": 33,
+        "note": "Compare o que os exploradores viram com a interpretação que deram à experiência."
+      }
+    ]
+  },
+  {
+    "id": "DEU",
+    "number": 5,
+    "genre": "Discursos de aliança e instrução",
+    "themes": [
+      "Memória",
+      "Amor a Deus",
+      "Justiça"
+    ],
+    "category": "Lei e origens",
+    "testament": "Antigo Testamento",
+    "overview": [
+      "Deuteronômio apresenta Moisés falando ao povo antes da entrada na terra. A memória do caminho sustenta suas orientações: não esquecer a libertação, ensinar às novas gerações e reconhecer que a vida comunitária depende de escolhas. A repetição de leis não é simples cópia; o discurso volta a situações anteriores para preparar uma comunidade diante de um novo cenário.",
+      "O amor a Deus é relacionado à escuta, ao cotidiano e ao cuidado com quem tem menos recursos. Estrangeiros, órfãos e viúvas recebem atenção em instruções concretas. Ao ler bênçãos e advertências, mantenha o contexto da aliança; não transforme o livro em uma fórmula que identifica riqueza com fidelidade ou sofrimento pessoal com desobediência."
+    ],
+    "connection": "Conclui o Pentateuco e prepara Josué; sua linguagem de memória e fidelidade atravessará as narrativas dos reis e os profetas.",
+    "example": "Uma família pode falar de fé durante tarefas comuns, sem depender apenas de encontros formais. O livro apresenta o ensino como parte das conversas e dos hábitos diários.",
+    "question": {
+      "prompt": "O que a memória tem a ver com a justiça?",
+      "answer": "Lembrar a própria libertação impede tratar o vulnerável como alguém sem importância. A comunidade é chamada a reconhecer no outro uma dignidade que também precisou receber e proteger."
+    },
+    "readings": [
+      {
+        "chapter": 6,
+        "verse": 4,
+        "endVerse": 9,
+        "note": "Observe a ligação entre amar a Deus e conversar sobre a fé na vida diária."
+      },
+      {
+        "chapter": 24,
+        "verse": 17,
+        "endVerse": 22,
+        "note": "A memória do Egito fundamenta o cuidado com estrangeiros, órfãos e viúvas."
+      }
+    ]
+  },
+  {
+    "id": "JOS",
+    "number": 6,
+    "genre": "Narrativa de entrada e estabelecimento na terra",
+    "themes": [
+      "Promessa",
+      "Memória",
+      "Escolha comunitária"
+    ],
+    "category": "História de Israel",
+    "testament": "Antigo Testamento",
+    "overview": [
+      "Josué narra a passagem do Jordão, campanhas militares e a distribuição da terra entre as tribos. A transição após Moisés coloca a continuidade da comunidade em primeiro plano. Memoriais e reuniões ajudam a preservar a lembrança do caminho; ao mesmo tempo, o livro apresenta tensões e conflitos que exigem leitura atenta de sua linguagem e de seu mundo antigo.",
+      "Os relatos de guerra são difíceis e recebem diferentes interpretações cristãs. Não devem ser usados como autorização para conquistar territórios, perseguir outros povos ou praticar violência religiosa hoje. Observe como o encerramento do livro convoca o povo a recordar sua história e escolher a quem servir, colocando a responsabilidade da comunidade dentro da narrativa da aliança."
+    ],
+    "connection": "Continua a entrada anunciada em Deuteronômio e prepara a realidade fragmentada das tribos descrita em Juízes.",
+    "example": "Um memorial pode ajudar uma comunidade a lembrar sua origem sem transformar o passado em orgulho contra outras pessoas. Pergunte o que está sendo lembrado e para qual responsabilidade essa lembrança aponta.",
+    "question": {
+      "prompt": "Como ler as campanhas militares com responsabilidade?",
+      "answer": "É necessário reconhecer a dificuldade dos textos, estudar seu contexto e distinguir a narrativa antiga de orientações para o presente. O livro não oferece licença para violência atual."
+    },
+    "readings": [
+      {
+        "chapter": 4,
+        "verse": 1,
+        "endVerse": 9,
+        "note": "As pedras do Jordão são apresentadas como oportunidade de perguntar e transmitir memória."
+      },
+      {
+        "chapter": 24,
+        "verse": 14,
+        "endVerse": 24,
+        "note": "A assembleia reúne memória, escolha e compromisso de servir a Deus."
+      }
+    ]
+  },
+  {
+    "id": "JDG",
+    "number": 7,
+    "genre": "Narrativas sobre lideranças e crises tribais",
+    "themes": [
+      "Infidelidade",
+      "Libertação",
+      "Limites da liderança"
+    ],
+    "category": "História de Israel",
+    "testament": "Antigo Testamento",
+    "overview": [
+      "Juízes acompanha Israel em um tempo de organização tribal, antes da monarquia. A narrativa repete situações de ruptura, opressão, clamor e livramento, mas as histórias não permanecem iguais: o quadro moral se deteriora. Débora, Gideão, Jefté e Sansão apresentam formas distintas de liderança e mostram que capacidade de agir não significa maturidade em todas as relações.",
+      "Os últimos capítulos expõem violência e desagregação comunitária. Descrever esses acontecimentos não equivale a aprová-los. Leia com cuidado especial os episódios que atingem mulheres e pessoas vulneráveis, perguntando como o próprio livro apresenta o colapso da convivência. A repetição sobre a ausência de rei ajuda a compreender a discussão que será desenvolvida nas narrativas de Samuel."
+    ],
+    "connection": "Segue o estabelecimento na terra e abre a pergunta sobre liderança, justiça e monarquia que aparece em 1 Samuel.",
+    "example": "Um líder pode resolver uma crise e causar outras ao agir sem escuta. A trajetória de Gideão ajuda a distinguir um momento de coragem de uma vida inteira de decisões responsáveis.",
+    "question": {
+      "prompt": "Todos os atos dos juízes são modelos para imitar?",
+      "answer": "Não. As narrativas também revelam falhas, violência e consequências destrutivas. Identificar alguém como personagem de uma ação de livramento não transforma todas as suas escolhas em exemplo."
+    },
+    "readings": [
+      {
+        "chapter": 4,
+        "verse": 4,
+        "endVerse": 10,
+        "note": "Débora participa da orientação do povo e do chamado de Baraque."
+      },
+      {
+        "chapter": 8,
+        "verse": 22,
+        "endVerse": 27,
+        "note": "Acompanhe a distância entre as palavras de Gideão e o efeito de uma decisão sua."
+      }
+    ]
+  },
+  {
+    "id": "RUT",
+    "number": 8,
+    "genre": "Novela narrativa de família e comunidade",
+    "themes": [
+      "Lealdade",
+      "Acolhimento",
+      "Redenção"
+    ],
+    "category": "História de Israel",
+    "testament": "Antigo Testamento",
+    "overview": [
+      "Rute começa com fome, deslocamento e perdas. Noemi retorna a Belém acompanhada de Rute, sua nora moabita, enquanto as duas procuram possibilidades de sobrevivência. A narrativa presta atenção a conversas, trabalho no campo e gestos de proteção. O cuidado não chega por um único acontecimento extraordinário: decisões cotidianas de pessoas e comunidade constroem um caminho de esperança.",
+      "Boaz participa das relações familiares e legais que cercam a segurança das duas mulheres. É importante compreender esses costumes antes de reduzi-los a uma história romântica moderna. O desfecho liga a família à genealogia de Davi e mostra como uma estrangeira ocupa lugar importante na memória de Israel. Lealdade, iniciativa e acolhimento unem a história doméstica ao horizonte maior da narrativa bíblica."
+    ],
+    "connection": "Situado no tempo dos juízes, conduz à família de Davi e oferece um contraponto de cuidado em meio a narrativas de violência.",
+    "example": "Se alguém recém-chegado precisa trabalhar e ainda não conhece seus direitos, acolher inclui oferecer informação e proteção. O campo de Boaz ajuda a pensar além de uma gentileza isolada.",
+    "question": {
+      "prompt": "Por que a origem moabita de Rute importa?",
+      "answer": "O relato a identifica como estrangeira e, ao mesmo tempo, apresenta sua lealdade e sua participação na família de Davi. Sua história amplia a atenção para quem chega de fora."
+    },
+    "readings": [
+      {
+        "chapter": 1,
+        "verse": 14,
+        "endVerse": 18,
+        "note": "A escolha de Rute é feita em um contexto de perda e de possibilidades incertas."
+      },
+      {
+        "chapter": 2,
+        "verse": 8,
+        "endVerse": 12,
+        "note": "Boaz oferece condições concretas de proteção e reconhece o caminho vivido por Rute."
+      }
+    ]
+  },
+  {
+    "id": "1SA",
+    "number": 9,
+    "genre": "Narrativa sobre profecia e início da monarquia",
+    "themes": [
+      "Escuta",
+      "Poder",
+      "Responsabilidade"
+    ],
+    "category": "História de Israel",
+    "testament": "Antigo Testamento",
+    "overview": [
+      "1 Samuel parte da oração de Ana e do crescimento de Samuel, passando pelo pedido de um rei e pela ascensão de Saul. O desejo de segurança política se encontra com advertências sobre o custo do poder. A narrativa acompanha também Davi, ainda antes de assumir o trono, e contrasta aparência pública, decisões pessoais e responsabilidade diante de Deus.",
+      "As relações entre Samuel, Saul, Jônatas e Davi mostram medo, amizade, ciúme e lealdade. Não há uma passagem simples de herói perfeito para governante ideal. Leia os episódios como partes de uma discussão sobre liderança: o rei não está acima da palavra que ouve nem das pessoas que suas escolhas afetam. A pergunta sobre quem governa permanece aberta para o livro seguinte."
+    ],
+    "connection": "Desenvolve as crises de liderança de Juízes e conduz da organização tribal à monarquia de Saul e Davi.",
+    "example": "Um grupo pode pedir um líder forte sem considerar como ele usará recursos e autoridade. A conversa sobre a monarquia ajuda a perguntar quais controles protegem a comunidade.",
+    "question": {
+      "prompt": "Por que o pedido de um rei recebe advertências?",
+      "answer": "O texto reconhece o desejo de organização, mas mostra que o poder também pode tomar trabalho, bens e liberdade. Uma solução política precisa ser avaliada por seus efeitos sobre as pessoas."
+    },
+    "readings": [
+      {
+        "chapter": 3,
+        "verse": 1,
+        "endVerse": 10,
+        "note": "Samuel aprende a reconhecer um chamado com a ajuda de Eli."
+      },
+      {
+        "chapter": 8,
+        "verse": 10,
+        "endVerse": 22,
+        "note": "Leia as consequências do poder real apresentadas antes da escolha do povo."
+      }
+    ]
+  },
+  {
+    "id": "2SA",
+    "number": 10,
+    "genre": "Narrativa do reinado de Davi",
+    "themes": [
+      "Aliança",
+      "Abuso de poder",
+      "Consequências"
+    ],
+    "category": "História de Israel",
+    "testament": "Antigo Testamento",
+    "overview": [
+      "2 Samuel acompanha Davi no governo e apresenta a consolidação de seu reino, Jerusalém e a promessa ligada à sua casa. O mesmo livro narra decisões graves do rei, incluindo sua ação contra Urias e a situação de Bate-Seba. A narrativa não permite separar a importância pública de Davi de sua responsabilidade pelas pessoas atingidas pelo poder.",
+      "O confronto de Natã e os conflitos da família real mostram que reconhecer uma culpa não apaga automaticamente seus efeitos. Violência, rivalidade e luto atravessam a casa de Davi e alcançam a comunidade. Leia esses episódios sem culpabilizar vítimas nem idealizar autoridades religiosas ou políticas; o livro oferece espaço para lamentar, denunciar e considerar o peso das escolhas."
+    ],
+    "connection": "Continua a história de Davi iniciada em 1 Samuel e prepara os conflitos de sucessão e governo de 1 Reis.",
+    "example": "Uma pessoa respeitada pode usar sua posição para silenciar outra. A intervenção de Natã ajuda a perceber por que a comunidade precisa de voz crítica, mesmo diante de um líder admirado.",
+    "question": {
+      "prompt": "A importância de Davi torna suas ações automaticamente corretas?",
+      "answer": "Não. O livro registra sua relevância e também o confronta. A denúncia profética mostra que reconhecimento, poder e promessas não eliminam responsabilidade por injustiças cometidas."
+    },
+    "readings": [
+      {
+        "chapter": 7,
+        "verse": 8,
+        "endVerse": 16,
+        "note": "A promessa à casa de Davi se insere na reflexão sobre reino e presença de Deus."
+      },
+      {
+        "chapter": 12,
+        "verse": 1,
+        "endVerse": 13,
+        "note": "Natã usa uma narrativa para confrontar Davi e tornar visível sua responsabilidade."
+      }
+    ]
+  },
+  {
+    "id": "1KI",
+    "number": 11,
+    "genre": "Narrativa da monarquia e da divisão do reino",
+    "themes": [
+      "Sabedoria",
+      "Culto",
+      "Justiça no poder"
+    ],
+    "category": "História de Israel",
+    "testament": "Antigo Testamento",
+    "overview": [
+      "1 Reis começa com a sucessão de Davi e acompanha Salomão, a construção do templo e a divisão entre os reinos do norte e do sul. A sabedoria celebrada no início convive com trabalho pesado, alianças e decisões que abrem conflitos. A grandeza de edifícios e governos é colocada ao lado de perguntas sobre fidelidade, justiça e o custo suportado pelo povo.",
+      "O ministério de Elias ganha destaque na segunda parte. A disputa pelo campo de Nabote mostra que a palavra profética não trata apenas de ritos: ela denuncia a violência de uma autoridade que toma o que deseja. Observe a relação entre culto, propriedade e vida comunitária, sem reduzir os profetas a personagens de feitos extraordinários isolados."
+    ],
+    "connection": "Desenvolve o governo herdado de Davi e apresenta a divisão dos reinos que será acompanhada até a queda em 2 Reis.",
+    "example": "Se um projeto bonito depende de explorar trabalhadores, sua aparência não responde à pergunta ética. A narrativa de Salomão convida a comparar brilho público e custo humano.",
+    "question": {
+      "prompt": "Por que a história de Nabote é importante?",
+      "answer": "Ela mostra como o poder pode usar instituições para tomar a vida e os bens de alguém. A denúncia de Elias liga a fidelidade a Deus à responsabilidade por uma injustiça concreta."
+    },
+    "readings": [
+      {
+        "chapter": 3,
+        "verse": 5,
+        "endVerse": 12,
+        "note": "O pedido de Salomão relaciona discernimento à tarefa de governar o povo."
+      },
+      {
+        "chapter": 21,
+        "verse": 1,
+        "endVerse": 19,
+        "note": "Observe o desejo do rei, o uso de testemunhas e a denúncia profética da injustiça."
+      }
+    ]
+  },
+  {
+    "id": "2KI",
+    "number": 12,
+    "genre": "Narrativa da queda dos reinos e do exílio",
+    "themes": [
+      "Memória",
+      "Profecia",
+      "Crise nacional"
+    ],
+    "category": "História de Israel",
+    "testament": "Antigo Testamento",
+    "overview": [
+      "2 Reis acompanha os ministérios proféticos, as sucessões reais e o avanço de potências que levam à queda de Israel e de Judá. Eliseu aparece em histórias de cuidado e intervenção; depois, o relato observa governos, reformas e conflitos. A repetição das avaliações dos reis fornece um critério narrativo de fidelidade, mas não substitui a atenção às pessoas e às situações de cada episódio.",
+      "O desfecho inclui a destruição de Jerusalém, a perda do templo e o exílio. Esses acontecimentos abalam referências políticas e religiosas fundamentais. O livro encerra uma longa memória de escolhas comunitárias e ainda conserva um pequeno sinal de continuidade na história de Joaquim. Leia o conjunto como reflexão sobre uma catástrofe nacional, evitando transformar toda perda pessoal em julgamento divino."
+    ],
+    "connection": "Conclui a sequência dos reis e fornece o cenário de ruptura que ajuda a ler os profetas, Lamentações e os relatos de retorno.",
+    "example": "Quando uma instituição entra em crise, olhar apenas para o último acontecimento pode esconder anos de decisões. O livro ensina a acompanhar processos, e não somente desfechos impressionantes.",
+    "question": {
+      "prompt": "Por que a queda dos reinos precisa ser lida como um processo?",
+      "answer": "O relato acompanha muitas escolhas, conflitos e advertências antes da catástrofe. Seu desfecho não deve ser isolado dessa longa história nem transformado em explicação automática para o sofrimento de uma pessoa."
+    },
+    "readings": [
+      {
+        "chapter": 5,
+        "verse": 1,
+        "endVerse": 14,
+        "note": "A história de Naamã inclui a palavra de uma menina e a dificuldade de aceitar uma orientação simples."
+      },
+      {
+        "chapter": 25,
+        "verse": 8,
+        "endVerse": 12,
+        "note": "Leia a descrição da destruição de Jerusalém considerando o impacto sobre a vida coletiva."
+      }
+    ]
+  },
+  {
+    "id": "1CH",
+    "number": 13,
+    "genre": "Genealogias e narrativa da casa de Davi",
+    "themes": [
+      "Memória",
+      "Culto",
+      "Continuidade"
+    ],
+    "category": "História de Israel",
+    "testament": "Antigo Testamento",
+    "overview": [
+      "1 Crônicas começa com genealogias que situam famílias e gerações em uma memória ampla. Depois concentra o olhar em Davi, na organização do culto e nos preparativos para o templo. As listas podem parecer repetitivas, mas ajudam a comunidade a responder quem ela é, de onde vem e como suas diferentes funções se conectam à história compartilhada.",
+      "Comparar Crônicas com Samuel permite perceber seleções e ênfases diferentes, em vez de esperar que todo relato repita os mesmos episódios. Aqui, cantores, músicos, guardas e responsáveis por tarefas recebem atenção. A narrativa apresenta o governo de Davi dentro de um projeto de continuidade comunitária; a construção propriamente dita será realizada no livro seguinte, sob Salomão."
+    ],
+    "connection": "Retoma a memória de Israel e relê a casa de Davi com atenção ao culto, preparando o templo de 2 Crônicas.",
+    "example": "Uma comunidade costuma lembrar seus nomes mais conhecidos e esquecer quem organiza tarefas diárias. As listas de funções convidam a reconhecer trabalhos diferentes que tornam a vida coletiva possível.",
+    "question": {
+      "prompt": "Por que começar com tantas genealogias?",
+      "answer": "Elas situam pessoas em uma história de gerações e sustentam a memória de pertencimento. O leitor pode perguntar quais famílias e funções recebem lugar nessa reconstrução da identidade comunitária."
+    },
+    "readings": [
+      {
+        "chapter": 16,
+        "verse": 8,
+        "endVerse": 15,
+        "note": "O cântico relaciona gratidão à lembrança das obras e da aliança de Deus."
+      },
+      {
+        "chapter": 29,
+        "verse": 10,
+        "endVerse": 19,
+        "note": "A oração de Davi situa ofertas e recursos diante da responsabilidade e da dependência de Deus."
+      }
+    ]
+  },
+  {
+    "id": "2CH",
+    "number": 14,
+    "genre": "Narrativa de reis, templo e reformas",
+    "themes": [
+      "Adoração",
+      "Reforma",
+      "Retorno"
+    ],
+    "category": "História de Israel",
+    "testament": "Antigo Testamento",
+    "overview": [
+      "2 Crônicas acompanha Salomão, a dedicação do templo e os reis de Judá, destacando momentos de reforma e de ruptura. Reuniões, celebrações e renovação do culto aparecem como acontecimentos que reorganizam a comunidade. O livro não se limita a uma lista de governantes: pergunta como a relação com Deus influencia a escuta, a liderança e as decisões de um povo.",
+      "O encerramento passa pela destruição de Jerusalém e chega ao decreto de Ciro, abrindo a possibilidade de retorno. Passagens sobre oração e restauração pertencem a essa história da aliança e do templo; não são fórmulas automáticas para governos atuais nem garantias individuais de prosperidade. Compare as cenas de arrependimento com as responsabilidades concretas que elas exigem das lideranças e da comunidade."
+    ],
+    "connection": "Continua 1 Crônicas e termina com a abertura para o retorno que Esdras desenvolverá, conservando o templo como eixo da narrativa.",
+    "example": "Uma reforma pode mudar a aparência de um espaço sem transformar a convivência. Ao ler as celebrações, pergunte também que escolhas e compromissos sustentam a mudança proposta.",
+    "question": {
+      "prompt": "Uma promessa ao templo pode ser aplicada automaticamente a qualquer país?",
+      "answer": "Não. Primeiro é necessário reconhecer os destinatários e a situação da aliança no texto. Uma reflexão atual pode aprender com a passagem sem apagar suas diferenças históricas."
+    },
+    "readings": [
+      {
+        "chapter": 6,
+        "verse": 18,
+        "endVerse": 21,
+        "note": "A oração de Salomão reconhece que Deus não cabe no edifício construído."
+      },
+      {
+        "chapter": 36,
+        "verse": 15,
+        "endVerse": 23,
+        "note": "O final reúne advertência, destruição e a abertura de um caminho de retorno."
+      }
+    ]
+  },
+  {
+    "id": "EZR",
+    "number": 15,
+    "genre": "Narrativa de retorno e reconstrução",
+    "themes": [
+      "Restauração",
+      "Memória",
+      "Identidade"
+    ],
+    "category": "História de Israel",
+    "testament": "Antigo Testamento",
+    "overview": [
+      "Esdras narra o retorno de grupos do exílio, a reconstrução do templo e a reorganização da comunidade em Jerusalém. A volta não resolve tudo de uma vez: há oposição, interrupções, diferenças entre gerações e necessidade de retomar o trabalho. Alegria e choro aparecem juntos quando a comunidade compara o novo começo com a lembrança do que foi perdido.",
+      "A segunda parte destaca o ensino da Lei e decisões sobre a identidade do grupo. Algumas medidas familiares são difíceis para leitores atuais e precisam ser situadas em suas tensões históricas; não devem justificar rejeição a casamentos interculturais ou hostilidade a estrangeiros hoje. Leia também Rute e os textos de acolhimento para perceber a diversidade de vozes preservadas na Bíblia."
+    ],
+    "connection": "Retoma o decreto que encerra Crônicas e dialoga com Neemias sobre reconstrução, ensino e organização depois do exílio.",
+    "example": "Duas pessoas podem reagir de modo diferente à mesma reconstrução: uma celebra o começo, outra recorda perdas. A cena do templo ajuda a ouvir essas memórias sem desqualificar nenhuma delas.",
+    "question": {
+      "prompt": "Por que a volta do exílio ainda envolve conflitos?",
+      "answer": "Retornar a um lugar não restaura automaticamente casas, instituições ou relações. O relato mostra que reconstrução material e reorganização comunitária exigem tempo, decisões e diálogo com memórias distintas."
+    },
+    "readings": [
+      {
+        "chapter": 3,
+        "verse": 10,
+        "endVerse": 13,
+        "note": "O som de alegria se mistura ao choro de quem conhecia o templo anterior."
+      },
+      {
+        "chapter": 7,
+        "verse": 8,
+        "endVerse": 10,
+        "note": "Esdras é apresentado com atenção ao estudo, à prática e ao ensino da Lei."
+      }
+    ]
+  },
+  {
+    "id": "NEH",
+    "number": 16,
+    "genre": "Memórias de reconstrução e reforma comunitária",
+    "themes": [
+      "Cooperação",
+      "Justiça social",
+      "Escuta da Lei"
+    ],
+    "category": "História de Israel",
+    "testament": "Antigo Testamento",
+    "overview": [
+      "Neemias apresenta a reconstrução das muralhas de Jerusalém junto de problemas de segurança, oposição e organização do trabalho. A narrativa inclui listas de participantes e situações de desgaste. Contudo, proteger a cidade não basta quando pessoas da própria comunidade sofrem com dívidas e exploração; a denúncia interna interrompe a ideia de que o único perigo vem de fora.",
+      "A leitura pública da Lei e os compromissos comunitários mostram que a reconstrução também envolve escuta e compreensão. O povo precisa receber explicação, não apenas ouvir palavras. O encerramento conserva tensões e reformas ainda necessárias, evitando a imagem de uma comunidade finalmente perfeita. Leia a obra como um processo que relaciona espaço, trabalho, educação e responsabilidade nas relações."
+    ],
+    "connection": "Caminha ao lado de Esdras e liga a restauração da cidade à necessidade de formar uma comunidade que compreenda e pratique o que ouve.",
+    "example": "Um grupo pode concluir uma obra enquanto seus trabalhadores permanecem sem condições justas. A queixa sobre dívidas mostra por que uma realização coletiva deve ser avaliada também por dentro.",
+    "question": {
+      "prompt": "Reconstruir muralhas é o único objetivo do livro?",
+      "answer": "Não. O relato também enfrenta exploração interna e apresenta a leitura explicada da Lei. A cidade precisa de estruturas, mas a convivência exige justiça e compreensão compartilhada."
+    },
+    "readings": [
+      {
+        "chapter": 5,
+        "verse": 1,
+        "endVerse": 12,
+        "note": "Uma denúncia de exploração leva Neemias a confrontar pessoas da própria comunidade."
+      },
+      {
+        "chapter": 8,
+        "verse": 1,
+        "endVerse": 12,
+        "note": "Observe a leitura, a explicação do sentido e a reação de quem compreende."
+      }
+    ]
+  },
+  {
+    "id": "EST",
+    "number": 17,
+    "genre": "Narrativa de corte e sobrevivência comunitária",
+    "themes": [
+      "Coragem",
+      "Identidade",
+      "Solidariedade"
+    ],
+    "category": "História de Israel",
+    "testament": "Antigo Testamento",
+    "overview": [
+      "Ester se passa no ambiente da corte persa e acompanha uma jovem judia, Mardoqueu e a ameaça articulada por Hamã contra seu povo. Banquetes, decretos, segredos e mudanças de posição movem a narrativa. A condição de Ester cria possibilidades de intervenção, mas também riscos: aproximar-se do rei não é um gesto simples nem livre de consequências.",
+      "A história relaciona coragem pessoal à mobilização de uma comunidade. Em sua forma hebraica, preservada nesta edição, o nome de Deus não aparece explicitamente; a leitura religiosa observa o cuidado providencial sem precisar inventar falas que o texto não contém. A festa de Purim surge como memória do livramento, enquanto as cenas de violência pedem atenção ao contexto e às dificuldades de sua interpretação."
+    ],
+    "connection": "Apresenta a vida judaica fora da terra e amplia o olhar sobre identidade e sobrevivência para além dos relatos de retorno a Jerusalém.",
+    "example": "Alguém em posição de acesso pode escolher ouvir uma comunidade ameaçada e agir com responsabilidade. Ester convida a perguntar para quem nossas oportunidades podem tornar-se proteção concreta.",
+    "question": {
+      "prompt": "O livro autoriza concluir que coragem é não sentir risco?",
+      "answer": "Não. A narrativa explicita o perigo da decisão de Ester e o apoio que ela pede à comunidade. Sua coragem é uma ação consciente diante do risco, não a ausência dele."
+    },
+    "readings": [
+      {
+        "chapter": 4,
+        "verse": 10,
+        "endVerse": 17,
+        "note": "Leia a conversa de Ester e Mardoqueu junto da preparação coletiva para sua decisão."
+      },
+      {
+        "chapter": 9,
+        "verse": 20,
+        "endVerse": 28,
+        "note": "A festa de Purim organiza a lembrança do livramento entre gerações."
+      }
+    ]
+  },
+  {
+    "id": "JOB",
+    "number": 18,
+    "genre": "Poesia sapiencial com moldura narrativa",
+    "themes": [
+      "Sofrimento",
+      "Lamento",
+      "Limites da explicação"
+    ],
+    "category": "Poesia e sabedoria",
+    "testament": "Antigo Testamento",
+    "overview": [
+      "Jó acompanha um homem que perde bens, familiares e saúde, enquanto procura compreender sua dor. O núcleo do livro é formado por discursos poéticos: Jó lamenta, seus amigos apresentam explicações e a conversa se torna cada vez mais tensa. A obra não oferece uma chave simples que permita descobrir a culpa de qualquer pessoa a partir do sofrimento que ela vive.",
+      "Quando Deus responde, o horizonte se amplia para uma criação que ultrapassa o controle e o conhecimento humanos. O desfecho também avalia criticamente o discurso dos amigos. Leia o livro como um convite à humildade diante da dor e dos limites das nossas explicações. Estar ao lado de alguém pode ser mais fiel ao cuidado do que oferecer uma resposta rápida para tudo."
+    ],
+    "connection": "Abre a coleção sapiencial desta ordem bíblica e dialoga com Provérbios ao questionar aplicações rígidas da relação entre conduta e resultados.",
+    "example": "Quando um amigo adoece, explicar imediatamente que ele fez algo errado pode aumentar sua dor. A presença silenciosa inicial dos amigos de Jó contrasta com as acusações que aparecem depois.",
+    "question": {
+      "prompt": "O sofrimento de Jó prova que ele era culpado?",
+      "answer": "Não. Essa explicação é justamente colocada em questão pela obra. O livro impede reduzir o sofrimento humano a uma conta simples de mérito, culpa e recompensa."
+    },
+    "readings": [
+      {
+        "chapter": 2,
+        "verse": 11,
+        "endVerse": 13,
+        "note": "Os amigos começam compartilhando silêncio diante de uma dor que reconhecem como grande."
+      },
+      {
+        "chapter": 42,
+        "verse": 7,
+        "endVerse": 9,
+        "note": "O encerramento confronta a forma como os amigos falaram sobre Deus e sobre Jó."
+      }
+    ]
+  },
+  {
+    "id": "PSA",
+    "number": 19,
+    "genre": "Coletânea de orações e poesia cantada",
+    "themes": [
+      "Lamento",
+      "Louvor",
+      "Confiança"
+    ],
+    "category": "Poesia e sabedoria",
+    "testament": "Antigo Testamento",
+    "overview": [
+      "Salmos reúne diferentes vozes de oração: louvor, pedido de ajuda, gratidão, confissão e perguntas em meio à injustiça. Nem todos os poemas falam da mesma situação ou usam o mesmo tom. Há palavras para quem celebra e para quem não consegue encontrar resposta; a diversidade impede pensar que uma vida de fé precisa parecer alegre o tempo inteiro.",
+      "O paralelismo, as imagens e as repetições fazem parte da linguagem poética. Leia cada salmo inteiro e observe como seu movimento começa e termina. Textos de revolta e desejo de vingança pedem cuidado: podem expressar a dor de quem sofreu violência, sem autorizar o leitor a praticá-la. A oração bíblica permite levar a vida a Deus com verdade e reverência."
+    ],
+    "connection": "Reúne a oração de Israel e fornece linguagem retomada pelos Evangelhos, pelas cartas e pela tradição de culto cristã.",
+    "example": "Em um dia de gratidão e em outro de perda, uma pessoa pode precisar de orações diferentes. Compare um salmo de louvor com um de lamento e perceba que ambos têm lugar na Bíblia.",
+    "question": {
+      "prompt": "Por que alguns salmos fazem perguntas duras a Deus?",
+      "answer": "O lamento é uma forma de oração que apresenta a dor sem disfarce. Essas perguntas mostram que a busca por Deus pode incluir incompreensão, protesto e espera."
+    },
+    "readings": [
+      {
+        "chapter": 13,
+        "verse": 1,
+        "endVerse": 6,
+        "note": "Observe o movimento entre a pergunta inicial, o pedido de ajuda e a confiança final."
+      },
+      {
+        "chapter": 23,
+        "verse": 1,
+        "endVerse": 6,
+        "note": "As imagens do pastor e da mesa articulam cuidado, caminho e presença."
+      }
+    ]
+  },
+  {
+    "id": "PRO",
+    "number": 20,
+    "genre": "Coleção de provérbios e instruções sapienciais",
+    "themes": [
+      "Sabedoria",
+      "Palavras",
+      "Justiça cotidiana"
+    ],
+    "category": "Poesia e sabedoria",
+    "testament": "Antigo Testamento",
+    "overview": [
+      "Provérbios apresenta conselhos para aprender a viver com discernimento. Família, trabalho, amizade, dinheiro e fala aparecem em frases curtas, comparações e discursos. A sabedoria é descrita como algo que se busca e se pratica; o leitor é convidado a escutar a orientação e observar o efeito de suas escolhas sobre outras pessoas.",
+      "Um provérbio não deve ser tratado como garantia automática de que toda pessoa prudente ficará rica ou nunca sofrerá. Algumas frases precisam ser colocadas em diálogo com outras e com as particularidades da situação. O próprio livro aproxima conselhos que parecem opostos, convidando ao discernimento. Compare também suas observações com Jó e Eclesiastes, que enfrentam os limites das explicações muito rápidas sobre a vida."
+    ],
+    "connection": "Forma uma conversa sapiencial com Jó e Eclesiastes: ensina caminhos prudentes sem dispensar atenção às situações e aos limites humanos.",
+    "example": "Antes de responder uma provocação, pode ser sábio falar ou pode ser sábio permanecer em silêncio. Provérbios ajuda a perguntar que resposta realmente evitará alimentar o conflito.",
+    "question": {
+      "prompt": "Um provérbio funciona como promessa sem exceções?",
+      "answer": "Não. É uma instrução de sabedoria que precisa ser compreendida em seu gênero e situação. O discernimento considera o conjunto do livro e as pessoas afetadas por uma decisão."
+    },
+    "readings": [
+      {
+        "chapter": 2,
+        "verse": 1,
+        "endVerse": 9,
+        "note": "A busca da sabedoria é comparada à procura de algo valioso e exige atenção."
+      },
+      {
+        "chapter": 26,
+        "verse": 4,
+        "endVerse": 5,
+        "note": "Leia os dois conselhos juntos e pergunte por que a situação faz diferença."
+      }
+    ]
+  },
+  {
+    "id": "ECC",
+    "number": 21,
+    "genre": "Reflexão sapiencial sobre a existência",
+    "themes": [
+      "Limites",
+      "Tempo",
+      "Alegria cotidiana"
+    ],
+    "category": "Poesia e sabedoria",
+    "testament": "Antigo Testamento",
+    "overview": [
+      "Eclesiastes observa trabalho, prazer, conhecimento e morte para perguntar o que permanece dos esforços humanos. Sua linguagem pode soar inquieta porque não esconde a distância entre o que desejamos controlar e o que de fato está ao nosso alcance. A repetição sobre vaidade ou transitoriedade pede atenção à tradução e ao movimento da reflexão, não uma conclusão de que a vida não tem valor.",
+      "O livro também convida a receber os bens simples da existência e a reconhecer que há tempos diferentes. Nem dinheiro nem realizações eliminam a fragilidade. Leia suas perguntas com paciência, em diálogo com outras vozes bíblicas, sem transformar um verso isolado em justificativa para desistir de cuidar ou agir. Reconhecer limites pode abrir espaço para gratidão e responsabilidade no presente."
+    ],
+    "connection": "Dialoga com Provérbios e Jó, ampliando a reflexão sobre sabedoria para as incertezas do tempo, da morte e dos resultados do trabalho.",
+    "example": "Uma pessoa pode adiar toda alegria para depois de alcançar uma meta e descobrir que outra meta sempre aparece. O livro convida a observar os bens presentes sem abandonar a responsabilidade.",
+    "question": {
+      "prompt": "Reconhecer a transitoriedade significa desprezar a vida?",
+      "answer": "Não. A reflexão questiona a ilusão de controle e permanência, mas também acolhe a alegria do cotidiano. A consciência dos limites pode tornar mais atento o modo de viver."
+    },
+    "readings": [
+      {
+        "chapter": 3,
+        "verse": 1,
+        "endVerse": 13,
+        "note": "Leia a sucessão de tempos junto da reflexão sobre trabalho e alegria."
+      },
+      {
+        "chapter": 4,
+        "verse": 9,
+        "endVerse": 12,
+        "note": "A companhia aparece como ajuda concreta diante da vulnerabilidade de quem caminha."
+      }
+    ]
+  },
+  {
+    "id": "SNG",
+    "number": 22,
+    "genre": "Poesia amorosa em vozes alternadas",
+    "themes": [
+      "Amor",
+      "Desejo",
+      "Reciprocidade"
+    ],
+    "category": "Poesia e sabedoria",
+    "testament": "Antigo Testamento",
+    "overview": [
+      "Cântico dos Cânticos é poesia de amor marcada por vozes que se procuram, admiram e desejam a presença uma da outra. Jardins, perfumes, animais e paisagens compõem comparações que pertencem ao seu mundo poético. Não é necessário transformar cada imagem em uma descrição literal para acompanhar a beleza da linguagem e a importância do encontro.",
+      "Ao longo da história, judeus e cristãos também produziram leituras simbólicas da relação com Deus e de Cristo com a Igreja. Essas tradições interpretativas merecem ser identificadas como tais, sem apagar o caráter amoroso do poema. Observe especialmente reciprocidade, espera e valor do amor. A leitura não deve ser usada para constranger alguém sobre seu corpo ou impor decisões afetivas."
+    ],
+    "connection": "Integra a diversidade da literatura sapiencial, oferecendo poesia amorosa ao lado de reflexões sobre trabalho, sofrimento, oração e convivência.",
+    "example": "Uma comparação poética pode dizer que alguém tem a força de uma paisagem sem descrever sua aparência literalmente. Ler as imagens com cuidado evita tornar o poema estranho ou ofensivo.",
+    "question": {
+      "prompt": "Existe uma única maneira cristã de interpretar o livro?",
+      "answer": "Não. Há leituras que destacam o amor humano e tradições de interpretação espiritual. É importante identificar cada abordagem e começar pela forma poética e pelas vozes do próprio texto."
+    },
+    "readings": [
+      {
+        "chapter": 2,
+        "verse": 8,
+        "endVerse": 13,
+        "note": "Observe como a paisagem e a mudança de estação acompanham o convite ao encontro."
+      },
+      {
+        "chapter": 8,
+        "verse": 6,
+        "endVerse": 7,
+        "note": "As imagens do selo, do fogo e das águas expressam a força e o valor do amor."
+      }
+    ]
+  },
+  {
+    "id": "ISA",
+    "number": 23,
+    "genre": "Poesia e discursos proféticos",
+    "themes": [
+      "Santidade",
+      "Justiça",
+      "Esperança"
+    ],
+    "category": "Profetas",
+    "testament": "Antigo Testamento",
+    "overview": [
+      "Isaías reúne denúncia da injustiça, reflexão sobre crises políticas e palavras de consolo. A cidade, o culto e as relações sociais aparecem sob a pergunta pela fidelidade a Deus. O livro possui diferentes movimentos e contextos internos; ler do primeiro ao último capítulo pede perceber mudanças de cenário, de destinatários e de tom, sem reduzir toda a obra a previsões isoladas.",
+      "Imagens de caminho, luz, servo e nova criação alimentam sua esperança. Os cristãos retomam diversas dessas passagens para compreender Jesus, mas essa releitura deve ser distinguida do primeiro horizonte dos textos. Observe como o cuidado com pobres e oprimidos acompanha a adoração: o futuro anunciado não dispensa a responsabilidade pelas pessoas que sofrem no presente."
+    ],
+    "connection": "Dialoga com as crises narradas em Reis e fornece imagens que serão retomadas nos Evangelhos e na esperança cristã de renovação.",
+    "example": "Uma celebração pode ser muito bem organizada e ainda ignorar quem passa fome. A crítica do profeta ajuda a perguntar como o culto se relaciona com práticas concretas de justiça.",
+    "question": {
+      "prompt": "Por que Isaías relaciona culto e cuidado social?",
+      "answer": "Porque a relação com Deus não é apresentada como atividade separada da convivência. Ritos e discursos perdem coerência quando a comunidade aceita opressão e deixa de defender quem é vulnerável."
+    },
+    "readings": [
+      {
+        "chapter": 1,
+        "verse": 10,
+        "endVerse": 17,
+        "note": "A denúncia do culto sem justiça desemboca em orientações concretas de cuidado."
+      },
+      {
+        "chapter": 40,
+        "verse": 1,
+        "endVerse": 11,
+        "note": "O tom de consolo inclui caminho, anúncio de boas notícias e a imagem de um pastor."
+      }
+    ]
+  },
+  {
+    "id": "JER",
+    "number": 24,
+    "genre": "Discursos proféticos e narrativas de crise",
+    "themes": [
+      "Aliança",
+      "Lamento",
+      "Esperança no exílio"
+    ],
+    "category": "Profetas",
+    "testament": "Antigo Testamento",
+    "overview": [
+      "Jeremias apresenta a atuação de um profeta em meio às crises que levam à queda de Jerusalém. Seus anúncios confrontam falsas seguranças, alianças políticas e injustiça. O templo não é tratado como proteção automática para uma comunidade que oprime. A palavra profética encontra resistência, e o livro permite ouvir o desgaste e a dor de quem precisa comunicá-la.",
+      "A destruição não ocupa a última palavra de toda a obra. Há promessas de restauração e de uma aliança marcada pelo conhecimento de Deus. A conhecida carta aos exilados pede atenção ao tempo da espera e ao cuidado com a cidade em que vivem. Leia promessas junto de seus destinatários e circunstâncias, evitando convertê-las em garantia imediata de sucesso individual."
+    ],
+    "connection": "Ajuda a compreender a queda narrada em 2 Reis e prepara a leitura do exílio como tempo de perda, perseverança e esperança.",
+    "example": "Quando uma comunidade confia apenas no nome de uma instituição, pode deixar de examinar suas ações. O discurso sobre o templo pergunta se a segurança declarada corresponde à justiça praticada.",
+    "question": {
+      "prompt": "A promessa aos exilados significa que toda espera será breve?",
+      "answer": "Não. A carta reconhece um tempo longo e orienta a vida durante ele. O consolo não elimina a história dos destinatários nem oferece um calendário universal para dificuldades pessoais."
+    },
+    "readings": [
+      {
+        "chapter": 7,
+        "verse": 1,
+        "endVerse": 11,
+        "note": "A confiança no templo é confrontada com a forma de tratar estrangeiros e vulneráveis."
+      },
+      {
+        "chapter": 29,
+        "verse": 4,
+        "endVerse": 14,
+        "note": "Leia a promessa dentro da carta, observando trabalho, oração, espera e retorno."
+      }
+    ]
+  },
+  {
+    "id": "LAM",
+    "number": 25,
+    "genre": "Poesia de lamento coletivo",
+    "themes": [
+      "Dor",
+      "Memória",
+      "Esperança"
+    ],
+    "category": "Profetas",
+    "testament": "Antigo Testamento",
+    "overview": [
+      "Lamentações reúne poemas ligados à devastação de Jerusalém. A cidade é personificada, a fome atinge famílias e a perda alcança o espaço público e a oração. A organização poética convive com imagens duras: a forma não torna o sofrimento menor, mas oferece linguagem para que a catástrofe não desapareça em silêncio ou em explicações apressadas.",
+      "O livro inclui perguntas dirigidas a Deus e também expressões de esperança. Nenhuma delas deve apagar as demais vozes da obra. Ler apenas um verso consolador pode esconder o peso do conjunto; ler apenas a dor pode perder o esforço de continuar orando. A comunidade busca palavras para viver depois da ruptura, conservando a memória de pessoas e relações atingidas."
+    ],
+    "connection": "Permanece junto da queda de Jerusalém narrada em Reis e Jeremias, oferecendo a voz do lamento antes de qualquer reconstrução.",
+    "example": "Depois de uma perda coletiva, uma comunidade pode precisar lembrar nomes e contar o que aconteceu antes de ouvir orientações sobre o futuro. O livro dá espaço a essa memória dolorosa.",
+    "question": {
+      "prompt": "Por que não começar logo com uma mensagem de superação?",
+      "answer": "Porque o sofrimento precisa ser reconhecido e ouvido. A esperança bíblica não exige apagar a dor; em Lamentações, ela surge dentro de uma oração que continua enfrentando perdas reais."
+    },
+    "readings": [
+      {
+        "chapter": 1,
+        "verse": 1,
+        "endVerse": 5,
+        "note": "A imagem da cidade solitária permite começar pela dimensão coletiva da perda."
+      },
+      {
+        "chapter": 3,
+        "verse": 19,
+        "endVerse": 26,
+        "note": "Observe como a lembrança da dor convive com a esperança na misericórdia de Deus."
+      }
+    ]
+  },
+  {
+    "id": "EZK",
+    "number": 26,
+    "genre": "Visões, ações simbólicas e discursos proféticos",
+    "themes": [
+      "Presença de Deus",
+      "Responsabilidade",
+      "Restauração"
+    ],
+    "category": "Profetas",
+    "testament": "Antigo Testamento",
+    "overview": [
+      "Ezequiel fala a uma comunidade deslocada e utiliza visões e gestos simbólicos para anunciar julgamento e esperança. A presença de Deus não fica confinada a um único edifício ou território. As imagens podem causar estranheza; antes de buscar equivalências modernas para cada detalhe, observe sua função na experiência de exílio e na pergunta sobre o futuro do povo.",
+      "O livro critica lideranças que se alimentam do rebanho e anuncia cuidado e renovação. A visão dos ossos secos interpreta a desesperança de uma comunidade que se julga sem futuro. Não é uma autorização para prometer resultados instantâneos a qualquer pessoa. A restauração envolve presença de Deus, transformação e reorganização da vida, depois de reconhecer a profundidade da ruptura."
+    ],
+    "connection": "Responde à crise do exílio e amplia as imagens de pastor e renovação que reaparecem nos Evangelhos e no Apocalipse.",
+    "example": "Se quem deveria cuidar usa recursos apenas para si, a comunidade perde proteção. A crítica aos pastores permite avaliar liderança por sua responsabilidade com as pessoas, não por sua aparência de força.",
+    "question": {
+      "prompt": "O que os ossos secos representam na própria visão?",
+      "answer": "A explicação do capítulo relaciona a imagem à casa de Israel, que perdeu a esperança. Começar por essa indicação impede transformar cada símbolo em uma previsão arbitrária sobre acontecimentos atuais."
+    },
+    "readings": [
+      {
+        "chapter": 34,
+        "verse": 1,
+        "endVerse": 16,
+        "note": "Compare a crítica aos pastores com a promessa de buscar e cuidar do rebanho."
+      },
+      {
+        "chapter": 37,
+        "verse": 1,
+        "endVerse": 14,
+        "note": "Leia a visão junto da explicação dada sobre a esperança de Israel."
+      }
+    ]
+  },
+  {
+    "id": "DAN",
+    "number": 27,
+    "genre": "Narrativas de corte e visões apocalípticas",
+    "themes": [
+      "Fidelidade",
+      "Impérios",
+      "Esperança"
+    ],
+    "category": "Profetas",
+    "testament": "Antigo Testamento",
+    "overview": [
+      "Daniel combina histórias de judeus vivendo em cortes estrangeiras com visões sobre reinos e conflitos. Alimentação, oração, estátua e cova de leões mostram tensões entre fidelidade e imposição imperial. A identidade da comunidade é posta à prova em situações de poder; os relatos também oferecem imagens de coragem e de limites para a obediência a autoridades.",
+      "Na parte das visões, animais e números fazem parte da linguagem apocalíptica. Eles precisam ser lidos em seus contextos literários e históricos, reconhecendo diferenças entre interpretações cristãs. A mensagem de esperança não depende de identificar toda notícia atual com um símbolo. O livro convida a perseverar diante de poderes que se apresentam como absolutos e a lembrar que esses poderes não são eternos."
+    ],
+    "connection": "Leva a experiência do exílio à reflexão sobre impérios e fornece linguagem simbólica importante para compreender o Apocalipse.",
+    "example": "Uma pessoa pode respeitar uma autoridade e ainda recusar uma ordem que viole sua consciência. As histórias de Daniel permitem discutir essa tensão sem glorificar confronto ou risco desnecessário.",
+    "question": {
+      "prompt": "Por que não ler os animais das visões como descrições literais?",
+      "answer": "Eles pertencem a uma forma simbólica de representar poderes e conflitos. O próprio livro oferece interpretações em alguns trechos, orientando o leitor a buscar sentido no contexto da visão."
+    },
+    "readings": [
+      {
+        "chapter": 3,
+        "verse": 13,
+        "endVerse": 18,
+        "note": "A resposta dos três jovens distingue confiança em Deus de uma exigência de livramento garantido."
+      },
+      {
+        "chapter": 7,
+        "verse": 9,
+        "endVerse": 14,
+        "note": "A visão contrapõe os poderes violentos ao julgamento e ao reino recebido diante de Deus."
+      }
+    ]
+  },
+  {
+    "id": "HOS",
+    "number": 28,
+    "genre": "Poesia profética com imagens de aliança",
+    "themes": [
+      "Fidelidade",
+      "Misericórdia",
+      "Retorno"
+    ],
+    "category": "Profetas",
+    "testament": "Antigo Testamento",
+    "overview": [
+      "Oseias usa imagens de casamento, família e agricultura para tratar da ruptura da aliança em Israel. Sua linguagem é intensa e, em alguns trechos, dolorosa. A denúncia alcança culto, política e falta de conhecimento de Deus. Ao ler a imagem conjugal, reconheça sua função profética e evite usá-la para justificar controle, humilhação ou permanência em relações violentas.",
+      "A misericórdia e o desejo de retorno também atravessam o livro. A imagem de Deus ensinando uma criança a andar introduz ternura em meio às advertências. A leitura pede acompanhar esses contrastes, sem reduzir a mensagem a ameaça ou a um consolo sem responsabilidade. Conhecer a Deus aparece ligado à fidelidade e a relações transformadas, e não apenas a palavras religiosas bem escolhidas."
+    ],
+    "connection": "Situa a crise de Israel no horizonte da aliança e oferece imagens de misericórdia retomadas nos Evangelhos.",
+    "example": "Dizer que uma relação importa e agir continuamente contra ela produz uma ruptura entre fala e prática. O profeta convida a observar essa distância no culto e na vida comunitária.",
+    "question": {
+      "prompt": "Conhecer a Deus significa apenas acumular informações religiosas?",
+      "answer": "No livro, esse conhecimento envolve uma relação de fidelidade que alcança as atitudes. A denúncia critica uma comunidade que mantém gestos religiosos enquanto rompe o cuidado e a responsabilidade."
+    },
+    "readings": [
+      {
+        "chapter": 6,
+        "verse": 1,
+        "endVerse": 6,
+        "note": "Observe a diferença entre um retorno apenas passageiro e a misericórdia desejada por Deus."
+      },
+      {
+        "chapter": 11,
+        "verse": 1,
+        "endVerse": 9,
+        "note": "As imagens de pai e criança revelam cuidado e a tensão da misericórdia."
+      }
+    ]
+  },
+  {
+    "id": "JOL",
+    "number": 29,
+    "genre": "Poesia profética de crise e renovação",
+    "themes": [
+      "Lamento comunitário",
+      "Retorno",
+      "Espírito"
+    ],
+    "category": "Profetas",
+    "testament": "Antigo Testamento",
+    "overview": [
+      "Joel parte de uma devastação que atinge campos, alimento e celebrações. A imagem dos gafanhotos torna visível uma crise que alcança toda a comunidade. O livro convoca diferentes grupos a reconhecer a perda, lamentar e buscar a Deus. Antes de aplicar suas imagens a acontecimentos atuais, acompanhe como a linguagem transforma o desastre em chamado à escuta e à mudança.",
+      "A promessa de restauração inclui o derramamento do Espírito sobre pessoas de diferentes idades e condições. A amplitude desse anúncio será retomada no discurso de Pedro em Atos. Há também linguagem de julgamento e do dia do Senhor, que precisa ser lida como parte da poesia profética. A esperança não depende de apagar a devastação, mas de enfrentar a crise em comunidade."
+    ],
+    "connection": "Relaciona crise, arrependimento e promessa; sua linguagem sobre o Espírito conecta a profecia ao relato cristão de Pentecostes.",
+    "example": "Quando uma dificuldade atinge uma cidade inteira, a resposta não pode depender de um único grupo. Joel reúne gerações e funções diferentes para participar do lamento e da busca por renovação.",
+    "question": {
+      "prompt": "Por que o anúncio do Espírito menciona pessoas tão diversas?",
+      "answer": "A lista amplia o alcance da promessa para além de uma elite: filhos, filhas, idosos, jovens e servos aparecem no anúncio. Atos retomará essa linguagem ao interpretar Pentecostes."
+    },
+    "readings": [
+      {
+        "chapter": 2,
+        "verse": 12,
+        "endVerse": 17,
+        "note": "O chamado ao retorno enfatiza o coração e reúne a comunidade para a oração."
+      },
+      {
+        "chapter": 2,
+        "verse": 28,
+        "endVerse": 32,
+        "note": "Observe quem é incluído na promessa do Espírito e compare depois com Atos 2."
+      }
+    ]
+  },
+  {
+    "id": "AMO",
+    "number": 30,
+    "genre": "Discursos proféticos de denúncia e esperança",
+    "themes": [
+      "Justiça",
+      "Culto",
+      "Responsabilidade"
+    ],
+    "category": "Profetas",
+    "testament": "Antigo Testamento",
+    "overview": [
+      "Amós denuncia uma sociedade que celebra prosperidade enquanto vende, explora e humilha pessoas pobres. Seu discurso alcança tribunais, negócios e festas religiosas. O profeta não aceita que o culto funcione como distração da injustiça. As imagens de julgamento questionam a segurança de quem considera sua posição privilegiada um sinal suficiente de aprovação divina.",
+      "O livro também confronta a ideia de que pertencer ao povo da aliança elimina responsabilidade. A proximidade declarada com Deus torna mais séria a exigência de justiça. Leia seus anúncios observando quem sofre os efeitos das decisões econômicas e políticas. A esperança final de restauração não desfaz a denúncia anterior; ela ajuda a imaginar uma vida comunitária diferente da riqueza construída sobre a exclusão."
+    ],
+    "connection": "Dialoga com a história do reino do norte e oferece uma das críticas mais diretas à separação entre religião e justiça social.",
+    "example": "Uma organização pode realizar eventos generosos e pagar salários injustos. Amós ajuda a perguntar se a celebração pública corresponde ao modo cotidiano de tratar pessoas sem poder de negociação.",
+    "question": {
+      "prompt": "Por que o profeta critica festas e cânticos religiosos?",
+      "answer": "A crítica se dirige ao culto que convive com a opressão. A questão não é a existência da música ou da festa, mas sua incoerência quando a comunidade recusa justiça."
+    },
+    "readings": [
+      {
+        "chapter": 5,
+        "verse": 10,
+        "endVerse": 15,
+        "note": "Observe como o tratamento no tribunal e a exploração econômica entram na denúncia."
+      },
+      {
+        "chapter": 5,
+        "verse": 21,
+        "endVerse": 24,
+        "note": "A linguagem sobre celebrações desemboca no chamado para que a justiça corra como águas."
+      }
+    ]
+  },
+  {
+    "id": "OBA",
+    "number": 31,
+    "genre": "Oráculo profético contra Edom",
+    "themes": [
+      "Fraternidade",
+      "Violência",
+      "Responsabilidade"
+    ],
+    "category": "Profetas",
+    "testament": "Antigo Testamento",
+    "overview": [
+      "Obadias é um livro breve que denuncia a atitude de Edom diante da calamidade de Judá. A imagem da rivalidade entre povos aparentados intensifica a crítica: aproveitar a queda do outro, bloquear fugitivos e participar da violência não são apresentados como neutralidade. A posição segura de uma comunidade é confrontada quando ela pensa estar fora do alcance de qualquer julgamento.",
+      "Sua linguagem pertence ao mundo dos oráculos contra nações e reúne denúncia, reversão e esperança para Sião. A leitura responsável não transforma povos atuais em equivalentes automáticos de Edom. O ponto de entrada é a responsabilidade diante da vulnerabilidade alheia: a queda de um vizinho pode revelar tanto a disposição para proteger quanto a tentação de lucrar com sua desgraça."
+    ],
+    "connection": "Conecta a memória da queda de Jerusalém às relações de Judá com seus vizinhos e à pergunta profética pela justiça entre povos.",
+    "example": "Quando alguém é humilhado em público, compartilhar a exposição para ganhar atenção não é apenas assistir. O livro ajuda a perceber a participação de quem aumenta a vulnerabilidade de outra pessoa.",
+    "question": {
+      "prompt": "O que a denúncia de Edom acrescenta à reflexão sobre injustiça?",
+      "answer": "Ela mostra que também há responsabilidade em explorar a calamidade alheia ou impedir a fuga de quem sofre. A violência inclui a vantagem buscada às custas da queda do outro."
+    },
+    "readings": [
+      {
+        "chapter": 1,
+        "verse": 3,
+        "endVerse": 4,
+        "note": "A imagem das alturas confronta uma segurança que se considera intocável."
+      },
+      {
+        "chapter": 1,
+        "verse": 10,
+        "endVerse": 14,
+        "note": "Observe os diferentes atos de participação na calamidade do povo vizinho."
+      }
+    ]
+  },
+  {
+    "id": "JON",
+    "number": 32,
+    "genre": "Narrativa profética com ironia",
+    "themes": [
+      "Misericórdia",
+      "Resistência",
+      "Compaixão"
+    ],
+    "category": "Profetas",
+    "testament": "Antigo Testamento",
+    "overview": [
+      "Jonas acompanha um profeta que foge de sua missão, encontra uma tempestade, ora em sua aflição e finalmente anuncia uma mensagem a Nínive. O grande peixe é uma parte da história, mas não seu único centro. Marinheiros e habitantes da cidade respondem de maneiras que contrastam com a resistência daquele que deveria levar a palavra.",
+      "O desfecho coloca uma pergunta sobre a compaixão de Deus diante da irritação do profeta. A narrativa termina convidando o leitor a examinar seus próprios limites de misericórdia. Em vez de transformar a obra apenas em debate sobre um acontecimento extraordinário, observe a ironia, os contrastes e a dificuldade de desejar o bem de pessoas que foram colocadas do lado de fora do nosso cuidado."
+    ],
+    "connection": "Abre a reflexão profética para a misericórdia dirigida a uma cidade estrangeira e questiona fronteiras estreitas de compaixão.",
+    "example": "Uma pessoa pode desejar perdão para o próprio erro e protestar quando alguém de quem não gosta recebe outra oportunidade. Jonas ajuda a reconhecer essa diferença de medida.",
+    "question": {
+      "prompt": "Por que a história não termina quando Jonas chega a Nínive?",
+      "answer": "Porque o conflito mais profundo ainda precisa aparecer: a resistência do profeta à misericórdia. A última cena desloca a atenção do cumprimento externo da missão para o coração de quem a realizou."
+    },
+    "readings": [
+      {
+        "chapter": 3,
+        "verse": 1,
+        "endVerse": 10,
+        "note": "Observe como a cidade responde à mensagem e como o relato apresenta a mudança."
+      },
+      {
+        "chapter": 4,
+        "verse": 1,
+        "endVerse": 11,
+        "note": "A conversa sobre a planta conduz à pergunta final sobre compaixão por Nínive."
+      }
+    ]
+  },
+  {
+    "id": "MIC",
+    "number": 33,
+    "genre": "Poesia profética de denúncia e promessa",
+    "themes": [
+      "Justiça",
+      "Humildade",
+      "Esperança"
+    ],
+    "category": "Profetas",
+    "testament": "Antigo Testamento",
+    "overview": [
+      "Miqueias denuncia líderes e grupos que concentram terras, distorcem julgamentos e usam sua posição para explorar. A vida religiosa não é poupada quando profetas e sacerdotes se tornam parte do problema. O livro contrasta a segurança proclamada por autoridades com a situação das pessoas cujas casas, recursos e direitos são tomados.",
+      "Ao lado das advertências aparecem imagens de futuro, paz e cuidado pastoral. A conhecida orientação sobre justiça, misericórdia e humildade não é uma frase solta para decoração; responde a uma conversa sobre culto e compromisso. Leia essa síntese junto das denúncias anteriores. A esperança de restauração aponta para outra forma de convivência, em que poder e adoração não sirvam para encobrir violência."
+    ],
+    "connection": "Relaciona-se às crises de Israel e Judá e fornece linguagem retomada na leitura cristã sobre Belém, justiça e cuidado do povo.",
+    "example": "Se alguém oferece uma contribuição visível, mas trata funcionários com humilhação, a generosidade pública não resolve a injustiça. Miqueias ajuda a colocar o gesto religioso ao lado da convivência diária.",
+    "question": {
+      "prompt": "Praticar justiça é um assunto separado da espiritualidade?",
+      "answer": "No livro, não. A resposta sobre o que Deus pede reúne justiça, misericórdia e humildade. Essas atitudes se tornam compreensíveis quando lemos a situação das pessoas prejudicadas pelo poder."
+    },
+    "readings": [
+      {
+        "chapter": 2,
+        "verse": 1,
+        "endVerse": 5,
+        "note": "A denúncia descreve o planejamento da injustiça e a tomada de campos e casas."
+      },
+      {
+        "chapter": 6,
+        "verse": 6,
+        "endVerse": 8,
+        "note": "Leia a pergunta sobre ofertas antes da síntese sobre justiça, misericórdia e humildade."
+      }
+    ]
+  },
+  {
+    "id": "NAM",
+    "number": 34,
+    "genre": "Poesia profética contra Nínive",
+    "themes": [
+      "Opressão",
+      "Queda dos impérios",
+      "Justiça"
+    ],
+    "category": "Profetas",
+    "testament": "Antigo Testamento",
+    "overview": [
+      "Naum anuncia a queda de Nínive, associada ao poder assírio, com imagens fortes de batalha e reversão. A cidade que parecia impossível de enfrentar é apresentada como vulnerável. Para comunidades atingidas pela violência imperial, a notícia de que o opressor não é eterno possui um sentido diferente daquele que teria para quem observa tudo de uma posição segura.",
+      "A linguagem de julgamento é dura e precisa ser lida sem prazer na dor de pessoas nem incentivo à vingança atual. Compare o livro com Jonas: a mesma cidade pode aparecer em tradições que interrogam a misericórdia e a justiça por caminhos distintos. Essa conversa ajuda a evitar uma imagem simplificada de Deus ou uma identificação automática de adversários contemporâneos com uma nação antiga."
+    ],
+    "connection": "Participa da memória bíblica sobre impérios e pode ser lido em diálogo com Jonas, distinguindo seus contextos e suas perguntas.",
+    "example": "Quem sofre intimidação pode precisar ouvir que o poder do agressor tem limites. Naum permite considerar essa esperança sem transformar a experiência da vítima em licença para praticar outra violência.",
+    "question": {
+      "prompt": "Jonas e Naum fazem a mesma pergunta sobre Nínive?",
+      "answer": "Não. Jonas destaca a resistência à misericórdia; Naum anuncia o fim de um poder opressor. Ler os dois amplia a reflexão, em vez de apagar suas diferenças literárias e históricas."
+    },
+    "readings": [
+      {
+        "chapter": 1,
+        "verse": 7,
+        "endVerse": 15,
+        "note": "Observe a combinação entre refúgio para quem sofre e anúncio do fim da ameaça."
+      },
+      {
+        "chapter": 3,
+        "verse": 1,
+        "endVerse": 7,
+        "note": "A denúncia apresenta os efeitos da violência e da exploração atribuídas à cidade."
+      }
+    ]
+  },
+  {
+    "id": "HAB",
+    "number": 35,
+    "genre": "Diálogo profético e oração",
+    "themes": [
+      "Perguntas",
+      "Justiça",
+      "Perseverança"
+    ],
+    "category": "Profetas",
+    "testament": "Antigo Testamento",
+    "overview": [
+      "Habacuque começa com uma queixa dirigida a Deus: a violência permanece, a justiça parece falhar e a resposta não chega como o profeta esperava. A conversa avança para outra dificuldade quando a ação de uma potência violenta entra em cena. O livro preserva perguntas que não são resolvidas por uma explicação confortável sobre o funcionamento do mundo.",
+      "As denúncias contra exploração e arrogância impedem tratar o poder vencedor como automaticamente justo. No final, a oração recorre a imagens do agir de Deus e assume uma postura de confiança mesmo diante da falta. Leia esse movimento sem obrigar quem sofre a demonstrar serenidade imediata. A perseverança apresentada surge de uma conversa franca que permitiu lamentar, perguntar e continuar esperando."
+    ],
+    "connection": "Dialoga com a crise das potências e com a tradição de lamento, aproximando a palavra profética das perguntas presentes em Jó e Salmos.",
+    "example": "Ao denunciar uma injustiça e ver surgir um problema ainda maior, alguém pode sentir que suas perguntas só aumentaram. Habacuque mostra que continuar dialogando não exige fingir que tudo ficou simples.",
+    "question": {
+      "prompt": "Fazer perguntas difíceis significa abandonar a fé?",
+      "answer": "O próprio livro conserva as perguntas do profeta dentro de sua relação com Deus. A confiança final não apaga a conversa; ela é apresentada depois de queixa, escuta e reflexão."
+    },
+    "readings": [
+      {
+        "chapter": 1,
+        "verse": 1,
+        "endVerse": 4,
+        "note": "A abertura coloca violência e demora da justiça no centro da oração."
+      },
+      {
+        "chapter": 3,
+        "verse": 17,
+        "endVerse": 19,
+        "note": "Observe a confiança expressa em um cenário de perda concreta de recursos."
+      }
+    ]
+  },
+  {
+    "id": "ZEP",
+    "number": 36,
+    "genre": "Poesia profética de julgamento e restauração",
+    "themes": [
+      "Responsabilidade",
+      "Humildade",
+      "Renovação"
+    ],
+    "category": "Profetas",
+    "testament": "Antigo Testamento",
+    "overview": [
+      "Sofonias descreve o dia do Senhor com linguagem abrangente de julgamento. O discurso alcança práticas religiosas, autoridades e indiferença, confrontando quem acredita que nada mudará. A denúncia não permite que uma comunidade se considere protegida apenas por sua identidade: sua forma de agir e de tratar os outros também é colocada sob exame.",
+      "O movimento do livro inclui a busca da humildade e uma promessa de restauração que reúne pessoas dispersas e envergonhadas. A imagem final de alegria não deve fazer esquecer a crítica anterior, nem ser usada para negar a dor de quem ainda espera. Leia a passagem da advertência ao consolo como uma transformação do horizonte comunitário, em que o futuro não pertence à arrogância dos poderosos."
+    ],
+    "connection": "Integra a voz profética sobre Judá e compartilha com outros profetas a passagem do julgamento à esperança de uma comunidade renovada.",
+    "example": "A ideia de que nada pode mudar pode alimentar indiferença diante da injustiça. Sofonias pergunta como a comunidade vive quando imagina que suas escolhas nunca precisarão ser examinadas.",
+    "question": {
+      "prompt": "A restauração é apenas a recuperação de prestígio?",
+      "answer": "O encerramento fala de reunir, cuidar e retirar a vergonha de quem foi disperso. Seu horizonte inclui a vida das pessoas vulneráveis, e não somente a imagem pública de uma cidade."
+    },
+    "readings": [
+      {
+        "chapter": 2,
+        "verse": 1,
+        "endVerse": 3,
+        "note": "O convite a buscar justiça e humildade aparece diante da seriedade da advertência."
+      },
+      {
+        "chapter": 3,
+        "verse": 14,
+        "endVerse": 20,
+        "note": "Leia a alegria final junto do cuidado prometido às pessoas feridas e dispersas."
+      }
+    ]
+  },
+  {
+    "id": "HAG",
+    "number": 37,
+    "genre": "Discursos proféticos de reconstrução",
+    "themes": [
+      "Prioridades",
+      "Trabalho comunitário",
+      "Ânimo"
+    ],
+    "category": "Profetas",
+    "testament": "Antigo Testamento",
+    "overview": [
+      "Ageu fala a uma comunidade de retorno que precisa reconstruir o templo. O contraste entre casas cuidadas e a obra abandonada provoca perguntas sobre prioridades. A mensagem não deve ser transformada em pressão para financiar qualquer construção religiosa atual: seu cenário é uma reorganização específica de vida e culto depois do exílio.",
+      "O livro também reconhece o desânimo de quem compara a reconstrução com a memória de um passado grandioso. Governante, sacerdote e povo são chamados a participar do trabalho. As palavras de encorajamento não eliminam o esforço nem prometem uma experiência sem obstáculos; sustentam uma tarefa comunitária que parece pequena aos olhos de alguns. Observe a relação entre memória, presença de Deus e responsabilidade pelo começo possível."
+    ],
+    "connection": "Relaciona-se à reconstrução narrada em Esdras e ao contexto profético de Zacarias, depois da volta de grupos do exílio.",
+    "example": "Uma tarefa necessária pode ser sempre adiada porque não parece importante ou porque seu começo é modesto. Ageu ajuda a perguntar quais prioridades orientam uma comunidade e quem participa de sua realização.",
+    "question": {
+      "prompt": "O texto permite cobrar ofertas para qualquer projeto em nome de Deus?",
+      "answer": "Não. É preciso respeitar o contexto da reconstrução do templo após o exílio. Uma aplicação atual deve considerar liberdade, responsabilidade financeira e o cuidado com as necessidades das pessoas."
+    },
+    "readings": [
+      {
+        "chapter": 1,
+        "verse": 1,
+        "endVerse": 8,
+        "note": "Observe o contraste entre as prioridades da comunidade e a tarefa deixada de lado."
+      },
+      {
+        "chapter": 2,
+        "verse": 1,
+        "endVerse": 9,
+        "note": "O encorajamento responde à comparação entre a obra presente e a memória do passado."
+      }
+    ]
+  },
+  {
+    "id": "ZEC",
+    "number": 38,
+    "genre": "Visões e discursos proféticos",
+    "themes": [
+      "Restauração",
+      "Justiça",
+      "Esperança"
+    ],
+    "category": "Profetas",
+    "testament": "Antigo Testamento",
+    "overview": [
+      "Zacarias reúne visões e mensagens dirigidas a uma comunidade em reconstrução. Imagens de cavalos, lâmpadas e personagens sacerdotais participam de uma linguagem simbólica que oferece encorajamento e também exige mudança. A obra não trata apenas de um edifício: pergunta por julgamento justo, misericórdia e proteção de pessoas vulneráveis na cidade que volta a se organizar.",
+      "Na parte final, imagens de rei, pastor e conflito ampliarão a esperança e serão retomadas nos Evangelhos. As diferentes seções pedem leitura atenta, sem supor que todo símbolo tenha uma única aplicação direta ao presente. O livro relaciona futuro e responsabilidade: uma comunidade pode falar de restauração e ainda precisar aprender a ouvir, a governar e a cuidar sem repetir antigas injustiças."
+    ],
+    "connection": "Acompanha o contexto de Ageu e fornece imagens importantes para a leitura cristã da entrada de Jesus em Jerusalém e de sua paixão.",
+    "example": "Reconstruir um espaço comunitário sem ouvir viúvas, estrangeiros e pobres pode repetir a exclusão anterior. O livro convida a avaliar a restauração pela forma como as relações são refeitas.",
+    "question": {
+      "prompt": "Por que os Evangelhos retomam imagens de Zacarias?",
+      "answer": "As comunidades cristãs reconheceram nessas imagens linguagem para compreender Jesus. Essa releitura deve ser estudada junto do contexto profético, sem apagar as perguntas de reconstrução presentes no livro."
+    },
+    "readings": [
+      {
+        "chapter": 7,
+        "verse": 8,
+        "endVerse": 14,
+        "note": "Observe justiça, misericórdia e proteção dos vulneráveis na mensagem à comunidade."
+      },
+      {
+        "chapter": 9,
+        "verse": 9,
+        "endVerse": 10,
+        "note": "A imagem do rei humilde aparece ligada ao anúncio de paz."
+      }
+    ]
+  },
+  {
+    "id": "MAL",
+    "number": 39,
+    "genre": "Diálogos proféticos com a comunidade",
+    "themes": [
+      "Fidelidade",
+      "Culto",
+      "Justiça"
+    ],
+    "category": "Profetas",
+    "testament": "Antigo Testamento",
+    "overview": [
+      "Malaquias utiliza perguntas e respostas para confrontar a distância entre discurso e prática. Sacerdotes e povo são chamados a examinar a qualidade do culto, a fidelidade nas relações e a responsabilidade com recursos. O livro permite ouvir objeções da comunidade e observar como o profeta responde, em vez de apresentar apenas uma sequência de ordens sem interlocutores.",
+      "A reflexão sobre ofertas e dízimos pertence ao contexto de sustento do culto e da comunidade. Não deve ser usada para prometer enriquecimento, exigir dinheiro de quem passa necessidade ou atribuir doença à falta de contribuição. A denúncia também alcança exploração de trabalhadores e desrespeito a vulneráveis. No encerramento, a lembrança da Lei e a expectativa profética ligam passado e esperança de renovação."
+    ],
+    "connection": "Encerra a coleção profética nesta ordem cristã e oferece linguagem retomada nos Evangelhos sobre preparação e retorno a Deus.",
+    "example": "Uma conversa sobre contribuição precisa perguntar para que os recursos servem e como as pessoas são tratadas. Ler apenas a parte financeira do livro esconderia sua denúncia da exploração e da injustiça.",
+    "question": {
+      "prompt": "O livro ensina uma troca automática de dinheiro por prosperidade?",
+      "answer": "Não. Suas palavras pertencem a uma situação de aliança e responsabilidade comunitária. Uma leitura fiel ao conjunto considera justiça, culto e cuidado, sem transformar contribuição em compra de resultados."
+    },
+    "readings": [
+      {
+        "chapter": 3,
+        "verse": 1,
+        "endVerse": 5,
+        "note": "A expectativa da vinda do Senhor inclui uma denúncia concreta de exploração e injustiça."
+      },
+      {
+        "chapter": 3,
+        "verse": 6,
+        "endVerse": 12,
+        "note": "Leia a orientação sobre recursos junto do contexto comunitário e das demais denúncias do livro."
+      }
+    ]
+  },
+  {
+    "id": "MAT",
+    "number": 40,
+    "genre": "Evangelho narrativo com discursos de Jesus",
+    "themes": [
+      "Reino dos céus",
+      "Discipulado",
+      "Cumprimento das Escrituras"
+    ],
+    "category": "Evangelhos e Atos",
+    "testament": "Novo Testamento",
+    "overview": [
+      "Mateus apresenta Jesus em ligação com a história de Israel e reúne narrativas de encontros com grandes discursos de ensino. Genealogia, nascimento, batismo e chamado dos discípulos abrem um caminho que leva à paixão e à ressurreição. As expressões sobre cumprimento convidam a observar como o evangelista relê as Escrituras, sem reduzir os textos anteriores a detalhes isolados de uma previsão.",
+      "O Sermão do Monte aproxima oração, justiça, reconciliação e cuidado com quem passa necessidade. Parábolas e confrontos mostram que ouvir uma palavra não equivale a praticá-la. A missão final liga o discipulado ao ensino e à presença de Jesus. Leia também a diversidade de pessoas acolhidas pelo relato e evite transformar seus conflitos antigos em hostilidade contra comunidades judaicas atuais."
+    ],
+    "connection": "Abre o conjunto dos Evangelhos nesta ordem e retoma temas da Lei e dos Profetas para apresentar a vida e o ensino de Jesus.",
+    "example": "Uma pessoa pode conhecer de memória um conselho sobre reconciliação e ainda evitar conversar com quem feriu. A imagem de construir sobre a rocha convida a aproximar escuta e prática.",
+    "question": {
+      "prompt": "Fazer discípulos significa apenas reunir pessoas?",
+      "answer": "No encerramento, a missão inclui ensinar a guardar o que Jesus orientou. Acompanhamento, aprendizado e prática fazem parte do discipulado, sustentado pela promessa de sua presença."
+    },
+    "readings": [
+      {
+        "chapter": 5,
+        "verse": 1,
+        "endVerse": 12,
+        "note": "As bem-aventuranças abrem o Sermão do Monte e apresentam o horizonte do Reino."
+      },
+      {
+        "chapter": 28,
+        "verse": 16,
+        "endVerse": 20,
+        "note": "Observe a ligação entre missão, batismo, ensino e a presença de Jesus."
+      }
+    ]
+  },
+  {
+    "id": "MRK",
+    "number": 41,
+    "genre": "Evangelho narrativo de ritmo concentrado",
+    "themes": [
+      "Identidade de Jesus",
+      "Serviço",
+      "Caminho da cruz"
+    ],
+    "category": "Evangelhos e Atos",
+    "testament": "Novo Testamento",
+    "overview": [
+      "Marcos acompanha Jesus em movimento: encontros, curas, debates e deslocamentos revelam sua missão e provocam perguntas. Os discípulos veem sinais, mas frequentemente não compreendem o caminho. A pergunta sobre quem é Jesus se torna especialmente importante quando o relato relaciona sua identidade ao sofrimento e à entrega, contrariando expectativas de poder e prestígio.",
+      "O evangelho coloca o serviço no centro da conversa sobre liderança. Pessoas que pareciam estar à margem podem reconhecer algo que os discípulos demoram a enxergar. Leia as cenas em sequência e acompanhe as reações, em vez de tratar cada milagre como uma história independente. Na paixão, abandono e testemunho mantêm aberta a pergunta sobre o significado de seguir aquele que foi crucificado."
+    ],
+    "connection": "Oferece um percurso concentrado para comparar com Mateus e Lucas, ligando o anúncio do Reino ao caminho de serviço e da cruz.",
+    "example": "Se um grupo discute quem merece mais destaque, a resposta de Jesus sobre servir desloca o critério de importância. A questão passa a ser quem cuida, e não quem aparece primeiro.",
+    "question": {
+      "prompt": "Por que os discípulos nem sempre entendem Jesus?",
+      "answer": "Essa incompreensão faz parte da narrativa e ensina o leitor a rever suas próprias expectativas. Conviver com sinais extraordinários não elimina a necessidade de aprender o caminho do serviço."
+    },
+    "readings": [
+      {
+        "chapter": 8,
+        "verse": 27,
+        "endVerse": 35,
+        "note": "A pergunta sobre a identidade de Jesus é seguida pelo anúncio do sofrimento e pelo chamado a segui-lo."
+      },
+      {
+        "chapter": 10,
+        "verse": 35,
+        "endVerse": 45,
+        "note": "Uma disputa por lugares de honra conduz ao ensino sobre liderança e serviço."
+      }
+    ]
+  },
+  {
+    "id": "LUK",
+    "number": 42,
+    "genre": "Evangelho narrativo com atenção ao caminho",
+    "themes": [
+      "Misericórdia",
+      "Oração",
+      "Acolhimento"
+    ],
+    "category": "Evangelhos e Atos",
+    "testament": "Novo Testamento",
+    "overview": [
+      "Lucas apresenta a vida de Jesus com atenção à oração, à ação do Espírito e às pessoas frequentemente colocadas à margem. Mulheres, pobres, estrangeiros e pecadores participam de encontros decisivos. A narrativa acompanha uma viagem em direção a Jerusalém, durante a qual parábolas e conversas aprofundam a pergunta sobre o cuidado de Deus e a resposta humana.",
+      "O samaritano, o pai que recebe o filho e Zaqueu ajudam a perceber a misericórdia em atitudes concretas. A atenção aos recursos e à mesa também atravessa o relato: quem é convidado, quem reparte e quem permanece excluído? O encerramento inclui o encontro no caminho de Emaús, ligando Escrituras, escuta e reconhecimento do Ressuscitado, e prepara a continuidade oferecida em Atos."
+    ],
+    "connection": "Forma com Atos uma sequência narrativa que vai do ministério de Jesus à expansão do testemunho das primeiras comunidades cristãs.",
+    "example": "Para ajudar alguém, não basta discutir a definição de próximo. A parábola do samaritano convida a observar quem interrompe o caminho, aproxima-se da ferida e organiza cuidado concreto.",
+    "question": {
+      "prompt": "Por que tantas refeições aparecem no relato?",
+      "answer": "A mesa torna visíveis acolhimento, diferenças sociais, partilha e resistência à convivência. As refeições ajudam a compreender como a misericórdia desafia fronteiras presentes nas relações."
+    },
+    "readings": [
+      {
+        "chapter": 10,
+        "verse": 25,
+        "endVerse": 37,
+        "note": "A pergunta sobre o próximo é transformada pela história de quem se aproxima para cuidar."
+      },
+      {
+        "chapter": 24,
+        "verse": 13,
+        "endVerse": 35,
+        "note": "O caminho de Emaús reúne conversa, leitura das Escrituras e reconhecimento de Jesus."
+      }
+    ]
+  },
+  {
+    "id": "JHN",
+    "number": 43,
+    "genre": "Evangelho com sinais e longos diálogos",
+    "themes": [
+      "Vida",
+      "Identidade de Jesus",
+      "Amor"
+    ],
+    "category": "Evangelhos e Atos",
+    "testament": "Novo Testamento",
+    "overview": [
+      "João apresenta Jesus por meio de sinais, encontros e diálogos que aprofundam seu significado. A abertura fala da Palavra e da vida; depois, água, pão, luz, pastor e videira ajudam a compreender a relação de Jesus com as pessoas. As conversas costumam partir de uma pergunta ou de um mal-entendido, convidando o leitor a avançar para além de uma primeira impressão.",
+      "Os sinais não funcionam como espetáculo isolado: apontam para a identidade de Jesus e para a fé. Na despedida, amor, serviço e presença do Espírito orientam a comunidade. O lava-pés mostra em gesto o cuidado que o discurso explica. Ao ler os conflitos do evangelho, reconheça seu contexto antigo e não os use para responsabilizar povos ou comunidades religiosas atuais."
+    ],
+    "connection": "Dialoga com os demais Evangelhos por um caminho literário próprio, oferecendo imagens centrais para a reflexão cristã sobre Jesus, vida e comunhão.",
+    "example": "Em uma conversa difícil, alguém pode precisar retomar uma palavra conhecida e descobrir um sentido mais profundo. Os diálogos de João convidam a escutar esse processo, sem apressar a compreensão dos interlocutores.",
+    "question": {
+      "prompt": "Como um sinal se distingue de um acontecimento apenas impressionante?",
+      "answer": "No evangelho, o sinal aponta além de si mesmo para revelar algo sobre Jesus e suscitar fé. Ler a conversa que o acompanha ajuda a reconhecer essa intenção narrativa."
+    },
+    "readings": [
+      {
+        "chapter": 4,
+        "verse": 7,
+        "endVerse": 26,
+        "note": "O encontro com a mulher samaritana desenvolve perguntas sobre água, vida e adoração."
+      },
+      {
+        "chapter": 13,
+        "verse": 1,
+        "endVerse": 17,
+        "note": "O gesto de lavar os pés apresenta uma forma concreta de serviço entre os discípulos."
+      }
+    ]
+  },
+  {
+    "id": "ACT",
+    "number": 44,
+    "genre": "Narrativa das primeiras comunidades e da missão",
+    "themes": [
+      "Espírito",
+      "Testemunho",
+      "Inclusão"
+    ],
+    "category": "Evangelhos e Atos",
+    "testament": "Novo Testamento",
+    "overview": [
+      "Atos continua o caminho iniciado no Evangelho de Lucas e acompanha o testemunho sobre Jesus de Jerusalém em direção a outros povos. Pentecostes, a vida da comunidade, conflitos internos e perseguições formam parte da narrativa. Pedro, Estêvão, Filipe, Paulo e diversas outras pessoas participam de uma história que não depende de um único protagonista humano.",
+      "A entrada dos gentios provoca perguntas sobre identidade, costumes e pertencimento. Reuniões e decisões mostram que a expansão exige discernimento e diálogo, não apenas deslocamento geográfico. O livro também registra divergências entre colaboradores e dificuldades reais das comunidades. Leia seus episódios junto das cartas quando possível, reconhecendo que uma narrativa de missão e uma carta dirigida a uma comunidade têm propósitos literários diferentes."
+    ],
+    "connection": "Faz a ponte entre a vida de Jesus narrada em Lucas e as comunidades que receberão as cartas do Novo Testamento.",
+    "example": "Quando chegam pessoas com costumes diferentes, uma comunidade pode exigir uniformidade ou conversar sobre o que realmente sustenta a comunhão. A reunião de Jerusalém ajuda a estudar essa pergunta.",
+    "question": {
+      "prompt": "A expansão da missão acontece sem conflitos?",
+      "answer": "Não. Atos registra debates, desigualdades, perseguições e divergências. A presença do Espírito não elimina o discernimento comunitário nem a responsabilidade de enfrentar problemas concretos."
+    },
+    "readings": [
+      {
+        "chapter": 2,
+        "verse": 42,
+        "endVerse": 47,
+        "note": "A descrição da comunidade reúne ensino, oração, mesa e partilha de recursos."
+      },
+      {
+        "chapter": 15,
+        "verse": 1,
+        "endVerse": 21,
+        "note": "Observe a pergunta discutida e as vozes ouvidas na reunião sobre os gentios."
+      }
+    ]
+  },
+  {
+    "id": "ROM",
+    "number": 45,
+    "genre": "Carta argumentativa sobre o evangelho",
+    "themes": [
+      "Graça",
+      "Fé",
+      "Vida transformada"
+    ],
+    "category": "Cartas",
+    "testament": "Novo Testamento",
+    "overview": [
+      "Romanos desenvolve uma reflexão extensa sobre pecado, graça, fé e a justiça de Deus. A carta conversa com as Escrituras e se dirige a uma comunidade em que a relação entre judeus e gentios importa. Para acompanhar seu argumento, leia blocos inteiros e observe perguntas, exemplos e respostas; uma frase isolada pode perder a função que recebe na conversa.",
+      "A reflexão alcança a vida no Espírito, a esperança e o lugar de Israel, antes de se desdobrar em orientações sobre convivência e serviço. Os capítulos finais pedem acolhimento diante de diferenças e apresentam uma rede de colaboradores. A graça não é descrita como indiferença ao modo de viver, nem o discurso sobre Israel autoriza desprezo pelo povo judeu."
+    ],
+    "connection": "Oferece uma leitura teológica da missão entre judeus e gentios que ajuda a aprofundar perguntas presentes em Atos e em outras cartas.",
+    "example": "Duas pessoas podem discordar sobre práticas alimentares e julgar a fé uma da outra. O ensino sobre acolhimento convida a distinguir o centro da comunhão de disputas que humilham o próximo.",
+    "question": {
+      "prompt": "A graça elimina a responsabilidade pelo modo de viver?",
+      "answer": "Não. A carta pergunta explicitamente sobre essa conclusão e a contesta. O cuidado com a vida transformada e com a comunidade acompanha a reflexão sobre a iniciativa de Deus."
+    },
+    "readings": [
+      {
+        "chapter": 6,
+        "verse": 1,
+        "endVerse": 4,
+        "note": "Paulo responde à ideia de que a graça seria um motivo para permanecer no pecado."
+      },
+      {
+        "chapter": 12,
+        "verse": 1,
+        "endVerse": 13,
+        "note": "Observe como a reflexão se desdobra em serviço, diversidade e amor concreto."
+      }
+    ]
+  },
+  {
+    "id": "1CO",
+    "number": 46,
+    "genre": "Carta a uma comunidade com divisões",
+    "themes": [
+      "Unidade",
+      "Amor",
+      "Dons para o bem comum"
+    ],
+    "category": "Cartas",
+    "testament": "Novo Testamento",
+    "overview": [
+      "1 Coríntios responde a conflitos e perguntas de uma comunidade diversa. Divisões, prestígio, relações, refeições e dons espirituais aparecem em situações concretas. A carta confronta a tendência de organizar a comunidade pela competição entre pessoas e líderes. Saber, falar bem ou ocupar uma posição de destaque não substitui a responsabilidade de edificar quem está ao lado.",
+      "O ensino sobre o amor pertence à conversa sobre dons e vida comunitária, não apenas a celebrações de casamento. A Ceia é tratada junto de desigualdades que humilham os pobres. Ao final, a ressurreição ocupa lugar central na esperança cristã. Leia as orientações considerando as perguntas da comunidade e reconheça as diferentes interpretações cristãs de alguns trechos difíceis."
+    ],
+    "connection": "Mostra por dentro problemas de uma comunidade alcançada pela missão narrada em Atos e relaciona fé em Cristo ao cuidado mútuo.",
+    "example": "Se uma reunião valoriza apenas quem fala com destaque, tarefas discretas podem ser desprezadas. A imagem do corpo lembra que membros diferentes precisam uns dos outros e merecem cuidado.",
+    "question": {
+      "prompt": "Por que o capítulo sobre o amor aparece entre textos sobre dons?",
+      "answer": "Porque o amor orienta o uso dos dons na comunidade. A diversidade perde seu sentido quando se transforma em disputa por superioridade, em vez de contribuir para o bem comum."
+    },
+    "readings": [
+      {
+        "chapter": 12,
+        "verse": 12,
+        "endVerse": 27,
+        "note": "A imagem do corpo liga diversidade, dignidade e cuidado entre os membros."
+      },
+      {
+        "chapter": 13,
+        "verse": 1,
+        "endVerse": 7,
+        "note": "Leia o ensino sobre o amor dentro da conversa sobre serviço e vida comunitária."
+      }
+    ]
+  },
+  {
+    "id": "2CO",
+    "number": 47,
+    "genre": "Carta marcada por defesa e reconciliação",
+    "themes": [
+      "Fragilidade",
+      "Consolo",
+      "Generosidade"
+    ],
+    "category": "Cartas",
+    "testament": "Novo Testamento",
+    "overview": [
+      "2 Coríntios permite ouvir uma relação difícil entre Paulo e a comunidade. Defesa do ministério, sofrimento, reconciliação e perguntas sobre autoridade atravessam a carta. A linguagem é pessoal e intensa: o vínculo com a comunidade importa, mas não é protegido pela aparência de uma vida sem dificuldades. A fragilidade torna visível outra maneira de compreender o serviço.",
+      "A coleta para outras comunidades ocupa parte importante da carta e conecta solidariedade a recursos concretos. Contribuir deve envolver disposição, responsabilidade e liberdade, sem manipulação. O contraste entre aparência e verdade também aparece no modo de avaliar pessoas e lideranças. Leia os diferentes movimentos da carta com atenção ao tom e à situação, evitando transformar sofrimento em prova de maior valor espiritual."
+    ],
+    "connection": "Continua a conversa com Corinto e aprofunda as tensões entre autoridade, fragilidade e serviço que também ajudam a ler outras cartas paulinas.",
+    "example": "Uma liderança pode sentir necessidade de parecer invulnerável para ser respeitada. A imagem dos vasos de barro permite reconhecer limites sem abandonar a responsabilidade e o compromisso de servir.",
+    "question": {
+      "prompt": "A carta apresenta a fragilidade como motivo para desistir?",
+      "answer": "Não. Ela reconhece aflições reais e questiona critérios de prestígio, enquanto sustenta o serviço e o cuidado. Fragilidade não é romantizada nem escondida como se invalidasse toda contribuição."
+    },
+    "readings": [
+      {
+        "chapter": 4,
+        "verse": 7,
+        "endVerse": 12,
+        "note": "O tesouro em vasos de barro relaciona limite humano e vida a serviço do evangelho."
+      },
+      {
+        "chapter": 9,
+        "verse": 6,
+        "endVerse": 8,
+        "note": "Observe a disposição de quem contribui e a orientação contra dar sob constrangimento."
+      }
+    ]
+  },
+  {
+    "id": "GAL",
+    "number": 48,
+    "genre": "Carta argumentativa sobre fé e liberdade",
+    "themes": [
+      "Graça",
+      "Pertencimento",
+      "Liberdade para amar"
+    ],
+    "category": "Cartas",
+    "testament": "Novo Testamento",
+    "overview": [
+      "Gálatas enfrenta uma controvérsia sobre a participação dos gentios na comunidade cristã e as exigências que deveriam acompanhá-la. A carta utiliza argumentos das Escrituras, memória de encontros e linguagem intensa para defender a suficiência de Cristo. Antes de aplicar cada frase, identifique a pergunta em discussão: quem pertence e sobre que base esse pertencimento é reconhecido?",
+      "A liberdade anunciada não é licença para prejudicar o próximo. Sua expressão concreta aparece no serviço pelo amor, no fruto do Espírito e no cuidado com quem precisa de ajuda. A comparação com o judaísmo deve ser feita com respeito e contexto, sem transformar a discussão antiga em caricatura de uma religião atual. O argumento busca preservar a comunhão recebida pela fé."
+    ],
+    "connection": "Aprofunda uma pergunta presente em Atos 15: a inclusão dos gentios e sua relação com práticas de identidade e com a promessa a Abraão.",
+    "example": "Uma comunidade pode criar exigências adicionais para dizer quem merece acolhimento. Gálatas ajuda a perguntar se essas condições correspondem ao evangelho anunciado ou apenas reproduzem fronteiras de prestígio.",
+    "question": {
+      "prompt": "Ser livre significa agir sem considerar os outros?",
+      "answer": "Não. A carta liga a liberdade ao serviço pelo amor. O fruto do Espírito e a responsabilidade mútua mostram que a liberdade cristã transforma a convivência em vez de dispensá-la."
+    },
+    "readings": [
+      {
+        "chapter": 3,
+        "verse": 23,
+        "endVerse": 29,
+        "note": "A reflexão sobre fé e pertencimento culmina na unidade em Cristo."
+      },
+      {
+        "chapter": 5,
+        "verse": 13,
+        "endVerse": 26,
+        "note": "Leia a liberdade junto do serviço pelo amor e do fruto do Espírito."
+      }
+    ]
+  },
+  {
+    "id": "EPH",
+    "number": 49,
+    "genre": "Carta de exortação e visão comunitária",
+    "themes": [
+      "Graça",
+      "Unidade",
+      "Vida cotidiana"
+    ],
+    "category": "Cartas",
+    "testament": "Novo Testamento",
+    "overview": [
+      "Efésios apresenta um horizonte amplo de bênção e reconciliação em Cristo, relacionando a graça à formação de um povo. A distância entre grupos não é tratada como destino inevitável. A imagem de uma casa e de um corpo ajuda a compreender o pertencimento como algo que reúne pessoas diferentes em uma responsabilidade compartilhada, sem apagar a história de cada uma.",
+      "Na segunda parte, a carta aproxima essa visão de palavras, trabalho, perdão e relações domésticas. Alguns textos refletem estruturas sociais antigas e exigem interpretação cuidadosa; não autorizam abuso ou desumanização. O chamado à unidade não significa esconder violência, e a imagem final da armadura deve ser lida como linguagem de perseverança e integridade, não como incentivo a atacar pessoas."
+    ],
+    "connection": "Desenvolve o tema da reconciliação entre grupos e conecta a reflexão sobre graça às práticas cotidianas de uma comunidade que aprende a viver junta.",
+    "example": "Uma palavra pode humilhar ou ajudar alguém a continuar. Ao falar de uma comunidade reconciliada, a carta inclui a responsabilidade pelo que dizemos em conversas comuns.",
+    "question": {
+      "prompt": "Boas obras e graça são apresentadas como assuntos sem relação?",
+      "answer": "Não. A passagem sobre salvação pela graça continua com a orientação de uma vida voltada às boas obras. A iniciativa de Deus e o modo de viver aparecem conectados no argumento."
+    },
+    "readings": [
+      {
+        "chapter": 2,
+        "verse": 8,
+        "endVerse": 22,
+        "note": "A graça é relacionada às boas obras e à reconciliação de grupos em um povo."
+      },
+      {
+        "chapter": 4,
+        "verse": 25,
+        "endVerse": 32,
+        "note": "Observe verdade, trabalho, palavras e perdão como práticas concretas de convivência."
+      }
+    ]
+  },
+  {
+    "id": "PHP",
+    "number": 50,
+    "genre": "Carta de amizade, gratidão e exortação",
+    "themes": [
+      "Alegria",
+      "Humildade",
+      "Perseverança"
+    ],
+    "category": "Cartas",
+    "testament": "Novo Testamento",
+    "overview": [
+      "Filipenses fala de gratidão, parceria e alegria em uma situação de restrição. A comunidade participa do cuidado com Paulo, e a carta reconhece pessoas que servem e assumem riscos. A alegria não depende de fingir que o sofrimento desapareceu; ela é colocada ao lado de limitações reais, preocupações com colaboradores e desejo de reencontro.",
+      "A reflexão sobre Cristo oferece um caminho de humildade que confronta disputas de importância. A carta também orienta a perseverança, a oração e o aprendizado da contentamento em circunstâncias diferentes. Uma frase sobre poder enfrentar tudo não deve ser transformada em garantia de vencer qualquer competição ou realizar qualquer desejo: o contexto trata de necessidades, recursos e apoio recebido."
+    ],
+    "connection": "Mostra uma relação de parceria na missão e aprofunda o serviço humilde que os Evangelhos apresentam na vida de Jesus.",
+    "example": "Receber ajuda quando faltam recursos pode ensinar gratidão sem transformar a pessoa em alguém sem dificuldades. A carta mostra parceria em que dar, receber e reconhecer limites fazem parte do cuidado.",
+    "question": {
+      "prompt": "A alegria da carta significa ausência de problemas?",
+      "answer": "Não. A alegria convive com prisão, preocupação e necessidades concretas. O texto apresenta confiança e parceria em meio a essas condições, não uma obrigação de parecer feliz o tempo inteiro."
+    },
+    "readings": [
+      {
+        "chapter": 2,
+        "verse": 1,
+        "endVerse": 11,
+        "note": "O exemplo de Cristo é apresentado dentro de uma orientação sobre humildade e cuidado mútuo."
+      },
+      {
+        "chapter": 4,
+        "verse": 10,
+        "endVerse": 20,
+        "note": "Leia a conhecida afirmação de força no contexto da gratidão e das diferentes condições materiais."
+      }
+    ]
+  },
+  {
+    "id": "COL",
+    "number": 51,
+    "genre": "Carta de ensino e exortação comunitária",
+    "themes": [
+      "Centralidade de Cristo",
+      "Nova vida",
+      "Gratidão"
+    ],
+    "category": "Cartas",
+    "testament": "Novo Testamento",
+    "overview": [
+      "Colossenses coloca Cristo no centro de uma reflexão sobre criação, reconciliação e vida comunitária. A carta enfrenta ensinamentos e exigências que prometem um acesso especial ou uma espiritualidade mais elevada. Seu argumento pergunta onde a comunidade encontra fundamento, evitando fazer da experiência religiosa uma competição por conhecimento secreto, regras ou aparência de rigor.",
+      "As orientações sobre a nova vida chegam a atitudes concretas: abandonar práticas que ferem, vestir-se de compaixão, perdoar e cantar com gratidão. Há também instruções domésticas inseridas em uma sociedade antiga, que não devem servir para justificar exploração. Leia a carta inteira para aproximar sua visão de Cristo do cuidado com palavras, trabalho, relações e participação de cada pessoa na comunidade."
+    ],
+    "connection": "Dialoga com Efésios em imagens e orientações, ligando a reflexão sobre Cristo à formação de relações reconciliadas no cotidiano.",
+    "example": "Um grupo pode sugerir que apenas quem conhece certas fórmulas tem acesso a uma fé superior. A carta orienta a avaliar esse discurso à luz de Cristo e de seus efeitos na convivência.",
+    "question": {
+      "prompt": "Como a centralidade de Cristo alcança a vida comum?",
+      "answer": "A reflexão se desdobra em compaixão, paciência, perdão e gratidão. O ensino não termina em uma ideia abstrata: orienta o modo de tratar pessoas e de participar da comunidade."
+    },
+    "readings": [
+      {
+        "chapter": 1,
+        "verse": 15,
+        "endVerse": 20,
+        "note": "A passagem reúne criação, primazia de Cristo e reconciliação."
+      },
+      {
+        "chapter": 3,
+        "verse": 12,
+        "endVerse": 17,
+        "note": "Observe as atitudes que a comunidade é convidada a vestir e cultivar em conjunto."
+      }
+    ]
+  },
+  {
+    "id": "1TH",
+    "number": 52,
+    "genre": "Carta de encorajamento a uma comunidade",
+    "themes": [
+      "Esperança",
+      "Cuidado mútuo",
+      "Perseverança"
+    ],
+    "category": "Cartas",
+    "testament": "Novo Testamento",
+    "overview": [
+      "1 Tessalonicenses registra gratidão por uma comunidade que recebeu a mensagem em meio a dificuldades. A carta lembra o vínculo construído com seus membros e demonstra interesse por sua perseverança. O tom de proximidade ajuda a compreender o ensino como acompanhamento: aprender inclui ser encorajado e saber que outras pessoas se importam com a caminhada.",
+      "As dúvidas sobre os mortos e a vinda do Senhor recebem atenção especial. A esperança é oferecida como consolo, não como autorização para elaborar calendários exatos do futuro. O encerramento inclui trabalho, apoio aos frágeis, paciência, oração e discernimento. Leia esses conselhos junto do vínculo pastoral que a carta constrói, sem transformá-los em cobrança de alegria permanente ou em julgamento de quem vive luto."
+    ],
+    "connection": "Mostra a vida de uma comunidade ligada às viagens missionárias e introduz perguntas sobre esperança futura retomadas em 2 Tessalonicenses.",
+    "example": "Diante da morte de alguém querido, uma pessoa pode precisar de companhia e esperança, não de uma previsão detalhada sobre datas. A carta dirige seu ensino para o consolo mútuo.",
+    "question": {
+      "prompt": "A esperança cristã impede o luto?",
+      "answer": "Não. A carta reconhece a tristeza e procura oferecer uma esperança que a acompanhe. Sua orientação não exige indiferença à perda nem pressa para interromper o sofrimento."
+    },
+    "readings": [
+      {
+        "chapter": 4,
+        "verse": 13,
+        "endVerse": 18,
+        "note": "Leia o ensino sobre os mortos a partir da finalidade declarada de consolar a comunidade."
+      },
+      {
+        "chapter": 5,
+        "verse": 12,
+        "endVerse": 22,
+        "note": "Observe paciência, apoio aos frágeis, gratidão e discernimento nas orientações finais."
+      }
+    ]
+  },
+  {
+    "id": "2TH",
+    "number": 53,
+    "genre": "Carta de correção e encorajamento",
+    "themes": [
+      "Perseverança",
+      "Discernimento",
+      "Responsabilidade"
+    ],
+    "category": "Cartas",
+    "testament": "Novo Testamento",
+    "overview": [
+      "2 Tessalonicenses conversa com uma comunidade inquieta por sofrimento e notícias relacionadas ao dia do Senhor. A carta pede firmeza e cuidado para não ser facilmente abalada por mensagens que reivindicam autoridade. As imagens sobre oposição e engano exigem leitura contextual e receberam interpretações diferentes; o texto não oferece uma chave simples para identificar pessoas atuais como personagens de seu anúncio.",
+      "As orientações sobre trabalho enfrentam comportamentos específicos que prejudicam a vida comunitária. Não devem ser usadas para negar alimento a pessoas desempregadas, doentes ou impossibilitadas de trabalhar. O argumento aproxima esperança e responsabilidade no presente: aguardar o futuro não dispensa o cuidado com tarefas e relações. A comunidade é chamada a perseverar sem alimentar pânico ou abandonar o bem."
+    ],
+    "connection": "Retoma perguntas de 1 Tessalonicenses sobre a esperança futura e destaca o discernimento diante de notícias e comportamentos que desorganizam a comunidade.",
+    "example": "Uma mensagem alarmante pode afirmar que conhece exatamente o futuro e exigir decisões precipitadas. A carta convida a examinar o que se ouve antes de reorganizar toda a vida por medo.",
+    "question": {
+      "prompt": "Por que as orientações sobre trabalho exigem cuidado de contexto?",
+      "answer": "Porque respondem a uma conduta comunitária, não descrevem todas as causas de falta de renda. Aplicá-las a quem está sem oportunidades ou sem condições de trabalhar distorceria seu alcance."
+    },
+    "readings": [
+      {
+        "chapter": 2,
+        "verse": 1,
+        "endVerse": 3,
+        "note": "O pedido inicial é não se deixar abalar facilmente por notícias sobre o dia do Senhor."
+      },
+      {
+        "chapter": 3,
+        "verse": 6,
+        "endVerse": 13,
+        "note": "Leia a advertência sobre desordem junto do compromisso de continuar fazendo o bem."
+      }
+    ]
+  },
+  {
+    "id": "1TI",
+    "number": 54,
+    "genre": "Carta de orientação a uma liderança comunitária",
+    "themes": [
+      "Ensino",
+      "Caráter",
+      "Cuidado"
+    ],
+    "category": "Cartas",
+    "testament": "Novo Testamento",
+    "overview": [
+      "1 Timóteo apresenta orientações sobre ensino, oração e organização da comunidade. Discussões improdutivas e o uso da religião como fonte de ganho são colocados sob crítica. A carta dá atenção ao caráter de pessoas que assumem funções, mostrando que responsabilidade comunitária não pode ser avaliada apenas por habilidade pública, prestígio ou vontade de ocupar um cargo.",
+      "Viúvas, idosos e relações de apoio aparecem em instruções que refletem o mundo social do texto. Alguns trechos sobre funções e gênero recebem interpretações diferentes nas tradições cristãs; é preciso identificá-las sem apresentar uma única posição como consenso universal. O fio do cuidado permanece importante: ensino e organização devem servir à comunidade, enquanto a relação com dinheiro exige vigilância contra exploração e falsas promessas."
+    ],
+    "connection": "Situa o acompanhamento das comunidades na formação de lideranças e ajuda a relacionar ensino bíblico, caráter e responsabilidade nas práticas de cuidado.",
+    "example": "Uma pessoa pode falar com confiança e ainda não demonstrar respeito em relações próximas. As orientações sobre caráter ajudam a perguntar como a vida cotidiana confirma ou contradiz uma imagem pública.",
+    "question": {
+      "prompt": "A carta avalia liderança apenas pela capacidade de ensinar?",
+      "answer": "Não. As instruções também examinam conduta, relações e responsabilidade. A função comunitária aparece ligada ao caráter e ao cuidado, não somente à habilidade de apresentar uma mensagem."
+    },
+    "readings": [
+      {
+        "chapter": 3,
+        "verse": 1,
+        "endVerse": 13,
+        "note": "Observe as qualidades de caráter e as responsabilidades relacionadas às funções comunitárias."
+      },
+      {
+        "chapter": 6,
+        "verse": 6,
+        "endVerse": 10,
+        "note": "O contraste entre contentamento e amor ao dinheiro ajuda a avaliar motivações religiosas."
+      }
+    ]
+  },
+  {
+    "id": "2TI",
+    "number": 55,
+    "genre": "Carta de encorajamento e continuidade do ensino",
+    "themes": [
+      "Perseverança",
+      "Escrituras",
+      "Transmissão responsável"
+    ],
+    "category": "Cartas",
+    "testament": "Novo Testamento",
+    "overview": [
+      "2 Timóteo apresenta uma voz de encorajamento diante de dificuldades e da necessidade de continuar transmitindo o ensino. Memória familiar, mentoria e colaboração mostram que a formação não acontece de maneira isolada. O texto reconhece medo e oposição, mas orienta a perseverar sem confundir firmeza com agressividade ou a busca por aprovação pública.",
+      "O papel das Escrituras é relacionado à aprendizagem e à preparação para boas obras. O cuidado ao ensinar inclui paciência e correção responsável, em vez de disputas que apenas ferem. A situação pessoal retratada torna a continuidade uma questão concreta: pessoas recebem algo que precisarão compreender, praticar e transmitir. Leia os apelos finais como parte desse vínculo, não como autorização para pressionar alguém a esconder seus limites."
+    ],
+    "connection": "Retoma o acompanhamento de lideranças e liga a memória da fé à responsabilidade de formar outras pessoas com paciência e fidelidade.",
+    "example": "Um professor pode corrigir um erro sem humilhar o aluno. A orientação sobre mansidão ajuda a distinguir clareza no ensino de uma disputa em que vencer importa mais que ajudar alguém a compreender.",
+    "question": {
+      "prompt": "Para que o texto apresenta a utilidade das Escrituras?",
+      "answer": "A passagem relaciona ensino, correção e formação a uma finalidade prática: preparar para boas obras. Conhecimento bíblico e modo de viver são apresentados como partes conectadas do aprendizado."
+    },
+    "readings": [
+      {
+        "chapter": 2,
+        "verse": 22,
+        "endVerse": 26,
+        "note": "A responsabilidade de ensinar é acompanhada de paciência e mansidão, evitando contendas."
+      },
+      {
+        "chapter": 3,
+        "verse": 14,
+        "endVerse": 17,
+        "note": "Observe a relação entre memória do aprendizado, Escrituras e preparação para boas obras."
+      }
+    ]
+  },
+  {
+    "id": "TIT",
+    "number": 56,
+    "genre": "Carta sobre organização e vida comunitária",
+    "themes": [
+      "Caráter",
+      "Graça",
+      "Boas obras"
+    ],
+    "category": "Cartas",
+    "testament": "Novo Testamento",
+    "overview": [
+      "Tito apresenta orientações para organizar comunidades e lidar com ensinamentos que causam desordem. A atenção ao caráter das lideranças e à coerência da vida ocupa um lugar central. O texto deve ser lido dentro de suas relações sociais antigas; citações polêmicas sobre habitantes de Creta não justificam estereótipos ou desprezo por povos atuais.",
+      "A graça é descrita como força que educa para uma forma de viver. Idades, situações de vida e tarefas diferentes entram na conversa sobre responsabilidade e exemplo. A insistência em boas obras não deve ser separada da misericórdia que a carta anuncia. Evitar discussões estéreis e manter cuidado concreto ajuda a reconhecer a finalidade comunitária do ensino, em vez de transformá-lo em competição por superioridade."
+    ],
+    "connection": "Conversa com 1 e 2 Timóteo sobre ensino e liderança, destacando a ligação entre graça recebida e práticas que beneficiam outras pessoas.",
+    "example": "Um debate pode consumir toda a energia de um grupo enquanto necessidades simples permanecem sem resposta. A carta ajuda a perguntar se a conversa produz compreensão e cuidado ou apenas prolonga rivalidades.",
+    "question": {
+      "prompt": "Graça e educação para a vida aparecem separadas?",
+      "answer": "Não. A graça é apresentada como algo que forma atitudes e sustenta boas obras. A conduta não compra a misericórdia, mas expressa uma vida que aprende a recebê-la e praticá-la."
+    },
+    "readings": [
+      {
+        "chapter": 2,
+        "verse": 11,
+        "endVerse": 14,
+        "note": "A passagem relaciona a graça à formação de uma vida responsável e voltada ao bem."
+      },
+      {
+        "chapter": 3,
+        "verse": 3,
+        "endVerse": 8,
+        "note": "Leia misericórdia e boas obras como elementos conectados do argumento."
+      }
+    ]
+  },
+  {
+    "id": "PHM",
+    "number": 57,
+    "genre": "Carta pessoal de pedido e mediação",
+    "themes": [
+      "Acolhimento",
+      "Fraternidade",
+      "Relações de poder"
+    ],
+    "category": "Cartas",
+    "testament": "Novo Testamento",
+    "overview": [
+      "Filemom é uma carta breve em que Paulo intercede por Onésimo diante de Filemom. O texto faz parte de um mundo em que a escravidão estava presente e constrói seu pedido por meio de vínculo, persuasão e linguagem de fraternidade. Certos detalhes sobre o passado de Onésimo são discutidos; é melhor não preencher as lacunas com uma biografia imaginada.",
+      "A solicitação de recebê-lo como irmão confronta o modo de avaliar uma pessoa por sua posição social. Isso não transforma a carta em uma declaração moderna e completa de abolição, mas também impede usá-la para naturalizar dominação. Leia quem tem poder para decidir, quem precisa de acolhimento e como o pedido procura reconfigurar a relação entre pessoas dentro da comunidade cristã."
+    ],
+    "connection": "Oferece um caso concreto para estudar a fraternidade anunciada nas cartas e as tensões entre essa linguagem e estruturas sociais do mundo antigo.",
+    "example": "Receber alguém apenas pelo rótulo que carrega pode impedir reconhecer sua dignidade. A carta convida a examinar o que muda quando a pessoa é tratada como irmã, e não como posse ou função.",
+    "question": {
+      "prompt": "É correto inventar detalhes para explicar a história de Onésimo?",
+      "answer": "Não. A carta deixa perguntas em aberto. A leitura pode apresentar hipóteses como hipóteses, mas precisa distinguir o que o texto diz da reconstrução que o leitor imagina."
+    },
+    "readings": [
+      {
+        "chapter": 1,
+        "verse": 8,
+        "endVerse": 16,
+        "note": "Observe como o pedido é formulado e como a linguagem de irmão transforma a questão."
+      },
+      {
+        "chapter": 1,
+        "verse": 17,
+        "endVerse": 21,
+        "note": "O acolhimento solicitado envolve responsabilidade concreta de quem faz a intercessão."
+      }
+    ]
+  },
+  {
+    "id": "HEB",
+    "number": 58,
+    "genre": "Exortação teológica com interpretação das Escrituras",
+    "themes": [
+      "Cristo",
+      "Perseverança",
+      "Acesso a Deus"
+    ],
+    "category": "Cartas",
+    "testament": "Novo Testamento",
+    "overview": [
+      "Hebreus desenvolve uma reflexão sobre Jesus utilizando linguagem de sacerdócio, sacrifício, aliança e santuário. Para acompanhar seu argumento, ajuda conhecer as instruções de Êxodo e Levítico. A obra alterna exposição e apelos à perseverança, procurando sustentar uma comunidade diante do desgaste. Sua autoria não é identificada no texto, e não precisa ser preenchida por uma certeza artificial.",
+      "As comparações pertencem à compreensão cristã da obra de Cristo e não autorizam desprezo pelo judaísmo. A confiança anunciada também se expressa em apoio mútuo, hospitalidade e cuidado com pessoas que sofrem. O conjunto de exemplos de fé conserva trajetórias difíceis, sem garantir sucesso visível para todos. Ler essa diversidade impede transformar perseverança em promessa de uma vida sem perdas."
+    ],
+    "connection": "Retoma o vocabulário do culto de Israel para desenvolver uma leitura cristã de Jesus e ligar essa reflexão ao encorajamento comunitário.",
+    "example": "Quando alguém está cansado de participar, uma lista de cobranças pode aumentar a distância. A orientação de encorajar e estimular ao amor ajuda a pensar em acompanhamento que sustenta, em vez de apenas exigir.",
+    "question": {
+      "prompt": "O capítulo de exemplos de fé promete triunfo visível a todos?",
+      "answer": "Não. O capítulo inclui livramentos e também sofrimento. A fé é apresentada em trajetórias diversas, impedindo usá-la como medida automática de sucesso, conforto ou reconhecimento público."
+    },
+    "readings": [
+      {
+        "chapter": 4,
+        "verse": 14,
+        "endVerse": 16,
+        "note": "A reflexão sobre Jesus como sumo sacerdote conduz à confiança para buscar misericórdia."
+      },
+      {
+        "chapter": 10,
+        "verse": 19,
+        "endVerse": 25,
+        "note": "O acesso a Deus é relacionado à esperança e ao encorajamento mútuo na comunidade."
+      }
+    ]
+  },
+  {
+    "id": "JAS",
+    "number": 59,
+    "genre": "Exortações sapienciais em forma de carta",
+    "themes": [
+      "Fé em prática",
+      "Justiça",
+      "Responsabilidade da fala"
+    ],
+    "category": "Cartas",
+    "testament": "Novo Testamento",
+    "overview": [
+      "Tiago reúne orientações sobre perseverança, sabedoria, favoritismo e cuidado com pessoas vulneráveis. A comunidade é convidada a ouvir e praticar, em vez de valorizar somente palavras. A atenção dada a ricos e pobres torna visível um problema de tratamento desigual: a maneira de receber alguém pode revelar quais valores realmente orientam uma reunião religiosa.",
+      "A relação entre fé e obras é apresentada no confronto com uma fé apenas declarada, incapaz de responder à necessidade do próximo. O texto também alerta para a força da língua e denuncia riqueza acumulada pela injustiça. Compare suas perguntas com as de outras cartas antes de montar oposições simplistas. O objetivo do ensino aparece na coerência entre confiança, palavras e atitudes concretas."
+    ],
+    "connection": "Aproxima a tradição sapiencial dos desafios comunitários cristãos e pode ser lido em diálogo com o Sermão do Monte e com as cartas paulinas.",
+    "example": "Desejar que alguém tenha alimento sem procurar uma resposta possível à sua fome expõe a distância entre fala e cuidado. Tiago pede que essa distância seja reconhecida na vida da comunidade.",
+    "question": {
+      "prompt": "Tiago está criticando qualquer pessoa que diga ter fé?",
+      "answer": "A crítica se dirige a uma fé declarada que não se traduz em cuidado. A pergunta é sobre coerência, especialmente quando uma necessidade concreta do próximo é conhecida e ignorada."
+    },
+    "readings": [
+      {
+        "chapter": 2,
+        "verse": 1,
+        "endVerse": 9,
+        "note": "O tratamento desigual entre ricos e pobres é confrontado pelo mandamento do amor ao próximo."
+      },
+      {
+        "chapter": 2,
+        "verse": 14,
+        "endVerse": 18,
+        "note": "A necessidade de alimento e roupa torna concreta a conversa sobre fé e obras."
+      }
+    ]
+  },
+  {
+    "id": "1PE",
+    "number": 60,
+    "genre": "Carta de encorajamento a comunidades em dificuldade",
+    "themes": [
+      "Esperança",
+      "Dignidade",
+      "Testemunho respeitoso"
+    ],
+    "category": "Cartas",
+    "testament": "Novo Testamento",
+    "overview": [
+      "1 Pedro se dirige a comunidades que enfrentam hostilidade e precisam sustentar sua esperança. Imagens de peregrinação, casa e povo ajudam a formar pertencimento em meio à vulnerabilidade. A carta relaciona a identidade cristã à maneira de viver, sem depender de aprovação social ou de uma posição de força para considerar valiosa a existência da comunidade.",
+      "As orientações sobre sofrimento e relações sociais pertencem a um mundo antigo e exigem cuidado: não justificam abuso, violência doméstica ou silêncio diante de crimes. O testemunho é associado à mansidão e ao respeito, e a liderança deve agir como exemplo, sem dominar o rebanho. Leia esses critérios juntos para perceber que perseverança e dignidade caminham com responsabilidade e cuidado, não com a glorificação do sofrimento."
+    ],
+    "connection": "Amplia o acompanhamento das comunidades para situações de marginalização e relaciona a esperança em Cristo a um modo respeitoso de responder e conviver.",
+    "example": "Quando alguém faz uma pergunta hostil sobre a fé, responder humilhando a pessoa pode contradizer a mensagem. A carta convida a preparar uma resposta que preserve respeito e boa consciência.",
+    "question": {
+      "prompt": "Perseverar significa aceitar qualquer forma de violência?",
+      "answer": "Não. Uma leitura responsável reconhece o contexto e a dignidade das pessoas. O texto não deve impedir proteção, denúncia ou busca de ajuda diante de abuso e de situações de perigo."
+    },
+    "readings": [
+      {
+        "chapter": 3,
+        "verse": 13,
+        "endVerse": 17,
+        "note": "A resposta sobre a esperança é acompanhada de mansidão, respeito e boa consciência."
+      },
+      {
+        "chapter": 5,
+        "verse": 1,
+        "endVerse": 7,
+        "note": "O cuidado do rebanho é orientado pelo exemplo, pela humildade e pela recusa da dominação."
+      }
+    ]
+  },
+  {
+    "id": "2PE",
+    "number": 61,
+    "genre": "Carta de exortação e advertência",
+    "themes": [
+      "Discernimento",
+      "Crescimento",
+      "Esperança futura"
+    ],
+    "category": "Cartas",
+    "testament": "Novo Testamento",
+    "overview": [
+      "2 Pedro reúne apelos ao crescimento e advertências contra ensinamentos e condutas que prejudicam a comunidade. A fé é acompanhada de virtudes que alcançam relações concretas. O problema não é apenas dizer algo incorreto, mas usar influência e promessa de liberdade para explorar pessoas e conduzi-las a uma vida que contradiz o cuidado anunciado.",
+      "A discussão sobre a demora da promessa leva o texto a falar de tempo, paciência e esperança. As imagens de transformação futura não fornecem um calendário para prever acontecimentos atuais. A carta também reconhece que passagens das Escrituras podem ser difíceis e distorcidas. Leia essa advertência como convite à humildade, ao estudo em contexto e à avaliação responsável de quem ensina com muita certeza."
+    ],
+    "connection": "Retoma temas de perseverança e discernimento presentes em outras cartas e aproxima a esperança futura da responsabilidade pelo modo de viver no presente.",
+    "example": "Um discurso pode prometer liberdade e acabar criando dependência de seu líder. A carta ajuda a observar o fruto da influência, em vez de aceitar uma promessa apenas porque parece atraente.",
+    "question": {
+      "prompt": "A dificuldade de um texto autoriza qualquer interpretação?",
+      "answer": "Não. Reconhecer dificuldade pede mais atenção ao contexto e ao conjunto, não menos. A carta adverte sobre distorções e convida a crescer no conhecimento com responsabilidade."
+    },
+    "readings": [
+      {
+        "chapter": 1,
+        "verse": 3,
+        "endVerse": 11,
+        "note": "O crescimento na fé é acompanhado de virtudes que alcançam o cuidado mútuo."
+      },
+      {
+        "chapter": 3,
+        "verse": 8,
+        "endVerse": 18,
+        "note": "Leia a esperança futura junto das orientações de vida e da advertência sobre distorcer textos."
+      }
+    ]
+  },
+  {
+    "id": "1JN",
+    "number": 62,
+    "genre": "Exortação comunitária sobre comunhão",
+    "themes": [
+      "Amor",
+      "Verdade",
+      "Vida em Cristo"
+    ],
+    "category": "Cartas",
+    "testament": "Novo Testamento",
+    "overview": [
+      "1 João combina linguagem de luz, vida e amor para orientar uma comunidade marcada por conflitos de ensino e pertencimento. A confissão sobre Jesus não é separada do cuidado com irmãos e irmãs. O texto procura oferecer critérios para reconhecer coerência, sem reduzir o discernimento à força de uma afirmação religiosa ou à aparência de uma experiência extraordinária.",
+      "A carta também reconhece pecado, necessidade de perdão e possibilidade de confiança diante de Deus. Amar não é apenas declarar um sentimento: a necessidade material do próximo entra na conversa. As oposições fortes do texto precisam ser lidas em seu conflito comunitário, sem virar licença para desumanizar pessoas atuais. A leitura cristã é convidada a reunir verdade, misericórdia e atitudes concretas de amor."
+    ],
+    "connection": "Compartilha linguagem importante com o Evangelho de João e aproxima a confissão sobre Jesus de critérios práticos para a vida comunitária.",
+    "example": "Uma pessoa pode dizer que ama sua comunidade e ignorar necessidades que tem condições de ajudar. A carta convida a examinar como a palavra amor se torna visível no cuidado.",
+    "question": {
+      "prompt": "Como o texto torna concreto o mandamento do amor?",
+      "answer": "Ele apresenta a situação de alguém que vê a necessidade de um irmão e fecha o coração. O amor é orientado para atitudes verdadeiras, não somente para declarações de boa intenção."
+    },
+    "readings": [
+      {
+        "chapter": 1,
+        "verse": 5,
+        "endVerse": 9,
+        "note": "A vida na luz é relacionada à verdade sobre a própria condição e ao perdão."
+      },
+      {
+        "chapter": 3,
+        "verse": 16,
+        "endVerse": 18,
+        "note": "Observe a ligação entre a entrega de Cristo e o cuidado material com o próximo."
+      }
+    ]
+  },
+  {
+    "id": "2JN",
+    "number": 63,
+    "genre": "Carta breve sobre verdade e hospitalidade",
+    "themes": [
+      "Amor",
+      "Discernimento",
+      "Responsabilidade no acolhimento"
+    ],
+    "category": "Cartas",
+    "testament": "Novo Testamento",
+    "overview": [
+      "2 João apresenta uma saudação marcada pela verdade e desenvolve uma orientação breve sobre amor e ensino. A destinatária é chamada de senhora eleita, expressão compreendida de diferentes maneiras, inclusive como referência comunitária. O texto não oferece uma biografia completa, e a leitura pode reconhecer essa abertura sem inventar pessoas e circunstâncias para preencher seus poucos versículos.",
+      "A advertência sobre receber mestres precisa ser situada na circulação de ensinamentos e na responsabilidade de apoiá-los. Não é uma proibição geral de tratar com respeito quem pensa diferente, nem uma licença para hostilidade religiosa. A carta aproxima o mandamento do amor do discernimento sobre aquilo que uma comunidade promove. Seu encerramento valoriza uma conversa presencial para além da comunicação escrita."
+    ],
+    "connection": "Conversa com 1 João sobre verdade e amor e prepara, junto de 3 João, uma reflexão sobre hospitalidade e influência nas comunidades.",
+    "example": "Convidar alguém para ensinar em nome de um grupo envolve responsabilidade diferente de oferecer gentileza a um visitante. A carta ajuda a distinguir acolhimento humano de endosso a uma mensagem.",
+    "question": {
+      "prompt": "O cuidado com o ensino elimina o mandamento do amor?",
+      "answer": "Não. O amor é retomado no centro da carta. O discernimento trata da responsabilidade pelo ensino que se apoia, sem transformar pessoas de outras convicções em inimigas a serem maltratadas."
+    },
+    "readings": [
+      {
+        "chapter": 1,
+        "verse": 4,
+        "endVerse": 6,
+        "note": "A alegria pela verdade aparece junto do mandamento de amar uns aos outros."
+      },
+      {
+        "chapter": 1,
+        "verse": 7,
+        "endVerse": 12,
+        "note": "Leia a advertência sobre ensino junto do desejo final de conversar pessoalmente."
+      }
+    ]
+  },
+  {
+    "id": "3JN",
+    "number": 64,
+    "genre": "Carta breve sobre acolhimento e poder",
+    "themes": [
+      "Hospitalidade",
+      "Cooperação",
+      "Limites da autoridade"
+    ],
+    "category": "Cartas",
+    "testament": "Novo Testamento",
+    "overview": [
+      "3 João reconhece a hospitalidade de Gaio e apresenta um conflito relacionado a Diótrefes, que deseja ocupar o primeiro lugar. A circulação de irmãos e colaboradores torna o acolhimento uma forma concreta de participação na missão. A carta mostra que tarefas de receber, apoiar e encaminhar pessoas podem ser tão importantes quanto a visibilidade de quem anuncia uma mensagem.",
+      "A crítica a Diótrefes inclui recusa de acolhimento e uso de poder contra quem deseja ajudar. O problema de liderança aparece em uma situação específica, sem necessidade de imaginar uma instituição moderna igual àquela comunidade. O elogio a Demétrio e o desejo de uma conversa pessoal completam o texto, lembrando que testemunho e relações se constroem por atitudes reconhecíveis, não por autopromoção."
+    ],
+    "connection": "Complementa 2 João: o discernimento sobre o ensino não pode servir de pretexto para uma liderança impedir todo acolhimento e concentrar poder.",
+    "example": "Quando alguém precisa autorizar todas as iniciativas para continuar no centro, a colaboração pode ser sufocada. A carta ajuda a perceber a diferença entre coordenar responsabilidades e dominar a comunidade.",
+    "question": {
+      "prompt": "Por que a busca pelo primeiro lugar é criticada?",
+      "answer": "Ela aparece ligada à recusa de acolher e ao uso de influência para impedir outras pessoas de colaborar. O problema se revela pelos efeitos sobre a missão e a convivência."
+    },
+    "readings": [
+      {
+        "chapter": 1,
+        "verse": 5,
+        "endVerse": 8,
+        "note": "O apoio a pessoas em viagem é reconhecido como participação concreta no trabalho da verdade."
+      },
+      {
+        "chapter": 1,
+        "verse": 9,
+        "endVerse": 12,
+        "note": "Observe a crítica ao controle e o contraste com um testemunho reconhecido pela comunidade."
+      }
+    ]
+  },
+  {
+    "id": "JUD",
+    "number": 65,
+    "genre": "Carta de advertência com exemplos tradicionais",
+    "themes": [
+      "Discernimento",
+      "Responsabilidade",
+      "Misericórdia"
+    ],
+    "category": "Cartas",
+    "testament": "Novo Testamento",
+    "overview": [
+      "Judas adverte uma comunidade contra pessoas que distorcem a graça e causam dano à convivência. A carta usa linguagem intensa e exemplos de tradições conhecidas por seus destinatários, incluindo referências que não se limitam aos livros desta edição bíblica. Reconhecer esse mundo de alusões evita tratar cada imagem como uma informação independente sobre acontecimentos atuais.",
+      "O encerramento orienta a fortalecer a fé, orar e cuidar de pessoas em situações diferentes. A misericórdia permanece parte da resposta ao problema; discernir não é apenas identificar e atacar um adversário. Leia as advertências junto dessa orientação final, sem usar o texto para produzir suspeita permanente ou humilhar quem faz perguntas. A comunidade é chamada a unir firmeza no cuidado e responsabilidade na maneira de responder."
+    ],
+    "connection": "Compartilha temas e imagens com 2 Pedro e mostra como o discernimento precisa caminhar com fortalecimento comunitário, oração e misericórdia.",
+    "example": "Uma advertência pode levar um grupo a cuidar melhor ou a desconfiar indiscriminadamente de todos. Judas convida a avaliar a resposta: há apoio, paciência e misericórdia para quem precisa de ajuda?",
+    "question": {
+      "prompt": "Por que estudar as alusões do livro com atenção?",
+      "answer": "Os exemplos fazem parte do repertório de seus destinatários e servem ao argumento da carta. Identificar sua origem e função evita inventar uma explicação detalhada que o próprio texto não fornece."
+    },
+    "readings": [
+      {
+        "chapter": 1,
+        "verse": 3,
+        "endVerse": 4,
+        "note": "Observe o problema apresentado: uma distorção da graça que prejudica a comunidade."
+      },
+      {
+        "chapter": 1,
+        "verse": 20,
+        "endVerse": 25,
+        "note": "As orientações finais unem fé, oração, misericórdia e confiança no cuidado de Deus."
+      }
+    ]
+  },
+  {
+    "id": "REV",
+    "number": 66,
+    "genre": "Apocalipse em forma de carta e visões",
+    "themes": [
+      "Perseverança",
+      "Crítica ao poder",
+      "Nova criação"
+    ],
+    "category": "Apocalipse",
+    "testament": "Novo Testamento",
+    "overview": [
+      "Apocalipse se dirige a comunidades concretas e utiliza visões, números, animais e imagens das Escrituras para revelar conflitos e sustentar a esperança. Antes das grandes cenas, há mensagens a sete igrejas com situações diferentes. Conhecer a linguagem dos profetas ajuda a ler seus símbolos sem transformá-los em um código que identifica automaticamente cada notícia ou figura pública atual.",
+      "A obra denuncia poderes que seduzem, exploram e exigem lealdade absoluta. Sua esperança culmina na presença de Deus, na cidade renovada e no fim das lágrimas. Interpretações cristãs divergem sobre vários detalhes e sequências; nenhuma data é calculada por este guia. O convite à perseverança deve fortalecer a fidelidade e o cuidado no presente, em vez de alimentar pânico ou curiosidade desligada da vida comunitária."
+    ],
+    "connection": "Retoma imagens de Gênesis, Êxodo, Daniel e dos profetas para apresentar a esperança cristã de renovação, fechando esta ordem de livros da Bíblia.",
+    "example": "Uma mensagem alarmante pode usar um número do livro para prever uma data ou apontar um inimigo. Começar pelas comunidades destinatárias e pelos ecos das Escrituras oferece um caminho mais responsável.",
+    "question": {
+      "prompt": "O propósito do livro é fornecer um calendário secreto?",
+      "answer": "O texto começa como comunicação a igrejas reais e as chama a ouvir e perseverar. Seus símbolos sustentam essa mensagem; convertê-los em previsões arbitrárias pode afastar o leitor de sua finalidade comunitária."
+    },
+    "readings": [
+      {
+        "chapter": 1,
+        "verse": 1,
+        "endVerse": 8,
+        "note": "A abertura apresenta a comunicação às igrejas e o horizonte de esperança em Cristo."
+      },
+      {
+        "chapter": 21,
+        "verse": 1,
+        "endVerse": 5,
+        "note": "A visão da renovação reúne presença de Deus, fim das lágrimas e vida restaurada."
+      }
+    ]
+  }
+]

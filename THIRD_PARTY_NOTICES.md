@@ -451,3 +451,10 @@ A static Portuguese welcome is generated with Kokoro-82M v1.0 and its pm_alex vo
 ## Original interface illustrations
 
 The Galilee-inspired landscape and contemporary study-desk image were generated for this project. They are labeled artistic illustrations and are separate from the authentic historical photographs in the museum. Dimensions and file checksums are in public/visuals/proveniencia.json.
+# Ampliação editorial de 29/10/2026
+
+Os novos guias, etapas, exemplos, perguntas e paráfrases das histórias são composições editoriais do InJessusName. As citações bíblicas continuam sendo recuperadas da Bíblia Livre TR2018, com seus créditos e CC BY 3.0 Brasil. Um guia não representa revisão ou nova edição da tradução.
+
+As treze novas artes originais (quatro ambientais e nove narrativas) foram geradas para o projeto e copiadas sem edição dos arquivos originais. A proveniência, dimensões e SHA-256 estão em `public/visuals/historias-proveniencia.json` e `public/visuals/historias-narrativas-proveniencia.json`. São ilustrações interpretativas; não são fotografias de objetos históricos, retratos autenticados ou reconstruções arqueológicas. A otimização responsiva de entrega utiliza o Next.js; os PNG originais são preservados.
+
+As fichas de igrejas e pessoas contêm sínteses autorais com ligações para fontes institucionais, documentos confessionais e fontes enciclopédicas, identificadas em `src/content/church-history/index.ts` e `docs/fontes-historia-igrejas.md`. Não foram incorporadas letras de hinos, gravações, fotografias de líderes ou cópias integrais de biografias de terceiros. Referenciar uma comunidade ou pessoa não declara vínculo institucional.

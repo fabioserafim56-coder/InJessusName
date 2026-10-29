@@ -1,4 +1,4 @@
-# Estado real do acervo — 27 de outubro de 2026
+# Estado real do acervo — 29 de outubro de 2026
 
 Inventário da entrega local. Conteúdo disponível em arquivos versionáveis é contado separadamente do catálogo editorial do Supabase; fontes e exercícios não são anunciados como revisados por pessoas quando essa revisão ainda não aconteceu.
 
@@ -8,6 +8,13 @@ Inventário da entrega local. Conteúdo disponível em arquivos versionáveis é
 | --- | --- |
 | Edição bíblica portuguesa integral | 1: Bíblia Livre TR, fevereiro de 2018, CC BY 3.0 Brasil; 66 livros, 1.189 capítulos, 31.102 versículos |
 | Leitor funcional | `/biblia`: seleção, navegação, destaque, tamanho de texto, referência e atribuição |
+| Busca em toda a edição | 31.102 versículos pesquisáveis por palavras, termos combinados e expressões; paginação, acentos e links ao contexto; 52 temas editoriais com 157 leituras, separados dos resultados literais |
+| Mapa de panorama bíblico | 24 etapas conectadas em `/percurso/[stageId]`:72 explicações,72 exemplos,72 referências e24 práticas com feedback; `/meu-percurso` funciona sem conta |
+| Guias dos livros | `/biblioteca`:66 guias introdutórios específicos da edição, cada um com gênero, temas, explicações, conexão, exemplo, pergunta explicada e 2 leituras conferíveis |
+| Histórias ilustradas | 12 histórias em 48 cenas, 12 artes originais contextuais, referências, contexto, exemplos e reflexão; navegação por toque/teclado e fallback sem JavaScript |
+| Igrejas e personalidades | 11 trajetórias, 27 pessoas e 29 relações documentadas; 38 fichas com origem, chegada ao Brasil, linha do tempo, perspectiva confessional e fontes recolhíveis |
+| Ponte histórica | 12 marcos das primeiras comunidades aos séculos XX–XXI, com 19 fontes identificadas; Bíblia, pesquisa histórica, documentos e memória institucional separados |
+| Versículo do dia | Rotação de 55 leituras contextualizadas pelo calendário de Brasília; texto exato desta edição, renovação diária no servidor e na página aberta,sem reprodução automática |
 | Aulas autorais utilizáveis | 6 pilotos: primeiros passos, panorama bíblico, criação e cuidado, Jesus e o próximo, oração e compartilhar a fé com respeito |
 | Atividades pedagógicas | Detetive do Contexto, perguntas de recuperação e transferência; mais 15 atividades de escolha, classificação e ordenação nas cinco novas aulas |
 | Atividades avaliadas na sessão | 25 unidades: dez da primeira aula e 15 das novas; o diagnóstico inicial fica fora do resultado. Classificações incluem 20 itens no bloco novo |
@@ -16,6 +23,10 @@ Inventário da entrega local. Conteúdo disponível em arquivos versionáveis é
 | Modo livro da Bíblia | Capítulo integral com capa e folhas físicas, medição por fonte/tela, teclado, movimento reduzido e leitor simples completo |
 | Resumo para o caderno | 1 PDF autoral de página única para download e fonte imprimível |
 | Progresso opcional | Primeira aula: conclusão, tentativas, ajuda e datas D+1/D+7 na conta adulta com consentimento ativo. Novas cinco aulas: estado apenas na sessão, sem simular salvamento |
+
+Os marcos das 24 etapas são distintos do progresso opcional da primeira aula: correspondem a uma resposta correta conferida nesta visita e ficam somente em memória, inclusive durante a navegação. Não sincronizam com a conta; recarregar ou fechar o aplicativo limpa esses marcos. Respostas individuais não são guardadas. O mapa permite estudar em qualquer ordem.
+
+O conteúdo novo é um panorama e um conjunto de guias autorais, não um comentário de todos os versículos nem uma formação teológica completa. O texto bíblico é consultado diretamente da fonte local intacta; exemplos e paráfrases editoriais são identificados separadamente. Revisão humana especializada e avaliação de aprendizagem com estudantes continuam pendentes. A história das igrejas é um recorte representativo, com tipos de fonte visíveis; não é cadastro universal de igrejas ou líderes atuais.
 
 A fonte integral, autoria, licença, versão, checksum e transformação estão em [fontes-biblicas.md](fontes-biblicas.md). O leitor usa dados locais no servidor e entrega apenas o capítulo solicitado; não exige chamada a uma API bíblica externa para cada leitura. O arquivo VPL original não contém notas da tradução. Essa edição de 66 livros não atende, sozinha, à cobertura católica de 73 livros. Os autores descrevem a tradução como trabalho em andamento.
 
@@ -29,7 +40,7 @@ Os seis estudos agora usam acolhimento específico para cada passagem, explicaç
 
 O museu usa quatro fotografias históricas reais sem retoques, com identificação de 1917, dimensões, SHA-256 e domínio público delimitado ao Brasil/EUA. São reproduções pequenas de um exemplar antigo, não fotografias atuais em alta resolução. [fontes-museu.md](fontes-museu.md) documenta a cadeia de aquisição, créditos e o que foi efetivamente consultado. As fichas distinguem observação, contexto, conexão bíblica e limites da pesquisa.
 
-PhotoSwipe 5.4.4 abre as fotografias; Fuse.js 7.5.0 faz busca aproximada local no museu e nos estudos. Licenças originais acompanham a distribuição. Modelos de voz e linguagem foram pesquisados, mas não foram instalados: [ferramentas-abertas-pastoral-museu.md](ferramentas-abertas-pastoral-museu.md).
+PhotoSwipe 5.4.4 abre as fotografias; Fuse.js 7.5.0 faz busca aproximada local no museu e nos estudos. A busca bíblica é um índice próprio no servidor, com recuperação dos versículos originais. As licenças originais acompanham a distribuição. O modelo Kokoro foi usado de fato para gerar a mensagem fixa; seus pesos não são distribuídos ao navegador. A pesquisa anterior de ferramentas é datada, e a integração posterior está em [ferramentas-visuais-abertas.md](ferramentas-visuais-abertas.md).
 
 ## O que ainda não compõe um curso publicado
 
@@ -45,7 +56,7 @@ As aulas estão identificadas como **pilotos educacionais com revisão humana es
 
 ## Visualização e publicação
 
-O código inicial foi enviado ao GitHub e o usuário confirmou acesso à hospedagem em https://in-jessus-name.vercel.app/. As publicações partem da branch `main` do repositório conectado à Vercel; a conclusão da publicação externa precisa ser confirmada separadamente do envio do código. A consulta HTTP externa dessa hospedagem foi bloqueada pelo proxy do ambiente; testes locais e arquivos PNG não substituem a verificação da nova publicação no endereço externo.
+O aplicativo público está em https://in-jessus-name.vercel.app/. As publicações partem da branch `main` do repositório conectado à Vercel; a conclusão de cada publicação precisa ser confirmada no endereço externo separadamente dos testes locais e do envio do código. A renovação anterior foi conferida no endereço público; a nova ampliação requer sua própria conferência após o envio.
 
 
 ## Renovação visual de 28/10/2026

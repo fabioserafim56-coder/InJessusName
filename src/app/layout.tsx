@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 import { ServiceWorker } from "@/pwa/service-worker";
+import { JourneySessionProvider } from "@/components/journey-session";
 import "./globals.css";
 
 const inter = localFont({
@@ -29,7 +30,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="pt-BR" className={inter.variable}>
       <body>
-        {children}
+        <JourneySessionProvider>{children}</JourneySessionProvider>
         <ServiceWorker />
       </body>
     </html>

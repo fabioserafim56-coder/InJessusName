@@ -1,0 +1,60 @@
+{
+  "images": [
+    {
+      "file": "/visuals/stories-creation.png",
+      "source": "Imagem original gerada com image_gen para o InJessusName",
+      "sourceFile": "exec-c06193e4-24b2-4e05-89cc-bb73a0e11b43.png",
+      "createdAt": "2026-10-28",
+      "caption": "Paisagem artística inspirada na criação, sem pretensão de reconstrução histórica.",
+      "type": "Ilustração artística gerada por IA; não é fotografia nem evidência histórica.",
+      "sha256": "5a158e81ad5ef13f27dc35fac1f132b1b5e3e0684bdbb96e119ca6254d8c8e09",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "edits": "Nenhuma edição de pixels; arquivo original copiado integralmente."
+    },
+    {
+      "file": "/visuals/stories-exodus.png",
+      "source": "Imagem original gerada com image_gen para o InJessusName",
+      "sourceFile": "exec-c0419899-da55-4a44-877c-1f56f0cbbdf2.png",
+      "createdAt": "2026-10-28",
+      "caption": "Caminho desértico e viajantes; ambientação artística para o Êxodo, sem localização geográfica documental.",
+      "type": "Ilustração artística gerada por IA; não é fotografia nem evidência histórica.",
+      "sha256": "e27bd5bca9770f713a6d570e802c392e3ae85f6a5f3f293788b78ce6ed57f6a8",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "edits": "Nenhuma edição de pixels; arquivo original copiado integralmente."
+    },
+    {
+      "file": "/visuals/stories-galilee.png",
+      "source": "Imagem original gerada com image_gen para o InJessusName",
+      "sourceFile": "exec-da15769f-535b-41f3-b448-2057b3caada6.png",
+      "createdAt": "2026-10-28",
+      "caption": "Caminho entre oliveiras e água; paisagem artística inspirada na Galileia.",
+      "type": "Ilustração artística gerada por IA; não é fotografia nem evidência histórica.",
+      "sha256": "9ae453ac129e76dd415cf0080caf37b73a1153d9107642210a3c9b4d5f4021ca",
+      "dimensions": [
+        1881,
+        836
+      ],
+      "edits": "Nenhuma edição de pixels; arquivo original copiado integralmente."
+    },
+    {
+      "file": "/visuals/stories-hope.png",
+      "source": "Imagem original gerada com image_gen para o InJessusName",
+      "sourceFile": "exec-a6f23c53-6fcd-4180-8024-d6d7fe390fbe.png",
+      "createdAt": "2026-10-28",
+      "caption": "Jardim e sepulcro em linguagem artística inspirada na esperança cristã, sem identificação arqueológica.",
+      "type": "Ilustração artística gerada por IA; não é fotografia nem evidência histórica.",
+      "sha256": "766c5a7448ac3f50d719cbfd87c49777492d7445a2ef96dec5ad0647cbf2cd9e",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "edits": "Nenhuma edição de pixels; arquivo original copiado integralmente."
+    }
+  ]
+}

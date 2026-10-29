@@ -6,6 +6,8 @@ O projeto começa pelo Cristianismo, com um núcleo comum e percursos identifica
 
 ## Estado do projeto
 
+Ampliação de 29/10/2026: o mapa público em `/meu-percurso` organiza 24 etapas bíblicas com 72 explicações e exemplos, prática com feedback e marcos mantidos somente durante a visita. A biblioteca em `/biblioteca` oferece guias introdutórios dos 66 livros desta edição. A busca em `/biblia?busca=batismo` consulta os 31.102 versículos e separa resultados literais de 52 guias temáticos contextualizados. `/historias` reúne 12 histórias em 48 cenas, com ilustrações originais identificadas e referências para conferir. `/igrejas` apresenta 11 trajetórias, 27 personalidades e 29 relações históricas documentadas. O versículo do dia acompanha o calendário de Brasília e se atualiza também se a página permanecer aberta. O modo livro tem fonte de 24–36 px, controles internos e movimento refinado. O inventário e os limites estão em [estado-do-acervo.md](docs/estado-do-acervo.md).
+
 As Etapas 1 e 2 têm uma implementação local funcional: apresentação responsiva, PWA, banco, cadastro/login de adultos e pré-entrevista com personalização salva. A interface usa navegação de app, fonte Inter hospedada localmente, leitor com créditos sob demanda e seis estudos introdutórios. A renovação visual inclui artes originais, percurso de estudos por toque/teclado, uma Bíblia com capa e páginas físicas e uma mensagem sintética opcional de boas-vindas em português. A linguagem autoral desses estudos foi reescrita para acompanhar a leitura com acolhimento, reflexão cristã e oração opcional; resultados das atividades aparecem sob demanda. A primeira mantém progresso opcional; cinco novas combinam escolha, classificação e ordenação com estado somente na sessão. Todas são pilotos com revisão humana especializada e avaliação com estudantes pendentes. Cursos completos e recursos avançados seguem no [roteiro de construção](docs/roadmap.md). Visitantes e menores têm percursos públicos; o cadastro por responsável ainda não está disponível.
 
 A [proposta de arquitetura](docs/arquitetura-etapa-1.md) registra o modelo de dados, as fronteiras entre serviços, as regras de privacidade e as fontes pesquisadas. Ela é a referência do desenho inicial; não comprova que todos os recursos descritos já estejam implementados.
@@ -37,6 +39,12 @@ npm run build
 ```
 
 O resultado de cada comando precisa ser conferido na execução atual. A presença de um comando nesta documentação não significa que ele já passou.
+
+As referências e o conteúdo estruturado também têm verificações locais sem acesso ao banco:
+
+```bash
+node --test tests/unit/*.test.mjs
+```
 
 Os testes de navegador usam o build de produção:
 

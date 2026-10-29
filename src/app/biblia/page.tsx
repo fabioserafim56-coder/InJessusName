@@ -2,10 +2,12 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { BibleReader } from "@/components/bible-reader";
 import { getBibleBooks, getBibleChapter } from "@/lib/bible";
+import { getBibleSearch } from "@/lib/bible-search";
+import { BibleSearch } from "@/components/bible/bible-search";
 
 export const metadata: Metadata = {
   title: "Leia a Bíblia — InJessusName",
-  description: "Encontre livro, capítulo e versículo em uma edição bíblica com fonte e direitos identificados."
+  description: "Pesquise palavras e temas nos 66 livros desta edição, confira passagens e leia a Bíblia com texto ajustável."
 };
 
 type QueryValue = string | string[] | undefined;
@@ -35,5 +37,8 @@ export default async function BiblePage({ searchParams }: {
   if (!chapter) notFound();
   if (highlightedVerse !== undefined && !chapter.verses.some((verse) => verse.number === highlightedVerse)) notFound();
 
-  return <BibleReader key={`${bookId}-${chapterNumber}`} books={books} chapter={chapter} highlightedVerse={highlightedVerse} />;
+  const searchQuery = typeof query.busca === "string" ? query.busca : "";
+  const searchPage = typeof query.pagina === "string" && /^[1-9]\d{0,5}$/.test(query.pagina) ? Number(query.pagina) : 1;
+  const search = getBibleSearch(searchQuery, searchPage);
+  return <BibleReader key={`${bookId}-${chapterNumber}`} books={books} chapter={chapter} highlightedVerse={highlightedVerse} searchPanel={<BibleSearch search={search} />} />;
 }
