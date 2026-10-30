@@ -1,7 +1,7 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import { createRequire } from "node:module";
-import { readFileSync } from "node:fs";
+import { readFileSync, readdirSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 import { createHash } from "node:crypto";
@@ -170,4 +170,40 @@ test("historical image originals match their preserved files, entity links and r
       assert.equal(url.password, "");
     }
   }
+});
+
+test("responsive historical photographs are real bounded image files tied to intact originals", async () => {
+  const manifest = loadLocal("src/content/church-history/photo-renditions.json");
+  const publicManifest = loadLocal("public/church-history/proveniencia-rendicoes.json");
+  assert.deepEqual(publicManifest.files, manifest.files, "The public provenance describes the distributed renditions exactly");
+  for (const field of ["generatedAt", "format", "quality"]) assert.equal(publicManifest[field], manifest[field]);
+  assert.equal(manifest.format, "webp");
+  assert.equal(manifest.quality, 95);
+  const photos = new Map(historicalPhotos.map(photo => [photo.id, photo]));
+  const sharp = nativeRequire("sharp");
+  const paths = new Set();
+  for (const file of manifest.files) {
+    const photo = photos.get(file.photoId);
+    assert.ok(photo, "Each rendition belongs to a documented original");
+    assert.equal(file.sourceSha256, photo.sha256, "The source is the preserved archival file");
+    assert.ok(file.width < photo.width, "Delivery never enlarges an archival photograph");
+    assert.ok([480, 960, 1440, 2048, 3840].includes(file.width));
+    assert.ok(Math.abs(file.height - photo.height * file.width / photo.width) <= 1, "The complete image keeps its aspect ratio");
+    assert.match(file.src, /^\/church-history\/renditions\/[a-z0-9/-]+\.webp$/);
+    assert.ok(!paths.has(file.src), "Every file has a unique address");
+    paths.add(file.src);
+    const bytes = readFileSync(join(root, "public", file.src));
+    assert.equal(bytes.length, file.bytes);
+    assert.equal(createHash("sha256").update(bytes).digest("hex"), file.sha256);
+    const metadata = await sharp(bytes).metadata();
+    assert.equal(metadata.format, "webp");
+    assert.equal(metadata.width, file.width);
+    assert.equal(metadata.height, file.height);
+  }
+  for (const photo of historicalPhotos) for (const width of [2048, 3840]) {
+    if (photo.width > width) assert.ok(manifest.files.some(file => file.photoId === photo.id && file.width === width), `${photo.id} has a real ${width}px viewer delivery`);
+  }
+  const actualPaths = readdirSync(join(root, "public/church-history/renditions"), { recursive: true })
+    .filter(path => path.endsWith(".webp")).map(path => `/church-history/renditions/${path}`);
+  assert.deepEqual(actualPaths.sort(), [...paths].sort(), "No undocumented delivery file is distributed");
 });

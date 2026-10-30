@@ -1,6 +1,7 @@
 import { test, expect, type Locator, type Page } from "@playwright/test";
 import corpus from "../../src/content/bible/blivre-tr-2018.json";
 import historyPhotos from "../../src/content/church-history/photos.json";
+import historyRenditions from "../../src/content/church-history/photo-renditions.json";
 import { curriculumStages } from "../../src/content/curriculum";
 import { biblicalStories } from "../../src/content/stories";
 
@@ -246,6 +247,40 @@ test("fotografia histórica preserva autoria, licença, arquivo original e ampli
   const original = viewer.locator("img.pswp__img").last();
   await imageLoaded(original);
   expect(await original.evaluate(element => (element as HTMLImageElement).naturalWidth)).toBe(photo.width);
+  await page.keyboard.press("Escape");
+  await expect(viewer).not.toBeVisible();
+  await expect(trigger).toBeFocused();
+  await noOverflow(page);
+});
+
+test("fotografia de arquivo grande usa versões reais menores no celular e no computador", async ({ page, request, isMobile }) => {
+  const photo = historyPhotos.find(item => item.id === "fluminense-ferrez")!;
+  const rendition = historyRenditions.files.find(item => item.photoId === photo.id && item.width === (isMobile ? 2048 : 3840))!;
+  await page.goto("/igrejas/congregacional");
+  const figure = page.locator(`[data-history-photo="${photo.id}"]`);
+  const thumbnail = figure.getByRole("img");
+  await thumbnail.scrollIntoViewIfNeeded();
+  await imageLoaded(thumbnail);
+  const thumbnailPath = await thumbnail.evaluate(element => new URL((element as HTMLImageElement).currentSrc).pathname);
+  expect(thumbnailPath).toMatch(/^\/church-history\/renditions\/.+\.webp$/);
+  const thumbnailFile = historyRenditions.files.find(item => item.src === thumbnailPath)!;
+  expect(thumbnailFile.photoId).toBe(photo.id);
+  expect(thumbnailFile.width).toBeLessThanOrEqual(1440);
+  const trigger = figure.locator("a.hp-image");
+  await expect(trigger).toHaveAttribute("href", photo.src);
+  await trigger.focus();
+  await trigger.press("Enter");
+  const viewer = page.locator(".pswp.pswp--open");
+  await expect(viewer).toBeVisible();
+  const displayed = viewer.locator("img.pswp__img").last();
+  await imageLoaded(displayed);
+  expect(await displayed.evaluate(element => new URL((element as HTMLImageElement).currentSrc).pathname)).toBe(rendition.src);
+  expect(await displayed.evaluate(element => ({ width: (element as HTMLImageElement).naturalWidth, height: (element as HTMLImageElement).naturalHeight }))).toEqual({ width: rendition.width, height: rendition.height });
+  const delivered = await request.get(rendition.src);
+  expect(delivered.status()).toBe(200);
+  expect(delivered.headers()["content-type"]).toMatch(/^image\/webp/);
+  expect((await delivered.body()).length).toBe(rendition.bytes);
+  expect(rendition.bytes).toBeLessThan(photo.bytes);
   await page.keyboard.press("Escape");
   await expect(viewer).not.toBeVisible();
   await expect(trigger).toBeFocused();
