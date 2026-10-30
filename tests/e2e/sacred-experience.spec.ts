@@ -254,6 +254,7 @@ test("fotografia histórica preserva autoria, licença, arquivo original e ampli
 });
 
 test("fotografia de arquivo grande usa versões reais menores no celular e no computador", async ({ page, request, isMobile }) => {
+  if (isMobile) await page.setViewportSize({ width: 320, height: 844 });
   const photo = historyPhotos.find(item => item.id === "fluminense-ferrez")!;
   const rendition = historyRenditions.files.find(item => item.photoId === photo.id && item.width === (isMobile ? 2048 : 3840))!;
   await page.goto("/igrejas/congregacional");
