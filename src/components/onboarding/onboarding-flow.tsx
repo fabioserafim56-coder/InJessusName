@@ -4,6 +4,7 @@ import Link from "next/link";
 import { AppShell } from "@/components/app-shell";
 import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState, type FormEvent } from "react";
+import { useJourneySession } from "@/components/journey-session";
 
 type AgeBand = "6_9" | "10_12" | "13_17" | "18_plus";
 type TraditionChoice = "ccb" | "roman_catholic" | "evangelical_protestant" | "seeker";
@@ -100,6 +101,7 @@ function selectedTitle(choices: Choice[], value: string) {
 
 export function OnboardingFlow({ authenticated = false }: { authenticated?: boolean }) {
   const router = useRouter();
+  const { visualProfile, updateVisualProfile } = useJourneySession();
   const [screen, setScreen] = useState<Screen>(0);
   const [ageBand, setAgeBand] = useState<AgeBand | "">("");
   const [tradition, setTradition] = useState<TraditionChoice | "">("");
@@ -135,6 +137,7 @@ export function OnboardingFlow({ authenticated = false }: { authenticated?: bool
     setConsent(false);
     if (screen === 0) {
       setAgeBand(value as AgeBand);
+      updateVisualProfile({ ageBand: value === "6_9" || value === "10_12" ? "child" : value === "13_17" ? "youth" : "adult" });
       if (value !== "18_plus") {
         setTradition("");
         setBaptism("");
@@ -251,7 +254,10 @@ export function OnboardingFlow({ authenticated = false }: { authenticated?: bool
               <p className="onboarding-question-description">{screen === "review" ? "Confira suas respostas. Elas serão usadas para sugerir temas e perspectivas de estudo, e você poderá alterá-las depois." : question.description}</p>
 
               {typeof screen === "number" ? (
-                <ChoiceGroup name={question.name} label={question.title} options={question.choices} value={values[screen]} onChange={selectAnswer} />
+                <>
+                  <ChoiceGroup name={question.name} label={question.title} options={question.choices} value={values[screen]} onChange={selectAnswer} />
+                  {screen === 0 && <details className="onboarding-visual-preferences"><summary>Prepare também sua jornada visual <span>Opcional</span></summary><p>Seu conhecimento ajuda a sugerir um começo. A representação muda apenas o personagem, sem definir sua vocação ou o valor da sua fé.</p><fieldset><legend>Como está seu conhecimento da Bíblia?</legend>{[{ value: "starting", label: "Estou começando" }, { value: "some", label: "Já conheço algumas passagens" }, { value: "experienced", label: "Já estudo e quero aprofundar" }].map(choice => <label key={choice.value}><input type="radio" name="visualKnowledge" value={choice.value} checked={visualProfile.knowledge === choice.value} onChange={() => updateVisualProfile({ knowledge: choice.value as typeof visualProfile.knowledge })} />{choice.label}</label>)}</fieldset><fieldset><legend>Como você prefere aparecer na jornada?</legend>{[{ value: "neutral", label: "Sem preferência" }, { value: "masculine", label: "Representação masculina" }, { value: "feminine", label: "Representação feminina" }].map(choice => <label key={choice.value}><input type="radio" name="visualAppearance" value={choice.value} checked={visualProfile.appearance === choice.value} onChange={() => updateVisualProfile({ appearance: choice.value as typeof visualProfile.appearance })} />{choice.label}</label>)}</fieldset><small>Essas preferências ficam apenas nesta visita. Não são enviadas ao perfil da conta. Você poderá mudá-las no cenário do percurso.</small></details>}
+                </>
               ) : (
                 <>
                   <dl className="onboarding-summary">

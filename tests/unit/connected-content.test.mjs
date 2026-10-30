@@ -4,6 +4,7 @@ import { createRequire } from "node:module";
 import { readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
+import { createHash } from "node:crypto";
 import ts from "typescript";
 
 // Compile the checked-in content modules without the browser or RSC runtime.
@@ -22,6 +23,7 @@ function loadLocal(relative) {
   const requireLocal = specifier => {
     if (specifier === "server-only") return {};
     if (specifier === "./stages.json") return loadLocal("src/content/curriculum/stages.json");
+    if (specifier === "./miracle-stories") return loadLocal("src/content/stories/miracle-stories.ts");
     if (specifier === "@/content/bible/blivre-tr-2018.json") return loadLocal("src/content/bible/blivre-tr-2018.json");
     if (specifier === "@/content/bible/edition.json") return loadLocal("src/content/bible/edition.json");
     return nativeRequire(specifier);
@@ -36,6 +38,7 @@ const { getBibleChapter } = loadLocal("src/lib/bible.ts");
 const { curriculumStages, scriptureLink } = loadLocal("src/content/curriculum/index.ts");
 const { biblicalStories, storyBibleUrl, storyStageIds } = loadLocal("src/content/stories/index.ts");
 const { churches, people, relationships, historySources } = loadLocal("src/content/church-history/index.ts");
+const historicalPhotos = loadLocal("src/content/church-history/photos.json");
 
 function assertPassage(bookId, chapter, verse) {
   const original = corpus.books.find(book => book.id === bookId)?.chapters[chapter - 1]?.[verse - 1];
@@ -88,9 +91,9 @@ test("the curriculum and its book index cover exactly the 66-book edition", () =
   assert.deepEqual([...indexed].sort(), canon);
 });
 
-test("12 four-scene stories keep all passages and curriculum connections valid", () => {
-  assert.equal(biblicalStories.length, 12);
-  assert.equal(new Set(biblicalStories.map(story => story.id)).size, 12);
+test("15 four-scene stories keep all passages and curriculum connections valid", () => {
+  assert.equal(biblicalStories.length, 15);
+  assert.equal(new Set(biblicalStories.map(story => story.id)).size, 15);
   const stages = new Set(curriculumStages.map(stage => stage.id));
   assert.deepEqual(Object.keys(storyStageIds).sort(), biblicalStories.map(story => story.id).sort());
   for (const story of biblicalStories) {
@@ -139,5 +142,32 @@ test("historical fiches and every connection resolve both people and identified 
     assert.equal(url.username, "");
     assert.equal(url.password, "");
     assert.ok(source.title && source.publisher, "A source includes title and publisher");
+  }
+});
+
+test("historical image originals match their preserved files, entity links and rights records", async () => {
+  const entities = new Set([...churches, ...people].map(entity => entity.id));
+  const photoIds = new Set(historicalPhotos.map(photo => photo.id));
+  assert.equal(photoIds.size, historicalPhotos.length, "Each image record is addressable without duplicate identifiers");
+  assert.ok(historicalPhotos.some(photo => photo.kind === "photograph"));
+  assert.ok(historicalPhotos.some(photo => photo.kind === "document" || photo.kind === "historical-portrait"));
+  const sharp = nativeRequire("sharp");
+  for (const photo of historicalPhotos) {
+    assert.ok(photo.entityIds.length > 0);
+    for (const entityId of photo.entityIds) assert.ok(entities.has(entityId), `${photo.id} belongs to an existing biography or church`);
+    assert.match(photo.src, /^\/church-history\/[a-z0-9/-]+\.(jpg|jpeg|png)$/);
+    const bytes = readFileSync(join(root, "public", photo.src));
+    assert.equal(bytes.length, photo.bytes, `${photo.id} preserves the recorded file size`);
+    assert.equal(createHash("sha256").update(bytes).digest("hex"), photo.sha256, `${photo.id} preserves the exact original bytes`);
+    const metadata = await sharp(bytes).metadata();
+    assert.equal(metadata.width, photo.width, `${photo.id} has the documented native width`);
+    assert.equal(metadata.height, photo.height, `${photo.id} has the documented native height`);
+    for (const field of ["creator", "license", "rightsEvidence", "dateLabel", "changes"]) assert.ok(photo[field].trim().length > 0, `${photo.id} identifies ${field}`);
+    for (const field of ["licenseUrl", "sourceUrl", "originalUrl"]) {
+      const url = new URL(photo[field]);
+      assert.equal(url.protocol, "https:");
+      assert.equal(url.username, "");
+      assert.equal(url.password, "");
+    }
   }
 });

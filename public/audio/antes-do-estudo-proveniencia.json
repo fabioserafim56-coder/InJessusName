@@ -1,0 +1,42 @@
+{
+  "title": "Uma oração antes da leitura",
+  "createdAt": "2026-10-29",
+  "transcript": "Senhor Jesus, estamos diante da tua Palavra. Abre nossos olhos para compreender o que ensinas. Fortalece nossa fé, acolhe nossas perguntas e transforma o que aprendermos em amor e serviço. Cremos no teu poder e confiamos no teu cuidado. Guia nossos passos, hoje e sempre. Amém.",
+  "authorship": "Oração autoral do InJessusName. Não é transcrição de um pastor nem citação de tradução bíblica.",
+  "voiceDisclosure": "Voz sintética brasileira pm_alex; sem imitação de pessoa identificável.",
+  "durationSeconds": 19.636,
+  "sampleRate": 24000,
+  "model": {
+    "id": "hexgrad/Kokoro-82M",
+    "revision": "f3ff3571791e39611d31c381e3a41a3af07b4987",
+    "url": "https://huggingface.co/hexgrad/Kokoro-82M",
+    "license": "Apache-2.0"
+  },
+  "conversion": {
+    "id": "onnx-community/Kokoro-82M-v1.0-ONNX",
+    "revision": "1939ad2a8e416c0acfeecc08a694d14ef25f2231",
+    "license": "Apache-2.0",
+    "url": "https://huggingface.co/onnx-community/Kokoro-82M-v1.0-ONNX"
+  },
+  "generation": {
+    "runtime": "kokoro-onnx0.6.1, onnxruntime1.31.1 CPUExecutionProvider",
+    "language": "pt-br",
+    "speed": 0.91,
+    "reproducibleScript": "/audio/geracao-oracao-referencia.py",
+    "integrity": "Modelo/voz/configuração conferidos por SHA-256 antes da geração."
+  },
+  "files": [
+    {
+      "path": "/audio/antes-do-estudo-kokoro-ptbr.wav",
+      "bytes": 942572,
+      "sha256": "830f0bd27548b4952625f2a0ecb35c2151fbee05f98d1c79d968e50bbe20f717"
+    },
+    {
+      "path": "/audio/antes-do-estudo-kokoro-ptbr.mp3",
+      "bytes": 236780,
+      "sha256": "2b12df3675f86ddec28ddd1d0a1484ccfd955409ad17e923d93c5d642fd4ca05"
+    }
+  ],
+  "privacy": "Áudio pré-gerado e local. Nenhuma oração pessoal, consulta ou voz do visitante é enviada para um modelo.",
+  "humanReview": "Naturalidade vocal e adequação pastoral aguardam revisão humana; verificações técnicas e reprodução no navegador não substituem escuta especializada."
+}

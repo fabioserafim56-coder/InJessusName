@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { HistoryPhotoGallery } from "./history-photos";
 import { churches, people, relationships, sourcesFor, type ChurchHistory, type HistoricalRelationship } from "@/content/church-history";
 
 const normalized = (value: string) => value.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLocaleLowerCase("pt-BR");
@@ -45,6 +46,7 @@ export function HistoryExplorer() {
         <div className="history-network-people">{edges.map(edge => {const item = people.find(person => person.id === edge.to)!;return <button type="button" data-person-id={item.id} data-relationship-kind={edge.kind} key={item.id} aria-pressed={selectedPerson === item.id} aria-controls="history-connection-detail" onClick={() => setSelectedPerson(item.id)}><span className="history-person-initials" aria-hidden="true">{initials(item.name)}</span><span><small>{edge.label}</small><strong>{item.name}</strong><span>{item.role}</span></span><span className="history-open-mark" aria-hidden="true">↗</span></button>;})}</div>
       </div>
       <div id="history-connection-detail" className="history-connection-detail" aria-live="polite">{person && selectedEdge ? <><div><p className="history-eyebrow">{kindNames[selectedEdge.kind]} · {person.period}</p><h3>{person.name}</h3><p>{person.summary}</p><p>{person.contribution}</p><div className="history-connection-proof"><strong>Por que estes dois pontos estão ligados?</strong><p>{selectedEdge.explanation}</p><small>Origem: {sourcesFor(selectedEdge.sourceIds).map(source => source.publisher).join("; ")}</small></div><Link className="history-detail-link" href={`/igrejas/${person.id}`}>Abrir biografia e fontes ↗</Link></div><button className="history-reset-selection" type="button" onClick={() => setSelectedPerson(null)}>Voltar à comunidade</button></> : <ChurchPreview church={church} />}</div>
+      <HistoryPhotoGallery entityId={selectedPerson || church.id} compact />
       <details className="history-text-connections"><summary>Ver as mesmas conexões em lista</summary><ul>{edges.map(edge => {const item = people.find(person => person.id === edge.to)!;return <li key={edge.to}><Link href={`/igrejas/${item.id}`}>{item.name}</Link><strong>{edge.label}</strong><p>{edge.explanation}</p></li>;})}</ul></details>
     </> : <ol className="history-timeline">{church.events.map((event, index) => <li key={`${event.year}-${index}`}><span>{event.year}</span><div><h3>{event.title}</h3><p>{event.text}</p><small>{sourcesFor(event.sourceIds).map(source => source.publisher).join("; ")}</small></div></li>)}</ol>}
     <div className="history-exploration-next"><div><p className="history-eyebrow">PARA ESTUDAR COM CONTEXTO</p><h3>A história continua com a Bíblia aberta.</h3><p>Compare a vida das primeiras comunidades com os diferentes caminhos da história cristã.</p></div><Link href="/biblia?livro=ACT&capitulo=2&versiculo=42">Ler Atos 2:42–47 ↗</Link></div>

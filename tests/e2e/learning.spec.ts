@@ -61,7 +61,7 @@ test("leitor abre livros e capítulos reais, destaca uma referência e oferece l
   await page.getByLabel("Livro", { exact: true }).selectOption("ACT");
   await page.getByLabel("Capítulo", { exact: true }).selectOption("17");
   await page.getByRole("button", { name: "Abrir capítulo" }).click();
-  await expect(page).toHaveURL(/\/biblia\?livro=ACT&capitulo=17$/);
+  await expect(page).toHaveURL(url => url.pathname === "/biblia" && url.searchParams.get("livro") === "ACT" && url.searchParams.get("capitulo") === "17" && url.searchParams.get("versiculo") === "1");
   await expect(page.getByRole("heading", { name: "Atos 17", exact: true })).toBeVisible();
   await expect(page.locator(".br-verses > li")).toHaveCount(34);
   await page.getByRole("link", { name: "Atos 17:11, destacar versículo" }).click();

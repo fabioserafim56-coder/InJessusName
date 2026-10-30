@@ -32,6 +32,7 @@ type ScriptureBookProps = {
   fontSize: number;
   highlightedVerse?: number;
   onSimpleReading: () => void;
+  onFontSizeChange?: (size: number) => void;
 };
 
 function makeFragment(fragment: Fragment, highlightedVerse?: number) {
@@ -113,13 +114,13 @@ function cover(back = false) {
   return page;
 }
 
-export function ScriptureBook({ bookName, chapterNumber, verses, fontSize, highlightedVerse, onSimpleReading }: ScriptureBookProps) {
+export function ScriptureBook({ bookName, chapterNumber, verses, fontSize, highlightedVerse, onSimpleReading, onFontSizeChange }: ScriptureBookProps) {
   const stage = useRef<HTMLDivElement>(null);
   const engineHost = useRef<HTMLDivElement>(null);
   const engine = useRef<PageFlip | null>(null);
   const reduced = useRef(false);
   const readingAnchor = useRef<{ chapter: string; verse: number } | null>(null);
-  const [readingSize, setReadingSize] = useState(() => Math.min(36, Math.max(24, fontSize)));
+  const [readingSize, setReadingSize] = useState(() => Math.min(38, Math.max(24, fontSize)));
   const [status, setStatus] = useState({ ready: false, failed: false, page: 0, count: 0, textPages: 0, state: "loading" });
 
   useEffect(() => {
@@ -143,7 +144,7 @@ export function ScriptureBook({ bookName, chapterNumber, verses, fontSize, highl
       const totalWidth = Math.floor(container!.clientWidth);
       const spread = totalWidth >= 790;
       const width = Math.min(490, spread ? Math.floor(totalWidth / 2) - 9 : totalWidth - 8);
-      const height = Math.min(760, Math.max(280, Math.floor(window.innerHeight - 270)));
+      const height = Math.min(760, Math.max(280, Math.floor(window.innerHeight - 330)));
       container!.style.setProperty("--sb-page-height", `${height}px`);
       container!.style.setProperty("--sb-page-width", `${width}px`);
       const padding = width < 330 ? 22 : width < 400 ? 29 : 39;
@@ -267,14 +268,16 @@ export function ScriptureBook({ bookName, chapterNumber, verses, fontSize, highl
   }
   function resizeReading(change: number) {
     setStatus((previous) => ({ ...previous, ready: false, state: "loading" }));
-    setReadingSize((size) => Math.max(24, Math.min(36, size + change)));
+    const size = Math.max(24, Math.min(38, readingSize + change));
+    setReadingSize(size);
+    onFontSizeChange?.(size);
   }
   function onKeyDown(event: KeyboardEvent<HTMLDivElement>) {
     if (event.altKey || event.ctrlKey || event.metaKey || ["INPUT", "SELECT", "TEXTAREA"].includes((event.target as HTMLElement).tagName)) return;
     if (event.key === "ArrowRight" || event.key === "ArrowLeft") { event.preventDefault(); turn(event.key === "ArrowRight" ? "next" : "previous"); }
   }
   return <div className="scripture-book" onKeyDown={onKeyDown} data-reading-size={readingSize}>
-    <div className="sb-reading-toolbar"><p>Leitura em páginas <span>· {bookName} {chapterNumber}</span></p><div role="group" aria-label="Tamanho da letra no livro"><button type="button" aria-label="Diminuir letra do livro" disabled={readingSize <= 24} onClick={() => resizeReading(-2)}>A−</button><span aria-live="polite">{readingSize} px</span><button type="button" aria-label="Aumentar letra do livro" disabled={readingSize >= 36} onClick={() => resizeReading(2)}>A+</button></div></div>
+    <div className="sb-reading-toolbar"><p>Leitura em páginas <span>· {bookName} {chapterNumber}</span></p><div role="group" aria-label="Tamanho da letra no livro"><button type="button" aria-label="Diminuir letra do livro" disabled={readingSize <= 24} onClick={() => resizeReading(-2)}>A−</button><span aria-live="polite">{readingSize} px</span><button type="button" aria-label="Aumentar letra do livro" disabled={readingSize >= 38} onClick={() => resizeReading(2)}>A+</button></div></div>
     <div className="sb-book-stage" ref={stage} aria-busy={!status.ready && !status.failed}>
       {status.count === 0 && <p className="sb-loading" role="status">{status.failed ? "O modo livro não abriu agora. A leitura simples continua disponível." : "Preparando as páginas da sua Bíblia…"}</p>}
       <div ref={engineHost} className="sb-engine-host" data-book-ready={status.ready} data-book-state={status.state} data-current-page={status.page} data-page-count={status.count} data-verse-count={verses.length} />

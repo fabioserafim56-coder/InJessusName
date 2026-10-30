@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { AppShell } from "@/components/app-shell";
 import { HistorySourceNotes } from "@/components/church-history/source-notes";
+import { HistoryPhotoGallery } from "@/components/church-history/history-photos";
 import { churches, people, getChurch, getPerson, getConnections, sourcesFor } from "@/content/church-history";
 import "@/components/church-history/history.css";
 
@@ -23,6 +24,7 @@ export default async function HistoryEntityPage({ params }: { params: Promise<{ 
   return <AppShell active="churches" title="Igrejas e personalidades" subtitle="Uma ficha para ler, relacionar e conferir"><article className="history-page history-detail-page">
     <Link className="history-back-link" href="/igrejas">← Voltar à rede de conexões</Link>
     <header className="history-detail-hero"><p className="history-eyebrow">{church ? `${church.family} · MARCO NO BRASIL: ${church.year}` : person!.role}</p><h1>{entity.name}</h1><p>{entity.summary}</p>{person && <span className="history-detail-period">{person.period}</span>}</header>
+    <HistoryPhotoGallery entityId={entityId} />
     {church ? <>
       <div className="history-fact-grid"><section><p className="history-eyebrow">01 · ORIGEM</p><h2>De onde veio?</h2><p>{church.origin}</p></section><section><p className="history-eyebrow">02 · BRASIL</p><h2>Quando e onde chegou?</h2><p>{church.brazil}</p></section><section><p className="history-eyebrow">03 · PESSOAS</p><h2>Quem participou do começo?</h2><p>{church.founders}</p></section><section><p className="history-eyebrow">04 · MISSÃO</p><h2>Por que se organizou?</h2><p>{church.purpose}</p></section></div>
       <section className="history-belief-note"><p className="history-eyebrow">ENSINO NA PERSPECTIVA DESTA TRADIÇÃO</p><h2>Como essa comunidade expressa sua fé?</h2><p>{church.teaching}</p><p className="history-detail-small">Uma síntese não substitui a leitura dos documentos confessionais. Os Dez Mandamentos de Êxodo 20 e Deuteronômio 5 são textos bíblicos; normas de uma instituição são outra categoria, e a numeração dos mandamentos varia entre tradições.</p><Link href="/biblia?livro=EXO&capitulo=20">Ler Êxodo 20 no contexto ↗</Link></section>

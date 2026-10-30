@@ -124,7 +124,7 @@ async function answerActivity(activity: Locator, question: CourseActivity, corre
   await activity.getByRole("button", { name: "Vamos conferir juntos", exact: true }).click();
 }
 
-test("novo estudo ensina em etapas e combina escolha, classificação e ordenação com correção", async ({ page }) => {
+test("novo estudo ensina em etapas e combina escolha, classificação e ordenação com correção", async ({ page, isMobile }) => {
   test.setTimeout(90000);
   const lesson = additionalLessons.find((item) => item.id === "panorama-biblico");
   if (!lesson) throw new Error("O bloco introdutório precisa conter a aula Panorama Bíblico.");
@@ -135,6 +135,11 @@ test("novo estudo ensina em etapas e combina escolha, classificação e ordenaç
   });
   await page.goto(`/aprender/${lesson.id}`);
   await expect(page.getByRole("heading", { level: 1 })).toHaveText(lesson.title);
+  await expect(page.locator("[data-study-purpose]")).toContainText("Ao terminar, você terá praticado");
+  await expect(page.locator("[data-study-evidence], [data-study-keepsake]")).toHaveCount(0);
+  await page.locator('.cl-topline a[href="/aprender"]').click();
+  await expect(page.locator("[data-guided-lessons-completed]")).toHaveCount(0);
+  await page.locator(`[data-sanctuary-lesson="${lesson.id}"] .ls-direct-lesson`).click();
   await page.getByRole("button", { name: "Vamos abrir a Palavra", exact: true }).click();
   for (const question of lesson.activities) {
     const activity = await advanceToActivity(page, question.id);
@@ -152,6 +157,10 @@ test("novo estudo ensina em etapas e combina escolha, classificação e ordenaç
     await page.locator("[data-course-next]").click();
   }
   await expect(page.getByRole("heading", { name: "A leitura continua na vida.", exact: true })).toBeVisible();
+  await expect(page.locator("[data-study-evidence] li")).toHaveCount(3);
+  await expect(page.locator('[data-study-evidence] [data-evidence-status="independent"]')).toHaveCount(1);
+  await expect(page.locator('[data-study-evidence] [data-evidence-status="supported"]')).toHaveCount(2);
+  await expect(page.locator("[data-study-keepsake]")).toBeVisible();
   const learningPath = page.locator("details.cl-learning-path");
   await expect(learningPath).not.toHaveAttribute("open", "");
   await learningPath.getByText("Meu caminho neste estudo", { exact: true }).click();
@@ -168,7 +177,21 @@ test("novo estudo ensina em etapas e combina escolha, classificação e ordenaç
   expect(writes).toEqual([]);
   expect(await page.evaluate(() => ({ local: Object.keys(localStorage), session: Object.keys(sessionStorage) }))).toEqual({ local: [], session: [] });
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+  await page.locator('.cl-topline a[href="/aprender"]').click();
+  await expect(page.locator("[data-guided-lessons-completed]")).toHaveAttribute("data-guided-lessons-completed", "1");
+  await expect(page.locator(`[data-sanctuary-lesson="${lesson.id}"] .ls-lesson-practiced`)).toBeVisible();
+  await expect(page.locator('[data-sanctuary-lesson="primeiros-passos"] .ls-lesson-practiced')).toHaveCount(0);
+  const navigation = page.getByRole("navigation", { name: isMobile ? "Navegação no celular" : "Navegação principal", exact: true });
+  await navigation.getByRole("link", { name: "Meu percurso", exact: true }).click();
+  await expect(page.locator("[data-world-avatar]")).toHaveAttribute("data-avatar-lessons", "1");
+  await expect(page.locator("[data-world-avatar]")).toHaveAttribute("data-avatar-practices", "0");
+  await page.locator("details.fw-marks > summary").click();
+  await expect(page.locator("details.fw-marks")).toContainText("Uma luz para o caminho");
   await page.reload();
+  await expect(page.locator("[data-world-avatar]")).toHaveAttribute("data-avatar-lessons", "0");
+  await navigation.getByRole("link", { name: "Aprender", exact: true }).click();
+  await expect(page.locator("[data-guided-lessons-completed]")).toHaveCount(0);
+  await page.locator(`[data-sanctuary-lesson="${lesson.id}"] .ls-direct-lesson`).click();
   await expect(page.getByRole("button", { name: "Vamos abrir a Palavra", exact: true })).toBeVisible();
   await expect(page.getByRole("heading", { name: "A leitura continua na vida.", exact: true })).toHaveCount(0);
 });

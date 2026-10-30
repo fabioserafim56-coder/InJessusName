@@ -202,8 +202,8 @@ test("histórias conectam cenas, contexto e reflexão à passagem bíblica sem r
   await page.emulateMedia({ reducedMotion: "reduce" });
   await page.goto("/historias");
   const cards = page.locator("a.story-card");
-  await expect(cards).toHaveCount(12);
-  expect(new Set(await cards.evaluateAll((links) => links.map((link) => link.getAttribute("href")))).size).toBe(12);
+  await expect(cards).toHaveCount(15);
+  expect(new Set(await cards.evaluateAll((links) => links.map((link) => link.getAttribute("href")))).size).toBe(15);
   for (const story of biblicalStories) {
     expect(story.scenes).toHaveLength(4);
     for (const scene of story.scenes) scripture(scene.reference.book, scene.reference.chapter, scene.reference.verse ?? 1);

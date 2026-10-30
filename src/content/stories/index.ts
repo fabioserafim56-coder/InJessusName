@@ -1,3 +1,5 @@
+import { miracleStories } from "./miracle-stories";
+
 export type StoryReference = Readonly<{ label: string; book: string; chapter: number; verse?: number }>;
 export type StoryScene = Readonly<{ title: string; text: string; observe: string; reference: StoryReference }>;
 export type BiblicalStory = Readonly<{
@@ -176,6 +178,7 @@ export const biblicalStories: readonly BiblicalStory[] = [
       { text: "Discutir primeiro se a pessoa pertence ao meu grupo.", feedback: "A pergunta final de Jesus desloca o foco para quem se faz próximo. A necessidade da pessoa ferida não espera que definamos se ela merece pertencer ao nosso grupo." }
     ] }, nextReading: ref("Levítico 19:18, 33–34", "LEV", 19, 18)
   },
+  ...miracleStories,
   {
     id: "cruz-e-ressurreicao", title: "A esperança diante da cruz", subtitle: "Paixão, ressurreição e encontro", era: "O centro da fé cristã · Os Evangelhos", theme: "Páscoa", art: "hope", symbol: "road",
     introduction: "Aqui nos aproximamos do centro da fé cristã com reverência. Os Evangelhos não escondem o sofrimento de Jesus nem o medo de seus discípulos; anunciam a ressurreição como uma esperança que transforma o encontro com ele.",
@@ -214,5 +217,5 @@ export function getBiblicalStory(id: string) { return biblicalStories.find(story
 
 export const storyStageIds: Readonly<Record<string,string>> = {
   criacao:"criacao-e-comecos",noe:"criacao-e-comecos",abraao:"promessa-e-alianca",jose:"promessa-e-alianca",exodo:"exodo-e-libertacao",rute:"rute-e-acolhimento",davi:"samuel-e-davi",daniel:"profetas-e-esperanca",
-  "nascimento-de-jesus":"chegada-de-jesus","bom-samaritano":"jesus-e-seu-reino","cruz-e-ressurreicao":"cruz-e-entrega",pentecostes:"pentecostes-e-comunidade"
+  "nascimento-de-jesus":"chegada-de-jesus","bom-samaritano":"jesus-e-seu-reino","cruz-e-ressurreicao":"cruz-e-entrega",pentecostes:"pentecostes-e-comunidade", "multiplicacao-dos-paes":"jesus-e-seu-reino", "jesus-acalma-a-tempestade":"jesus-e-seu-reino", lazaro:"jesus-e-seu-reino"
 };

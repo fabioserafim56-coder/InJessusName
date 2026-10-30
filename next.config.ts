@@ -1,7 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  images: { qualities: [75, 90] },
+  images: { qualities: [75, 90, 100] },
   distDir: process.env.INJESSUS_NEXT_DIST_DIR || (process.env.NODE_ENV === "development" ? ".next-workspace" : ".next"),
   allowedDevOrigins: ["127.0.0.1"],
   logging: {

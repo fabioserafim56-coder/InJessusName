@@ -1,0 +1,44 @@
+{
+  "collection": "Os sinais de Jesus",
+  "createdAt": "2026-10-29",
+  "generator": "OpenAI image_gen",
+  "status": "Ilustrações interpretativas geradas por IA, não fotografias ou retratos históricos autenticados. Nenhuma afirmação de resolução 4K ou de aumento percentual medido.",
+  "files": [
+    {
+      "storyId": "multiplicacao-dos-paes",
+      "path": "/visuals/story-multiplicacao-dos-paes.png",
+      "originalFile": "exec-b55aaae4-1d1b-41d3-86a3-ac47fd38720e.png",
+      "reference": "João 6:1–15",
+      "description": "Jesus dá graças pelo alimento diante da multidão; interpretação artística do sinal narrado em João.",
+      "width": 1774,
+      "height": 887,
+      "bytes": 3240229,
+      "sha256": "9520767b8756eda3e6109d68110b026a400a8452fa2326c5472771704b740f32",
+      "copiedWithoutPixelEdits": true
+    },
+    {
+      "storyId": "jesus-acalma-a-tempestade",
+      "path": "/visuals/story-jesus-acalma-a-tempestade.png",
+      "originalFile": "exec-715bd514-82fe-4c1a-9373-38a62c414247.png",
+      "reference": "Marcos 4:35–41",
+      "description": "Jesus e os discípulos no barco; interpretação artística do poder de Cristo sobre a tempestade.",
+      "width": 1672,
+      "height": 941,
+      "bytes": 3100018,
+      "sha256": "007173d70ce7b24989dee8885c158dc25ec0f60646809dfb4b7e7951ee3756e7",
+      "copiedWithoutPixelEdits": true
+    },
+    {
+      "storyId": "lazaro",
+      "path": "/visuals/story-lazaro.png",
+      "originalFile": "exec-18caeedc-0e3a-4872-b65e-3a0e9234dd08.png",
+      "reference": "João 11:1–44",
+      "description": "Jesus diante do sepulcro de Lázaro; interpretação artística da narrativa da ressurreição.",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 3506085,
+      "sha256": "eeca7f64a5d085f10375aeb07b86e0e2ca31aaf976bc8a0da0756efdc7a225af",
+      "copiedWithoutPixelEdits": true
+    }
+  ]
+}

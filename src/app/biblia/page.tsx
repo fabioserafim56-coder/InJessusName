@@ -4,6 +4,7 @@ import { BibleReader } from "@/components/bible-reader";
 import { getBibleBooks, getBibleChapter } from "@/lib/bible";
 import { getBibleSearch } from "@/lib/bible-search";
 import { BibleSearch } from "@/components/bible/bible-search";
+import corpus from "@/content/bible/blivre-tr-2018.json";
 
 export const metadata: Metadata = {
   title: "Leia a Bíblia — InJessusName",
@@ -37,8 +38,14 @@ export default async function BiblePage({ searchParams }: {
   if (!chapter) notFound();
   if (highlightedVerse !== undefined && !chapter.verses.some((verse) => verse.number === highlightedVerse)) notFound();
 
+  const churchMode = query.modo === "igreja";
+  const initialBookOpen = query.livroaberto === "1";
+  const initialTheme = query.tema === "sepia" || query.tema === "noturno" ? query.tema : "claro";
+  const requestedFont = typeof query.fonte === "string" ? Number(query.fonte) : 24;
+  const initialFontSize = Number.isInteger(requestedFont) ? Math.max(20, Math.min(38, requestedFont)) : 24;
+  const verseCounts = Object.fromEntries(corpus.books.map(book => [book.id, book.chapters.map(verses => verses.length)]));
   const searchQuery = typeof query.busca === "string" ? query.busca : "";
   const searchPage = typeof query.pagina === "string" && /^[1-9]\d{0,5}$/.test(query.pagina) ? Number(query.pagina) : 1;
-  const search = getBibleSearch(searchQuery, searchPage);
-  return <BibleReader key={`${bookId}-${chapterNumber}`} books={books} chapter={chapter} highlightedVerse={highlightedVerse} searchPanel={<BibleSearch search={search} />} />;
+  const search = churchMode ? null : getBibleSearch(searchQuery, searchPage);
+  return <BibleReader key={`${bookId}-${chapterNumber}-${churchMode}-${initialBookOpen}`} books={books} chapter={chapter} highlightedVerse={highlightedVerse} churchMode={churchMode} initialBookOpen={initialBookOpen} initialTheme={initialTheme} initialFontSize={initialFontSize} verseCounts={verseCounts} searchPanel={search ? <BibleSearch search={search} /> : null} />;
 }

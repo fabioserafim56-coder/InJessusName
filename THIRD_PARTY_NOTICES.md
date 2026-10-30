@@ -6,7 +6,7 @@ The component `src/components/ui/study-progress-ring.tsx` adapts CircleProgress 
 
 Source: https://github.com/serafimcloud/21st/blob/b96d84dcf748d5e56f2f72f2bab9a4f7f33574cf/apps/web/components/ui/circle-progress.tsx
 
-Changes include bounded progress values, a size-derived radius, top origin, accessible progress semantics, and project-specific styling. It displays the current lesson session, not a grade, streak or evidence of long-term learning. The hosted 21st.dev catalog was not available from this environment; the official repository and its license were consulted directly.
+Changes include bounded progress values, a size-derived radius, top origin, accessible progress semantics, and project-specific styling. It displays the current lesson session, not a grade, streak or evidence of long-term learning. During the initial CircleProgress integration, the hosted 21st.dev catalog was not available from this environment; the official repository and its license were consulted directly. The catalog was subsequently accessed for the separate MagicUI research of 29 October 2026 described below.
 
 MIT License
 
@@ -44,7 +44,7 @@ The Bible corpus has its own authorship and CC BY 3.0 Brasil terms. See `docs/fo
 
 Source: https://github.com/dimsemenov/PhotoSwipe/tree/v5.4.4
 
-PhotoSwipe powers the museum photograph lightbox and keyboard-accessible zoom. Photographs have independent rights and credits recorded in docs/fontes-museu.md.
+PhotoSwipe powers the museum and church-history photograph lightboxes, whole-image story viewers and keyboard-accessible zoom. Photographs have independent rights and credits recorded in docs/fontes-museu.md and docs/fontes-fotograficas-igrejas.md; story artworks are artistic illustrations with separate provenance.
 
 Full license also distributed at public/licenses/photoswipe-MIT.txt.
 
@@ -77,7 +77,7 @@ THE SOFTWARE.
 
 Source: https://github.com/krisk/Fuse/tree/v7.5.0
 
-Fuse.js powers local approximate search in the lesson catalog and museum. Search terms stay in page memory.
+Fuse.js powers local approximate search in the museum and remains available in the earlier lesson-catalog component. The current /aprender experience uses six guided encounters rather than that catalog. These local search terms stay in page memory; the separate Bible search uses its own server index.
 
 Full license also distributed at public/licenses/fuse-Apache-2.0.txt.
 
@@ -444,17 +444,70 @@ SOFTWARE.
 
 The explicit postinstall script scripts/patch-page-flip.mjs updates the pinned 2.0.7 browser/module distributions: it records and cancels the renderer animation-frame handle when destroy() runs. This prevents a closed Bible from continuing its rendering loop. The script verifies the version and exact original patterns, is idempotent, and fails on an unexpected upstream distribution. The original npm package integrity check remains active. Original MIT copyright and license remain distributed above.
 
-## Kokoro-generated authorial welcome
+## Kokoro-generated authorial welcome and prayer
 
-A static Portuguese welcome is generated with Kokoro-82M v1.0 and its pm_alex voice, retrieved from pinned Hugging Face revisions. No model weights or runtime are shipped to the browser. Exact sources, voice comparison, checksums, generation settings and authorial transcript are in public/audio/bem-vindo-proveniencia.json; full model and generation-runtime licenses are distributed in public/audio/. The synthetic narration is identified beside its optional player. Model licensing does not automatically license the authorial script or recorded output.
+Two static Portuguese recordings were generated with Kokoro-82M v1.0 and its pm_alex voice, retrieved from pinned Hugging Face revisions: the earlier welcome (~25 seconds) and the prayer before studying (19.636 seconds). No model weights or inference runtime are shipped to the browser. Both optional players identify the synthetic voice, provide the authorial transcript and do not autoplay; no visitor prayers, voices or study queries are sent to a model.
+
+Exact sources, voice comparison, checksums and generation settings for the welcome are in public/audio/bem-vindo-proveniencia.json. The prayer has its own transcript, settings, output checksums and reproducible script in public/audio/antes-do-estudo-proveniencia.json and public/audio/geracao-oracao-referencia.py. Model revision: hexgrad/Kokoro-82M at f3ff3571791e39611d31c381e3a41a3af07b4987. ONNX conversion: onnx-community/Kokoro-82M-v1.0-ONNX at 1939ad2a8e416c0acfeecc08a694d14ef25f2231, Apache-2.0. Full model and generation-runtime licenses are distributed in public/audio/.
+
+Model licensing does not automatically license the authorial scripts or recorded outputs. The words are original InJessusName compositions, not recordings or impersonations of a pastor, and the prayer is not a quotation from a Bible translation. Human review of voice naturalness and pastoral suitability remains pending.
 
 ## Original interface illustrations
 
 The Galilee-inspired landscape and contemporary study-desk image were generated for this project. They are labeled artistic illustrations and are separate from the authentic historical photographs in the museum. Dimensions and file checksums are in public/visuals/proveniencia.json.
-# Ampliação editorial de 29/10/2026
+## Ampliação editorial de 29/10/2026
 
 Os novos guias, etapas, exemplos, perguntas e paráfrases das histórias são composições editoriais do InJessusName. As citações bíblicas continuam sendo recuperadas da Bíblia Livre TR2018, com seus créditos e CC BY 3.0 Brasil. Um guia não representa revisão ou nova edição da tradução.
 
 As treze novas artes originais (quatro ambientais e nove narrativas) foram geradas para o projeto e copiadas sem edição dos arquivos originais. A proveniência, dimensões e SHA-256 estão em `public/visuals/historias-proveniencia.json` e `public/visuals/historias-narrativas-proveniencia.json`. São ilustrações interpretativas; não são fotografias de objetos históricos, retratos autenticados ou reconstruções arqueológicas. A otimização responsiva de entrega utiliza o Next.js; os PNG originais são preservados.
 
-As fichas de igrejas e pessoas contêm sínteses autorais com ligações para fontes institucionais, documentos confessionais e fontes enciclopédicas, identificadas em `src/content/church-history/index.ts` e `docs/fontes-historia-igrejas.md`. Não foram incorporadas letras de hinos, gravações, fotografias de líderes ou cópias integrais de biografias de terceiros. Referenciar uma comunidade ou pessoa não declara vínculo institucional.
+As fichas de igrejas e pessoas contêm sínteses autorais com ligações para fontes institucionais, documentos confessionais e fontes enciclopédicas, identificadas em `src/content/church-history/index.ts` e `docs/fontes-historia-igrejas.md`. Não foram incorporadas letras de hinos, gravações musicais ou cópias integrais de biografias de terceiros. As fotografias acrescentadas posteriormente nesta mesma data têm créditos e direitos próprios, documentados abaixo. Referenciar uma comunidade ou pessoa não declara vínculo institucional.
+
+
+## MagicUI BorderBeam adaptation — 29 October 2026
+
+`src/components/learning-sanctuary/focus-border.tsx` adapts BorderBeam from MagicUI, discovered through the 21st.dev component gallery. Source revision: `efe76fc5755eca1142dd4f74c1d6f0ace2887e3c`.
+
+- Source: https://github.com/magicuidesign/magicui/blob/efe76fc5755eca1142dd4f74c1d6f0ace2887e3c/apps/www/registry/magicui/border-beam.tsx
+- License: https://github.com/magicuidesign/magicui/blob/efe76fc5755eca1142dd4f74c1d6f0ace2887e3c/LICENSE.md
+- Original full license: `public/licenses/magicui-MIT.txt` and `src/components/learning-sanctuary/MAGICUI-LICENSE.txt`.
+
+Changes replace Tailwind and class utilities with project CSS, use the already installed Motion package, adapt colors, and run one five-second highlight after an explicit encounter selection. Reduced-motion preference suppresses the decoration. No additional package was installed. The scene, journey illustrations and avatar are original project SVG compositions, not MagicUI assets.
+
+```text
+MIT License
+
+Copyright (c) Magic UI
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
+
+## Church-history photographs, portraits and document — 29 October 2026
+
+Eighteen unmodified original files in `public/church-history/` illustrate eight church/tradition entries and nine people. Each file has independent creator, credit, capture-date qualification, source URL, license URL, rights evidence, dimensions, byte count and SHA-256 in `src/content/church-history/photos.json` and the distributed `public/church-history/proveniencia.json`. A file linked to multiple entries is counted once. Full acquisition notes and the list of selected records are in `docs/fontes-fotograficas-igrejas.md`.
+
+The selection includes public-domain historical records, Creative Commons Attribution and Attribution-ShareAlike photographs, and one photograph reproduced with the Palácio do Planalto attribution permission. It is not governed by a single software or image license. Original credits and applicable license links remain visible beside each image and in the provenance data. CC BY/CC BY-SA sources include Valter Campanato/Agência Brasil, Wilfredor, Felipe Restrepo Acosta, Eugenio Hansen OFS, Manoel Messias de So… (the name as credited by the Panoramio archive), Vitor Mazuco, Bruce Boehner, the Los Angeles Times Photographic Collection/UCLA and Cecioka. Ricardo Stuckert/Palácio do Planalto is credited under the recorded institutional attribution permission. Historical reproductions retain the rights grounds and archive credits supplied by their sources rather than attributing authorship to the uploader.
+
+Original files have not been cropped, restored, colorized or enlarged with AI. Next.js generates responsive delivery versions; the interactive viewer limits display width to 2048 px on mobile and 3840 px on desktop, with a separate link to the intact original. The largest original is 7385×9812 px; smaller archival portraits retain their native limits. The photographs do not imply endorsement by a person, church, archive or institution. A photograph of a later building is not represented as the community's original church.
+
+## Additional original miracle illustrations — 29 October 2026
+
+Three illustrations were generated for the multiplication of the loaves (John 6), Jesus calming the storm (Mark 4) and Lazarus (John 11). They are interpretive artwork, not authenticated portraits, documentary photographs or archaeological evidence. The original PNGs were copied without pixel edits. Their dimensions, references and SHA-256 are recorded in `public/visuals/milagres-proveniencia.json`; the story viewer can display the whole original image.
+
+The visual scene and image-delivery settings do not substantiate a measured percentage improvement or universal 4K resolution. PixiJS, Swin2SR and multilingual E5 were researched but were not installed, run or distributed as integrations in this release. Research references are in `docs/ferramentas-pesquisadas-2026-10-29.md`.

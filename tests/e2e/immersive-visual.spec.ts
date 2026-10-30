@@ -262,7 +262,7 @@ test("início e leitor permanecem utilizáveis sem JavaScript", async ({ browser
     await plain.getByLabel("Livro", { exact: true }).selectOption("LUK");
     await plain.getByLabel("Capítulo", { exact: true }).selectOption("1");
     await plain.getByRole("button", { name: "Abrir capítulo", exact: true }).click();
-    await expect(plain).toHaveURL(/\/biblia\?livro=LUK&capitulo=1$/);
+    await expect(plain).toHaveURL(url => url.pathname === "/biblia" && url.searchParams.get("livro") === "LUK" && url.searchParams.get("capitulo") === "1" && url.searchParams.get("versiculo") === "1");
     await expect(plain.getByRole("heading", { name: "Lucas 1", exact: true })).toBeVisible();
     await expect(plain.locator(".br-verses > li")).toHaveCount(80);
     expect(await plain.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
