@@ -7,6 +7,7 @@ import { WelcomeNarration } from "@/components/scripture-audio/welcome-narration
 import { DailyVerse } from "@/components/daily-verse";
 import { getDailyVerse } from "@/lib/daily-verse";
 import { getCourseCatalog } from "@/lib/course-catalog";
+import { MultimodalEntry } from "@/components/multimodal/multimodal-entry";
 import "@/components/learning-home.css";
 
 export const dynamic = "force-dynamic";
@@ -27,6 +28,7 @@ export default function Home() {
       <WelcomeNarration />
 
       <DailyVerse initialVerse={getDailyVerse()} />
+      <MultimodalEntry />
 
       <section className="home-connected" aria-labelledby="home-connected-title"><div className="home-section-heading"><div><p className="home-kicker"><Compass size={18} aria-hidden="true" /> UMA HISTÓRIA. CAMINHOS QUE SE ENCONTRAM.</p><h2 id="home-connected-title">Abra uma porta para compreender o todo.</h2><p className="home-section-description">O texto dá origem à leitura. A leitura encontra a história. O que você aprende acompanha a vida.</p></div></div><div className="home-connected-grid"><Link href="/meu-percurso" className="home-connected-map"><span className="home-connected-number">01 · CAMINHAR</span><Compass size={31} aria-hidden="true" /><h3>Seu mapa na Palavra</h3><p>Da criação à nova criação, siga etapas conectadas, com explicações, exemplos e leituras para conferir.</p><span>Explorar meu percurso <ArrowUpRight size={20} aria-hidden="true" /></span></Link><Link href="/historias" className="home-connected-stories"><span className="home-connected-number">02 · IMAGINAR E LER</span><BookOpenText size={31} aria-hidden="true" /><h3>Histórias que nos aproximam</h3><p>Caminhe por cenas ilustradas, conheça o contexto e volte à passagem bíblica para ouvir o que ela conta.</p><span>Conhecer as histórias <ArrowUpRight size={20} aria-hidden="true" /></span></Link><Link href="/igrejas" className="home-connected-history"><span className="home-connected-number">03 · INVESTIGAR</span><Sparkle size={31} aria-hidden="true" /><h3>Raízes, igrejas e pessoas</h3><p>Investigue origens, datas, chegadas ao Brasil e as relações documentadas entre comunidades e pessoas.</p><span>Abrir o painel de conexões <ArrowUpRight size={20} aria-hidden="true" /></span></Link></div></section>
 

@@ -1,0 +1,65 @@
+{
+  "title": "Ampliação experimental de um detalhe artístico: os pães",
+  "createdAt": "2026-10-30T12:37:51.403Z",
+  "status": "Experimento real de super-resolução x2. O modelo estima novos pixels. Não constitui recuperação autenticada de detalhes, reconstrução histórica, fotografia documental nem prova de melhoria percentual.",
+  "source": {
+    "src": "/visuals/story-multiplicacao-dos-paes.png",
+    "sha256": "9520767b8756eda3e6109d68110b026a400a8452fa2326c5472771704b740f32",
+    "type": "Ilustração interpretativa gerada para o projeto; não fotografia histórica",
+    "crop": {
+      "left": 775,
+      "top": 555,
+      "width": 240,
+      "height": 192
+    }
+  },
+  "model": {
+    "id": "caidas/swin2SR-classical-sr-x2-64",
+    "revision": "cee1c923c6a37361c6e5650b65dcf4be821e5d52",
+    "url": "https://huggingface.co/caidas/swin2SR-classical-sr-x2-64",
+    "license": "Apache-2.0"
+  },
+  "conversion": {
+    "id": "Xenova/swin2SR-classical-sr-x2-64",
+    "revision": "93dfc9089abda257351d3a58d5771e2c1ff69442",
+    "url": "https://huggingface.co/Xenova/swin2SR-classical-sr-x2-64",
+    "file": "onnx/model.onnx",
+    "bytes": 54428699,
+    "sha256": "6dde3fe2440543ccae7c40d175609f83c18aeaa3d8456745c4329ef97ae744bd",
+    "licensing": "Conversão ONNX que identifica o modelo de origem Apache-2.0; não foi presumida uma licença independente para o autor da conversão."
+  },
+  "generation": {
+    "width": 480,
+    "height": 384,
+    "channels": 3,
+    "runtime": "onnxruntime",
+    "runtimeVersion": "1.31.1",
+    "provider": "CPUExecutionProvider",
+    "threads": 1,
+    "modelLoadSeconds": 126.622,
+    "inferenceSeconds": 162.781,
+    "inputName": "pixel_values",
+    "outputName": "reconstruction",
+    "modelSha256": "6dde3fe2440543ccae7c40d175609f83c18aeaa3d8456745c4329ef97ae744bd"
+  },
+  "recipe": "node scripts/enhance-illustrations.mjs; scripts/enhance-illustrations.py exige o SHA-256 fixado, usa uma thread CPU e não baixa nem executa pickle.",
+  "privacy": "Somente uma arte local do projeto foi processada antecipadamente. Nenhuma imagem de visitante ou fotografia de acervo foi enviada a um serviço.",
+  "files": [
+    {
+      "role": "artistic-source-crop",
+      "src": "/visuals/enhanced/bread-detail-original.png",
+      "width": 240,
+      "height": 192,
+      "bytes": 134322,
+      "sha256": "2f6e5abb8dcd111b9fea4a552482e7c8c4c44662a3f1a7d313750e6eb69033cb"
+    },
+    {
+      "role": "model-estimated-upscale",
+      "src": "/visuals/enhanced/bread-detail-swin2sr-x2.png",
+      "width": 480,
+      "height": 384,
+      "bytes": 530055,
+      "sha256": "5cbe0e4c33a580c36a011eb97a9138290eb62cfc3740f18958e8416c54f2c147"
+    }
+  ]
+}

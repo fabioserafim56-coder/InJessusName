@@ -1,0 +1,517 @@
+{
+  "createdAt": "2026-10-30T02:11:50Z",
+  "model": {
+    "id": "hexgrad/Kokoro-82M",
+    "revision": "f3ff3571791e39611d31c381e3a41a3af07b4987",
+    "url": "https://huggingface.co/hexgrad/Kokoro-82M",
+    "license": "Apache-2.0"
+  },
+  "conversion": {
+    "id": "onnx-community/Kokoro-82M-v1.0-ONNX",
+    "revision": "1939ad2a8e416c0acfeecc08a694d14ef25f2231",
+    "license": "Apache-2.0"
+  },
+  "voice": "pm_alex",
+  "language": "pt-br",
+  "speed": 0.91,
+  "sampleRate": 24000,
+  "runtime": "kokoro-onnx 0.6.1, onnxruntime 1.31.1 CPUExecutionProvider; 2 inference threads",
+  "sourceCorpusSha256": "d9dc1ff27d9c4d5893accfc532c85c3c493d75d1e59b437d83a789c51e2eeaa0",
+  "edition": {
+    "id": "blivre-tr-2018.2.0",
+    "name": "Bíblia Livre (BLIVRE) · TR · fevereiro de 2018",
+    "attribution": "Bíblia Livre (BLIVRE), Copyright © Diego Santos, Mario Sérgio e Marco Teles — fevereiro de 2018. https://sites.google.com/site/biblialivre/ . Licença Creative Commons Atribuição 3.0 Brasil. Reprodução permitida desde que devidamente mencionados fonte e autores. Conversão técnica de VPL para JSON pelo InJessusName, sem revisão ou alteração da redação dos versículos. O formato VPL não inclui as notas da edição. Atribuição não implica apoio dos autores ao aplicativo.",
+    "license": "Creative Commons Atribuição 3.0 Brasil (CC BY 3.0 BR)",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0/br/"
+  },
+  "processing": "Voz sintética. Cada arquivo pronuncia o texto do versículo desta edição. A segmentação por versículo fornece alinhamento para o destaque; não é alinhamento palavra por palavra.",
+  "humanReview": "Reprodução e integridade verificadas tecnicamente. Pronúncia, naturalidade e adequação pastoral aguardam revisão humana; nenhum selo de revisão foi atribuído.",
+  "privacy": "Arquivos estáticos pré-gerados. Nenhuma voz, oração ou anotação do visitante é enviada para um modelo.",
+  "reproduce": "python scripts/generate-scripture-narration.py; --check para verificar os arquivos existentes.",
+  "passages": [
+    {
+      "id": "salmo-23",
+      "title": "O Senhor é meu pastor",
+      "introduction": "Permaneça um pouco neste salmo. Ouça cada versículo e acompanhe a Palavra ao seu lado.",
+      "bookId": "PSA",
+      "chapter": 23,
+      "startVerse": 1,
+      "endVerse": 6,
+      "storyIds": [],
+      "bookName": "Salmos",
+      "reference": "Salmos 23:1–6",
+      "verses": [
+        {
+          "number": 1,
+          "text": "Salmo de Davi:O SENHOR é meu pastor, nada me faltará.",
+          "src": "/audio/scripture/psa-23-1.mp3",
+          "durationSeconds": 3.432,
+          "bytes": 41516,
+          "sha256": "633a897615196e368e3231ea9c0d248b9f135b20f424975b019e9376e1890798"
+        },
+        {
+          "number": 2,
+          "text": "Ele me faz deitar em pastos verdes, [e] me leva a águas quietas.",
+          "src": "/audio/scripture/psa-23-2.mp3",
+          "durationSeconds": 4.032,
+          "bytes": 48716,
+          "sha256": "a3b0feaff554c7e49226efe58ebd5579228331aefd99758301a587c87f075f92"
+        },
+        {
+          "number": 3,
+          "text": "Ele restaura minha alma, [e] me guia pelos caminhos da justiça por seu nome.",
+          "src": "/audio/scripture/psa-23-3.mp3",
+          "durationSeconds": 4.536,
+          "bytes": 54764,
+          "sha256": "d4cfeebc1f81dcb937dd854fab8cd25cbf3a25ec3f49a6b2119a64ebb3075d96"
+        },
+        {
+          "number": 4,
+          "text": "Ainda que eu venha a andar pelo vale da sombra da morte, não temerei mal algum, porque tu estás comigo; tua vara e teu cajado me consolam.",
+          "src": "/audio/scripture/psa-23-4.mp3",
+          "durationSeconds": 8.208,
+          "bytes": 98828,
+          "sha256": "bfdc93d31a5fbfd97b67309a2ea8e2e91ea7af6f214c52b64da136aa81f03afc"
+        },
+        {
+          "number": 5,
+          "text": "Tu preparas uma mesa diante de mim à vista de meus adversários; unges a minha cabeça com azeite, meu cálice transborda.",
+          "src": "/audio/scripture/psa-23-5.mp3",
+          "durationSeconds": 7.608,
+          "bytes": 91628,
+          "sha256": "5397a0f6d10f5a54092b89666231a13eb45e026b10cf2fd1d8b15adb2a111b9f"
+        },
+        {
+          "number": 6,
+          "text": "Certamente o bem e a bondade me seguirão todos os dias de minha vida; e habitarei na casa do SENHOR por muitos e muitos dias.",
+          "src": "/audio/scripture/psa-23-6.mp3",
+          "durationSeconds": 7.608,
+          "bytes": 91628,
+          "sha256": "42f111f116b4824f65e026d2e3fe17da6726c1f9f180be2e72f9318ced906b8a"
+        }
+      ]
+    },
+    {
+      "id": "bereanos-at17",
+      "title": "Receber e conferir a Palavra",
+      "introduction": "Os bereanos receberam a Palavra e examinaram as Escrituras. Este é o cuidado que acompanha nosso primeiro estudo.",
+      "bookId": "ACT",
+      "chapter": 17,
+      "startVerse": 10,
+      "endVerse": 12,
+      "storyIds": [],
+      "bookName": "Atos",
+      "reference": "Atos 17:10–12",
+      "verses": [
+        {
+          "number": 10,
+          "text": "E logo os irmãos enviaram de noite a Paulo e a Silas até Bereia; os quais, ao chegarem lá, foram à sinagoga dos judeus.",
+          "src": "/audio/scripture/act-17-10.mp3",
+          "durationSeconds": 7.872,
+          "bytes": 94796,
+          "sha256": "7517b5d4f2b5317019f823ed9ca2636140f16911c251e04d4ca5631134dbcd43"
+        },
+        {
+          "number": 11,
+          "text": "E estes foram mais nobres do que os que estavam em Tessalônica, [porque] os quais receberam a palavra com toda boa vontade, examinando a cada dia as escrituras, [para ver] se estas coisas eram assim.",
+          "src": "/audio/scripture/act-17-11.mp3",
+          "durationSeconds": 11.88,
+          "bytes": 142892,
+          "sha256": "431844bda382ad0a712354fd316c26ba47d43584dfd76c7d378c6000e2e4e504"
+        },
+        {
+          "number": 12,
+          "text": "Portanto muitos deles realmente creram, e das mulheres gregas honradas; e dos homens, não poucos.",
+          "src": "/audio/scripture/act-17-12.mp3",
+          "durationSeconds": 6.0,
+          "bytes": 72332,
+          "sha256": "867a0e9759e9db5a6abec36acd7743da91fc59f27209c35b79aff7103bd352ee"
+        }
+      ]
+    },
+    {
+      "id": "multiplicacao-jo6",
+      "title": "Jesus alimenta a multidão",
+      "introduction": "Acompanhe o sinal narrado por João. Abra o capítulo inteiro para permanecer no ensino de Jesus.",
+      "bookId": "JHN",
+      "chapter": 6,
+      "startVerse": 1,
+      "endVerse": 15,
+      "storyIds": [
+        "multiplicacao-dos-paes"
+      ],
+      "bookName": "João",
+      "reference": "João 6:1–15",
+      "verses": [
+        {
+          "number": 1,
+          "text": "Depois disto Jesus partiu para a outro lado do mar da Galileia, que é o de Tibérias.",
+          "src": "/audio/scripture/jhn-6-1.mp3",
+          "durationSeconds": 5.112,
+          "bytes": 61676,
+          "sha256": "a5a018c6b58574de4219dca0bc654de882c0b83b540dcad1aa69b979a329dfd0"
+        },
+        {
+          "number": 2,
+          "text": "E uma grande multidão o seguia, porque viam seus sinais que ele fazia nos enfermos.",
+          "src": "/audio/scripture/jhn-6-2.mp3",
+          "durationSeconds": 5.232,
+          "bytes": 63116,
+          "sha256": "840d0c1cb9a1b835bf2b1b6b9290db5600ddde2ab78a4484f60cba2f6e362adf"
+        },
+        {
+          "number": 3,
+          "text": "E subiu Jesus ao monte, e sentou-se ali com seus discípulos.",
+          "src": "/audio/scripture/jhn-6-3.mp3",
+          "durationSeconds": 3.888,
+          "bytes": 46988,
+          "sha256": "0659116b0b9c1892b30862f315b36f8e3eff463ae254f7d4dcffb6914bc4a738"
+        },
+        {
+          "number": 4,
+          "text": "E já a Páscoa, a festa dos judeus, estava perto.",
+          "src": "/audio/scripture/jhn-6-4.mp3",
+          "durationSeconds": 3.144,
+          "bytes": 38060,
+          "sha256": "7e1939fcf1f8f8b65f616a80350ae3d41414374701857066f9885fd7cf100ead"
+        },
+        {
+          "number": 5,
+          "text": "Levantando pois Jesus os olhos, e vendo que uma grande multidão vinha a ele, disse a Filipe: De onde comparemos pães, para que estes comam?",
+          "src": "/audio/scripture/jhn-6-5.mp3",
+          "durationSeconds": 8.136,
+          "bytes": 97964,
+          "sha256": "79255a62aa4a93eb40ef83cd77e116f1852286c1530c9f48be4914137db3f61a"
+        },
+        {
+          "number": 6,
+          "text": "(Mas ele disse isto para o testar; pois ele bem sabia o que havia de fazer.)",
+          "src": "/audio/scripture/jhn-6-6.mp3",
+          "durationSeconds": 4.68,
+          "bytes": 56492,
+          "sha256": "cb45abce2013e2b679eb362d715e86652980c9386df4713236621bfaad671b6a"
+        },
+        {
+          "number": 7,
+          "text": "Respondeu-lhe Filipe: Duzentos dinheiros de pão não lhes bastarão, para que cada um deles tome um pouco.",
+          "src": "/audio/scripture/jhn-6-7.mp3",
+          "durationSeconds": 6.024,
+          "bytes": 72620,
+          "sha256": "847dcba2f31a112c0daffba89aa75e12f877605a9d98d800b74d118858cf569e"
+        },
+        {
+          "number": 8,
+          "text": "Disse-lhe um de seus discípulos, André, o irmão de Simão Pedro:",
+          "src": "/audio/scripture/jhn-6-8.mp3",
+          "durationSeconds": 3.816,
+          "bytes": 46124,
+          "sha256": "a381d27dfa57b916ed7388cd935dcc993641f71ced430acd6d8e025aa454a923"
+        },
+        {
+          "number": 9,
+          "text": "Um menino está aqui que tem cinco pães de cevada e dois peixinhos; mas que é isto entre tantos?",
+          "src": "/audio/scripture/jhn-6-9.mp3",
+          "durationSeconds": 5.664,
+          "bytes": 68300,
+          "sha256": "2d830236bde2969bdd70c291dc2dd73096aea13d83a991601fc03aca860975d5"
+        },
+        {
+          "number": 10,
+          "text": "E disse Jesus: Fazei sentar as pessoas; e havia muita erva naquele lugar. Sentaram-se, pois, os homens, em número de cinco mil.",
+          "src": "/audio/scripture/jhn-6-10.mp3",
+          "durationSeconds": 7.8,
+          "bytes": 93932,
+          "sha256": "fdc969900a2205a10984b6a75ae0a5c657026dc076562e792f44d4f7f1473e44"
+        },
+        {
+          "number": 11,
+          "text": "E tomou Jesus os pães, e havendo dado graças, repartiu-os aos discípulos, e os discípulos aos que estavam sentados, semelhantemente também dos peixes, quanto queriam.",
+          "src": "/audio/scripture/jhn-6-11.mp3",
+          "durationSeconds": 10.392,
+          "bytes": 125036,
+          "sha256": "ffd9718aba0f2d268b7daa86ac9b7ed1e05a6e605b57f14dce77f10cbe7e5d95"
+        },
+        {
+          "number": 12,
+          "text": "E quando já estiveram fartos, disse ele a seus discípulos: Recolhei os pedaços que sobraram, para que nada se perca.",
+          "src": "/audio/scripture/jhn-6-12.mp3",
+          "durationSeconds": 6.864,
+          "bytes": 82700,
+          "sha256": "5bcd035bf4866b971988351ab4c684d5f7cecbb976dae48c08bf7689caa4e7ed"
+        },
+        {
+          "number": 13,
+          "text": "Então eles os recolheram, e encheram doze cestos de pedaços dos cinco pães de cevada, que sobraram aos que tinham comido.",
+          "src": "/audio/scripture/jhn-6-13.mp3",
+          "durationSeconds": 7.488,
+          "bytes": 90188,
+          "sha256": "d7a62d63a6382d2b78f3cb0340f364c3de39e608648cbeebda7c674cb5fb7168"
+        },
+        {
+          "number": 14,
+          "text": "Vendo, pois, aquelas pessoas o sinal que Jesus fizera, disseram: Este é verdadeiramente o Profeta que havia de vir ao mundo!",
+          "src": "/audio/scripture/jhn-6-14.mp3",
+          "durationSeconds": 7.464,
+          "bytes": 89900,
+          "sha256": "38f8bf6dca177cd9fa93cd07efa8ab5c78df5fb3ccaef48eb45039b43e93c732"
+        },
+        {
+          "number": 15,
+          "text": "Sabendo pois Jesus que viriam, e o tomariam, para fazê-lo rei, voltou a se retirar sozinho ao monte.",
+          "src": "/audio/scripture/jhn-6-15.mp3",
+          "durationSeconds": 6.024,
+          "bytes": 72620,
+          "sha256": "a037e4993f50cb4da89df6c825826f0e3584520b13dadcaead36b030b58ae9f8"
+        }
+      ]
+    },
+    {
+      "id": "tempestade-mc4",
+      "title": "Jesus acalma a tempestade",
+      "introduction": "Ouça o relato de Marcos e acompanhe o encontro dos discípulos com o poder e o cuidado de Cristo.",
+      "bookId": "MRK",
+      "chapter": 4,
+      "startVerse": 35,
+      "endVerse": 41,
+      "storyIds": [
+        "jesus-acalma-a-tempestade"
+      ],
+      "bookName": "Marcos",
+      "reference": "Marcos 4:35–41",
+      "verses": [
+        {
+          "number": 35,
+          "text": "Naquele dia, chegando o entardecer, disse-lhes: Passemos para o outro lado.",
+          "src": "/audio/scripture/mrk-4-35.mp3",
+          "durationSeconds": 4.44,
+          "bytes": 53612,
+          "sha256": "d17abce0a98e8c84ba1de4cb43df8d51197ee47a35ba0c9386d04e24ac600fb0"
+        },
+        {
+          "number": 36,
+          "text": "Então despediram a multidão, e o levaram consigo assim como estava no barco; mas havia também outros barquinhos com ele.",
+          "src": "/audio/scripture/mrk-4-36.mp3",
+          "durationSeconds": 7.464,
+          "bytes": 89900,
+          "sha256": "f568dceb1bfdd9264b20d346b58f368678d441e4b6e26fb10181d21229745642"
+        },
+        {
+          "number": 37,
+          "text": "E levantou-se uma grande tempestade de vento; as ondas atingiam por cima do barco, de maneira que já se enchia.",
+          "src": "/audio/scripture/mrk-4-37.mp3",
+          "durationSeconds": 7.152,
+          "bytes": 86156,
+          "sha256": "f401925af8b60e27978972dc265b6820b67c3419540e74512ce2fe5643852181"
+        },
+        {
+          "number": 38,
+          "text": "[Jesus] estava na popa dormindo sobre uma almofada. Então despertaram-no, e disseram-lhe: Mestre, não te importas que pereçamos?",
+          "src": "/audio/scripture/mrk-4-38.mp3",
+          "durationSeconds": 8.136,
+          "bytes": 97964,
+          "sha256": "9753a834046074ef40ae5d31fe6d53c2332227aff3015d1ea47c580dca2efbd1"
+        },
+        {
+          "number": 39,
+          "text": "Então ele se levantou, repreendeu o vento, e disse ao mar: Cala-te, aquieta-te! E o vento se aquietou, e fez-se grande bonança.",
+          "src": "/audio/scripture/mrk-4-39.mp3",
+          "durationSeconds": 7.512,
+          "bytes": 90476,
+          "sha256": "462f961f5ce805d1856f1d818a74c5ef3db4735d364c7e2354eb27cc5179035c"
+        },
+        {
+          "number": 40,
+          "text": "E perguntou-lhes: Por que sois tão covardes? Como não tendes fé?",
+          "src": "/audio/scripture/mrk-4-40.mp3",
+          "durationSeconds": 3.84,
+          "bytes": 46412,
+          "sha256": "a9b5b54c6602b86efe9cf0434746f569518bb5576d04f61293a040cdbb8a9755"
+        },
+        {
+          "number": 41,
+          "text": "E ficaram muito atemorizados, e diziam uns aos outros: Quem é este, que até o vento e o mar lhe obedecem?",
+          "src": "/audio/scripture/mrk-4-41.mp3",
+          "durationSeconds": 6.336,
+          "bytes": 76364,
+          "sha256": "ae9e991fdd27cf633c970c79e750b4005831ca96e7d35b48b4c3c58a9f92522b"
+        }
+      ]
+    },
+    {
+      "id": "samaritano-lc10",
+      "title": "O próximo que recebe cuidado",
+      "introduction": "Jesus nos conduz à pergunta pelo próximo. Ouça a passagem e observe os gestos de misericórdia.",
+      "bookId": "LUK",
+      "chapter": 10,
+      "startVerse": 25,
+      "endVerse": 37,
+      "storyIds": [
+        "bom-samaritano"
+      ],
+      "bookName": "Lucas",
+      "reference": "Lucas 10:25–37",
+      "verses": [
+        {
+          "number": 25,
+          "text": "E eis que um certo estudioso da Lei se levantou, tentando-o, e dizendo: Mestre, o que devo fazer para ter para herdar a vida eterna?",
+          "src": "/audio/scripture/luk-10-25.mp3",
+          "durationSeconds": 8.04,
+          "bytes": 96812,
+          "sha256": "7b177bab9c3cafd1a38c3a42942d7624e53d5716c57d16ccd5e9f96b3cfad4fe"
+        },
+        {
+          "number": 26,
+          "text": "E ele lhe disse: O que está escrito na Lei? Como tu [a] lês?",
+          "src": "/audio/scripture/luk-10-26.mp3",
+          "durationSeconds": 3.48,
+          "bytes": 42092,
+          "sha256": "dcb0519c4f9109cc31c736e8b3eba6aff1aa1c871574ea944f274b6a5145f3b5"
+        },
+        {
+          "number": 27,
+          "text": "E respondendo ele, disse: Amarás ao Senhor teu Deus de todo teu coração, e de toda tua alma, e de todas tuas forças, e de todo teu entendimento; e [amarás] a teu próximo como a ti mesmo.",
+          "src": "/audio/scripture/luk-10-27.mp3",
+          "durationSeconds": 11.76,
+          "bytes": 141452,
+          "sha256": "d536611b618bf1768ccc6c33d2db87390e1297c402db377caf44ae615ad973e4"
+        },
+        {
+          "number": 28,
+          "text": "E disse-lhe: Respondeste bem; faze isso, e viverás.",
+          "src": "/audio/scripture/luk-10-28.mp3",
+          "durationSeconds": 3.36,
+          "bytes": 40652,
+          "sha256": "beb61e6a7b107252b355dcf864893d97a9cbb0b9b9a1359b339f88712a3f18bc"
+        },
+        {
+          "number": 29,
+          "text": "Mas ele, querendo se justificar, disse a Jesus: E quem é o meu próximo?",
+          "src": "/audio/scripture/luk-10-29.mp3",
+          "durationSeconds": 4.464,
+          "bytes": 53900,
+          "sha256": "7ea6835870cf269e1e58cdd7e8f3d4ac8f047f358232792af4a570a181cb3bbe"
+        },
+        {
+          "number": 30,
+          "text": "E respondendo Jesus, disse: Um homem descia de Jerusalém a Jericó, e foi atacado por assaltantes, que também tiraram suas roupas, espancaram-no, e se foram, deixando-o meio morto.",
+          "src": "/audio/scripture/luk-10-30.mp3",
+          "durationSeconds": 10.992,
+          "bytes": 132236,
+          "sha256": "af5068558e3e6867344264f3fc60de5aaf4e2ec6baf62b9db2aad9579a8c0fd4"
+        },
+        {
+          "number": 31,
+          "text": "E por acaso descia um certo sacerdote pelo mesmo caminho, e vendo-o, passou longe [dele] .",
+          "src": "/audio/scripture/luk-10-31.mp3",
+          "durationSeconds": 5.568,
+          "bytes": 67148,
+          "sha256": "466c6850005858fabf23ee87facbf4865b54d5b3758b0c3941d19c1b849fca5a"
+        },
+        {
+          "number": 32,
+          "text": "E semelhantemente também um levita, chegando junto a aquele lugar, veio, e vendo-o, passou longe [dele]",
+          "src": "/audio/scripture/luk-10-32.mp3",
+          "durationSeconds": 5.904,
+          "bytes": 71180,
+          "sha256": "344c57ce28827af0c6c673ca4d2022006699b22c521debd6629be8a2de45763b"
+        },
+        {
+          "number": 33,
+          "text": "Porém um certo samaritano, que ia pelo caminho, veio junto a ele, e vendo-o, teve compaixão [dele] .",
+          "src": "/audio/scripture/luk-10-33.mp3",
+          "durationSeconds": 5.592,
+          "bytes": 67436,
+          "sha256": "3e87ba38becaa2b3d13b1c9dd4f8d3d107c1a85601b1160d058c2bcb1f6d40ca"
+        },
+        {
+          "number": 34,
+          "text": "E chegando-se, amarrou-lhe [um curativo] nas feridas, pondo-lhe nelas azeite e vinho; e pondo-o sobre o animal que o transportava, levou-o para uma hospedaria, e cuidou dele.",
+          "src": "/audio/scripture/luk-10-34.mp3",
+          "durationSeconds": 9.816,
+          "bytes": 118124,
+          "sha256": "0ca33678dd77a1727ab13757a6af16a01e572ff09981055161db8dae785808d5"
+        },
+        {
+          "number": 35,
+          "text": "E partindo-se no outro dia, tirou dois dinheiros, e os deu para o hospedeiro; e disse-lhe: Cuide dele; e tudo o que gastares a mais, eu te pagarei quando voltar.",
+          "src": "/audio/scripture/luk-10-35.mp3",
+          "durationSeconds": 9.456,
+          "bytes": 113804,
+          "sha256": "51a3334fbf40ab6586e8b38e317387fc055e2758acbd0460d2dcec8bf381f0fd"
+        },
+        {
+          "number": 36,
+          "text": "Quem, pois, destes três te parece que foi o próximo daquele que foi atacado por assaltantes?",
+          "src": "/audio/scripture/luk-10-36.mp3",
+          "durationSeconds": 5.616,
+          "bytes": 67724,
+          "sha256": "ea7d789adc9bb511a5c4e578163d6f0fa72685c0e043bd79fa181ec2c9637d0e"
+        },
+        {
+          "number": 37,
+          "text": "Ele disse: Aquele que agiu tendo misericórdia com ele.Então Jesus lhe disse: Vai, e faze da mesma maneira.",
+          "src": "/audio/scripture/luk-10-37.mp3",
+          "durationSeconds": 6.504,
+          "bytes": 78380,
+          "sha256": "44850932e138161a1671575e8c33082048b330428252faafcb86ff5f8ba61eff"
+        }
+      ]
+    },
+    {
+      "id": "criacao-gn1",
+      "title": "No princípio, Deus criou",
+      "introduction": "Começamos pela Palavra que apresenta Deus como Criador. Escute estes versículos e continue a leitura de Gênesis.",
+      "bookId": "GEN",
+      "chapter": 1,
+      "startVerse": 1,
+      "endVerse": 5,
+      "storyIds": [
+        "criacao"
+      ],
+      "bookName": "Gênesis",
+      "reference": "Gênesis 1:1–5",
+      "verses": [
+        {
+          "number": 1,
+          "text": "No princípio criou Deus os céus e a terra.",
+          "src": "/audio/scripture/gen-1-1.mp3",
+          "durationSeconds": 2.856,
+          "bytes": 34604,
+          "sha256": "bacb55957336d845f1071f470df549999cec405f1d520687bac58950b01f1169"
+        },
+        {
+          "number": 2,
+          "text": "E a terra estava desordenada e vazia, e as trevas estavam sobre a face do abismo, e o Espírito de Deus se movia sobre a face das águas.",
+          "src": "/audio/scripture/gen-1-2.mp3",
+          "durationSeconds": 8.448,
+          "bytes": 101708,
+          "sha256": "2681299bc2e4cd37ffb76059abd50d9e538f4940d6ad09efb8683ae289c05c22"
+        },
+        {
+          "number": 3,
+          "text": "E disse Deus: Haja luz; e houve luz.",
+          "src": "/audio/scripture/gen-1-3.mp3",
+          "durationSeconds": 2.544,
+          "bytes": 30860,
+          "sha256": "b552a9c87bbbbd8302080fbf7d9bc7faa1c37cc261a9089e059384ecddca6365"
+        },
+        {
+          "number": 4,
+          "text": "E viu Deus que a luz era boa: e separou Deus a luz das trevas.",
+          "src": "/audio/scripture/gen-1-4.mp3",
+          "durationSeconds": 3.768,
+          "bytes": 45548,
+          "sha256": "14f66d7f919d2e750d60aa8a48f040bcee0e8e717975176652b17da5da329904"
+        },
+        {
+          "number": 5,
+          "text": "E chamou Deus à luz Dia, e às trevas chamou Noite: e foi a tarde e a manhã o primeiro dia.",
+          "src": "/audio/scripture/gen-1-5.mp3",
+          "durationSeconds": 5.856,
+          "bytes": 70604,
+          "sha256": "94021920f0f52c15a813ac483bda3d1e23b19b4c191c2023361de5814c5c097d"
+        }
+      ]
+    }
+  ]
+}

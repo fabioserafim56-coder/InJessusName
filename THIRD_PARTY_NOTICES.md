@@ -446,7 +446,7 @@ The explicit postinstall script scripts/patch-page-flip.mjs updates the pinned 2
 
 ## Kokoro-generated authorial welcome and prayer
 
-Two static Portuguese recordings were generated with Kokoro-82M v1.0 and its pm_alex voice, retrieved from pinned Hugging Face revisions: the earlier welcome (~25 seconds) and the prayer before studying (19.636 seconds). No model weights or inference runtime are shipped to the browser. Both optional players identify the synthetic voice, provide the authorial transcript and do not autoplay; no visitor prayers, voices or study queries are sent to a model.
+Two static Portuguese recordings were generated with Kokoro-82M v1.0 and its pm_alex voice, retrieved from pinned Hugging Face revisions: the earlier welcome (~25 seconds) and the prayer before studying (19.636 seconds). No Kokoro model weights or its generation runtime are shipped to the browser. Both optional players identify the synthetic voice, provide the authorial transcript and do not autoplay; no visitor prayers, voices or study queries are sent to Kokoro.
 
 Exact sources, voice comparison, checksums and generation settings for the welcome are in public/audio/bem-vindo-proveniencia.json. The prayer has its own transcript, settings, output checksums and reproducible script in public/audio/antes-do-estudo-proveniencia.json and public/audio/geracao-oracao-referencia.py. Model revision: hexgrad/Kokoro-82M at f3ff3571791e39611d31c381e3a41a3af07b4987. ONNX conversion: onnx-community/Kokoro-82M-v1.0-ONNX at 1939ad2a8e416c0acfeecc08a694d14ef25f2231, Apache-2.0. Full model and generation-runtime licenses are distributed in public/audio/.
 
@@ -518,4 +518,52 @@ Sharp was already a Next.js dependency; no new package was added for the static 
 
 Three illustrations were generated for the multiplication of the loaves (John 6), Jesus calming the storm (Mark 4) and Lazarus (John 11). They are interpretive artwork, not authenticated portraits, documentary photographs or archaeological evidence. The original PNGs were copied without pixel edits. Their dimensions, references and SHA-256 are recorded in `public/visuals/milagres-proveniencia.json`; the story viewer can display the whole original image.
 
-The visual scene and image-delivery settings do not substantiate a measured percentage improvement or universal 4K resolution. PixiJS, Swin2SR and multilingual E5 were researched but were not installed, run or distributed as integrations in this release. Research references are in `docs/ferramentas-pesquisadas-2026-10-29.md`.
+The visual scene and image-delivery settings do not substantiate a measured percentage improvement or universal 4K resolution. In the 29 October release, PixiJS, Swin2SR and multilingual E5 were research candidates. Their subsequent integrations are documented below and in `docs/multimodal-estado.md`; the earlier research references remain in `docs/ferramentas-pesquisadas-2026-10-29.md`.
+
+## Multimodal browser libraries and runtime
+
+The current integration uses the following installed packages. Original license texts are distributed with the application; the package versions are pinned by `package-lock.json`.
+
+| Component and source | License and distributed notice | Use |
+| --- | --- | --- |
+| [Transformers.js 4.3.2](https://github.com/huggingface/transformers.js) | Apache-2.0; `public/licenses/transformers-js-Apache-2.0.txt` | Local Whisper transcription and E5 query embeddings in browser workers |
+| [Hugging Face tokenizers 0.2.0](https://github.com/huggingface/tokenizers.js) | Apache-2.0; `public/licenses/huggingface-tokenizers-Apache-2.0.txt` | Tokenization used by Transformers.js |
+| [Hugging Face Jinja 0.5.11](https://github.com/huggingface/huggingface.js) | MIT, Copyright (c) 2023 Hugging Face; `public/licenses/huggingface-jinja-MIT.txt` | Template dependency of Transformers.js |
+| [PixiJS 8.22.0](https://github.com/pixijs/pixijs/tree/v8.22.0) | MIT, Copyright (c) 2013-2023 Mathew Groves, Chad Engler; `public/licenses/pixi-MIT.txt` | Optional five-moment John 6 scene |
+| [ONNX Runtime Web](https://github.com/microsoft/onnxruntime), `1.31.0-dev.20260914-8d85527a0` | MIT, Microsoft Corporation; `public/models/runtime/ONNXRUNTIME-LICENSE.txt` and `public/licenses/onnxruntime-ThirdPartyNotices.txt` | Four local ESM/WASM files; versions, byte counts and hashes in `public/models/runtime/proveniencia.json` |
+
+The runtime files are execution software rather than model weights. Whisper and E5 weights are downloaded from pinned public Hugging Face revisions only after a visitor chooses the corresponding feature. The app processes voice and semantic queries in the browser; a model download does not send those recordings or queries to a hosted inference API. Model files may remain in browser cache. These software licenses do not replace the rights in the Bible text, authorial content or museum photographs.
+
+## Whisper and multilingual E5
+
+[OpenAI Whisper](https://github.com/openai/whisper) code and weights are MIT, Copyright (c) 2022 OpenAI. The full license is distributed at `public/licenses/whisper-MIT.txt`. The browser uses the multilingual q8 conversion [onnx-community/whisper-tiny](https://huggingface.co/onnx-community/whisper-tiny), revision `ff4177021cc41f7db950912b73ea4fdf7d01d8e7`, with Portuguese explicitly selected. The conversion is identified as deriving from Whisper; no independent conversion license is invented. Exact encoder/decoder hashes are recorded in `src/lib/voice/model.ts`. This is local recognition, separate from the static Kokoro narration.
+
+[intfloat/multilingual-e5-small](https://huggingface.co/intfloat/multilingual-e5-small), revision `614241f622f53c4eeff9890bdc4f31cfecc418b3`, declares MIT terms, Microsoft Corporation. The full license is distributed at `public/semantic/E5-MIT.txt`. The q8 ONNX conversion [Xenova/multilingual-e5-small](https://huggingface.co/Xenova/multilingual-e5-small), revision `761b726dd34fb83930e26aab4e9ac3899aa1fa78`, identifies intfloat as its base without declaring an additional independent license. The app distributes 421 generated embeddings of 384 values, references and authorial context; model/tokenizer hashes and the generation record are in `public/semantic/proveniencia.json`. The cited Bible passages retain their own CC BY 3.0 Brasil terms. The selection represents all 66 books without indexing all 31,102 verses semantically.
+
+## Tesseract browser OCR and Portuguese trained data
+
+[Tesseract.js 7.0.0](https://github.com/naptha/tesseract.js) and [Tesseract.js-core 7.0.0](https://github.com/naptha/tesseract.js-core) are Apache-2.0. Their unmodified worker and three alternative LSTM WebAssembly/core files are self-hosted under `public/ocr/`; the browser loads a compatible core after explicit choice. Original package licenses are distributed at `public/ocr/licenses/TESSERACT-JS-APACHE-2.0.txt` and `TESSERACT-CORE-APACHE-2.0.txt`. The worker's extracted upstream notices remain at `public/ocr/worker.min.js.LICENSE.txt`; supplemental full notices for bundled dependencies accompany them in `public/ocr/licenses/`.
+
+Bundled worker notices cover base64-js, buffer, bmp-js, idb-keyval, ieee754, is-url, regenerator-runtime, wasm-feature-detect, zlibjs and the credited Jon Leighton base64 utility. Native core notices cover Tesseract, Leptonica, GIFLIB, libjpeg, libpng, libtiff, libwebp, zlib and OpenLibm. Their full original texts, copyright notices, applicable patent notice, exact upstream sources and matching evidence are indexed in [public/ocr/licenses/SOURCES.md](public/ocr/licenses/SOURCES.md).
+
+This software is based in part on the work of the Independent JPEG Group.
+
+The Portuguese trained data comes from [tesseract-ocr/tessdata_fast](https://github.com/tesseract-ocr/tessdata_fast), revision `65727574dfcd264acbb0c3e07860e4e9e9b22185`, Apache-2.0, distributed at `public/ocr/lang/por.traineddata.gz` with `public/ocr/licenses/TESSDATA-APACHE-2.0.txt`. `public/ocr/proveniencia.json` records sources, compression, bytes and hashes. OCR trained data is a distributed model asset; it is separate from the larger Whisper/E5 models downloaded on demand. The photograph is processed locally. Only text explicitly confirmed for passage lookup is sent to the app's own route.
+
+## Kokoro-generated Bible selection
+
+The same Kokoro model, voice and pinned revisions recorded for the welcome and prayer above generated 49 verse MP3 files in six passages, totaling 311.808 seconds. Model weights and the Python inference environment remain outside the distributed app. `public/audio/scripture/proveniencia.json` records each text, reference, duration, byte count and SHA-256; `scripts/generate-scripture-narration.py` records the generation recipe. Kokoro and generation-runtime license texts remain distributed under `public/audio/`.
+
+The text is from Bíblia Livre TR, February 2018, by Diego Santos, Mario Sérgio and Marco Teles, CC BY 3.0 Brasil. Synthetic spoken conversion is identified as a transformation of that text; the translation itself is preserved. Attribution and the license link accompany the player and provenance. This selection is separate from the authorial welcome/prayer and is not a recording of the entire Bible. Human listening review of pronunciation and suitability remains pending.
+
+## Swin2SR artistic experiment
+
+[caidas/swin2SR-classical-sr-x2-64](https://huggingface.co/caidas/swin2SR-classical-sr-x2-64), revision `cee1c923c6a37361c6e5650b65dcf4be821e5d52`, declares Apache-2.0. Its full source license is distributed at `public/licenses/swin2sr-Apache-2.0.txt`. The [Xenova ONNX conversion](https://huggingface.co/Xenova/swin2SR-classical-sr-x2-64), revision `93dfc9089abda257351d3a58d5771e2c1ff69442`, identifies that original model; no additional independent conversion license is presumed.
+
+ONNX Runtime CPU 1.31.1 processed one 240×192 crop of an original interpretive illustration into a 480×384 PNG before publication. Only the two comparison images and provenance are distributed under `public/visuals/enhanced/`; no Swin2SR weights or browser inference runtime for super-resolution are shipped. `swin2sr-proveniencia.json` records source/crop coordinates, revisions, hashes and the technical transformation. Estimated pixels are not authenticated details. Historical photographs have not been processed by this model; original artwork has separate provenance and rights.
+
+## Optional private OCR and vision providers
+
+The source in `services/multimodal/` supports optional PaddleOCR and Qwen2.5-VL or an existing compatible visual provider. Their dependencies and model weights are installed separately on that service, not embedded in the browser or distributed as public model files. PaddleOCR/PaddlePaddle and the selected Qwen2.5-VL-7B-Instruct model declare Apache-2.0; the exact dependencies, model revision and deployment instructions are recorded in the service README. A real CPU PaddleOCR sample is documented in `docs/multimodal-estado.md`; transport tests with substituted model functions do not establish Qwen inference.
+
+The Next.js server also has direct HTTP adapters for OpenAI and Gemini. These are commercial hosted APIs, not a distribution of open model weights or a claim that another model is Qwen. Private keys and explicit provider configuration are required; returned model identification is preserved. Provider terms, billing, access and data policies apply independently. The app's implementation and tests do not themselves prove public activation or a paid inference. See `docs/configurar-visao.md`.

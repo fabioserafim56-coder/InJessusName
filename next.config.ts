@@ -2,6 +2,7 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   images: { qualities: [75, 90, 100] },
+  outputFileTracingIncludes: { "/api/multimodal/vision": ["./public/museum/*.jpg"] },
   distDir: process.env.INJESSUS_NEXT_DIST_DIR || (process.env.NODE_ENV === "development" ? ".next-workspace" : ".next"),
   allowedDevOrigins: ["127.0.0.1"],
   logging: {
@@ -20,7 +21,7 @@ const nextConfig: NextConfig = {
           ...(process.env.NODE_ENV === "production"
             ? [{ key: "X-Frame-Options", value: "DENY" }]
             : []),
-          { key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=()" }
+          { key: "Permissions-Policy", value: "camera=(self), microphone=(self), geolocation=()" }
         ]
       },
       {

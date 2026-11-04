@@ -1,0 +1,8 @@
+[
+  { "id": "salmo-23", "title": "O Senhor é meu pastor", "introduction": "Permaneça um pouco neste salmo. Ouça cada versículo e acompanhe a Palavra ao seu lado.", "bookId": "PSA", "chapter": 23, "startVerse": 1, "endVerse": 6, "storyIds": [] },
+  { "id": "bereanos-at17", "title": "Receber e conferir a Palavra", "introduction": "Os bereanos receberam a Palavra e examinaram as Escrituras. Este é o cuidado que acompanha nosso primeiro estudo.", "bookId": "ACT", "chapter": 17, "startVerse": 10, "endVerse": 12, "storyIds": [] },
+  { "id": "multiplicacao-jo6", "title": "Jesus alimenta a multidão", "introduction": "Acompanhe o sinal narrado por João. Abra o capítulo inteiro para permanecer no ensino de Jesus.", "bookId": "JHN", "chapter": 6, "startVerse": 1, "endVerse": 15, "storyIds": ["multiplicacao-dos-paes"] },
+  { "id": "tempestade-mc4", "title": "Jesus acalma a tempestade", "introduction": "Ouça o relato de Marcos e acompanhe o encontro dos discípulos com o poder e o cuidado de Cristo.", "bookId": "MRK", "chapter": 4, "startVerse": 35, "endVerse": 41, "storyIds": ["jesus-acalma-a-tempestade"] },
+  { "id": "samaritano-lc10", "title": "O próximo que recebe cuidado", "introduction": "Jesus nos conduz à pergunta pelo próximo. Ouça a passagem e observe os gestos de misericórdia.", "bookId": "LUK", "chapter": 10, "startVerse": 25, "endVerse": 37, "storyIds": ["bom-samaritano"] },
+  { "id": "criacao-gn1", "title": "No princípio, Deus criou", "introduction": "Começamos pela Palavra que apresenta Deus como Criador. Escute estes versículos e continue a leitura de Gênesis.", "bookId": "GEN", "chapter": 1, "startVerse": 1, "endVerse": 5, "storyIds": ["criacao"] }
+]

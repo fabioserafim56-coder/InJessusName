@@ -4,6 +4,8 @@ import Link from "next/link";
 import { useEffect, useRef, useState, type CSSProperties, type ReactNode } from "react";
 import { AppShell } from "@/components/app-shell";
 import { ScriptureBook } from "@/components/bible/scripture-book";
+import { NarratedReading } from "@/components/multimodal/narrated-reading";
+import { getNarratedPassageForReference } from "@/content/narration";
 import "./bible-reader.css";
 
 type Book = { id: string; name: string; chapters: number };
@@ -56,6 +58,7 @@ export function BibleReader({ books, chapter, highlightedVerse, searchPanel, chu
   verseCounts?: Record<string, number[]>;
 }) {
   const [selectedBook, setSelectedBook] = useState(chapter.book.id);
+  const narratedPassage = getNarratedPassageForReference(chapter.book.id, chapter.chapter, highlightedVerse);
   const [selectedChapter, setSelectedChapter] = useState(chapter.chapter);
   const [fontSize, setFontSize] = useState(initialFontSize);
   const [theme, setTheme] = useState<BibleTheme>(initialTheme);
@@ -184,6 +187,7 @@ export function BibleReader({ books, chapter, highlightedVerse, searchPanel, chu
       </section>
 
       <div className="br-display-bar">{themeControls}<button type="button" className="br-fullscreen" aria-pressed={fullScreen} onClick={toggleFullScreen}>{fullScreen ? "Sair da tela inteira" : "Tela inteira"}</button></div>
+      {narratedPassage && <details className="br-narrated-passage"><summary>Ouvir {narratedPassage.reference} e acompanhar os versículos</summary><NarratedReading passageId={narratedPassage.id} /></details>}
 
       <div className="br-workspace">
         <article id="bible-chapter" className="br-reading" aria-labelledby="br-chapter-title" tabIndex={-1}>

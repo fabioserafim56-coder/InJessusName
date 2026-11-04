@@ -5,14 +5,18 @@ import { StorySymbol } from "./story-art";
 import { StoryReflection, StoryScenes } from "./story-scenes";
 import { StoryArtworkViewer } from "./story-artwork-viewer";
 import { getStoryArtwork } from "@/content/stories/artwork";
+import { getNarratedPassageForStory } from "@/content/narration";
+import { NarratedReading } from "@/components/multimodal/narrated-reading";
 import "./stories.css";
 
 export function StoryDetail({story}:{story:BiblicalStory}) {
   const index=biblicalStories.findIndex(item=>item.id===story.id);
   const previous=biblicalStories[index-1];const next=biblicalStories[index+1];
   const art = getStoryArtwork(story.image || `/visuals/stories-${story.art}.png`);
+  const narration = getNarratedPassageForStory(story.id);
   return <div className="stories-page story-detail-page"><Link className="story-back-link" href="/historias"><ArrowLeft size={20} aria-hidden="true" /> Todas as histórias</Link><header className="story-detail-header"><div><p className="stories-eyebrow">HISTÓRIA {String(index+1).padStart(2,"0")} · {story.era}</p><h1>{story.title}</h1><p className="story-detail-subtitle">{story.subtitle}</p><p>{story.introduction}</p></div><div className="story-detail-mark" aria-hidden="true"><StorySymbol kind={story.symbol} /></div></header>
     <StoryScenes story={story}/>
+    {narration && <NarratedReading passageId={narration.id} />}
     <section className="story-understanding" aria-label="Contexto e conexões da história"><article><p className="stories-eyebrow">PARA NÃO PERDER O CONTEXTO</p><h2>Onde estamos na Bíblia?</h2><p>{story.context}</p></article><article><p className="stories-eyebrow">UM FIO LIGA AO OUTRO</p><h2>O que esta história prepara?</h2><p>{story.connection}</p></article><article><p className="stories-eyebrow">UM EXEMPLO POSSÍVEL</p><h2>Da leitura para a vida.</h2><p>{story.example}</p></article></section>
     <StoryReflection story={story}/>
     {art && <StoryArtworkViewer {...art} title={story.title} />}

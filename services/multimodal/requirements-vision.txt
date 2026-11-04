@@ -1,0 +1,4 @@
+# Install the matching PyTorch CPU/CUDA build separately; see README.md.
+transformers==4.57.3
+accelerate==1.12.0
+safetensors==0.7.0

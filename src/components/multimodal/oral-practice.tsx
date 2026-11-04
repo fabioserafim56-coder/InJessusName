@@ -1,0 +1,28 @@
+"use client";
+
+import dynamic from "next/dynamic";
+import Link from "next/link";
+import { useId, useState } from "react";
+import { BookOpenText, CheckCircle, Microphone } from "@phosphor-icons/react/ssr";
+import { narratedPassages } from "@/content/narration";
+import "./oral-practice.css";
+
+const VoiceInput = dynamic(() => import("./voice-input").then(module => module.VoiceInput));
+const practices = [
+  { passage: "samaritano-lc10", title: "Um amor que se aproxima", question: "Como o samaritano cuidou do homem ferido? Conte uma atitude que você poderia levar à sua vida.", checks: ["Contei uma atitude concreta do samaritano.", "Percebi que o cuidado alcançou alguém que precisava de ajuda.", "Pensei numa forma concreta de amar o próximo."], companion: "Jesus nos convida a um amor que se aproxima e cuida. Repare nos verbos do relato: ver, aproximar-se, tratar, levar e cuidar." },
+  { passage: "multiplicacao-jo6", title: "Nas mãos de Jesus", question: "Conte como a multidão foi alimentada. Quem agiu e o que os discípulos puderam recolher depois?", checks: ["Reconheci a ação de Jesus no sinal narrado.", "Contei o que foi apresentado e como o alimento foi repartido.", "Recordei que todos se saciaram e houve alimento recolhido."], companion: "O relato nos aproxima do poder e do cuidado de Jesus. Volte aos versículos 11–13 e observe o que ele faz e o que acontece com a multidão." },
+  { passage: "salmo-23", title: "O cuidado do Pastor", question: "Que cuidado de Deus este salmo anuncia? Conte uma imagem que permaneceu com você e o que ela expressa.", checks: ["Recordei uma imagem presente no salmo.", "Relacionei essa imagem ao cuidado anunciado pelo salmista.", "Voltei ao texto para conferir o que ele realmente diz."], companion: "O salmista expressa confiança no Senhor em lugares de descanso e também no vale. Observe como a presença e o cuidado do Pastor acompanham o caminho." }
+] as const;
+
+export function OralPractice() {
+  const id = useId();
+  const [selected, setSelected] = useState(0);
+  const [response, setResponse] = useState("");
+  const [voiceOpen, setVoiceOpen] = useState(false);
+  const [review, setReview] = useState(false);
+  const [checked, setChecked] = useState<number[]>([]);
+  const practice = practices[selected];
+  const passage = narratedPassages.find(item => item.id === practice.passage)!;
+  function choose(index: number) { setSelected(index); setResponse(""); setVoiceOpen(false); setReview(false); setChecked([]); }
+  return <section className="oral-practice" data-oral-practice><header><p><Microphone size={19} aria-hidden="true" /> COM SUAS PRÓPRIAS PALAVRAS</p><h2>Uma descoberta<br /><em>que ganha sua voz.</em></h2><p>Depois de ler, tente contar o que compreendeu. Não precisa repetir nossas frases. Há tempo para recordar, conferir e encontrar suas palavras.</p></header><div className="op-choices" role="group" aria-label="Escolher uma prática de recordação">{practices.map((item, index) => <button key={item.passage} type="button" aria-pressed={selected === index} onClick={() => choose(index)}>{item.title}</button>)}</div><div className="op-question"><span>{passage.reference}</span><h3>{practice.question}</h3><Link href={`/biblia?livro=${passage.bookId}&capitulo=${passage.chapter}&versiculo=${passage.startVerse}#versiculo-${passage.startVerse}`}>Ler a passagem antes de contar <BookOpenText size={18} aria-hidden="true" /></Link></div><button className="op-open-voice" type="button" aria-expanded={voiceOpen} onClick={() => setVoiceOpen(value => !value)}><Microphone size={19} aria-hidden="true" />{voiceOpen ? "Fechar gravação" : "Quero contar falando"}</button>{voiceOpen && <VoiceInput label="Conte a descoberta que esta leitura deixou" onTranscript={text => { setResponse(text); setVoiceOpen(false); setReview(false); }} />}<label className="op-response-label" htmlFor={`${id}-response`}>O que permaneceu com você?</label><textarea id={`${id}-response`} value={response} maxLength={3000} onChange={event => { setResponse(event.target.value); setReview(false); }} rows={5} placeholder="Você pode falar e conferir a transcrição, ou escrever aqui…" /><p className="op-private-note">Sua resposta fica somente nesta página e não é enviada para avaliação por um servidor.</p><button className="op-confer" type="button" disabled={!response.trim()} onClick={() => setReview(true)}>Conferir minha recordação com a Palavra <BookOpenText size={18} aria-hidden="true" /></button>{review && <div className="op-review" data-oral-review><h3>Vamos olhar juntos para o que você contou.</h3><p>{practice.companion}</p><p>Com sua resposta e a leitura ao lado, marque o que você reconhece no seu relato. Essa conferência é feita por você; não é uma nota automática.</p><fieldset><legend>O que consegui recordar?</legend>{practice.checks.map((text, index) => <label key={text}><input type="checkbox" checked={checked.includes(index)} onChange={event => setChecked(current => event.target.checked ? [...current, index] : current.filter(value => value !== index))} /><span>{text}</span></label>)}</fieldset><details><summary>Abrir o texto para conferir</summary><ol>{passage.verses.map(verse => <li key={verse.number}><sup>{verse.number}</sup> {verse.text}</li>)}</ol><small>Bíblia Livre · TR 2018 · <a href="https://creativecommons.org/licenses/by/3.0/br/">CC BY 3.0 BR</a></small></details>{checked.length === practice.checks.length && <p className="op-discovery" role="status"><CheckCircle size={22} aria-hidden="true" />Você acompanhou os três pontos desta conferência. Guarde uma descoberta e volte à passagem para continuar aprendendo.</p>}</div>}</section>;
+}

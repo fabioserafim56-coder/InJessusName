@@ -1,0 +1,539 @@
+[
+  {
+    "query": "Como perdoar alguém que me machucou?",
+    "expectedBooks": [
+      "MAT",
+      "LUK",
+      "EPH"
+    ],
+    "top6": [
+      {
+        "id": "topic-perdao-1",
+        "bookId": "EPH",
+        "reference": "Efésios 4:31–32",
+        "title": "Perdão e reconciliação",
+        "score": 0.863250743494117
+      },
+      {
+        "id": "topic-luto-2",
+        "bookId": "1TH",
+        "reference": "1 Tessalonicenses 4:13–18",
+        "title": "Luto e consolo",
+        "score": 0.8400845406280925
+      },
+      {
+        "id": "topic-sofrimento-0",
+        "bookId": "PSA",
+        "reference": "Salmos 13:1–6",
+        "title": "Sofrimento e presença de Deus",
+        "score": 0.8397331556740775
+      },
+      {
+        "id": "topic-pecado-1",
+        "bookId": "1JN",
+        "reference": "1 João 1:5–9",
+        "title": "Pecado, misericórdia e responsabilidade",
+        "score": 0.8387587993476663
+      },
+      {
+        "id": "topic-perdao-2",
+        "bookId": "LUK",
+        "reference": "Lucas 15:11–24",
+        "title": "Perdão e reconciliação",
+        "score": 0.8377726614886861
+      },
+      {
+        "id": "book-PSA-0",
+        "bookId": "PSA",
+        "reference": "Salmos 13:1–6",
+        "title": "Salmos: Lamento, Louvor, Confiança",
+        "score": 0.8375901407867955
+      }
+    ],
+    "expectedBookInTop6": true
+  },
+  {
+    "query": "Estou muito preocupado e não consigo descansar.",
+    "expectedBooks": [
+      "MAT",
+      "PHP",
+      "1PE",
+      "PSA"
+    ],
+    "top6": [
+      {
+        "id": "topic-ansiedade-1",
+        "bookId": "PHP",
+        "reference": "Filipenses 4:4–9",
+        "title": "Ansiedade e preocupações",
+        "score": 0.8656765966363384
+      },
+      {
+        "id": "topic-luto-2",
+        "bookId": "1TH",
+        "reference": "1 Tessalonicenses 4:13–18",
+        "title": "Luto e consolo",
+        "score": 0.8589126756799117
+      },
+      {
+        "id": "topic-ansiedade-2",
+        "bookId": "1PE",
+        "reference": "1 Pedro 5:6–7",
+        "title": "Ansiedade e preocupações",
+        "score": 0.8568744783656986
+      },
+      {
+        "id": "topic-ansiedade-0",
+        "bookId": "MAT",
+        "reference": "Mateus 6:25–34",
+        "title": "Ansiedade e preocupações",
+        "score": 0.8555681248877377
+      },
+      {
+        "id": "topic-sofrimento-0",
+        "bookId": "PSA",
+        "reference": "Salmos 13:1–6",
+        "title": "Sofrimento e presença de Deus",
+        "score": 0.8533004574262198
+      },
+      {
+        "id": "topic-esperanca-1",
+        "bookId": "PSA",
+        "reference": "Salmos 42:5–11",
+        "title": "Esperança",
+        "score": 0.8513323941803379
+      }
+    ],
+    "expectedBookInTop6": true
+  },
+  {
+    "query": "Por que Jesus multiplicou os pães?",
+    "expectedBooks": [
+      "JHN",
+      "MRK",
+      "MAT"
+    ],
+    "top6": [
+      {
+        "id": "topic-milagres-1",
+        "bookId": "JHN",
+        "reference": "João 6:1–15",
+        "title": "Milagres e sinais",
+        "score": 0.8765319935225743
+      },
+      {
+        "id": "story-multiplicacao-dos-paes-1",
+        "bookId": "JHN",
+        "reference": "João 6:9",
+        "title": "Quando o pouco é colocado nas mãos de Jesus: Cinco pães e dois peixes",
+        "score": 0.8610566658149719
+      },
+      {
+        "id": "topic-ceia-0",
+        "bookId": "LUK",
+        "reference": "Lucas 22:14–20",
+        "title": "Ceia do Senhor",
+        "score": 0.8570724546127676
+      },
+      {
+        "id": "topic-ceia-2",
+        "bookId": "ACT",
+        "reference": "Atos 2:42–46",
+        "title": "Ceia do Senhor",
+        "score": 0.8538241140449396
+      },
+      {
+        "id": "topic-reino-1",
+        "bookId": "MAT",
+        "reference": "Mateus 5:1–12",
+        "title": "Reino de Deus",
+        "score": 0.8528127006308404
+      },
+      {
+        "id": "topic-reino-2",
+        "bookId": "MAT",
+        "reference": "Mateus 13:31–33",
+        "title": "Reino de Deus",
+        "score": 0.8525316277330552
+      }
+    ],
+    "expectedBookInTop6": true
+  },
+  {
+    "query": "Como a Bíblia ensina a cuidar dos pobres?",
+    "expectedBooks": [
+      "MIC",
+      "ISA",
+      "MAT",
+      "JAM",
+      "DEU"
+    ],
+    "top6": [
+      {
+        "id": "book-1TI-1",
+        "bookId": "1TI",
+        "reference": "1 Timóteo 6:6–10",
+        "title": "1 Timóteo: Ensino, Caráter, Cuidado",
+        "score": 0.87541944102568
+      },
+      {
+        "id": "topic-justica-1",
+        "bookId": "ISA",
+        "reference": "Isaías 1:16–17",
+        "title": "Justiça e cuidado com os vulneráveis",
+        "score": 0.8728196786295421
+      },
+      {
+        "id": "topic-palavra-1",
+        "bookId": "2TI",
+        "reference": "2 Timóteo 3:14–17",
+        "title": "Bíblia, Palavra e leitura",
+        "score": 0.8709658532140434
+      },
+      {
+        "id": "topic-igreja-0",
+        "bookId": "ACT",
+        "reference": "Atos 2:42–47",
+        "title": "Igreja e comunhão",
+        "score": 0.8705813638654519
+      },
+      {
+        "id": "topic-justica-0",
+        "bookId": "MIC",
+        "reference": "Miqueias 6:6–8",
+        "title": "Justiça e cuidado com os vulneráveis",
+        "score": 0.8690414734046968
+      },
+      {
+        "id": "topic-palavra-0",
+        "bookId": "ACT",
+        "reference": "Atos 17:10–12",
+        "title": "Bíblia, Palavra e leitura",
+        "score": 0.8668420531753899
+      }
+    ],
+    "expectedBookInTop6": true
+  },
+  {
+    "query": "Perdi alguém querido e preciso de consolo.",
+    "expectedBooks": [
+      "JHN",
+      "PSA",
+      "1TH",
+      "REV"
+    ],
+    "top6": [
+      {
+        "id": "topic-luto-2",
+        "bookId": "1TH",
+        "reference": "1 Tessalonicenses 4:13–18",
+        "title": "Luto e consolo",
+        "score": 0.8649971175400737
+      },
+      {
+        "id": "topic-luto-1",
+        "bookId": "PSA",
+        "reference": "Salmos 23:1–6",
+        "title": "Luto e consolo",
+        "score": 0.8544859248156271
+      },
+      {
+        "id": "book-1TH-0",
+        "bookId": "1TH",
+        "reference": "1 Tessalonicenses 4:13–18",
+        "title": "1 Tessalonicenses: Esperança, Cuidado mútuo, Perseverança",
+        "score": 0.844247909490808
+      },
+      {
+        "id": "story-bom-samaritano-1",
+        "bookId": "LUK",
+        "reference": "Lucas 10:30",
+        "title": "O amor que atravessa a estrada: Há uma pessoa ferida no caminho",
+        "score": 0.8429288824101218
+      },
+      {
+        "id": "topic-ansiedade-1",
+        "bookId": "PHP",
+        "reference": "Filipenses 4:4–9",
+        "title": "Ansiedade e preocupações",
+        "score": 0.8425559775725062
+      },
+      {
+        "id": "book-EPH-1",
+        "bookId": "EPH",
+        "reference": "Efésios 4:25–32",
+        "title": "Efésios: Graça, Unidade, Vida cotidiana",
+        "score": 0.8419664286791778
+      }
+    ],
+    "expectedBookInTop6": true
+  },
+  {
+    "query": "O que significa ser batizado?",
+    "expectedBooks": [
+      "MAT",
+      "ACT",
+      "ROM"
+    ],
+    "top6": [
+      {
+        "id": "topic-batismo-0",
+        "bookId": "MAT",
+        "reference": "Mateus 3:13–17",
+        "title": "Batismo",
+        "score": 0.8936988292198081
+      },
+      {
+        "id": "topic-batismo-1",
+        "bookId": "MAT",
+        "reference": "Mateus 28:18–20",
+        "title": "Batismo",
+        "score": 0.8887009392508504
+      },
+      {
+        "id": "topic-batismo-3",
+        "bookId": "ROM",
+        "reference": "Romanos 6:1–4",
+        "title": "Batismo",
+        "score": 0.8847164679054194
+      },
+      {
+        "id": "topic-batismo-2",
+        "bookId": "ACT",
+        "reference": "Atos 2:37–41",
+        "title": "Batismo",
+        "score": 0.8813622322861803
+      },
+      {
+        "id": "topic-evangelismo-0",
+        "bookId": "MAT",
+        "reference": "Mateus 28:18–20",
+        "title": "Evangelismo e testemunho",
+        "score": 0.8572022542591029
+      },
+      {
+        "id": "book-ROM-0",
+        "bookId": "ROM",
+        "reference": "Romanos 6:1–4",
+        "title": "Romanos: Graça, Fé, Vida transformada",
+        "score": 0.8569819104377475
+      }
+    ],
+    "expectedBookInTop6": true
+  },
+  {
+    "query": "Como aprender a orar a Deus?",
+    "expectedBooks": [
+      "MAT",
+      "LUK",
+      "PHP",
+      "PSA"
+    ],
+    "top6": [
+      {
+        "id": "topic-oracao-1",
+        "bookId": "LUK",
+        "reference": "Lucas 11:1–4",
+        "title": "Oração",
+        "score": 0.8811581413929707
+      },
+      {
+        "id": "topic-oracao-0",
+        "bookId": "MAT",
+        "reference": "Mateus 6:5–13",
+        "title": "Oração",
+        "score": 0.8762695995966547
+      },
+      {
+        "id": "topic-oracao-2",
+        "bookId": "PHP",
+        "reference": "Filipenses 4:6–7",
+        "title": "Oração",
+        "score": 0.8736606496853594
+      },
+      {
+        "id": "topic-palavra-1",
+        "bookId": "2TI",
+        "reference": "2 Timóteo 3:14–17",
+        "title": "Bíblia, Palavra e leitura",
+        "score": 0.8633803226658945
+      },
+      {
+        "id": "book-DEU-0",
+        "bookId": "DEU",
+        "reference": "Deuteronômio 6:4–9",
+        "title": "Deuteronômio: Memória, Amor a Deus, Justiça",
+        "score": 0.8586077776279359
+      },
+      {
+        "id": "book-PSA-0",
+        "bookId": "PSA",
+        "reference": "Salmos 13:1–6",
+        "title": "Salmos: Lamento, Louvor, Confiança",
+        "score": 0.8560322805649739
+      }
+    ],
+    "expectedBookInTop6": true
+  },
+  {
+    "query": "Quem criou o mundo e a humanidade?",
+    "expectedBooks": [
+      "GEN",
+      "PSA",
+      "JHN"
+    ],
+    "top6": [
+      {
+        "id": "topic-criacao-2",
+        "bookId": "GEN",
+        "reference": "Gênesis 2:15",
+        "title": "Criação e cuidado com o mundo",
+        "score": 0.8833520798174694
+      },
+      {
+        "id": "story-criacao-0",
+        "bookId": "GEN",
+        "reference": "Gênesis 1:1",
+        "title": "Um mundo recebido como presente: A vida começa como dádiva",
+        "score": 0.8817546594547534
+      },
+      {
+        "id": "topic-criacao-0",
+        "bookId": "GEN",
+        "reference": "Gênesis 1:1–5",
+        "title": "Criação e cuidado com o mundo",
+        "score": 0.8813761895807755
+      },
+      {
+        "id": "story-criacao-2",
+        "bookId": "GEN",
+        "reference": "Gênesis 2:1",
+        "title": "Um mundo recebido como presente: Cultivar, guardar e descansar",
+        "score": 0.8742964501807972
+      },
+      {
+        "id": "stage-criacao-e-comecos-0",
+        "bookId": "GEN",
+        "reference": "Gênesis 1:26",
+        "title": "Criação, dignidade e cuidado",
+        "score": 0.8740090493427416
+      },
+      {
+        "id": "stage-criacao-e-comecos-1",
+        "bookId": "GEN",
+        "reference": "Gênesis 3:9",
+        "title": "Criação, dignidade e cuidado",
+        "score": 0.8729165206741585
+      }
+    ],
+    "expectedBookInTop6": true
+  },
+  {
+    "query": "Jesus tem poder sobre a tempestade?",
+    "expectedBooks": [
+      "MRK",
+      "MAT",
+      "LUK",
+      "PSA"
+    ],
+    "top6": [
+      {
+        "id": "story-jesus-acalma-a-tempestade-1",
+        "bookId": "MRK",
+        "reference": "Marcos 4:37",
+        "title": "A voz de Jesus no meio da tempestade: Uma pergunta no meio do medo",
+        "score": 0.8927767816425786
+      },
+      {
+        "id": "story-jesus-acalma-a-tempestade-2",
+        "bookId": "MRK",
+        "reference": "Marcos 4:39",
+        "title": "A voz de Jesus no meio da tempestade: O vento e o mar se aquietam",
+        "score": 0.8873447127660217
+      },
+      {
+        "id": "story-jesus-acalma-a-tempestade-0",
+        "bookId": "MRK",
+        "reference": "Marcos 4:35",
+        "title": "A voz de Jesus no meio da tempestade: Vamos para a outra margem",
+        "score": 0.882499859469859
+      },
+      {
+        "id": "story-jesus-acalma-a-tempestade-3",
+        "bookId": "MRK",
+        "reference": "Marcos 4:40",
+        "title": "A voz de Jesus no meio da tempestade: Quem é este?",
+        "score": 0.8798531761204533
+      },
+      {
+        "id": "story-noe-2",
+        "bookId": "GEN",
+        "reference": "Gênesis 8:1",
+        "title": "Uma aliança depois da tempestade: Esperar pela terra",
+        "score": 0.8515700126627541
+      },
+      {
+        "id": "stage-chegada-de-jesus-2",
+        "bookId": "LUK",
+        "reference": "Lucas 2:10",
+        "title": "A esperança se aproxima",
+        "score": 0.8482073429068839
+      }
+    ],
+    "expectedBookInTop6": true
+  },
+  {
+    "query": "Como amar e ajudar uma pessoa ferida?",
+    "expectedBooks": [
+      "LUK",
+      "MAT",
+      "1CO",
+      "JAM"
+    ],
+    "top6": [
+      {
+        "id": "topic-perdao-1",
+        "bookId": "EPH",
+        "reference": "Efésios 4:31–32",
+        "title": "Perdão e reconciliação",
+        "score": 0.8649372789634073
+      },
+      {
+        "id": "story-bom-samaritano-1",
+        "bookId": "LUK",
+        "reference": "Lucas 10:30",
+        "title": "O amor que atravessa a estrada: Há uma pessoa ferida no caminho",
+        "score": 0.863877239202344
+      },
+      {
+        "id": "topic-amizade-1",
+        "bookId": "ECC",
+        "reference": "Eclesiastes 4:9–12",
+        "title": "Amizade e apoio mútuo",
+        "score": 0.8608628203332558
+      },
+      {
+        "id": "topic-amor-1",
+        "bookId": "LUK",
+        "reference": "Lucas 10:25–37",
+        "title": "Amor a Deus e ao próximo",
+        "score": 0.8598591930000026
+      },
+      {
+        "id": "topic-amizade-0",
+        "bookId": "PRO",
+        "reference": "Provérbios 17:17",
+        "title": "Amizade e apoio mútuo",
+        "score": 0.8558398344080624
+      },
+      {
+        "id": "topic-amizade-2",
+        "bookId": "JHN",
+        "reference": "João 15:12–17",
+        "title": "Amizade e apoio mútuo",
+        "score": 0.854878986847566
+      }
+    ],
+    "expectedBookInTop6": true
+  }
+]

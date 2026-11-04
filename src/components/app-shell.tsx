@@ -3,10 +3,10 @@ import type { ReactNode } from "react";
 import { ArrowRight, Bank, BookOpenText, Check, Church, Clock, Compass, GraduationCap, Heart, House, List, MagnifyingGlass, Sparkle, Stack, Scroll, UserCircle } from "@phosphor-icons/react/ssr";
 import "./app-shell.css";
 
-export type AppSection = "home" | "learn" | "bible" | "museum" | "profile" | "stories" | "churches";
+export type AppSection = "home" | "learn" | "bible" | "museum" | "profile" | "stories" | "churches" | "explore";
 export type AppIconName = AppSection | "arrow" | "spark" | "check" | "layers" | "heart" | "search" | "clock" | "compass";
 
-const icons = { home: House, learn: GraduationCap, bible: BookOpenText, museum: Bank, profile: UserCircle, stories: Scroll, churches: Church, arrow: ArrowRight, spark: Sparkle, check: Check, layers: Stack, heart: Heart, search: MagnifyingGlass, clock: Clock, compass: Compass } as const;
+const icons = { home: House, learn: GraduationCap, bible: BookOpenText, museum: Bank, profile: UserCircle, stories: Scroll, churches: Church, explore: Sparkle, arrow: ArrowRight, spark: Sparkle, check: Check, layers: Stack, heart: Heart, search: MagnifyingGlass, clock: Clock, compass: Compass } as const;
 
 export function AppIcon({ name, className = "" }: { name: AppIconName; className?: string }) {
   const Icon = icons[name];
@@ -20,6 +20,7 @@ const destinations = [
   { id: "stories", label: "Histórias bíblicas", href: "/historias" },
   { id: "churches", label: "Igrejas e pessoas", href: "/igrejas" },
   { id: "museum", label: "Museu", href: "/museu" },
+  { id: "explore", label: "Voz, imagem e Palavra", href: "/explorar" },
   { id: "profile", label: "Meu percurso", href: "/meu-percurso" }
 ] as const;
 
@@ -27,7 +28,7 @@ function Navigation({ active, mobile = false }: { active: AppSection; mobile?: b
   const items = mobile ? destinations.filter((item) => ["home", "learn", "bible", "profile"].includes(item.id)) : destinations;
   return <nav className={mobile ? "app-bottom-nav" : "app-side-nav"} aria-label={mobile ? "Navegação no celular" : "Navegação principal"}>
     {items.map((item) => <Link key={item.id} href={item.href} aria-current={active === item.id ? "page" : undefined} prefetch={false}><span className="app-nav-icon"><AppIcon name={item.id} /></span><span>{item.label}</span>{!mobile && active === item.id && <span className="app-nav-current" aria-hidden="true" />}</Link>)}
-    {mobile && <details className="app-more-menu"><summary aria-label="Mais áreas do aplicativo"><span className="app-nav-icon"><List size={23} aria-hidden="true" /></span><span>Explorar</span></summary><div className="app-more-panel"><p>Conhecer e conectar</p>{destinations.filter((item) => ["stories", "churches", "museum"].includes(item.id)).map((item) => <Link key={item.id} href={item.href} aria-current={active === item.id ? "page" : undefined}><AppIcon name={item.id} /><span>{item.label}</span></Link>)}<Link href="/biblia?busca=batismo"><MagnifyingGlass aria-hidden="true" /><span>Pesquisar na Bíblia</span></Link></div></details>}
+    {mobile && <details className="app-more-menu"><summary aria-label="Mais áreas do aplicativo"><span className="app-nav-icon"><List size={23} aria-hidden="true" /></span><span>Explorar</span></summary><div className="app-more-panel"><p>Conhecer e conectar</p>{destinations.filter((item) => ["stories", "churches", "museum", "explore"].includes(item.id)).map((item) => <Link key={item.id} href={item.href} aria-current={active === item.id ? "page" : undefined}><AppIcon name={item.id} /><span>{item.label}</span></Link>)}<Link href="/biblia?busca=batismo"><MagnifyingGlass aria-hidden="true" /><span>Pesquisar na Bíblia</span></Link></div></details>}
   </nav>;
 }
 
