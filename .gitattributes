@@ -1,0 +1,2 @@
+# Preserve the exact upstream bytes of vendored license notices.
+public/ocr/licenses/*.txt -whitespace
