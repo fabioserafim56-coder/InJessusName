@@ -79,3 +79,10 @@ A última publicação anterior à ampliação multimodal corresponde a `5a7acab
 ## Renovação visual de 28/10/2026
 
 Artes originais e capas editoriais, percurso Embla, Motion em etapas, ícones Phosphor, StPageFlip e celebração opcional foram integrados. São recursos de experiência; não ampliam por si o número de aulas nem demonstram eficácia de aprendizagem. A narração fixa é uma primeira integração real de geração com modelo do Hugging Face, sem tutor generativo ou Bíblia inteira narrada. [Proveniência e ferramentas](ferramentas-visuais-abertas.md).
+
+
+## Ampliação visual e prática de 04/11/2026
+
+Três jogos em `/jogos` usam leituras de Lucas 10, Salmo 23 e João 6, com erros explicados e conclusão vinculada às respostas verificadas. As 15 histórias mantêm 60 cenas e agora oferecem reconstrução da sequência; quatro cenas receberam arte original 1536×1024 com bytes e SHA-256 em `/visuals/scenes/proveniencia.json`. As imagens são interpretações artísticas geradas por IA, não fotos nem evidências históricas. A contagem dos cestos é ensinada pelo texto de João 6:13, sem pedir ao aluno que conte objetos na ilustração.
+
+A conferência automatizada do acervo e os limites da revisão estão em [revisao-conteudo.md](revisao-conteudo.md). Não se acrescentou uma narração humana licenciada nesta ampliação; os áudios sintéticos anteriores continuam identificados.

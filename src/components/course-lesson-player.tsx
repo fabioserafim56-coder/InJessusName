@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useId, useRef, useState } from "react";
-import { AppShell } from "@/components/app-shell";
+import { FocusShell } from "@/components/focus-shell";
 import { useJourneySession } from "@/components/journey-session";
 import { StudyPurpose, StudyCompass, StudyEvidence, StudyContinuation, StudyDiscovery } from "@/components/study-companion/study-companion";
 import { StudyProgressRing } from "@/components/ui/study-progress-ring";
@@ -167,7 +167,7 @@ export function CourseLessonPlayer({ lesson, passages, edition, nextLesson }: { 
     ? "Houve trechos em que uma ajuda foi bem-vinda. Volte com carinho à passagem que mais pediu atenção e conte, com suas palavras, o que compreendeu. Reler também é uma forma de permanecer na Palavra."
     : "Escolha uma palavra ou atitude desta leitura para levar ao seu dia. Se puder, converse com alguém de confiança sobre o que aprendeu e volte ao texto em outro momento, sem pressa.";
 
-  return <AppShell active="learn" title="Aprender" subtitle={lesson.theme}>
+  return <FocusShell title={started ? finished ? "Levar a Palavra à vida" : ["Ouvir a Palavra", "Compreender a Palavra", "Conversar sobre a Palavra", "Levar a Palavra à vida"][phase] : "Seu encontro na Palavra"} subtitle={started && !finished ? `Etapa ${stepIndex + 1} de ${steps.length} · ${lesson.theme}` : lesson.theme} backHref="/aprender" backLabel="Todos os estudos" className="study-focus-shell" controls={<button type="button" className="cl-toolbar-reference" onClick={() => consult(mainPassage)}><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 6c-3-2-6-2-10-1v15c4-1 7-1 10 1 3-2 6-2 10-1V5c-4-1-7-1-10 1Zm0 0v15" /></svg><span>Bíblia deste encontro</span></button>}>
     <div className="course-study">
       <div className="cl-topline"><Link href="/aprender"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14 6-6 6 6 6" /></svg>Todos os estudos</Link><span>cerca de {lesson.estimatedMinutes} min · no seu ritmo</span></div>
       <header className="cl-lesson-header"><div className="cl-lesson-title"><div className="cl-theme"><span aria-hidden="true" />{lesson.theme}</div><h1>{lesson.title}</h1><p>{lesson.subtitle}</p></div><StudyChapterArt /></header>
@@ -217,5 +217,5 @@ export function CourseLessonPlayer({ lesson, passages, edition, nextLesson }: { 
       <div className="cl-resources"><EditionDetails edition={edition} /><details className="cl-about-lesson"><summary>Sobre este encontro <span>Aula piloto</span></summary><p>{courseEditorialNote}</p><p>Comentários e atividades autorais. As referências bíblicas permitem conferir o estudo. Os resultados não classificam fé, salvação ou aptidão ministerial.</p></details></div>
       <dialog ref={passageDialog} className="cl-passage-dialog" aria-labelledby="cl-passage-dialog-title"><header><div><p className="cl-eyebrow">VOLTANDO À PALAVRA</p><h2 id="cl-passage-dialog-title">Bíblia ao lado</h2></div><button className="cl-close-dialog" aria-label="Fechar passagem" onClick={() => passageDialog.current?.close()}><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18" /></svg></button></header>{passages.length > 1 && <label className="cl-passage-select">Escolher passagem<select value={activePassageKey} onChange={(event) => { setActivePassageKey(event.target.value); const selected = passages.find((passage) => referenceKey(passage) === event.target.value); if (selected) setRequestedReference(selected); }}>{passages.map((passage) => <option key={referenceKey(passage)} value={referenceKey(passage)}>{passage.label}</option>)}</select></label>}<>{activePassage ? <PassageText passage={activePassage} /> : <div className="cl-small-task"><p>O trecho {requestedReference.label} pode ser conferido no leitor completo.</p><Link className="cl-source-button" href={`/biblia?livro=${requestedReference.book}&capitulo=${requestedReference.chapter}&versiculo=${requestedReference.startVerse}`} target="_blank">Abrir a passagem no leitor</Link></div>}</><EditionDetails edition={edition} /><button className="cl-primary" onClick={() => passageDialog.current?.close()}>Voltar ao estudo</button></dialog>
     </div>
-  </AppShell>;
+  </FocusShell>;
 }

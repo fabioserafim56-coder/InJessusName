@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useRef, useState, type CSSProperties, type ReactNode } from "react";
-import { AppShell } from "@/components/app-shell";
+import { FocusShell } from "@/components/focus-shell";
 import { ScriptureBook } from "@/components/bible/scripture-book";
 import { NarratedReading } from "@/components/multimodal/narrated-reading";
 import { getNarratedPassageForReference } from "@/content/narration";
@@ -46,11 +46,12 @@ function ReaderIcon({ kind }: { kind: "book" | "info" | "copy" | "arrow-left" | 
   </svg>;
 }
 
-export function BibleReader({ books, chapter, highlightedVerse, searchPanel, churchMode = false, initialBookOpen = false, initialTheme = "claro", initialFontSize = 24, verseCounts = {} }: {
+export function BibleReader({ books, chapter, highlightedVerse, searchPanel, searchActive = false, churchMode = false, initialBookOpen = false, initialTheme = "claro", initialFontSize = 24, verseCounts = {} }: {
   books: readonly Book[];
   chapter: ReaderChapter;
   highlightedVerse?: number;
   searchPanel?: ReactNode;
+  searchActive?: boolean;
   churchMode?: boolean;
   initialBookOpen?: boolean;
   initialTheme?: BibleTheme;
@@ -153,13 +154,12 @@ export function BibleReader({ books, chapter, highlightedVerse, searchPanel, chu
       <a className="skip-link" href="#bible-chapter">Pular para o texto bíblico</a>
       {churchMode && <noscript><form action="/biblia" method="get" className="br-nojs-form"><input type="hidden" name="modo" value="igreja" />{theme !== "claro" && <input type="hidden" name="tema" value={theme} />}{fontSize !== 24 && <input type="hidden" name="fonte" value={fontSize} />}<label>Livro<select name="livro" defaultValue={chapter.book.id}>{books.map(book => <option key={book.id} value={book.id}>{book.name}</option>)}</select></label><label>Capítulo<input type="number" name="capitulo" min={1} max={150} defaultValue={chapter.chapter} /></label><label>Versículo<input type="number" name="versiculo" min={1} max={176} defaultValue={highlightedVerse || 1} /></label><button type="submit">Abrir passagem</button></form></noscript>}
 
-      {!churchMode && <section className="br-book-invitation" aria-labelledby="br-book-invitation-title">
-        <div className="br-book-invitation-copy"><p className="br-book-kicker">UM ENCONTRO COM A PALAVRA</p><h2 id="br-book-invitation-title">Há uma Palavra<br /><span>esperando por você.</span></h2><p>Abra sua Bíblia, vire as páginas e permaneça um pouco. Há tempo para escutar, fazer perguntas e levar um ensino ao coração.</p><div className="br-book-invitation-actions"><button type="button" className="br-open-book" ref={bookTrigger} onClick={openBook}>Abrir minha Bíblia <ReaderIcon kind="arrow-right" /></button><a href="#bible-chapter">Ir direto ao texto</a><Link href={chapterUrl({ bookId: chapter.book.id, chapter: chapter.chapter }, highlightedVerse, false, true)}>Usar só a Bíblia</Link></div><span className="br-book-invitation-edition">Bíblia Livre · 66 livros · Texto ajustável</span></div>
-        <div className="br-tactile-scene" aria-hidden="true"><div className="br-tactile-book"><span className="br-tactile-pages" /><span className="br-tactile-spine" /><div className="br-tactile-cover"><div className="br-tactile-frame"><span className="br-tactile-symbol">✦</span><strong>BÍBLIA</strong><span>SAGRADA</span><small>PALAVRA · VIDA · ESPERANÇA</small></div></div><span className="br-tactile-ribbon" /></div><span className="br-tactile-caption">Abra. Escute. Permaneça.</span></div>
+      {!churchMode && <section className="br-reader-welcome" aria-label="Seu espaço de leitura">
+        <div className="br-welcome-copy"><span className="br-welcome-cross" aria-hidden="true" /><div><p>SAGRADAS ESCRITURAS</p><h2>Um tempo a sós com a Palavra.</h2><span>66 livros. A Bíblia inteira, aberta para você.</span></div></div>
+        <div className="br-welcome-actions"><button type="button" className="br-open-book" ref={bookTrigger} onClick={openBook}><ReaderIcon kind="book" />Abrir minha Bíblia <ReaderIcon kind="arrow-right" /></button><Link href={chapterUrl({ bookId: chapter.book.id, chapter: chapter.chapter }, highlightedVerse, false, true)}>Modo igreja</Link></div>
       </section>}
 
-      {!churchMode && <div className="br-church-entry"><div><p>PARA O CULTO, A ORAÇÃO E A LEITURA</p><strong>Quando você precisa apenas da Bíblia.</strong></div><Link href={chapterUrl({ bookId: chapter.book.id, chapter: chapter.chapter }, highlightedVerse, false, true)}>Entrar no modo igreja <ReaderIcon kind="arrow-right" /></Link></div>}
-      {!churchMode && searchPanel}
+      {!churchMode && searchPanel && <details className="br-search-drawer" open={searchActive || undefined}><summary><span><span className="br-search-symbol" aria-hidden="true">⌕</span>Pesquisar uma palavra ou um tema</span><span aria-hidden="true">+</span></summary>{searchPanel}</details>}
 
       <section className="br-toolbar" aria-label="Encontre uma passagem">
         <form action="/biblia" method="get" className="br-location-form">
@@ -186,15 +186,15 @@ export function BibleReader({ books, chapter, highlightedVerse, searchPanel, chu
         </button>
       </section>
 
-      <div className="br-display-bar">{themeControls}<button type="button" className="br-fullscreen" aria-pressed={fullScreen} onClick={toggleFullScreen}>{fullScreen ? "Sair da tela inteira" : "Tela inteira"}</button></div>
+      <div className="br-display-bar"><Link href="/" className="br-fullscreen-back" aria-label="Voltar ao aplicativo"><ReaderIcon kind="arrow-left" /></Link><button type="button" className="br-current-reference" aria-label={`Mudar passagem: ${reference}`} onClick={event => openPassage(event.currentTarget)}><ReaderIcon kind="book" /><span>{reference}</span><span aria-hidden="true">⌄</span></button>{themeControls}<button type="button" className="br-fullscreen" aria-pressed={fullScreen} onClick={toggleFullScreen}>{fullScreen ? "Sair da tela inteira" : "Tela inteira"}</button></div>
       {narratedPassage && <details className="br-narrated-passage"><summary>Ouvir {narratedPassage.reference} e acompanhar os versículos</summary><NarratedReading passageId={narratedPassage.id} /></details>}
 
       <div className="br-workspace">
         <article id="bible-chapter" className="br-reading" aria-labelledby="br-chapter-title" tabIndex={-1}>
           <header className="br-chapter-header">
-            <div className="br-chapter-icon"><ReaderIcon kind="book" /></div>
+            <div className="br-chapter-icon" aria-hidden="true"><span className="br-welcome-cross" /></div>
             <div className="br-chapter-heading">
-              <p className="br-edition-label">BLIVRE · TR 2018</p>
+              <p className="br-edition-label">SAGRADAS ESCRITURAS · BLIVRE · TR 2018</p>
               <h1 id="br-chapter-title">{chapter.book.name} <span>{chapter.chapter}</span></h1>
               <p className="br-chapter-counter">Capítulo {chapter.chapter} de {chapter.book.chapters} · {chapter.verses.length} versículos</p>
             </div>
@@ -233,15 +233,9 @@ export function BibleReader({ books, chapter, highlightedVerse, searchPanel, chu
           </footer>
         </article>
 
-        {!churchMode && <aside className="br-study-card" aria-labelledby="br-study-title">
-          <span className="br-study-symbol" aria-hidden="true"><ReaderIcon kind="book" /></span>
-          <p className="br-small-label">UM TEMPO COM A PALAVRA</p>
-          <h3 id="br-study-title">Vamos escutar esta passagem?</h3>
-          <p>Leia devagar. Há uma palavra que pede sua atenção? Permaneça um pouco nela e procure compreender o que essa passagem nos revela sobre Deus e a vida.</p>
-          <Link href="/aprender">Ler com uma explicação ao lado <ReaderIcon kind="arrow-right" /></Link>
-          <div className="br-study-tip"><strong>Suas perguntas têm lugar aqui.</strong><p>Se algo parecer difícil, você pode reler, anotar e voltar depois. Não é preciso transformar esse encontro em uma corrida.</p></div>
-        </aside>}
       </div>
+
+      {!churchMode && <section className="br-study-invitation" aria-labelledby="br-study-title"><span className="br-study-symbol" aria-hidden="true"><ReaderIcon kind="book" /></span><div><p className="br-small-label">CAMINHE COM A PALAVRA</p><h2 id="br-study-title">Suas perguntas têm lugar aqui.</h2><p>Depois da leitura, dê mais um passo. Conheça o contexto, releia com cuidado e descubra como levar esse ensino para a vida.</p></div><Link href="/aprender">Quero aprender <ReaderIcon kind="arrow-right" /></Link></section>}
 
       <dialog className="br-book-dialog" data-bible-theme={theme} ref={bookDialog} aria-labelledby="br-book-dialog-title" onClose={returnFromBook}>
         <header className="br-book-dialog-header"><div><p className="br-small-label">{chapter.book.name} {chapter.chapter} · BÍBLIA LIVRE</p><h2 id="br-book-dialog-title">Sua Bíblia aberta</h2></div><div className="br-book-header-actions"><button type="button" className="br-book-passage" aria-label="Escolher livro, capítulo e versículo" onClick={event => openPassage(event.currentTarget)}><ReaderIcon kind="book" /><span>{chapter.book.name} {chapter.chapter}</span><span aria-hidden="true">⌄</span></button><button type="button" className="br-book-close" aria-label="Fechar modo livro" onClick={() => closeBook()}><ReaderIcon kind="close" /></button></div></header><div className="br-book-appearance">{themeControls}<button type="button" onClick={event => openPassage(event.currentTarget, true)}>Abrir Salmos</button></div>
@@ -268,5 +262,5 @@ export function BibleReader({ books, chapter, highlightedVerse, searchPanel, chu
         <button className="br-primary-button" type="button" onClick={() => sourceDialog.current?.close()}>Voltar à leitura</button>
       </dialog>
     </div>;
-  return churchMode ? <main className="church-bible-shell" aria-label="Bíblia para acompanhar o culto">{content}</main> : <AppShell active="bible" title="Bíblia" subtitle="Abra a Palavra com o coração atento">{content}</AppShell>;
+  return churchMode ? <main className="church-bible-shell" aria-label="Bíblia para acompanhar o culto">{content}</main> : <FocusShell title="Bíblia" eyebrow="INJESSUSNAME" subtitle="A Palavra, sempre com você" theme={theme === "noturno" ? "dark" : "light"} className="bible-focus-shell" mainClassName="bible-focus-main" controls={<button type="button" className="br-focus-reference" aria-label={`Escolher passagem: ${reference}`} onClick={event => openPassage(event.currentTarget)}><ReaderIcon kind="book" /><span>{reference}</span><span aria-hidden="true">⌄</span></button>}>{content}</FocusShell>;
 }

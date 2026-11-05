@@ -200,7 +200,7 @@ test("os serviços visuais sem configuração respondem 503 de verdade e deixam 
   expect((await ocr.json()).text).toBeUndefined();
   await openExperience(page, "museu");
   await page.locator(".mm-visual-questions > summary").click();
-  await expect(page.locator(".mm-visual-question-body")).toContainText("As perguntas livres com análise de imagem ainda não estão disponíveis");
+  await expect(page.locator(".mm-visual-question-body")).toContainText("A análise automática de imagem está desligada");
   await expect(page.getByRole("button", { name: "Analisar minha pergunta", exact: true })).toHaveCount(0);
   await expect(page.locator("[data-museum-hotspot]")).toHaveCount(3);
 });

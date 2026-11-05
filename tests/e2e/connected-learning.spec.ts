@@ -129,6 +129,7 @@ test("buscar batismo separa a seleção temática do texto bíblico e abre a pas
   page.on("pageerror", (error) => errors.push(error.message));
   page.on("request", (request) => { if (["POST", "PUT", "PATCH", "DELETE"].includes(request.method())) writes.push(request.method()); });
   await page.goto("/biblia");
+  await page.locator(".br-search-drawer > summary").click();
   const form = page.getByRole("search", { name: "Buscar palavras ou temas na Bíblia", exact: true });
   await form.getByRole("searchbox", { name: "Palavra, expressão ou tema", exact: true }).fill("batismo");
   await form.getByRole("button", { name: "Buscar na Bíblia", exact: true }).click();
@@ -197,6 +198,7 @@ test("busca livre aceita acentos, expressão exata e páginas de resultados reai
 });
 
 test("histórias conectam cenas, contexto e reflexão à passagem bíblica sem reproduzir automaticamente", async ({ page }) => {
+  test.setTimeout(60000);
   const errors: string[] = [];
   page.on("pageerror", (error) => errors.push(error.message));
   await page.emulateMedia({ reducedMotion: "reduce" });
@@ -209,6 +211,9 @@ test("histórias conectam cenas, contexto e reflexão à passagem bíblica sem r
     for (const scene of story.scenes) scripture(scene.reference.book, scene.reference.chapter, scene.reference.verse ?? 1);
   }
   await page.locator('a.story-card[href="/historias/exodo"]').click();
+  await expect(page.locator("[data-focus-shell]")).toHaveCount(1);
+  await expect(page.locator(".app-sidebar")).toHaveCount(0);
+  const exodus = biblicalStories.find(story => story.id === "exodo")!;
   const scenes = page.getByRole("region", { name: "Quatro cenas para acompanhar a passagem", exact: true });
   await expect(scenes.locator("article[data-story-scene]")).toHaveCount(4);
   await expect(scenes).toHaveAttribute("data-story-position", "0");
@@ -223,6 +228,39 @@ test("histórias conectam cenas, contexto e reflexão à passagem bíblica sem r
   await expect(scenes).toHaveAttribute("data-story-position", "3");
   await expect(lastPassage).toBeInViewport({ ratio: .9 });
   for (const link of await scenes.locator('a[href^="/biblia?"]').all()) validReference((await link.getAttribute("href"))!);
+  const discovery = scenes.locator('[data-story-scene="3"] .story-scene-discover');
+  await discovery.locator("summary").click();
+  await expect(discovery).toHaveAttribute("open", "");
+  await expect(discovery).toContainText(exodus.scenes[3].observe);
+  await expect(discovery).toContainText(exodus.scenes[3].reference.label);
+  const context = page.getByRole("region", { name: "Contexto e conexões da história", exact: true });
+  await expect(context).toContainText(exodus.context);
+  await expect(context).toContainText(exodus.connection);
+
+  // Recalling the next event is an action with corrective Scripture feedback,
+  // rather than simply counting how many pictures the reader has opened.
+  const recall = page.locator(".story-recall");
+  const recallStatus = recall.getByRole("status");
+  await expect(recall).toHaveAttribute("data-story-recalled", "0");
+  await recall.getByRole("button", { name: exodus.scenes[2].title, exact: true }).click();
+  await expect(recall).toHaveAttribute("data-story-recalled", "0");
+  await expect(recallStatus).toContainText("Voltemos à passagem com calma.");
+  await expect(recallStatus).toContainText(exodus.scenes[2].reference.label);
+  const correction = validReference((await recallStatus.locator('a[href^="/biblia?"]').getAttribute("href"))!);
+  expect(correction).toMatchObject({ bookId: "EXO", chapter: 14, verse: 1 });
+  for (const [index, scene] of exodus.scenes.entries()) {
+    const answer = recall.getByRole("button", { name: scene.title, exact: true });
+    await answer.click();
+    await expect(recall).toHaveAttribute("data-story-recalled", String(index + 1));
+    if (index < exodus.scenes.length - 1) await expect(answer).toBeDisabled();
+  }
+  await expect(recallStatus).toContainText("Você retomou o caminho desta leitura.");
+  await expect(recall.locator(".story-recall-choices")).toHaveCount(0);
+  await recall.getByRole("button", { name: "Recomeçar", exact: true }).click();
+  await expect(recall).toHaveAttribute("data-story-recalled", "0");
+  await expect(recallStatus).toBeEmpty();
+  await recall.getByRole("button", { name: exodus.scenes[0].title, exact: true }).click();
+  await expect(recall).toHaveAttribute("data-story-recalled", "1");
   const reflection = page.locator(".story-reflection");
   const options = reflection.locator(".story-reflection-options > button");
   await options.first().click();
@@ -235,9 +273,54 @@ test("histórias conectam cenas, contexto e reflexão à passagem bíblica sem r
   await expect(page).toHaveURL(/\/historias\/rute$/);
   await expect(page.locator("[data-story-position]")).toHaveAttribute("data-story-position", "0");
   await expect(page.locator(".story-reflection-feedback")).toBeEmpty();
+  await expect(page.locator(".story-recall")).toHaveAttribute("data-story-recalled", "0");
+  await expect(page.locator(".story-recall-feedback")).toBeEmpty();
   await expect(page.locator("audio[autoplay], video[autoplay]")).toHaveCount(0);
   expect(await page.evaluate(() => ({ local: Object.keys(localStorage), session: Object.keys(sessionStorage) }))).toEqual({ local: [], session: [] });
   await noHorizontalOverflow(page);
+  expect(errors).toEqual([]);
+});
+
+test("cenas dos sinais e da misericórdia ampliam a arte original sem confundi-la com registro histórico", async ({ page }) => {
+  test.setTimeout(90000);
+  const errors: string[] = [];
+  page.on("pageerror", error => errors.push(error.message));
+  await page.emulateMedia({ reducedMotion: "reduce" });
+  const scenes = [
+    { story: "multiplicacao-dos-paes", index: 1, src: "/visuals/scenes/joao-6-oferta.png", reference: { bookId: "JHN", chapter: 6, verse: 9 } },
+    { story: "multiplicacao-dos-paes", index: 2, src: "/visuals/scenes/joao-6-recolher.png", reference: { bookId: "JHN", chapter: 6, verse: 11 } },
+    { story: "jesus-acalma-a-tempestade", index: 2, src: "/visuals/scenes/marcos-4-calmaria.png", reference: { bookId: "MRK", chapter: 4, verse: 39 } },
+    { story: "bom-samaritano", index: 2, src: "/visuals/scenes/lucas-10-cuidado.png", reference: { bookId: "LUK", chapter: 10, verse: 33 } },
+  ];
+  for (const entry of scenes) {
+    await page.goto(`/historias/${entry.story}`);
+    const host = page.locator("[data-story-position]");
+    await host.getByRole("button", { name: new RegExp(`^Ir para a cena ${entry.index + 1}:`) }).click();
+    await expect(host).toHaveAttribute("data-story-position", String(entry.index));
+    const scene = host.locator(`[data-story-scene="${entry.index}"]`);
+    await expect(scene.locator(".story-scene-art-label")).toContainText("ILUSTRAÇÃO ARTÍSTICA");
+    const verse = validReference((await scene.locator('a[href^="/biblia?"]').getAttribute("href"))!);
+    expect(verse).toMatchObject(entry.reference);
+    const zoom = scene.locator("a.story-scene-zoom");
+    await expect(zoom).toHaveAttribute("href", entry.src);
+    await expect(zoom).toHaveAttribute("data-pswp-width", "1536");
+    await expect(zoom).toHaveAttribute("data-pswp-height", "1024");
+    await zoom.click();
+    const viewer = page.locator(".pswp.pswp--open");
+    await expect(viewer).toBeVisible();
+    const original = viewer.locator("img.pswp__img").last();
+    await expect(original).toHaveAttribute("src", entry.src);
+    await expect.poll(() => original.evaluate(image => ({ width: (image as HTMLImageElement).naturalWidth, height: (image as HTMLImageElement).naturalHeight }))).toEqual({ width: 1536, height: 1024 });
+    await page.keyboard.press("Escape");
+    await expect(viewer).not.toBeVisible();
+    await expect(zoom).toBeFocused();
+    const provenance = page.locator("details.story-editorial-note");
+    await provenance.locator("summary").click();
+    await expect(provenance).toContainText("não são registros históricos");
+    await expect(provenance.locator('a[href="/visuals/scenes/proveniencia.json"]')).toBeVisible();
+    await expect(page.locator("audio[autoplay], video[autoplay]")).toHaveCount(0);
+    await noHorizontalOverflow(page);
+  }
   expect(errors).toEqual([]);
 });
 

@@ -5,7 +5,7 @@ import { StudyCelebration, StudyChapterArt, StudyTransition } from "@/components
 import { useId, useRef, useState } from "react";
 import { firstLesson as lesson, type LessonQuestion } from "@/content/lessons/primeiros-passos";
 import { calculateStudySummary, type StudyAnswer } from "@/lib/study-progress";
-import { AppShell } from "@/components/app-shell";
+import { FocusShell } from "@/components/focus-shell";
 import { useJourneySession } from "@/components/journey-session";
 import { StudyPurpose, StudyCompass, StudyEvidence, StudyContinuation, StudyDiscovery, type StudyEvidenceItem } from "@/components/study-companion/study-companion";
 import "./lesson-player.css";
@@ -113,8 +113,10 @@ function dateLabel(value: string) {
 export function LessonPlayer({ mainPassage, transferPassage, edition }: { mainPassage: LessonPassage; transferPassage: LessonPassage; edition: LessonEdition }) {
   const { markLessonCompleted } = useJourneySession();
   const preparationDialog = useRef<HTMLDialogElement>(null);
+  const passageDialog = useRef<HTMLDialogElement>(null);
   const sectionHeading = useRef<HTMLHeadingElement>(null);
   const [started, setStarted] = useState(false);
+  const [referenceOpen, setReferenceOpen] = useState(false);
   const [phase, setPhase] = useState(0);
   const [diagnosticDone, setDiagnosticDone] = useState(false);
   const [lens, setLens] = useState(0);
@@ -185,11 +187,17 @@ export function LessonPlayer({ mainPassage, transferPassage, edition }: { mainPa
     : "Escolha um cuidado desta leitura para levar ao seu dia. Você pode conversar com alguém de confiança, anotar uma pergunta ou voltar à passagem em oração. O importante é dar lugar à Palavra na vida.";
   const focusCard = () => requestAnimationFrame(() => sectionHeading.current?.focus());
 
-  return <AppShell active="learn" title="Primeiros passos" subtitle="Fundamentos da leitura bíblica">
+  const openStudyPassage = () => {
+    if (started && phase === 2 && currentQuestion?.evidenceMode === "without-looking" && !finished) recordSupport(currentQuestion.id, { consultedText: true });
+    setReferenceOpen(true);
+    requestAnimationFrame(() => passageDialog.current?.showModal());
+  };
+
+  return <FocusShell title={started ? ["Acolher a Palavra", "Ouvir a Palavra", "Conversar sobre a Palavra", "Levar a Palavra à vida"][phase] : "Seu encontro na Palavra"} subtitle={started ? `Etapa ${phase + 1} de 4 · Primeiros passos` : "Primeiros passos na leitura bíblica"} backHref="/aprender" backLabel="Todos os estudos" className="study-focus-shell" controls={<button type="button" className="study-toolbar-reference" onClick={openStudyPassage}><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 6c-3-2-6-2-10-1v15c4-1 7-1 10 1 3-2 6-2 10-1V5c-4-1-7-1-10 1Zm0 0v15" /></svg><span>Bíblia deste encontro</span></button>}>
     <div className="study-page" id="aula">
       <header className="study-lesson-heading">
         <div className="study-heading-copy">
-        <Link className="study-back" href="/aprender"><span aria-hidden="true">←</span> Todos os estudos</Link>
+        <p className="study-cover-eyebrow">UM ENCONTRO COM DEUS, PELA PALAVRA</p>
         <div className="study-heading-meta"><span>Aula 01</span><span>15–20 min · no seu ritmo</span><details className="study-about"><summary>Piloto educacional</summary><div><p>{lesson.evaluationNote}</p><p>{lesson.perspective}</p><p>{lesson.pacingNote}</p></div></details></div>
         <h1>{lesson.title}</h1>
         {!started && <p className="study-subtitle">{lesson.subtitle}</p>}
@@ -218,6 +226,7 @@ export function LessonPlayer({ mainPassage, transferPassage, edition }: { mainPa
         <div className={`study-layout ${phase === 3 ? "study-layout-complete" : ""}`}>
           <section className="study-main" aria-labelledby="study-phase-title">
             <div className="study-step-heading"><p className="study-kicker">ETAPA {phase + 1} DE 4</p><h2 id="study-phase-title" tabIndex={-1} ref={sectionHeading}>{titles[phase]}</h2></div>
+            {phase === 1 && <div className="study-inline-reading"><Passage passage={mainPassage} edition={edition} /></div>}
             {phase === 0 && <>
               <p className="study-lead">Antes de seguirmos, pense nesta pergunta. Ela nos ajuda a começar a conversa, sem nota ou cobrança. Há lugar para o seu começo aqui.</p>
               {!diagnosticDone ? <QuestionCard question={lesson.preparation.diagnostic} previousAnswers={answers} passage={mainPassage} edition={edition} onAnswer={addAnswer} onContinue={() => setDiagnosticDone(true)} /> : <div className="study-callout"><h3>Podemos caminhar a partir daqui.</h3><p>Vamos abrir a passagem e olhar com atenção para o que ela nos conta. Sua pergunta também tem lugar neste caminho.</p></div>}
@@ -274,9 +283,7 @@ export function LessonPlayer({ mainPassage, transferPassage, edition }: { mainPa
             </>}
           </section>
 
-          {phase !== 3 && <aside className="study-sidebar">
-            {phase === 1 ? <Passage passage={mainPassage} edition={edition} /> : phase === 2 && currentQuestion?.evidenceMode === "without-looking" && !finished ? <div className="study-coach"><span className="study-coach-symbol" aria-hidden="true">◎</span><h3>O que esta leitura deixou em você?</h3><p>Tente contar com suas palavras. Se precisar reler, abrimos a passagem outra vez. Não há pressa nem constrangimento.</p></div> : <div className="study-coach"><span className="study-coach-symbol" aria-hidden="true">↗</span><h3>{phase === 0 ? "Podemos começar daqui." : "Vamos olhar juntos para a Palavra."}</h3><p>{phase === 0 ? "Não é preciso conhecer tudo para se aproximar da Bíblia. Vamos ouvir, perguntar e compreender um pouco de cada vez." : coach}</p><div className="study-coach-route"><span>Ouvir</span><span>Compreender</span><span>Viver</span></div></div>}
-          </aside>}
+          {phase !== 3 && <details className="study-context-help"><summary><span aria-hidden="true">✧</span> Um cuidado para este momento <span aria-hidden="true">+</span></summary><div>{phase === 2 && currentQuestion?.evidenceMode === "without-looking" && !finished ? <><h3>O que esta leitura deixou em você?</h3><p>Tente contar com suas palavras. Se precisar reler, abrimos a passagem outra vez. Não há pressa nem constrangimento.</p></> : <><h3>{phase === 0 ? "Podemos começar daqui." : "Vamos olhar juntos para a Palavra."}</h3><p>{phase === 0 ? "Não é preciso conhecer tudo para se aproximar da Bíblia. Vamos ouvir, perguntar e compreender um pouco de cada vez." : coach}</p></>}</div></details>}
         </div>
       </>}
       </StudyTransition>
@@ -284,7 +291,8 @@ export function LessonPlayer({ mainPassage, transferPassage, edition }: { mainPa
       {saveMessage && <p className={`study-save-message ${saveState === "error" ? "is-error" : ""}`} role="status">{saveMessage}</p>}
       <details className="study-account-summary"><summary>Progresso na conta</summary><div><p>Enquanto você estuda, as respostas ficam apenas nesta sessão. Ao sair ou recarregar, elas são descartadas até você escolher salvar a conclusão.</p><button className="study-secondary" onClick={readProgress}>Consultar meu progresso salvo</button>{saved?.completed && <div className="study-saved-dates"><p>Conclusão: {saved.completedAt ? dateLabel(saved.completedAt) : "registrada"}.</p>{saved.reviewDates?.map((date) => <p key={date}>Retomada sugerida: {dateLabel(date)}.</p>)}<button className="study-secondary" onClick={clearProgress}>Apagar progresso desta aula</button></div>}<Link className="study-text-link" href="/privacidade">Privacidade e escolhas</Link></div></details>
 
+      <dialog className="study-reference-dialog" ref={passageDialog} onClose={() => setReferenceOpen(false)} aria-labelledby="study-reference-dialog-title"><header><div><p className="study-kicker">VOLTAR À FONTE</p><h2 id="study-reference-dialog-title">A Palavra está por perto.</h2></div><button type="button" aria-label="Fechar passagem" onClick={() => passageDialog.current?.close()}>×</button></header>{referenceOpen && <Passage passage={phase === 2 && activity === 9 ? transferPassage : mainPassage} edition={edition} />}<button type="button" className="study-primary" onClick={() => passageDialog.current?.close()}>Voltar ao estudo</button></dialog>
       <dialog className="study-preparation-dialog" ref={preparationDialog} aria-labelledby="preparation-dialog-title"><span className="study-dialog-icon" aria-hidden="true">✦</span><h2 id="preparation-dialog-title">Vamos preparar este momento?</h2><p>Se puder, deixe sua <strong>Bíblia física aberta ao lado</strong> e um caderno por perto. Vamos ler juntos e guardar o que esta Palavra nos ensina.</p><p>Se não os tiver agora, o texto está aqui para acompanhar você. Podemos seguir com calma, com atenção e reverência.</p><div className="study-card-actions"><button className="study-primary" onClick={() => { preparationDialog.current?.close(); setStarted(true); requestAnimationFrame(() => sectionHeading.current?.focus()); }}>Começar a aula <span aria-hidden="true">→</span></button><button className="study-secondary" onClick={() => preparationDialog.current?.close()}>Voltar</button></div></dialog>
     </div>
-  </AppShell>;
+  </FocusShell>;
 }

@@ -45,11 +45,11 @@ function harness(env = {}, transport = async () => { throw new Error("Unexpected
 test("availability requires the selected provider's private configuration and makes no paid requests", () => {
   for (const env of [
     {}, { OPENAI_API_KEY: "contract-key", GEMINI_API_KEY: "contract-key" },
-    { INJESSUS_VISION_PROVIDER: "openai", NEXT_PUBLIC_OPENAI_API_KEY: "public-must-not-work" },
-    { INJESSUS_VISION_PROVIDER: "openai", INJESSUS_MULTIMODAL_SERVICE_URL: "http://localhost:8000" },
+    { INJESSUS_ENABLE_PAID_VISION: "1", INJESSUS_VISION_PROVIDER: "openai", NEXT_PUBLIC_OPENAI_API_KEY: "public-must-not-work" },
+    { INJESSUS_ENABLE_PAID_VISION: "1", INJESSUS_VISION_PROVIDER: "openai", INJESSUS_MULTIMODAL_SERVICE_URL: "http://localhost:8000" },
     { INJESSUS_VISION_PROVIDER: "unknown", OPENAI_API_KEY: "contract-key", INJESSUS_MULTIMODAL_SERVICE_URL: "http://localhost:8000" },
-    { INJESSUS_VISION_PROVIDER: "gemini", GEMINI_API_KEY: "contract-key", INJESSUS_GEMINI_VISION_MODEL: "https://example.test/model" },
-    { INJESSUS_VISION_PROVIDER: "openai", OPENAI_API_KEY: "bad\nheader" }
+    { INJESSUS_ENABLE_PAID_VISION: "1", INJESSUS_VISION_PROVIDER: "gemini", GEMINI_API_KEY: "contract-key", INJESSUS_GEMINI_VISION_MODEL: "https://example.test/model" },
+    { INJESSUS_ENABLE_PAID_VISION: "1", INJESSUS_VISION_PROVIDER: "openai", OPENAI_API_KEY: "bad\nheader" }
   ]) {
     const app = harness(env);
     assert.deepEqual(app.helper.visionAvailability(), { available: false, provider: null, configuredModel: null });
@@ -61,7 +61,7 @@ test("availability requires the selected provider's private configuration and ma
 });
 
 test("OpenAI sends the selected photograph and grounded context once to the official endpoint", async () => {
-  const app = harness({ INJESSUS_VISION_PROVIDER: "openai", OPENAI_API_KEY: "contract-openai-private-key", GEMINI_API_KEY: "unused-contract-key" }, async () => jsonResponse(openaiResult));
+  const app = harness({ INJESSUS_ENABLE_PAID_VISION: "1", INJESSUS_VISION_PROVIDER: "openai", OPENAI_API_KEY: "contract-openai-private-key", GEMINI_API_KEY: "unused-contract-key" }, async () => jsonResponse(openaiResult));
   assert.deepEqual(app.helper.visionAvailability(), { available: true, provider: "openai", configuredModel: "gpt-6-luna" });
   const result = await app.helper.requestVision(input);
   assert.deepEqual(result, { answer: openaiResult.choices[0].message.content.trim(), model: openaiResult.model, provider: "openai" });
@@ -89,7 +89,7 @@ test("OpenAI sends the selected photograph and grounded context once to the offi
 });
 
 test("Gemini uses inline pixels, a header credential and the actual returned model version", async () => {
-  const app = harness({ INJESSUS_VISION_PROVIDER: "gemini", GEMINI_API_KEY: "contract-gemini-private-key", OPENAI_API_KEY: "unused-contract-key" }, async () => jsonResponse(geminiResult));
+  const app = harness({ INJESSUS_ENABLE_PAID_VISION: "1", INJESSUS_VISION_PROVIDER: "gemini", GEMINI_API_KEY: "contract-gemini-private-key", OPENAI_API_KEY: "unused-contract-key" }, async () => jsonResponse(geminiResult));
   assert.deepEqual(app.helper.visionAvailability(), { available: true, provider: "gemini", configuredModel: "gemini-3.8-flash" });
   assert.deepEqual(await app.helper.requestVision(input), { answer: geminiResult.candidates[0].content.parts[1].text, model: geminiResult.modelVersion, provider: "gemini" });
   assert.equal(app.calls.length, 1);
@@ -111,20 +111,20 @@ test("Gemini uses inline pixels, a header credential and the actual returned mod
 });
 
 test("private model overrides change only the selected model, never the provider endpoint", async () => {
-  const app = harness({ INJESSUS_VISION_PROVIDER: "openai", OPENAI_API_KEY: "contract-key", INJESSUS_OPENAI_VISION_MODEL: "contract-image-model" }, async () => jsonResponse({ ...openaiResult, model: "contract-image-model-actual" }));
+  const app = harness({ INJESSUS_ENABLE_PAID_VISION: "1", INJESSUS_VISION_PROVIDER: "openai", OPENAI_API_KEY: "contract-key", INJESSUS_OPENAI_VISION_MODEL: "contract-image-model" }, async () => jsonResponse({ ...openaiResult, model: "contract-image-model-actual" }));
   assert.equal((await app.helper.requestVision(input)).model, "contract-image-model-actual");
   assert.equal(app.calls[0].url, "https://api.openai.com/v1/chat/completions");
   assert.equal(app.calls[0].body.model, "contract-image-model");
   assert.equal(app.calls[0].body.reasoning_effort, undefined);
   assert.equal(app.calls[0].body.temperature, undefined);
-  const gemini = harness({ INJESSUS_VISION_PROVIDER: "gemini", GEMINI_API_KEY: "contract-key", INJESSUS_GEMINI_VISION_MODEL: "contract-image-model" }, async () => jsonResponse(geminiResult));
+  const gemini = harness({ INJESSUS_ENABLE_PAID_VISION: "1", INJESSUS_VISION_PROVIDER: "gemini", GEMINI_API_KEY: "contract-key", INJESSUS_GEMINI_VISION_MODEL: "contract-image-model" }, async () => jsonResponse(geminiResult));
   await gemini.helper.requestVision(input);
   assert.equal(gemini.calls[0].url, "https://generativelanguage.googleapis.com/v1beta/models/contract-image-model:generateContent");
   assert.equal(gemini.calls[0].body.generationConfig.thinkingConfig, undefined);
 });
 
 test("a missing selected key remains unavailable even when another provider and private backend are configured", async () => {
-  const app = harness({ INJESSUS_VISION_PROVIDER: "openai", GEMINI_API_KEY: "contract-key", INJESSUS_MULTIMODAL_SERVICE_URL: "http://localhost:8000" });
+  const app = harness({ INJESSUS_ENABLE_PAID_VISION: "1", INJESSUS_VISION_PROVIDER: "openai", GEMINI_API_KEY: "contract-key", INJESSUS_MULTIMODAL_SERVICE_URL: "http://localhost:8000" });
   await assert.rejects(app.helper.requestVision(input), error => error.code === "not_configured");
   assert.equal(app.calls.length, 0);
 });
@@ -135,7 +135,7 @@ test("upstream failure bodies and transport details are never returned and never
     async () => new Response(`${secret} raw error`, { status: 429 }),
     async () => { throw new Error(`${secret} request headers`); }
   ]) {
-    const app = harness({ INJESSUS_VISION_PROVIDER: "openai", OPENAI_API_KEY: "contract-key", GEMINI_API_KEY: "unused-contract-key", INJESSUS_MULTIMODAL_SERVICE_URL: "http://localhost:8000" }, transport);
+    const app = harness({ INJESSUS_ENABLE_PAID_VISION: "1", INJESSUS_VISION_PROVIDER: "openai", OPENAI_API_KEY: "contract-key", GEMINI_API_KEY: "unused-contract-key", INJESSUS_MULTIMODAL_SERVICE_URL: "http://localhost:8000" }, transport);
     await assert.rejects(app.helper.requestVision(input), error => error.code === "unavailable" && !error.message.includes(secret));
     assert.equal(app.calls.length, 1);
   }
@@ -154,7 +154,7 @@ test("invalid, truncated and oversized model replies are rejected instead of bec
     () => jsonResponse({ ...openaiResult, padding: "x".repeat(129 * 1024) })
   ];
   for (const response of responses) {
-    const app = harness({ INJESSUS_VISION_PROVIDER: "openai", OPENAI_API_KEY: "contract-key" }, async () => response());
+    const app = harness({ INJESSUS_ENABLE_PAID_VISION: "1", INJESSUS_VISION_PROVIDER: "openai", OPENAI_API_KEY: "contract-key" }, async () => response());
     await assert.rejects(app.helper.requestVision(input), error => error.code === "invalid_response");
     assert.equal(app.calls.length, 1);
   }
@@ -164,14 +164,14 @@ test("invalid, truncated and oversized model replies are rejected instead of bec
     { ...geminiResult, candidates: [{ finishReason: "MAX_TOKENS", content: { parts: [{ text: "Truncated" }] } }] },
     { ...geminiResult, candidates: [{ finishReason: "STOP", content: { parts: [{ thought: true, text: "Only private reasoning" }] } }] }
   ]) {
-    const app = harness({ INJESSUS_VISION_PROVIDER: "gemini", GEMINI_API_KEY: "contract-key" }, async () => jsonResponse(data));
+    const app = harness({ INJESSUS_ENABLE_PAID_VISION: "1", INJESSUS_VISION_PROVIDER: "gemini", GEMINI_API_KEY: "contract-key" }, async () => jsonResponse(data));
     await assert.rejects(app.helper.requestVision(input), error => error.code === "invalid_response");
   }
 });
 
 test("the response stream is cancelled at its byte limit", async () => {
   let cancelled = false;
-  const app = harness({ INJESSUS_VISION_PROVIDER: "openai", OPENAI_API_KEY: "contract-key" }, async () => new Response(new ReadableStream({
+  const app = harness({ INJESSUS_ENABLE_PAID_VISION: "1", INJESSUS_VISION_PROVIDER: "openai", OPENAI_API_KEY: "contract-key" }, async () => new Response(new ReadableStream({
     pull(controller) { controller.enqueue(new Uint8Array(64 * 1024)); },
     cancel() { cancelled = true; }
   }), { headers: { "content-type": "application/json" } }));
@@ -182,16 +182,16 @@ test("the response stream is cancelled at its byte limit", async () => {
 test("timeouts and caller cancellation return safe errors without retrying", async () => {
   const controller = new AbortController();
   controller.abort();
-  const app = harness({ INJESSUS_VISION_PROVIDER: "openai", OPENAI_API_KEY: "contract-key" }, async (_url, options) => { assert.equal(options.signal.aborted, true); throw new DOMException("upstream-private-detail", "AbortError"); });
+  const app = harness({ INJESSUS_ENABLE_PAID_VISION: "1", INJESSUS_VISION_PROVIDER: "openai", OPENAI_API_KEY: "contract-key" }, async (_url, options) => { assert.equal(options.signal.aborted, true); throw new DOMException("upstream-private-detail", "AbortError"); });
   await assert.rejects(app.helper.requestVision(input, controller.signal), error => error.code === "timeout" && !error.message.includes("upstream-private-detail"));
   assert.equal(app.calls.length, 1);
-  const timeout = harness({ INJESSUS_VISION_PROVIDER: "gemini", GEMINI_API_KEY: "contract-key" }, async () => { throw new DOMException("private detail", "TimeoutError"); });
+  const timeout = harness({ INJESSUS_ENABLE_PAID_VISION: "1", INJESSUS_VISION_PROVIDER: "gemini", GEMINI_API_KEY: "contract-key" }, async () => { throw new DOMException("private detail", "TimeoutError"); });
   await assert.rejects(timeout.helper.requestVision(input), error => error.code === "timeout");
   assert.equal(timeout.calls.length, 1);
 });
 
 test("invalid image, question and context limits are enforced before any billable request", async () => {
-  const app = harness({ INJESSUS_VISION_PROVIDER: "openai", OPENAI_API_KEY: "contract-key" });
+  const app = harness({ INJESSUS_ENABLE_PAID_VISION: "1", INJESSUS_VISION_PROVIDER: "openai", OPENAI_API_KEY: "contract-key" });
   for (const invalid of [
     { ...input, question: "x".repeat(501) }, { ...input, question: " " },
     { ...input, imageBase64: "https://example.test/photo.jpg" },
@@ -232,7 +232,7 @@ test("the vision route reports private configuration without probing and preserv
 });
 
 test("the vision route selects only its allowlisted local photograph and supplies the actual editorial sources", async () => {
-  const app = harness({ INJESSUS_VISION_PROVIDER: "openai", OPENAI_API_KEY: "contract-key" }, async () => jsonResponse(openaiResult));
+  const app = harness({ INJESSUS_ENABLE_PAID_VISION: "1", INJESSUS_VISION_PROVIDER: "openai", OPENAI_API_KEY: "contract-key" }, async () => jsonResponse(openaiResult));
   const exhibit = app.load("src/content/museum/index.ts").museumExhibits[0];
   const request = formRequest({ exhibitId: exhibit.id, question: input.question, imageUrl: "https://untrusted.example/photo", imageBase64: "personal-image-must-be-ignored", context: { title: "Fabricated source must be ignored" } });
   const response = await app.route().POST(request);
@@ -255,7 +255,7 @@ test("the vision route selects only its allowlisted local photograph and supplie
 });
 
 test("origin, form size, exhibit allowlist and image limits reject requests before provider calls", async () => {
-  const app = harness({ INJESSUS_VISION_PROVIDER: "gemini", GEMINI_API_KEY: "contract-key" });
+  const app = harness({ INJESSUS_ENABLE_PAID_VISION: "1", INJESSUS_VISION_PROVIDER: "gemini", GEMINI_API_KEY: "contract-key" });
   const exhibit = app.load("src/content/museum/index.ts").museumExhibits[0];
   for (const [request, status] of [
     [formRequest({ exhibitId: exhibit.id, question: input.question }, { Origin: "https://other.example.test" }), 403],
@@ -266,7 +266,19 @@ test("origin, form size, exhibit allowlist and image limits reject requests befo
   ]) assert.equal((await app.route().POST(request)).status, status);
   assert.equal(app.calls.length, 0);
   assert.equal(app.readPaths.length, 0);
-  const tooLarge = harness({ INJESSUS_VISION_PROVIDER: "gemini", GEMINI_API_KEY: "contract-key" }, undefined, Buffer.alloc(2 * 1024 * 1024 + 1));
+  const tooLarge = harness({ INJESSUS_ENABLE_PAID_VISION: "1", INJESSUS_VISION_PROVIDER: "gemini", GEMINI_API_KEY: "contract-key" }, undefined, Buffer.alloc(2 * 1024 * 1024 + 1));
   assert.equal((await tooLarge.route().POST(formRequest({ exhibitId: exhibit.id, question: input.question }))).status, 413);
   assert.equal(tooLarge.calls.length, 0);
+});
+
+
+test("commercial vision remains off without an explicit budget flag, including configured keys", async () => {
+  for (const provider of ["openai", "gemini"]) {
+    for (const enabled of [undefined, "", "0", "true"]) {
+      const app = harness({ INJESSUS_VISION_PROVIDER: provider, INJESSUS_ENABLE_PAID_VISION: enabled, OPENAI_API_KEY: "contract-key", GEMINI_API_KEY: "contract-key" });
+      assert.equal(app.helper.visionAvailability().available, false);
+      await assert.rejects(app.helper.requestVision(input), error => error.code === "not_configured");
+      assert.equal(app.calls.length, 0);
+    }
+  }
 });

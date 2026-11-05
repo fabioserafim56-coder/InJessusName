@@ -29,6 +29,10 @@ O navegador pode conservar esses modelos no seu cache. O app não grava consulta
 
 O OCR local usa worker, três variantes compatíveis do core WebAssembly e `por.traineddata.gz` hospedados em `/ocr/`; o aparelho escolhe uma variante do core. O modelo de idioma vem de `tessdata_fast`, revisão `65727574dfcd264acbb0c3e07860e4e9e9b22185`, Apache-2.0. Esse dado treinado de OCR é um asset distribuído, distinto dos pesos maiores mantidos fora do repositório. Seu cache de modelos em IndexedDB foi desativado. Os assets começam a ser preparados quando a pessoa pede o reconhecimento.
 
+## Consulta ao museu sem inferência paga
+
+A visita também oferece consulta local às fichas com Fuse.js: recupera parágrafos documentados e suas fontes; não produz explicação generativa, não autentica uma imagem e deixa explícito quando não encontra um trecho. Essa consulta funciona independentemente da disponibilidade do endpoint visual.
+
 ## Dados em cada fluxo
 
 - **Áudio narrado e cena:** arquivos estáticos; respostas da cena e escolhas da visita ficam em memória. A reprodução não necessita de gravação da pessoa.
@@ -42,7 +46,7 @@ O código do serviço Python não mantém banco de fotos ou perguntas nem grava 
 
 ## Visão com OpenAI ou Gemini
 
-O servidor Next.js pode chamar diretamente as APIs visuais da OpenAI ou do Gemini, sem instalar o serviço Python. A seleção exige `INJESSUS_VISION_PROVIDER=openai` ou `gemini` e a chave privada correspondente, `OPENAI_API_KEY` ou `GEMINI_API_KEY`. As substituições opcionais de modelo são `INJESSUS_OPENAI_VISION_MODEL` e `INJESSUS_GEMINI_VISION_MODEL`. Nenhuma dessas variáveis usa `NEXT_PUBLIC_`.
+O servidor Next.js pode chamar diretamente as APIs visuais da OpenAI ou do Gemini, sem instalar o serviço Python. Chamadas comerciais ficam desligadas por padrão. Sua ativação exige `INJESSUS_ENABLE_PAID_VISION=1`, além de `INJESSUS_VISION_PROVIDER=openai` ou `gemini` e a chave privada correspondente, `OPENAI_API_KEY` ou `GEMINI_API_KEY`. As substituições opcionais de modelo são `INJESSUS_OPENAI_VISION_MODEL` e `INJESSUS_GEMINI_VISION_MODEL`. Nenhuma dessas variáveis usa `NEXT_PUBLIC_`.
 
 Uma chave presente não ativa um provedor automaticamente. Se a seleção explícita não estiver utilizável, o app informa indisponibilidade; não tenta outro provedor. Sem seleção explícita, o caminho anterior de serviço privado continua disponível quando sua URL e autenticação são válidas. `INJESSUS_VISION_PROVIDER=qwen` seleciona esse mesmo serviço, cujo modelo efetivamente retornado deve ser identificado na resposta. O GET de disponibilidade verifica configuração, sem pagar por uma inferência nem comprovar acesso ao modelo.
 

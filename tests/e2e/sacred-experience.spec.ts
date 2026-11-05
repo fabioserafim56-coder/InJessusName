@@ -88,15 +88,21 @@ test("preferências opcionais acompanham a jornada visual sem definir fé nem gr
   });
   await page.emulateMedia({ reducedMotion: "reduce" });
   await page.goto("/comecar");
+  // The conversation focuses its first question after mounting. Wait for that
+  // real readiness signal before opening a native details on a touch viewport.
+  await expect(page.getByRole("heading", { name: "Em qual fase da vida você está?", exact: true })).toBeFocused();
   const preferences = page.locator("details.onboarding-visual-preferences");
   await expect(preferences).not.toHaveAttribute("open", "");
   await preferences.locator("summary").click();
   await preferences.getByRole("radio", { name: "Já estudo e quero aprofundar", exact: true }).check();
   await preferences.getByRole("radio", { name: "Representação feminina", exact: true }).check();
+  if (!isMobile) await page.getByRole("button", { name: "Abrir menu do aplicativo", exact: true }).click();
   const navigation = page.getByRole("navigation", { name: isMobile ? "Navegação no celular" : "Navegação principal", exact: true });
   await navigation.getByRole("link", { name: "Aprender", exact: true }).click();
+  await expect(page.locator(".app-shell")).toHaveCount(0);
+  await expect(page.locator("[data-focus-shell]")).toBeVisible();
   await expect(page.locator("[data-study-recommendation]")).toHaveAttribute("data-study-recommendation", "experienced");
-  await navigation.getByRole("link", { name: "Meu percurso", exact: true }).click();
+  await page.locator('.ls-beyond-grid a[href="/meu-percurso"]').click();
   const world = page.locator("[data-faith-world]");
   await expect(world).toHaveAttribute("data-faith-world-appearance", "feminine");
   await expect(world).toHaveAttribute("data-faith-world-company", "alone");

@@ -126,3 +126,31 @@
 }
 @media (prefers-reduced-motion: reduce) { .app-shell * { scroll-behavior: auto !important; transition: none !important; } }
 @media(max-width:380px){.app-topbar{padding-inline:14px;gap:8px}.app-topbar-actions{gap:6px}.app-global-search{min-width:36px;min-height:39px}.app-global-search svg{width:19px;height:19px}.app-topbar-subtitle{font-size:10px}.app-topbar-title{font-size:13px}.app-content{padding-inline:14px}}
+
+/* Content-first workspace. The menu opens on demand instead of consuming a rail. */
+.app-layout-wide .app-workspace { margin-left: 0; }
+.app-layout-wide .app-content { max-width: 1700px; padding-inline: clamp(20px, 3.5vw, 64px); }
+.app-layout-wide .app-topbar { padding-inline: clamp(18px, 3.5vw, 64px); }
+.app-layout-wide .app-mobile-mark { display: grid; place-items: center; width: 40px; height: 44px; border-radius: 12px; background: #17382e; color: #e6d29b; flex-shrink: 0; }
+.app-menu-trigger { display: grid; place-items: center; width: 44px; height: 44px; flex-shrink: 0; border: 1px solid #d7d9c9; border-radius: 12px; background: #fffdf6; color: #264b37; cursor: pointer; }
+.app-menu-trigger:hover { background: #e8edde; }
+.app-navigation-dialog { position: fixed; margin: 0; padding: 0; inset: 0 auto 0 0; width: min(355px, 92vw); height: 100dvh; max-height: 100dvh; max-width: 100vw; border: 0; color: #f5f2e7; background: transparent; overflow: visible; }
+.app-navigation-dialog::backdrop { background: #071e27aa; backdrop-filter: blur(5px); }
+.app-navigation-drawer { position: relative; height: 100%; overflow-y: auto; padding: 35px 22px 28px; background: radial-gradient(ellipse at 15% 0%, #36544888, transparent 50%), #102d25; box-shadow: 10px 0 65px #051b2855; scrollbar-color: #70816d transparent; scrollbar-width: thin; }
+.app-navigation-drawer .app-logo { padding-right: 30px; margin-bottom: 30px; }
+.app-menu-close { position: absolute; right: 12px; top: 12px; display: grid; place-items: center; width: 38px; height: 38px; border: 1px solid #8c9d7770; border-radius: 50%; background: #ffffff0a; color: #f6e4b8; cursor: pointer; }
+.app-navigation-drawer a:focus-visible, .app-navigation-drawer button:focus-visible { outline-color: #f2d49a; }
+.app-navigation-drawer .app-side-invitation { margin-block: 24px; }
+.app-navigation-drawer .app-side-nav { gap: 3px; }
+.app-navigation-drawer .app-side-nav > a { min-height: 49px; padding-block: 10px; }
+.app-no-script-nav { display: flex; flex-wrap: wrap; gap: 12px 20px; padding: 18px 30px; border-bottom: 1px solid #ddd7c4; }
+@media (max-width: 760px) {
+ .app-layout-wide .app-content { padding-inline: 18px; }
+ .app-layout-wide .app-topbar { padding-inline: 13px; gap: 8px; }
+ .app-layout-wide .app-topbar-location { gap: 9px; }
+ .app-layout-wide .app-mobile-mark { display: none; }
+ .app-layout-wide .app-topbar-title { font-size: 14px; }
+ .app-layout-wide .app-topbar-subtitle { font-size: 10px; }
+ .app-layout-wide .app-topbar-actions { gap: 6px; }
+ .app-layout-wide .app-global-search { min-width: 39px; }
+}

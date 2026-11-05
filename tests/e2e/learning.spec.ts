@@ -161,6 +161,14 @@ test("aula oferece exemplo, correção e retomada sem confundir ajuda com lembra
       // Both the question and the adjacent reader must hide the passage initially.
       await expect(page.locator(".study-passage")).toHaveCount(0);
       if (index === 6) {
+        // The optional focus-header reader also counts as consulting the text.
+        await page.getByRole("button", { name: "Bíblia deste encontro", exact: true }).click();
+        const reference = page.getByRole("dialog", { name: "A Palavra está por perto.", exact: true });
+        await expect(reference).toBeVisible();
+        await expect(reference.locator(".study-verse")).toHaveCount(3);
+        await reference.getByRole("button", { name: "Fechar passagem", exact: true }).click();
+        await expect(reference).not.toBeVisible();
+        await expect(page.locator(".study-passage")).toHaveCount(0);
         await card.getByRole("button", { name: "Reler a passagem", exact: true }).click();
         await expect(card.locator(".study-passage")).toHaveCount(1);
       }

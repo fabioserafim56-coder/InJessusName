@@ -37,3 +37,76 @@
 @media(max-width:760px){.faith-world{margin-bottom:31px}.fw-heading{display:block;margin-bottom:22px}.faith-world .fw-heading h2{font-size:38px;letter-spacing:-1px;line-height:1.13;margin:13px 0 17px}.fw-heading>div>p:last-child{font-size:16px;line-height:1.9}.fw-eyebrow{font-size:9px!important;letter-spacing:.9px}.fw-real-progress{display:flex;align-items:center;gap:11px;border-left:0;padding:0;margin-top:20px}.fw-real-progress>strong{font-size:27px;letter-spacing:-1px}.fw-real-progress>strong span{font-size:13px}.fw-real-progress>p{font-size:10px;line-height:1.6}.fw-real-progress>svg{width:20px!important;height:20px!important}.fw-world-frame{border-radius:17px}.fw-world-viewport{height:440px}.fw-world-topline{left:13px;right:13px;top:13px;gap:8px}.fw-world-topline>span{font-size:9px;gap:6px;padding:8px 10px}.fw-live-dot{width:4px;height:4px}.fw-world-topline button{font-size:9px;padding:8px;gap:5px;min-height:37px}.fw-world-topline button svg{width:16px!important;height:16px!important}.fw-land-caption{padding:15px 15px 18px}.fw-land-caption>span{font-size:21px;line-height:1.3}.fw-land-caption>p{font-size:10px;line-height:1.8;margin-top:7px}.fw-world-controls{padding:13px 12px;gap:8px}.fw-world-controls button{min-height:44px;padding:10px;gap:5px;font-size:10px}.fw-world-controls button svg{width:17px!important;height:17px!important}.fw-world-controls>p{font-size:10px}.fw-stop-details{margin:0 8px;padding:22px 17px;grid-template-columns:38px 1fr;gap:13px;border-radius:0 0 13px 13px}.fw-step-seal{width:38px;height:50px;font-size:22px}.faith-world .fw-stop-details h3{font-size:23px;line-height:1.35}.fw-stop-details .fw-eyebrow{font-size:8px!important;line-height:1.9;letter-spacing:.7px;margin-bottom:9px}.fw-stop-details>div>p:not(.fw-eyebrow){font-size:15px;line-height:1.85}.fw-stop-details>a{grid-column:1/-1;justify-self:stretch;margin-top:6px;font-size:13px;min-height:48px}.fw-practiced-message{font-size:11px;line-height:1.8;align-items:flex-start}.fw-practiced-message svg{flex-shrink:0;margin-top:2px}.fw-word-companion{font-size:18px;line-height:1.85;margin:24px 8px!important}.fw-word-companion>a{font-size:11px;display:block;margin-top:8px}.fw-personalization{gap:11px;margin-top:20px}.fw-customize>summary{font-size:12px;padding:17px;gap:9px}.fw-customize-body{padding:18px 17px}.fw-customize-body>p{font-size:15px}.fw-customize-fields label{font-size:12px}.fw-customize-fields select{font-size:15px}.fw-company-options>label{font-size:14px;min-height:46px}.fw-customize-body>p.fw-vocation-note{font-size:13px}.fw-customize-body>ul>li{font-size:14px}.fw-baptism{grid-template-columns:37px 1fr 15px;gap:12px;padding:22px 17px}.fw-baptism>span:first-child{width:37px;height:44px}.fw-baptism>span:first-child svg{width:23px!important;height:23px!important}.fw-baptism small{font-size:8px;letter-spacing:.8px;line-height:1.9}.fw-baptism strong{font-size:24px}.fw-baptism p{font-size:14px}.fw-baptism>svg:last-child{width:17px!important;height:17px!important}.fw-biblical-roots{padding-inline:17px}.fw-biblical-roots>summary{font-size:12px}.fw-biblical-roots>div{grid-template-columns:1fr;gap:24px}.fw-biblical-roots article strong{font-size:16px}.fw-biblical-roots article p{font-size:15px}.fw-biblical-roots article a{font-size:12px}.fw-biblical-roots>p{font-size:12px!important}}
 @media(max-width:350px){.fw-world-controls button span{display:none}.fw-world-controls button{min-width:44px;justify-content:center}.fw-world-topline>span{font-size:8px}.fw-world-topline button{font-size:8px;gap:4px;padding-inline:7px}.faith-world .fw-heading h2{font-size:34px}.fw-world-viewport{height:415px}.fw-customize>summary{font-size:11px}.fw-baptism{grid-template-columns:1fr}.fw-baptism>span:first-child{display:none}.fw-baptism>svg:last-child{display:none}}
 @media(prefers-reduced-motion:reduce){.faith-world *{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+
+/* The journey is a landscape first, with reading choices within reach. */
+.faith-world{margin-bottom:70px}
+.fw-heading{padding:14px 0 13px;gap:36px}
+.faith-world .fw-heading h2{font-size:clamp(42px,4.8vw,74px);letter-spacing:-.055em;line-height:1.08}
+.fw-heading>div>p:last-child{font-size:18px;line-height:1.85;max-width:750px}
+.fw-real-progress{padding-left:30px}
+.fw-real-progress>strong{font-size:50px}
+.fw-real-progress>p{font-size:12px}
+.fw-land-navigation{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px;margin:18px 0 20px}
+.fw-land-navigation>button{position:relative;display:grid;gap:9px;min-width:0;min-height:115px;text-align:left;border:1px solid #d2d9c3;border-radius:12px;background:#faf9ec;padding:18px 15px;color:#4b664c;cursor:pointer;transition:background .2s,transform .2s}
+.fw-land-navigation>button>span{font-size:11px;font-weight:650;color:#9d8857;letter-spacing:.13em}
+.fw-land-navigation>button>strong{font-family:Georgia,serif;font-size:19px;line-height:1.35;font-weight:400}
+.fw-land-navigation>button>small{font-size:10px;line-height:1.7;color:#7b856b}
+.fw-land-navigation>button[aria-pressed=true]{border-color:#345a43;background:#254e3b;color:#fcf2d6;box-shadow:0 5px 15px #35563b15}
+.fw-land-navigation>button[aria-pressed=true]>span{color:#dbc38b}
+.fw-land-navigation>button[aria-pressed=true]>small{color:#c1d0b5}
+.fw-land-navigation>button:hover{transform:translateY(-3px)}
+.fw-world-frame{border-radius:23px;box-shadow:0 24px 60px #23482f18;border-color:#b7c5ac}
+.fw-world-viewport{height:clamp(560px,49vw,790px)}
+.fw-world-topline{left:28px;right:28px;top:24px}
+.fw-world-topline>span{padding:11px 17px;font-size:12px;letter-spacing:.02em;background:#f5f4e4ee}
+.fw-world-topline button{min-height:45px;padding:12px 16px;font-size:12px;background:#fbfaeced;border-radius:10px}
+.fw-art-land{filter:drop-shadow(0 15px 13px #1d473a16)}
+.fw-world-art .fw-stop-name{font-size:16px;fill:#3d5e3d;stroke:#e7dfbd}
+.fw-world-art .fw-stop-number{font-size:18px;fill:#35533c}
+.fw-land-caption{padding:21px 25px 22px;background:#e5e8d2;border-top-color:#afbf9e6b}
+.fw-land-caption>span{font-size:28px;color:#2f553c}
+.fw-land-caption>p{font-size:14px;margin-top:7px}
+.fw-world-controls{padding:18px 24px;background:#f4f4e7}
+.fw-world-controls button{font-size:13px;min-height:47px;padding:12px 17px}
+.fw-world-controls>p{font-size:13px}
+.fw-stop-details{grid-template-columns:65px minmax(0,1fr) auto;gap:22px;margin:0 23px;padding:32px;background:#fffcf1;border-color:#d1d4bb;border-radius:0 0 21px 21px}
+.fw-step-seal{width:64px;height:78px;font-size:32px}
+.faith-world .fw-stop-details h3{font-family:Georgia,serif;font-weight:400;font-size:clamp(30px,3vw,43px);letter-spacing:-.045em;line-height:1.2}
+.fw-stop-details .fw-eyebrow{font-size:10px!important}
+.fw-stop-details>div>p:not(.fw-eyebrow){font-size:17px;line-height:1.85;max-width:850px}
+.fw-stop-details>a{font-size:14px;padding:16px 22px;min-height:54px;border-radius:11px}
+.fw-open-scriptures{grid-column:2/-1;display:flex;flex-wrap:wrap;gap:10px;align-items:center;border-top:1px solid #e1dfcd;padding-top:19px;min-width:0}
+.fw-open-scriptures>span{font-size:11px;font-weight:700;letter-spacing:.04em;color:#8a7949;margin-right:4px}
+.fw-open-scriptures>a{display:inline-flex;align-items:center;gap:8px;padding:9px 12px;min-height:40px;font-size:12px;line-height:1.7;border:1px solid #d6d9c3;border-radius:7px;color:#3b5f42;background:#f0f1e3;text-decoration:none}
+.fw-stage-context{grid-column:2/-1;min-width:0;width:100%;border-top:1px solid #e1dfcd;padding-top:17px}
+.fw-stage-context>summary{font-size:13px;font-weight:650;line-height:1.8;color:#63734f;cursor:pointer}
+.fw-stage-context>p{font-size:16px;line-height:1.9;color:#617054;margin:17px 0 20px}
+.fw-stage-context>div{padding:20px 0;border-top:1px solid #e4e1ce}
+.fw-stage-context small{display:block;font-size:9px;letter-spacing:.1em;font-weight:700;line-height:1.8;color:#9a8453;margin-bottom:8px}
+.fw-stage-context>div>a{font-size:18px;line-height:1.7;font-weight:600;color:#3f6244;text-decoration:none}
+.fw-stage-context>div>p{font-size:15px;line-height:1.9;margin:8px 0 0;color:#6d795f}
+.fw-region-itinerary{display:grid;grid-template-columns:minmax(220px,.6fr) minmax(0,1.4fr);gap:35px;align-items:center;margin:38px 0 0;padding:30px;border:1px solid #d8d9c2;background:#f0f1e3;border-radius:17px}
+.fw-region-itinerary h3{font-family:Georgia,serif;font-size:30px;line-height:1.2;font-weight:400;margin:0 0 14px;letter-spacing:-.035em}
+.fw-region-itinerary>div>p:not(.fw-eyebrow){font-size:14px;line-height:1.8;color:#748065;margin:0}
+.fw-region-itinerary>ol{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;list-style:none;margin:0;padding:0}
+.fw-region-itinerary li{min-width:0}
+.fw-region-itinerary button{width:100%;display:grid;grid-template-columns:35px minmax(0,1fr) 18px;gap:5px 10px;align-items:center;text-align:left;min-height:99px;padding:17px 14px;background:#fffdf1;border:1px solid #d2d7bd;border-radius:10px;color:#3c5b3e;cursor:pointer}
+.fw-region-itinerary button>span{grid-row:1/3;font-family:Georgia,serif;font-size:23px;color:#9e8a50}
+.fw-region-itinerary button>strong{font-size:14px;font-weight:650;line-height:1.5}
+.fw-region-itinerary button>small{grid-column:2;font-size:10px;line-height:1.7;color:#7d866b}
+.fw-region-itinerary button>svg{grid-column:3;grid-row:1/3;color:#958551}
+.fw-region-itinerary button[aria-pressed=true]{background:#e1e8cf;border-color:#8aa278;box-shadow:inset 0 0 0 1px #8aa278}
+.fw-word-companion{font-size:23px;max-width:900px;line-height:1.8;margin:33px auto!important}
+.fw-word-companion>a{font-size:12px}
+.fw-personalization{grid-template-columns:1fr 1fr;gap:19px;margin-top:35px}
+.fw-customize>summary{padding:23px;font-size:14px}
+.fw-baptism{padding:30px;margin-top:22px}
+.fw-baptism strong{font-size:31px}
+.fw-baptism p{font-size:16px;line-height:1.85;max-width:900px}
+@media(max-width:1100px){.fw-land-navigation{grid-template-columns:repeat(3,minmax(0,1fr))}.fw-land-navigation>button{min-height:105px}.fw-world-viewport{height:590px}.fw-personalization{grid-template-columns:1fr}.fw-region-itinerary{grid-template-columns:minmax(0,1fr);gap:22px}.fw-region-itinerary>div{max-width:600px}.fw-stop-details>a{grid-column:2;justify-self:start}.fw-open-scriptures,.fw-stage-context{grid-column:2/-1}}
+@media(max-width:760px){
+ .faith-world{margin-bottom:45px}.fw-heading{padding:0;margin-bottom:23px}.faith-world .fw-heading h2{font-size:clamp(38px,9vw,56px);letter-spacing:-.045em}.fw-heading>div>p:last-child{font-size:17px}.fw-real-progress{padding:0;margin-top:21px}.fw-real-progress>strong{font-size:31px}.fw-real-progress>p{font-size:11px}.fw-land-navigation{display:flex;overflow-x:auto;scroll-snap-type:x proximity;padding:0 0 12px;gap:10px;margin:0 0 15px;scrollbar-width:thin}.fw-land-navigation>button{flex:0 0 155px;scroll-snap-align:start;min-height:116px;padding:16px}.fw-land-navigation>button>strong{font-size:20px}.fw-land-navigation>button>small{font-size:10px}.fw-world-frame{border-radius:16px}.fw-world-viewport{height:510px}.fw-world-topline{left:12px;right:12px;top:13px;align-items:flex-start}.fw-world-topline>span{font-size:9px;padding:10px;line-height:1.6;max-width:48%}.fw-world-topline button{padding:10px 9px;font-size:9px;gap:6px;min-height:40px;max-width:49%;line-height:1.6}.fw-land-caption{padding:20px 17px}.fw-land-caption>span{font-size:25px;line-height:1.3}.fw-land-caption>p{font-size:12px;line-height:1.8}.fw-world-controls{padding:14px 12px;gap:8px}.fw-world-controls button{font-size:10px;padding:10px;min-height:44px}.fw-world-controls>p{font-size:11px}.fw-stop-details{margin:0 7px;padding:25px 19px;grid-template-columns:42px minmax(0,1fr);gap:17px 14px}.fw-step-seal{width:42px;height:56px;font-size:24px}.faith-world .fw-stop-details h3{font-size:29px}.fw-stop-details .fw-eyebrow{font-size:9px!important}.fw-stop-details>div>p:not(.fw-eyebrow){font-size:16px}.fw-stop-details>a{grid-column:1/-1;justify-self:stretch;min-height:53px;padding:14px 16px}.fw-open-scriptures{grid-column:1/-1;gap:8px;align-items:stretch}.fw-open-scriptures>span{width:100%;margin-bottom:4px}.fw-open-scriptures>a{font-size:11px;padding:9px 10px}.fw-stage-context{grid-column:1/-1}.fw-stage-context>summary{font-size:12px}.fw-stage-context>p{font-size:16px}.fw-stage-context>div>a{font-size:17px}.fw-stage-context>div>p{font-size:15px}.fw-region-itinerary{padding:24px 18px;border-radius:14px;margin-top:25px;gap:22px}.fw-region-itinerary h3{font-size:29px}.fw-region-itinerary>div>p:not(.fw-eyebrow){font-size:14px}.fw-region-itinerary>ol{grid-template-columns:minmax(0,1fr);gap:10px}.fw-region-itinerary button{min-height:87px;padding:16px}.fw-region-itinerary button>strong{font-size:16px}.fw-region-itinerary button>small{font-size:11px}.fw-word-companion{font-size:21px;margin:28px 8px!important}.fw-customize>summary{padding:20px 17px;font-size:13px}.fw-baptism{padding:25px 18px}.fw-baptism strong{font-size:27px}.fw-baptism p{font-size:16px}
+}
+@media(max-width:350px){.fw-world-viewport{height:480px}.fw-world-controls button span{display:none}.fw-world-controls button{min-width:44px}.fw-world-topline>span{font-size:8px}.fw-world-topline button{font-size:8px}.fw-stop-details{padding-inline:15px}.faith-world .fw-stop-details h3{font-size:27px}}
+@media(prefers-reduced-motion:reduce){.fw-land-navigation>button{transition:none}.fw-land-navigation>button:hover{transform:none}}
+@media(max-width:760px){.faith-world[data-faith-world-mode="overview"] .fw-world-viewport{height:280px}.faith-world[data-faith-world-mode="overview"] .fw-world-art{padding-top:35px}}

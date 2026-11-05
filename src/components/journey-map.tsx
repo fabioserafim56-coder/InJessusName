@@ -17,7 +17,7 @@ const trail = positions.reduce((path, position, index) => {
 
 export function JourneyMap({ currentStageId }: { currentStageId?: string }) {
   return <section className="journey-map" data-journey-map aria-labelledby="journey-map-title">
-    <FaithWorld stages={curriculumStages.map(stage => ({ id: stage.id, number: stage.number, title: stage.title, era: stage.era, objective: stage.objective }))} currentStageId={currentStageId} />
+    <FaithWorld stages={curriculumStages.map(stage => ({ id: stage.id, number: stage.number, title: stage.title, era: stage.era, objective: stage.objective, context: stage.context, connection: stage.connection, passages: stage.passages }))} currentStageId={currentStageId} />
     <header className="jm-heading"><div><p className="jm-eyebrow"><MapTrifold size={19} aria-hidden="true" /> UM CAMINHO COM SENTIDO</p><h2 id="journey-map-title">Da criação à esperança que permanece.</h2><p>Cada parada prepara a próxima. Abra uma etapa, leia a passagem em seu contexto e experimente explicar o que compreendeu.</p></div><div className="jm-key"><span><strong>24</strong> etapas de leitura</span><span><strong>66</strong> livros no índice</span></div></header>
     <p className="jm-exploration-note"><Compass size={19} aria-hidden="true" /> Este é o mapa do conteúdo disponível. A ordem conecta as leituras; você pode explorar qualquer parada. As práticas não são uma avaliação da sua fé.</p>
     <JourneySessionSummary total={curriculumStages.length} />

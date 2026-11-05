@@ -21,7 +21,7 @@ export default async function HistoryEntityPage({ params }: { params: Promise<{ 
   const entity = church ?? person!;
   const connections = getConnections(entityId);
   const allSources = [...new Set([...entity.sourceIds, ...(church?.events.flatMap(event => event.sourceIds) ?? []), ...connections.flatMap(edge => edge.sourceIds)])];
-  return <AppShell active="churches" title="Igrejas e personalidades" subtitle="Uma ficha para ler, relacionar e conferir"><article className="history-page history-detail-page">
+  return <AppShell active="churches" title="Igrejas e personalidades" subtitle="Uma ficha para ler, relacionar e conferir" layout="wide"><article className="history-page history-detail-page">
     <Link className="history-back-link" href="/igrejas">← Voltar à rede de conexões</Link>
     <header className="history-detail-hero"><p className="history-eyebrow">{church ? `${church.family} · MARCO NO BRASIL: ${church.year}` : person!.role}</p><h1>{entity.name}</h1><p>{entity.summary}</p>{person && <span className="history-detail-period">{person.period}</span>}</header>
     <HistoryPhotoGallery entityId={entityId} />

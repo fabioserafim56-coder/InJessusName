@@ -12,7 +12,7 @@ Estas variáveis pertencem ao aplicativo Next.js. Configure somente o provedor e
 | Gemini | `INJESSUS_VISION_PROVIDER=gemini` e `GEMINI_API_KEY` | `gemini-3.8-flash`; substituição em `INJESSUS_GEMINI_VISION_MODEL` |
 | Serviço privado | `INJESSUS_VISION_PROVIDER=qwen` e `INJESSUS_MULTIMODAL_SERVICE_URL`; `INJESSUS_MULTIMODAL_SERVICE_TOKEN` obrigatório fora do loopback | Configuração própria do [serviço multimodal](../services/multimodal/README.md); a resposta identifica o modelo efetivamente utilizado |
 
-Uma chave isolada não escolhe um provedor. Com `INJESSUS_VISION_PROVIDER` vazio, apenas o serviço privado anterior pode ser utilizado, se estiver configurado corretamente. Um provedor selecionado sem configuração válida fica indisponível; o app não troca para outro provedor automaticamente.
+**Padrão sem consumo de API:** `INJESSUS_ENABLE_PAID_VISION=0` (ou ausente) bloqueia chamadas comerciais mesmo quando uma chave está configurada. O aprendizado, os jogos e a consulta às fichas continuam disponíveis. Para ativar OpenAI ou Gemini, o operador precisa definir explicitamente `INJESSUS_ENABLE_PAID_VISION=1` e estabelecer orçamento e limites na conta do provedor. Uma chave isolada não escolhe um provedor. Com `INJESSUS_VISION_PROVIDER` vazio, apenas o serviço privado anterior pode ser utilizado, se estiver configurado corretamente. Um provedor selecionado sem configuração válida fica indisponível; o app não troca para outro provedor automaticamente.
 
 OpenAI e Gemini são APIs comerciais com acesso, limites e cobrança próprios. Não são anunciadas como modelos abertos nem como execução de Qwen. O modelo escolhido precisa aceitar imagem e texto nos contratos suportados pelo adaptador. Os padrões foram conferidos nas páginas oficiais de [GPT-6 Luna](https://developers.openai.com/api/docs/models/gpt-6-luna) e [Gemini 3.8 Flash](https://ai.google.dev/gemini-api/docs/models/gemini-3.8-flash). Confirme a disponibilidade do modelo na conta antes de ativar o recurso.
 
@@ -25,9 +25,9 @@ Para desenvolvimento, copie os nomes necessários de `.env.example` para `.env.l
 ## Ativar na Vercel
 
 1. Abra o projeto que publica `in-jessus-name.vercel.app` e entre em **Settings → Environment Variables**.
-2. Adicione `INJESSUS_VISION_PROVIDER` com `openai` ou `gemini` e a variável da nova chave correspondente. Se necessário, adicione a substituição de modelo da tabela. Selecione o ambiente **Production**; adicione **Preview** somente se também quiser habilitar chamadas nessa versão.
+2. Somente se houver orçamento para chamadas pagas, adicione `INJESSUS_ENABLE_PAID_VISION=1`, `INJESSUS_VISION_PROVIDER` com `openai` ou `gemini` e a variável da nova chave correspondente. Se necessário, adicione a substituição de modelo da tabela. Selecione o ambiente **Production**; adicione **Preview** somente se também quiser habilitar chamadas nessa versão.
 3. Salve as variáveis. Em **Deployments**, publique a versão que contém os adaptadores ou use **Redeploy** na versão adequada para carregar a nova configuração.
-4. Quando a publicação terminar, abra `/explorar?modo=museu`, escolha uma peça e confira a indicação do provedor antes de enviar uma pergunta curta. O envio real pode gerar cobrança. Confira uma resposta, o modelo informado e as fontes da ficha.
+4. Quando a publicação terminar, abra `/explorar?modo=museu`, escolha uma peça e confira o aviso de envio ao serviço externo antes de enviar uma pergunta curta. O envio real pode gerar cobrança. Confira uma resposta, o modelo informado e as fontes da ficha.
 
 `GET /api/multimodal/vision` informa apenas a disponibilidade da configuração. Ele não revela a chave, não faz inferência paga e não comprova saldo, acesso ao modelo ou sucesso de uma pergunta. A ativação pública só está conferida depois de uma chamada real na implantação correspondente.
 

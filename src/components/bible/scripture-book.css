@@ -49,3 +49,34 @@
 
 /* Paper and controls follow the reader's deliberately chosen appearance. */
 .br-book-dialog .scripture-book{color:var(--bible-ink)}.br-book-dialog .sb-paper,.br-book-dialog .sb-paper.--right{background:var(--bible-paper);background:linear-gradient(90deg,color-mix(in srgb,var(--bible-paper) 85%,#665a3d) 0,var(--bible-paper) 5%,var(--bible-paper) 94%,color-mix(in srgb,var(--bible-paper) 92%,#665a3d));color:var(--bible-ink)}.br-book-dialog .sb-paper-text p.sb-verse{color:var(--bible-ink)}.br-book-dialog .sb-paper-header,.br-book-dialog .sb-paper-footer,.br-book-dialog .sb-verse sup{color:var(--bible-gold)}.br-book-dialog .sb-highlight{background:var(--bible-highlight);box-shadow:0 0 0 3px var(--bible-highlight)}.br-book-dialog .sb-leaf{border-color:var(--bible-line)}.br-book-dialog .sb-reading-toolbar,.br-book-dialog .sb-reading-toolbar>p span,.br-book-dialog .sb-book-controls p,.br-book-dialog .sb-mode-note,.br-book-dialog .sb-end-leaf span{color:var(--bible-muted)}.br-book-dialog .sb-reading-toolbar button,.br-book-dialog .sb-book-controls button{background:var(--bible-button);color:var(--bible-ink);border-color:var(--bible-line)}.br-book-dialog .sb-mode-note button{color:var(--bible-ink);border-color:var(--bible-line)}.br-book-dialog .sb-book-controls button:not(:disabled):hover,.br-book-dialog .sb-reading-toolbar button:hover:not(:disabled){background:var(--bible-surface)}.br-book-dialog .sb-loading{color:var(--bible-muted)}.br-book-dialog[data-bible-theme=noturno] .sb-leather-cover{background:repeating-linear-gradient(112deg,#ffffff02 0,#ffffff02 1px,#0000000a 2px,#0000000a 3px),radial-gradient(ellipse at 45% 22%,#243528,#101c14 70%,#0d1710)}
+
+/* The book uses the entire available reading desk, including on a phone. */
+.br-book-dialog .scripture-book{display:flex;flex:1;flex-direction:column;min-height:390px;gap:0;padding-top:2px}
+.br-book-dialog .sb-reading-toolbar{flex-shrink:0;margin:0 0 9px;min-height:44px}
+.br-book-dialog .sb-reading-toolbar>p{font-size:11px;letter-spacing:.3px}
+.br-book-dialog .sb-reading-toolbar button{width:42px;min-height:42px;border-radius:5px}
+.br-book-dialog .sb-book-stage{flex:1;min-height:240px;height:auto;padding:6px 0}
+.br-book-dialog .sb-book-stage::before{width:75%;height:23px;bottom:3px;opacity:.55}
+.br-book-dialog .sb-engine-host{position:absolute;inset:6px 0;height:calc(100% - 12px)}
+.br-book-dialog .sb-engine-mount{margin-inline:auto}
+.br-book-dialog .sb-paper{box-shadow:inset 3px 0 12px #3c34200a,0 2px 5px #20261712}
+.br-book-dialog .sb-paper-text{line-height:1.6}
+.br-book-dialog .sb-paper-header{font-size:9px;letter-spacing:1.8px}
+.br-book-dialog .sb-paper-footer{font-size:9px}
+.br-book-dialog .sb-book-controls{flex-shrink:0;max-width:1320px;width:100%;margin:12px auto 0;gap:18px;min-height:46px}
+.br-book-dialog .sb-book-controls button{padding:10px 19px;min-height:44px;font-size:12px;gap:13px}
+.br-book-dialog .sb-book-controls p{font-size:11px}
+.br-book-dialog .sb-mode-note{flex-shrink:0;max-width:1320px;width:100%;margin:3px auto 0;min-height:31px;font-size:10px}
+.br-book-dialog .sb-mode-note button{font-size:11px;min-height:31px;padding-block:5px}
+@media(max-width:760px){
+ .br-book-dialog .scripture-book{min-height:360px}
+ .br-book-dialog .sb-reading-toolbar{min-height:42px;margin-bottom:8px}
+ .br-book-dialog .sb-reading-toolbar>p{font-size:10px}
+ .br-book-dialog .sb-reading-toolbar button{width:42px;min-height:42px}
+ .br-book-dialog .sb-book-controls{gap:8px;margin-top:10px}
+ .br-book-dialog .sb-book-controls button{min-height:44px;padding:9px 12px;font-size:11px;gap:8px}
+ .br-book-dialog .sb-book-controls p{font-size:10px}
+ .br-book-dialog .sb-mode-note{justify-content:center;min-height:31px;margin-top:2px}
+ .br-book-dialog .sb-mode-note button{font-size:10px}
+}
+@media(max-width:350px){.br-book-dialog .sb-book-controls button{padding-inline:9px;gap:6px;font-size:10px}.br-book-dialog .sb-book-controls p{font-size:9px}.br-book-dialog .sb-reading-toolbar>p{max-width:none}}

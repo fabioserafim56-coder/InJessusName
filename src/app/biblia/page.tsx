@@ -47,5 +47,5 @@ export default async function BiblePage({ searchParams }: {
   const searchQuery = typeof query.busca === "string" ? query.busca : "";
   const searchPage = typeof query.pagina === "string" && /^[1-9]\d{0,5}$/.test(query.pagina) ? Number(query.pagina) : 1;
   const search = churchMode ? null : getBibleSearch(searchQuery, searchPage);
-  return <BibleReader key={`${bookId}-${chapterNumber}-${churchMode}-${initialBookOpen}`} books={books} chapter={chapter} highlightedVerse={highlightedVerse} churchMode={churchMode} initialBookOpen={initialBookOpen} initialTheme={initialTheme} initialFontSize={initialFontSize} verseCounts={verseCounts} searchPanel={search ? <BibleSearch search={search} /> : null} />;
+  return <BibleReader key={`${bookId}-${chapterNumber}-${churchMode}-${initialBookOpen}`} books={books} chapter={chapter} highlightedVerse={highlightedVerse} churchMode={churchMode} initialBookOpen={initialBookOpen} initialTheme={initialTheme} initialFontSize={initialFontSize} verseCounts={verseCounts} searchActive={Boolean(searchQuery)} searchPanel={search ? <BibleSearch search={search} /> : null} />;
 }

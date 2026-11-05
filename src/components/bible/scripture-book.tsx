@@ -129,7 +129,7 @@ export function ScriptureBook({ bookName, chapterNumber, verses, fontSize, highl
     if (!host || !container) return;
     let disposed = false;
     let frame = 0;
-    let measuredWidth = 0;
+    let measuredSize = "";
     let rebuild = 0;
     const media = window.matchMedia("(prefers-reduced-motion: reduce)");
     reduced.current = media.matches;
@@ -143,8 +143,10 @@ export function ScriptureBook({ bookName, chapterNumber, verses, fontSize, highl
       if (disposed || thisBuild !== rebuild) return;
       const totalWidth = Math.floor(container!.clientWidth);
       const spread = totalWidth >= 790;
-      const width = Math.min(490, spread ? Math.floor(totalWidth / 2) - 9 : totalWidth - 8);
-      const height = Math.min(760, Math.max(280, Math.floor(window.innerHeight - 330)));
+      const width = Math.min(650, spread ? Math.floor(totalWidth / 2) - 9 : totalWidth - 8);
+      // The reading stage receives the space left by the small, real controls.
+      // Measure it instead of guessing how much of the viewport a modal occupies.
+      const height = Math.max(240, Math.floor(container!.clientHeight) - 12);
       container!.style.setProperty("--sb-page-height", `${height}px`);
       container!.style.setProperty("--sb-page-width", `${width}px`);
       const padding = width < 330 ? 22 : width < 400 ? 29 : 39;
@@ -198,7 +200,7 @@ export function ScriptureBook({ bookName, chapterNumber, verses, fontSize, highl
       mount.className = "sb-engine-mount";
       mount.append(...leaves);
       host!.append(mount);
-      const flip = new Flip(mount, { width, height, size: fixedSize, minWidth: width, maxWidth: width, minHeight: height, maxHeight: height, showCover: true, usePortrait: !spread, autoSize: false, maxShadowOpacity: .22, drawShadow: true, flippingTime: media.matches ? 1 : 900, startZIndex: 1, mobileScrollSupport: true, useMouseEvents: !media.matches, swipeDistance: 55, showPageCorners: false, disableFlipByClick: true, clickEventForward: false });
+      const flip = new Flip(mount, { width, height, size: fixedSize, minWidth: width, maxWidth: width, minHeight: height, maxHeight: height, showCover: true, usePortrait: !spread, autoSize: false, maxShadowOpacity: .16, drawShadow: true, flippingTime: media.matches ? 1 : 520, startZIndex: 1, mobileScrollSupport: true, useMouseEvents: !media.matches, swipeDistance: 55, showPageCorners: false, disableFlipByClick: true, clickEventForward: false });
       engine.current = flip;
       let opening = true;
       let restoringPosition = true;
@@ -241,7 +243,9 @@ export function ScriptureBook({ bookName, chapterNumber, verses, fontSize, highl
     };
     const observer = new ResizeObserver((entries) => {
       const width = Math.floor(entries[0]?.contentRect.width ?? 0);
-      if (width > 0 && width !== measuredWidth) { measuredWidth = width; load(); }
+      const height = Math.floor(entries[0]?.contentRect.height ?? 0);
+      const size = `${width}:${height}`;
+      if (width > 0 && height > 0 && size !== measuredSize) { measuredSize = size; load(); }
     });
     observer.observe(container);
     return () => {

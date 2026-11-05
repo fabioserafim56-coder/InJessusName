@@ -24,20 +24,27 @@ test("painel de estudo carrega com navegação e entrada real na primeira aula",
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
 });
 
-test("navegação de app funciona por teclado e mantém a área atual identificada", async ({ page, isMobile }) => {
+test("menu funciona por teclado e abre os ambientes de estudo e Bíblia sem barras laterais", async ({ page }) => {
   await page.goto("/");
-  const navigation = page.getByRole("navigation", { name: isMobile ? "Navegação no celular" : "Navegação principal", exact: true });
-  const learn = navigation.getByRole("link", { name: "Aprender", exact: true });
-  await expect(navigation).toBeVisible();
+  const trigger = page.getByRole("button", { name: "Abrir menu do aplicativo", exact: true });
+  await trigger.focus();
+  await trigger.press("Enter");
+  const menu = page.getByRole("dialog", { name: "Menu do aplicativo", exact: true });
+  await expect(menu).toBeVisible();
+  const navigation = menu.getByRole("navigation", { name: "Navegação principal", exact: true });
   await expect(navigation.getByRole("link", { name: "Início", exact: true })).toHaveAttribute("aria-current", "page");
+  const learn = navigation.getByRole("link", { name: "Aprender", exact: true });
   await learn.focus();
   await expect(learn).toBeFocused();
   await learn.press("Enter");
   await expect(page).toHaveURL(/\/aprender$/);
-  await expect(learn).toHaveAttribute("aria-current", "page");
+  await expect(page.locator("[data-focus-shell]")).toBeVisible();
+  await expect(page.locator(".app-sidebar, .app-bottom-nav")).toHaveCount(0);
+  await page.getByRole("link", { name: "Início", exact: true }).click();
+  await trigger.click();
   await navigation.getByRole("link", { name: "Bíblia", exact: true }).click();
   await expect(page).toHaveURL(/\/biblia$/);
-  await expect(navigation.getByRole("link", { name: "Bíblia", exact: true })).toHaveAttribute("aria-current", "page");
+  await expect(page.locator(".app-sidebar, .app-bottom-nav")).toHaveCount(0);
   await expect(page.getByLabel("Livro", { exact: true })).toHaveValue("JHN");
   await expect(page.getByRole("heading", { name: "João 1", exact: true })).toBeVisible();
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);

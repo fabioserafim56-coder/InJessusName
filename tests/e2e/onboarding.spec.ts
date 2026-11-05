@@ -99,7 +99,9 @@ test("adulto cria conta, salva, revisa e revoga seu percurso com persistência r
   await page.getByRole("checkbox", { name: "Declaro que tenho 18 anos ou mais." }).check();
   await page.getByRole("button", { name: "Criar minha conta", exact: true }).click();
   await expect(page).toHaveURL((url) => url.pathname === "/comecar" && url.search === "");
-  await expect(page.getByRole("link", { name: "Meu percurso", exact: true })).toBeVisible();
+  await page.getByRole("button", { name: "Abrir menu do aplicativo", exact: true }).click();
+  await expect(page.getByRole("dialog", { name: "Menu do aplicativo", exact: true }).getByRole("link", { name: "Meu percurso", exact: true })).toBeVisible();
+  await page.keyboard.press("Escape");
 
   const sessionCookies = (await context.cookies()).filter((cookie) => cookie.name.startsWith("sb-"));
   expect(sessionCookies.length).toBeGreaterThan(0);

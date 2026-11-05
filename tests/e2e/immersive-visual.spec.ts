@@ -50,6 +50,12 @@ async function openBook(page: Page) {
   await trigger.click();
   const dialog = page.getByRole("dialog", { name: "Sua Bíblia aberta", exact: true });
   await expect(dialog).toBeVisible();
+  const viewport = page.viewportSize()!;
+  const bounds = await dialog.boundingBox();
+  expect(bounds!.x).toBe(0);
+  expect(bounds!.y).toBe(0);
+  expect(bounds!.width).toBe(viewport.width);
+  expect(bounds!.height).toBe(viewport.height);
   const host = dialog.locator("[data-book-ready]");
   await expect(host).toHaveAttribute("data-book-ready", "true", { timeout: 15000 });
   await expect(host).toHaveAttribute("data-book-state", "read");
@@ -169,6 +175,17 @@ test("Bíblia abre o capítulo integral como livro, vira páginas e devolve o fo
     Object.defineProperty(window, "__injessusPendingAnimationFrames", { value: () => pending.size });
   });
   await page.goto("/biblia?livro=ACT&capitulo=17");
+  await expect(page.locator(".app-shell, .app-sidebar")).toHaveCount(0);
+  await expect(page.locator("[data-focus-shell]")).toBeVisible();
+  await expect(page.getByRole("link", { name: "Voltar", exact: true })).toHaveAttribute("href", "/");
+  const readerBounds = await page.locator(".br-reading").boundingBox();
+  expect(readerBounds!.width).toBeGreaterThan(page.viewportSize()!.width * .82);
+  const search = page.locator("details.br-search-drawer");
+  await expect(search).not.toHaveAttribute("open", "");
+  await search.locator("summary").click();
+  await expect(search.getByRole("searchbox", { name: "Palavra, expressão ou tema", exact: true })).toBeVisible();
+  await search.locator("summary").click();
+  await expect(search).not.toHaveAttribute("open", "");
   const pendingFrames = () => page.evaluate(() => (
     window as typeof window & { __injessusPendingAnimationFrames: () => number }
   ).__injessusPendingAnimationFrames());

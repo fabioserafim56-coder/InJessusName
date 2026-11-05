@@ -1,0 +1,56 @@
+{
+  "collection": "Cenas para participar da leitura",
+  "createdAt": "2026-11-04",
+  "generator": "OpenAI image_gen",
+  "status": "Ilustrações narrativas geradas por IA. Não são fotografias, retratos autenticados ou evidência arqueológica. Detalhes visuais interpretativos devem ser conferidos no texto bíblico; não substituem a passagem nem constituem diagramas de contagem.",
+  "files": [
+    {
+      "path": "/visuals/scenes/joao-6-oferta.png",
+      "storyId": "multiplicacao-dos-paes",
+      "sceneIndex": 1,
+      "reference": "João 6:8–10",
+      "description": "Um menino apresenta cinco pães e dois peixes; composição interpretativa.",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 3473160,
+      "sha256": "0d3a51b817237fe1e61398717c6d1e5e1c3fea93ca06e8363cb745a078c4a23b",
+      "copiedWithoutPixelEdits": true
+    },
+    {
+      "path": "/visuals/scenes/joao-6-recolher.png",
+      "storyId": "multiplicacao-dos-paes",
+      "sceneIndex": 2,
+      "reference": "João 6:12–13",
+      "description": "Discípulos recolhem os pães que sobraram; a composição não é um diagrama para contar cestos.",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 3942775,
+      "sha256": "4ee1770a32ef7ebc2ee272f7e5c9220a9fa13c7888609b0448454587aeee24cb",
+      "copiedWithoutPixelEdits": true
+    },
+    {
+      "path": "/visuals/scenes/marcos-4-calmaria.png",
+      "storyId": "jesus-acalma-a-tempestade",
+      "sceneIndex": 2,
+      "reference": "Marcos 4:39–41",
+      "description": "Jesus e os discípulos no barco depois da calmaria; interpretação artística.",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 3136678,
+      "sha256": "a68e532fd591dcb80d8ed8f452df92a870d86b21c3bf7b718d2be5140cb13c3e",
+      "copiedWithoutPixelEdits": true
+    },
+    {
+      "path": "/visuals/scenes/lucas-10-cuidado.png",
+      "storyId": "bom-samaritano",
+      "sceneIndex": 2,
+      "reference": "Lucas 10:33–35",
+      "description": "O samaritano cuida do viajante; representação da parábola.",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 3614203,
+      "sha256": "369cc604387701d67e535d2bd583ab3934f8b9ffb66f65ff98f94f243bf34482",
+      "copiedWithoutPixelEdits": true
+    }
+  ]
+}

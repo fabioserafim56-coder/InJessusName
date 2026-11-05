@@ -25,7 +25,7 @@ export function LearningPathView({
   currentStageId?: string;
 }) {
   return (
-    <AppShell active="profile" title={saved ? "Meu percurso" : "Conhecer meu percurso"} subtitle="Um caminho que respeita a sua história"><div className={`learning-path-page lp-${path.experience}`}>
+    <AppShell layout="wide" active="profile" title={saved ? "Meu percurso" : "Conhecer meu percurso"} subtitle="Um caminho que respeita a sua história"><div className={`learning-path-page lp-${path.experience}`}>
       <div id="learning-path-content" className="lp-container">
         <section className="lp-hero" aria-labelledby="learning-path-title">
           <div className="lp-hero-copy">

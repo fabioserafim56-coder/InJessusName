@@ -1,7 +1,7 @@
 import { test, expect, type Locator, type Page } from "@playwright/test";
 import { additionalLessons, type CourseActivity } from "../../src/content/courses/introductory-course";
 
-test("catálogo oferece seis estudos reais e mantém a navegação disponível no celular", async ({ page, request, isMobile }) => {
+test("catálogo oferece seis estudos reais em tela de foco com saída para o início", async ({ page, request }) => {
   await page.goto("/aprender");
   const expectedPaths = ["/aprender/primeiros-passos", ...additionalLessons.map((lesson) => `/aprender/${lesson.id}`)].sort();
   expect(expectedPaths).toHaveLength(6);
@@ -16,16 +16,13 @@ test("catálogo oferece seis estudos reais e mantém a navegação disponível n
   }
   expect((await request.get("/aprender/aula-que-nao-existe")).status()).toBe(404);
 
-  const navigation = page.getByRole("navigation", { name: isMobile ? "Navegação no celular" : "Navegação principal", exact: true });
-  await expect(navigation.getByRole("link", { name: "Aprender", exact: true })).toHaveAttribute("aria-current", "page");
-  if (isMobile) {
-    await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
-    await expect(navigation).toBeInViewport();
-    const bounds = await navigation.boundingBox();
-    expect(bounds).not.toBeNull();
-    expect(bounds!.y + bounds!.height).toBeLessThanOrEqual(page.viewportSize()!.height + 1);
-  }
+  await expect(page.locator("[data-focus-shell]")).toBeVisible();
+  await expect(page.locator(".app-sidebar, .app-bottom-nav")).toHaveCount(0);
+  await expect(page.locator(".focus-back")).toHaveAttribute("href", "/");
+  await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+  await page.getByRole("banner").getByRole("link", { name: "Início", exact: true }).click();
+  await expect(page).toHaveURL("/");
 });
 
 test("leitura usa texto amplo e contrastante com atribuição completa em painel sob demanda", async ({ page }) => {
@@ -181,14 +178,15 @@ test("novo estudo ensina em etapas e combina escolha, classificação e ordenaç
   await expect(page.locator("[data-guided-lessons-completed]")).toHaveAttribute("data-guided-lessons-completed", "1");
   await expect(page.locator(`[data-sanctuary-lesson="${lesson.id}"] .ls-lesson-practiced`)).toBeVisible();
   await expect(page.locator('[data-sanctuary-lesson="primeiros-passos"] .ls-lesson-practiced')).toHaveCount(0);
-  const navigation = page.getByRole("navigation", { name: isMobile ? "Navegação no celular" : "Navegação principal", exact: true });
-  await navigation.getByRole("link", { name: "Meu percurso", exact: true }).click();
+  await page.locator('.ls-beyond a[href="/meu-percurso"]').click();
   await expect(page.locator("[data-world-avatar]")).toHaveAttribute("data-avatar-lessons", "1");
   await expect(page.locator("[data-world-avatar]")).toHaveAttribute("data-avatar-practices", "0");
   await page.locator("details.fw-marks > summary").click();
   await expect(page.locator("details.fw-marks")).toContainText("Uma luz para o caminho");
   await page.reload();
   await expect(page.locator("[data-world-avatar]")).toHaveAttribute("data-avatar-lessons", "0");
+  if (!isMobile) await page.getByRole("button", { name: "Abrir menu do aplicativo", exact: true }).click();
+  const navigation = page.getByRole("navigation", { name: isMobile ? "Navegação no celular" : "Navegação principal", exact: true });
   await navigation.getByRole("link", { name: "Aprender", exact: true }).click();
   await expect(page.locator("[data-guided-lessons-completed]")).toHaveCount(0);
   await page.locator(`[data-sanctuary-lesson="${lesson.id}"] .ls-direct-lesson`).click();

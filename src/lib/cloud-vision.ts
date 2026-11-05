@@ -18,6 +18,8 @@ function configuration(): VisionConfiguration | null {
   // Keys alone never choose a paid provider, and a selected provider never falls back.
   if (!provider || provider === "qwen") return isMultimodalServiceConfigured() ? { provider: "qwen" } : null;
   if (provider !== "openai" && provider !== "gemini") return null;
+  // Commercial calls require a separate budget decision, even if a key exists.
+  if (process.env.INJESSUS_ENABLE_PAID_VISION !== "1") return null;
   const key = (provider === "openai" ? process.env.OPENAI_API_KEY : process.env.GEMINI_API_KEY)?.trim();
   const override = provider === "openai" ? process.env.INJESSUS_OPENAI_VISION_MODEL : process.env.INJESSUS_GEMINI_VISION_MODEL;
   const model = override?.trim() || defaultModels[provider];
