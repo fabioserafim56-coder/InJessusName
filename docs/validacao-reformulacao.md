@@ -15,6 +15,8 @@ As verificações de navegador incluem os três jogos com erro/tentativa/conclus
 
 A consulta editorial do museu usa Fuse e textos/fontes reais; seis testes cobrem relevância, ausência de resultados, acentos e preservação dos parágrafos publicados. Os contratos das APIs comerciais usam fixtures de transporte e não estabelecem qualidade ou acesso a modelos pagos. Nenhuma inferência comercial foi executada para esta publicação.
 
+A revisão final corrigiu um link do rodapé dos jogos para a fonte e a licença oficiais da edição. Os seis casos dos jogos foram reexecutados, incluindo os créditos e os destinos corretos; todos passaram. A compilação foi repetida após essa correção e passou.
+
 O rastreamento da função de visão permaneceu em aproximadamente 2,06 MB, com apenas as quatro fotografias do museu entre os arquivos públicos. As novas ilustrações são assets estáticos, sem inclusão de todo o diretório público nessa função.
 
 Os relatórios e capturas de execução ficam em arquivos temporários do ambiente; os testes e scripts reproduzíveis estão versionados. A verificação no endereço público é uma etapa separada após a publicação. A revisão bíblica especializada, a gravação humana autorizada PT-BR e um estudo de eficácia com alunos continuam pendentes, conforme os documentos de conteúdo e produto.

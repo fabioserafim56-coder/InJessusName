@@ -1,4 +1,5 @@
 import { expect, test, type Page } from "@playwright/test";
+import edition from "../../src/content/bible/edition.json";
 
 async function openGame(page: Page, game: "caminho" | "conexoes" | "sinais") {
   await page.goto(`/jogos?jogo=${game}`);
@@ -41,6 +42,11 @@ test("the Samaritan path explains a retry and completes only in the biblical seq
   await page.locator(".g-reading-columns .g-scripture summary").click();
   await expect(page.locator(".g-verse").first()).toContainText("Porém um certo samaritano");
   await expect(page.locator('a[href="/biblia?livro=LUK&capitulo=10&versiculo=33#versiculo-33"]')).toBeVisible();
+  const credits = page.locator(".g-footer details");
+  await credits.locator("summary").click();
+  await expect(credits).toContainText(edition.attribution);
+  await expect(credits.getByRole("link", { name: "Fonte da edição", exact: false })).toHaveAttribute("href", edition.sourceUrl);
+  await expect(credits.getByRole("link", { name: "Licença de uso da Bíblia", exact: false })).toHaveAttribute("href", edition.licenseUrl);
   await assertNoOverflow(page);
   await page.reload();
   await expect(page.locator('[data-games-ready="true"]')).toBeVisible();

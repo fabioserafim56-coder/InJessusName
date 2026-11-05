@@ -160,7 +160,7 @@ function BreadGame({ reading, onComplete }: { reading: GameReading; onComplete: 
   </section>;
 }
 
-export function GamesHub({ readings, initialGame = "caminho", attribution }: { readings: GameReadings; initialGame?: GameId; attribution: string }) {
+export function GamesHub({ readings, initialGame = "caminho", attribution, sourceUrl, licenseUrl }: { readings: GameReadings; initialGame?: GameId; attribution: string; sourceUrl: string; licenseUrl: string }) {
   const [current, setCurrent] = useState<GameId>(initialGame);
   const [completed, setCompleted] = useState<GameId[]>([]);
   const ready = useSyncExternalStore(subscribe, () => true, () => false);
@@ -175,6 +175,6 @@ export function GamesHub({ readings, initialGame = "caminho", attribution }: { r
       <div className="g-experience-wrap" id="game-experience" ref={experience} tabIndex={-1} key={current} data-active-game={current}>{current === "caminho" ? <CompassionGame reading={readings.samaritano} onComplete={() => complete("caminho")} /> : current === "conexoes" ? <ConnectionsGame readings={readings} onComplete={() => complete("conexoes")} /> : <BreadGame reading={readings.paes} onComplete={() => complete("sinais")} />}</div>
     </fieldset>
     <noscript><div className="g-noscript"><h2>Estude as passagens na Bíblia</h2><p>Os tabuleiros precisam de JavaScript. A leitura bíblica continua disponível nestes links:</p>{Object.values(readings).map(reading => <Link key={reading.id} href={gameBibleLink(reading)}>{reading.label} ↗</Link>)}</div></noscript>
-    <footer className="g-footer"><div><Symbol name="heart" /><p><strong>O que você pratica aqui</strong><span>{selectedGame.skill}. Os desafios verificam compreensão do texto; o cuidado com a sua fé vai além de qualquer atividade.</span></p></div><details><summary>Sobre os textos, as imagens e esta visita</summary><p>As instruções e explicações são comentários editoriais. Os versículos identificados como texto bíblico preservam a redação da Bíblia Livre, edição TR de fevereiro de 2018. As cenas são ilustrações artísticas; não são fotografias dos acontecimentos nem fontes para contar objetos.</p><p>O registro de práticas fica apenas na memória desta página e desaparece ao recarregar. As atividades não avaliam fé, santidade ou inteligência.</p><p>{attribution}</p><Link href="/fontes">Consultar fontes e direitos ↗</Link></details></footer>
+    <footer className="g-footer"><div><Symbol name="heart" /><p><strong>O que você pratica aqui</strong><span>{selectedGame.skill}. Os desafios verificam compreensão do texto; o cuidado com a sua fé vai além de qualquer atividade.</span></p></div><details><summary>Sobre os textos, as imagens e esta visita</summary><p>As instruções e explicações são comentários editoriais. Os versículos identificados como texto bíblico preservam a redação da Bíblia Livre, edição TR de fevereiro de 2018. As cenas são ilustrações artísticas; não são fotografias dos acontecimentos nem fontes para contar objetos.</p><p>O registro de práticas fica apenas na memória desta página e desaparece ao recarregar. As atividades não avaliam fé, santidade ou inteligência.</p><p>{attribution}</p><a href={sourceUrl} target="_blank" rel="noreferrer">Fonte da edição ↗</a><a href={licenseUrl} target="_blank" rel="noreferrer">Licença de uso da Bíblia ↗</a></details></footer>
   </div>;
 }

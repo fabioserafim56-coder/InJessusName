@@ -16,6 +16,6 @@ export default async function GamesPage({ searchParams }: { searchParams: Promis
   })) as GameReadings;
   const edition = getBibleEdition();
   return <FocusShell title="Jogos na Palavra" subtitle="Conhecer, praticar e guardar no coração" backHref="/aprender" backLabel="Voltar aos estudos" mainClassName="games-main">
-    <GamesHub readings={readings} initialGame={initialGame} attribution={edition.attribution} />
+    <GamesHub readings={readings} initialGame={initialGame} attribution={edition.attribution} sourceUrl={edition.sourceUrl} licenseUrl={edition.licenseUrl} />
   </FocusShell>;
 }
