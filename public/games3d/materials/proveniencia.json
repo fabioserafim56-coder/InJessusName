@@ -1,0 +1,281 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-11-06",
+  "collection": "Materiais do caminho da compaixão",
+  "description": "Texturas fotográficas de materiais contemporâneos para a interpretação artística do jogo. Não são fotografias de personagens, construções bíblicas ou sítios arqueológicos autenticados. Arquivos finais preparados uma vez e servidos pelo próprio aplicativo.",
+  "provider": "Poly Haven",
+  "license": {
+    "id": "CC0-1.0",
+    "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "evidenceUrl": "https://polyhaven.com/license",
+    "textPath": "/games3d/materials/CC0-1.0.txt",
+    "textSourceUrl": "https://creativecommons.org/publicdomain/zero/1.0/legalcode.txt",
+    "textSha256": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499"
+  },
+  "materials": [
+    {
+      "id": "ground",
+      "title": "Sandy Gravel",
+      "purpose": "Chão arenoso e cascalho da estrada e do vale.",
+      "sourceAssetId": "sandy_gravel",
+      "sourcePageUrl": "https://polyhaven.com/a/sandy_gravel",
+      "infoApiUrl": "https://api.polyhaven.com/info/sandy_gravel",
+      "filesApiUrl": "https://api.polyhaven.com/files/sandy_gravel",
+      "providerFilesHash": "1894a5e023f0213e3ec037d22633960cde00176a",
+      "authors": [
+        "Charlotte Baglioni"
+      ],
+      "license": "CC0-1.0"
+    },
+    {
+      "id": "stone",
+      "title": "Old Sandstone 02",
+      "purpose": "Superfície de pedra da hospedaria e da ponte; aparência artística, sem autenticação arqueológica.",
+      "sourceAssetId": "old_sandstone_02",
+      "sourcePageUrl": "https://polyhaven.com/a/old_sandstone_02",
+      "infoApiUrl": "https://api.polyhaven.com/info/old_sandstone_02",
+      "filesApiUrl": "https://api.polyhaven.com/files/old_sandstone_02",
+      "providerFilesHash": "a336dea63c883feba28f6b0ca94a8795b6b8ed80",
+      "authors": [
+        "Dimitrios Savva"
+      ],
+      "license": "CC0-1.0"
+    },
+    {
+      "id": "wood",
+      "title": "Rough Wood",
+      "purpose": "Madeira dos vãos, vigas, porta e móveis da hospedaria.",
+      "sourceAssetId": "rough_wood",
+      "sourcePageUrl": "https://polyhaven.com/a/rough_wood",
+      "infoApiUrl": "https://api.polyhaven.com/info/rough_wood",
+      "filesApiUrl": "https://api.polyhaven.com/files/rough_wood",
+      "providerFilesHash": "2d89c64601e620069e9caaf3ede0d7494d430138",
+      "authors": [
+        "Rob Tuytel"
+      ],
+      "license": "CC0-1.0"
+    }
+  ],
+  "files": [
+    {
+      "material": "ground",
+      "role": "color",
+      "src": "/games3d/materials/ground-color.webp",
+      "format": "webp",
+      "width": 1024,
+      "height": 1024,
+      "bytes": 297520,
+      "sha256": "917464d812f30f3bd9d3b24faf6e207a0e632e5d537289e5f128fe869fb031fb",
+      "runtimeColorSpace": "SRGBColorSpace",
+      "source": {
+        "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/sandy_gravel/sandy_gravel_diff_1k.jpg",
+        "bytes": 795227,
+        "officialMd5": "9808ac7c155cff11314a4fe200255c50",
+        "sha256": "38829e669dc246e86b7ce94c4141485709988450b13f82cfc4bc6067dd69ed48",
+        "format": "jpeg",
+        "width": 1024,
+        "height": 1024
+      },
+      "transformation": {
+        "processor": "sharp 0.35.5",
+        "resize": {
+          "width": 1024,
+          "height": 1024,
+          "kernel": "lanczos3"
+        },
+        "encoding": {
+          "format": "webp",
+          "quality": 90,
+          "lossless": false,
+          "effort": 6
+        },
+        "metadata": "Stripped by the delivery encoder; no content-generating or restoration model used."
+      }
+    },
+    {
+      "material": "ground",
+      "role": "normal",
+      "src": "/games3d/materials/ground-normal.webp",
+      "format": "webp",
+      "width": 512,
+      "height": 512,
+      "bytes": 158154,
+      "sha256": "bbfddfad2d71806899d3348bdc32391bbc22a8184a9777f2ef440eb4119bc73a",
+      "runtimeColorSpace": "NoColorSpace",
+      "normalConvention": "OpenGL tangent-space",
+      "source": {
+        "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/sandy_gravel/sandy_gravel_nor_gl_1k.jpg",
+        "bytes": 1159620,
+        "officialMd5": "df94f818fdfab5afdaf11add554f51e7",
+        "sha256": "f2a4c48f31cd5ad5e2b0488e89c94d284c5a2acd4367bec49a5f48f832b7e3da",
+        "format": "jpeg",
+        "width": 1024,
+        "height": 1024
+      },
+      "transformation": {
+        "processor": "sharp 0.35.5",
+        "resize": {
+          "width": 512,
+          "height": 512,
+          "kernel": "lanczos3"
+        },
+        "encoding": {
+          "format": "webp",
+          "quality": 100,
+          "lossless": false,
+          "effort": 6
+        },
+        "metadata": "Stripped by the delivery encoder; no content-generating or restoration model used."
+      }
+    },
+    {
+      "material": "stone",
+      "role": "color",
+      "src": "/games3d/materials/stone-color.webp",
+      "format": "webp",
+      "width": 1024,
+      "height": 1024,
+      "bytes": 242994,
+      "sha256": "2393d3168b4162c7442c338a55de1aa43e363fd922da47d629f9d3a3466d83f5",
+      "runtimeColorSpace": "SRGBColorSpace",
+      "source": {
+        "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/old_sandstone_02/old_sandstone_02_diff_1k.jpg",
+        "bytes": 747284,
+        "officialMd5": "45235f7669057df7cdbb24cac89beede",
+        "sha256": "a58111224570bb33eba3c348bc7e3207255b5efb07f9cf274209c56b71d6825c",
+        "format": "jpeg",
+        "width": 1024,
+        "height": 1024
+      },
+      "transformation": {
+        "processor": "sharp 0.35.5",
+        "resize": {
+          "width": 1024,
+          "height": 1024,
+          "kernel": "lanczos3"
+        },
+        "encoding": {
+          "format": "webp",
+          "quality": 90,
+          "lossless": false,
+          "effort": 6
+        },
+        "metadata": "Stripped by the delivery encoder; no content-generating or restoration model used."
+      }
+    },
+    {
+      "material": "stone",
+      "role": "normal",
+      "src": "/games3d/materials/stone-normal.webp",
+      "format": "webp",
+      "width": 512,
+      "height": 512,
+      "bytes": 164950,
+      "sha256": "77eeb6b10c9ef3377838551903806db1ebb954b0941aa391c14ee8545f4faa87",
+      "runtimeColorSpace": "NoColorSpace",
+      "normalConvention": "OpenGL tangent-space",
+      "source": {
+        "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/old_sandstone_02/old_sandstone_02_nor_gl_1k.jpg",
+        "bytes": 1031253,
+        "officialMd5": "896ccd3108b5376f3ffa9f141e2086fb",
+        "sha256": "4dcaa85f9de33d77cec4e89e6f63cd1afecb81e436104c1b7eb4b151fe0b7f75",
+        "format": "jpeg",
+        "width": 1024,
+        "height": 1024
+      },
+      "transformation": {
+        "processor": "sharp 0.35.5",
+        "resize": {
+          "width": 512,
+          "height": 512,
+          "kernel": "lanczos3"
+        },
+        "encoding": {
+          "format": "webp",
+          "quality": 100,
+          "lossless": false,
+          "effort": 6
+        },
+        "metadata": "Stripped by the delivery encoder; no content-generating or restoration model used."
+      }
+    },
+    {
+      "material": "wood",
+      "role": "color",
+      "src": "/games3d/materials/wood-color.webp",
+      "format": "webp",
+      "width": 1024,
+      "height": 1024,
+      "bytes": 321018,
+      "sha256": "fc98e63fb164e84f2cfa47769c0fc63c7e889ac76d8bce31c8b49a0b353a492f",
+      "runtimeColorSpace": "SRGBColorSpace",
+      "source": {
+        "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/rough_wood/rough_wood_diff_1k.jpg",
+        "bytes": 567074,
+        "officialMd5": "92d4b3dd46bab95248f5a7680b7882e7",
+        "sha256": "abc46d8e3163d911220f4ec3a4043b68d2b0c6d750513f80871211acfefb2a98",
+        "format": "jpeg",
+        "width": 1024,
+        "height": 1024
+      },
+      "transformation": {
+        "processor": "sharp 0.35.5",
+        "resize": {
+          "width": 1024,
+          "height": 1024,
+          "kernel": "lanczos3"
+        },
+        "encoding": {
+          "format": "webp",
+          "quality": 90,
+          "lossless": false,
+          "effort": 6
+        },
+        "metadata": "Stripped by the delivery encoder; no content-generating or restoration model used."
+      }
+    },
+    {
+      "material": "wood",
+      "role": "normal",
+      "src": "/games3d/materials/wood-normal.webp",
+      "format": "webp",
+      "width": 512,
+      "height": 512,
+      "bytes": 136536,
+      "sha256": "b3efc20920e5ae024cc9da8e873bedbce993e56511e5c26e9f96c9dc2216ed0a",
+      "runtimeColorSpace": "NoColorSpace",
+      "normalConvention": "OpenGL tangent-space",
+      "source": {
+        "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/rough_wood/rough_wood_nor_gl_1k.jpg",
+        "bytes": 790334,
+        "officialMd5": "1c9829c9023f74c74eaeba28e56e5144",
+        "sha256": "3d1c6f098b66d93e52071b41834dd14a424d8cd2f7c4130c62dc062acfa65011",
+        "format": "jpeg",
+        "width": 1024,
+        "height": 1024
+      },
+      "transformation": {
+        "processor": "sharp 0.35.5",
+        "resize": {
+          "width": 512,
+          "height": 512,
+          "kernel": "lanczos3"
+        },
+        "encoding": {
+          "format": "webp",
+          "quality": 100,
+          "lossless": false,
+          "effort": 6
+        },
+        "metadata": "Stripped by the delivery encoder; no content-generating or restoration model used."
+      }
+    }
+  ],
+  "totalTextureBytes": 1321172,
+  "notes": [
+    "Official upstream JPEG byte lengths and MD5 checksums were verified before conversion; source and output SHA-256 hashes are recorded.",
+    "Albedo maps are 1024px; normal maps are 512px OpenGL tangent-space. Both use documented lossy WebP delivery encoding; quality100 does not mean lossless.",
+    "Only the downloaded material textures are CC0; Poly Haven website text, logos and branding are separate.",
+    "No AI model weights or inference are included. Runtime requests should go only to these self-hosted paths after game entry."
+  ]
+}

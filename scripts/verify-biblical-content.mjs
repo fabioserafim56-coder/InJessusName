@@ -50,7 +50,8 @@ const datasets = [
   ["museu", readJson("src/content/museum/exhibits.json")],
   ["narracoes", readJson("src/content/narration/passages.json")],
   ["jogos", gameData.gameReferences],
-  ["jornada-3d", [journey3d.missionReference, ...journey3d.missionStages.map(stage => stage.reference)]],
+  ["jornada-3d", [journey3d.missionReference, ...journey3d.missionStages.map(stage => stage.reference),
+    ...journey3d.careSteps.map(step => step.reference), ...journey3d.explorationLandmarks.map(landmark => landmark.reference)]],
   ["guias-dos-livros", readJson("src/content/book-guides/guides.json").flatMap(guide =>
     guide.readings.map(reading => ({ ...reading, book: guide.id })))],
 ];
@@ -114,6 +115,29 @@ for (const stage of journey3d.missionStages) {
   if (stage.reference.bookId !== "LUK" || stage.reference.chapter !== 10 || stage.reference.start < 25 || stage.reference.end > 37) errors.push(`Jornada 3D ${stage.id}: gesto fora da passagem-base.`);
 }
 for (const [name, point] of Object.entries(journey3d.worldPoints)) if (!Number.isFinite(point.x) || !Number.isFinite(point.z) || point.x < journey3d.worldBounds.minX || point.x > journey3d.worldBounds.maxX || point.z < journey3d.worldBounds.minZ || point.z > journey3d.worldBounds.maxZ) errors.push(`Jornada 3D ${name}: ponto fora do cenário.`);
+const materialProvenance = readJson("public/games3d/materials/proveniencia.json");
+let journeyMaterialBytes = 0;
+for (const asset of materialProvenance.files) {
+  if (!/^\/games3d\/materials\/(ground|stone|wood)-(color|normal)\.webp$/.test(asset.src)) {
+    errors.push(`Material 3D: caminho inválido (${asset.src}).`);
+    continue;
+  }
+  const bytes = readFileSync(path.join(root, "public", asset.src));
+  journeyMaterialBytes += bytes.length;
+  if (bytes.length !== asset.bytes || createHash("sha256").update(bytes).digest("hex") !== asset.sha256) errors.push(`Material 3D ${asset.src}: bytes/hash divergentes.`);
+}
+for (const material of materialProvenance.materials) {
+  if (material.license !== "CC0-1.0" || ["color", "normal"].some(role => materialProvenance.files.filter(asset => asset.material === material.id && asset.role === role).length !== 1)) errors.push(`Material 3D ${material.id}: licença ou par de mapas divergente.`);
+}
+if (journeyMaterialBytes !== materialProvenance.totalTextureBytes || materialProvenance.files.length !== 6) errors.push("Materiais 3D: total divergente do manifesto.");
+const materialLicense = readFileSync(path.join(root, "public", materialProvenance.license.textPath));
+if (createHash("sha256").update(materialLicense).digest("hex") !== materialProvenance.license.textSha256) errors.push("Materiais 3D: texto da licença CC0 divergente.");
+for (const preview of readJson("public/games3d/proveniencia.json").files) {
+  if (!/^\/games3d\/[a-z0-9-]+\.png$/.test(preview.path)) { errors.push("Prévia 3D: caminho inválido."); continue; }
+  const bytes = readFileSync(path.join(root, "public", preview.path));
+  if (bytes.length !== preview.bytes || createHash("sha256").update(bytes).digest("hex") !== preview.sha256 ||
+    bytes.subarray(0, 8).toString("hex") !== "89504e470d0a1a0a" || bytes.readUInt32BE(16) !== preview.width || bytes.readUInt32BE(20) !== preview.height) errors.push("Prévia 3D: integridade/dimensões divergentes da captura documentada.");
+}
 for (const story of stories) if (story.scenes.length !== 4) errors.push(`História ${story.id}: não tem quatro cenas.`);
 if (new Set(stories.map(story => story.id)).size !== stories.length) errors.push("IDs de histórias repetidos.");
 
@@ -167,9 +191,12 @@ const result = {
   twoDimensionalGames: gameData.games.length,
   threeDimensionalJourneys: 1,
   journeyObjectives: journey3d.missionStages.length,
+  journeyCareGestures: journey3d.careSteps.length,
+  journeyOptionalReadings: journey3d.explorationLandmarks.length,
+  journeyMaterialBytes,
   illustrations,
   errors,
-  limits: "Confere referências estruturadas, existência do texto, integridade do ZIP, vínculos das atividades e proveniência técnica das novas ilustrações. Não interpreta teologia, não certifica pedagogia, não verifica cada referência em prosa nem a fidelidade visual das imagens.",
+  limits: "Confere referências estruturadas, existência do texto, integridade do ZIP, vínculos das atividades e proveniência técnica das novas ilustrações e dos materiais 3D. Não interpreta teologia, não certifica pedagogia, não verifica cada referência em prosa nem a fidelidade visual das imagens.",
 };
 if (process.argv.includes("--json")) console.log(JSON.stringify(result, null, 2));
 else {

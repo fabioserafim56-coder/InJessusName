@@ -47,3 +47,5 @@ O [README oficial do Emscripten](https://github.com/emscripten-core/emscripten#r
 Para um eventual acervo externo, o [Kenney Nature Kit](https://kenney.nl/assets/nature-kit) declara **CC0**, e o [suporte do autor](https://kenney.nl/support) confirma uso comercial dos assets desse catálogo. Isso o torna um candidato possível a elementos naturais, sujeito à direção de arte e ao contexto da cena. A pesquisa não significa que esse pack foi incorporado: os arquivos efetivamente usados precisam ter origem, licença e transformações registradas.
 
 Esta nota documenta pesquisa e decisão técnica. A implementação, seus assets reais e os resultados de testes devem ser apresentados a partir dos arquivos e medições da entrega, sem transformar ferramentas apenas pesquisadas em funcionalidades supostamente instaladas.
+
+Na ampliação de 06/11/2026, o motor continua sendo Three.js. O jogo incorpora de fato seis mapas fotográficos de três materiais Poly Haven sob CC0, servidos localmente. [A origem e a preparação dos arquivos](jogo3d-assets.md) estão registradas. Não foram incluídos novos motores, pesos de modelos ou os packs apenas pesquisados acima.
