@@ -1,0 +1,18 @@
+{
+  "createdAt": "2026-11-05",
+  "type": "runtime-screenshot",
+  "description": "Captura real do cenário autoral renderizado no navegador com Three.js 0.187.0. Interface de jogo e indicador de desenvolvimento ocultos apenas para a captura; geometria e pixels do cenário não foram gerados por IA nem retocados.",
+  "route": "/jogos/caminho-da-compaixao",
+  "scene": "Ponto inicial da jornada, câmera padrão em terceira pessoa.",
+  "renderer": "Three.js 0.187.0 / WebGL2",
+  "worldAssets": "Geometria e materiais procedurais autorais do aplicativo; não são reconstrução arqueológica certificada.",
+  "files": [
+    {
+      "path": "/games3d/caminho-da-compaixao.png",
+      "width": 1440,
+      "height": 912,
+      "bytes": 660261,
+      "sha256": "a8005debb7e4c9be69c1d51e4ddc32ac038de4f8ad38ab8fdb836b8d26b0909c"
+    }
+  ]
+}

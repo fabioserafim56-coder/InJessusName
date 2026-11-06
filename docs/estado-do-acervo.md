@@ -86,3 +86,8 @@ Artes originais e capas editoriais, percurso Embla, Motion em etapas, ícones Ph
 Três jogos em `/jogos` usam leituras de Lucas 10, Salmo 23 e João 6, com erros explicados e conclusão vinculada às respostas verificadas. As 15 histórias mantêm 60 cenas e agora oferecem reconstrução da sequência; quatro cenas receberam arte original 1536×1024 com bytes e SHA-256 em `/visuals/scenes/proveniencia.json`. As imagens são interpretações artísticas geradas por IA, não fotos nem evidências históricas. A contagem dos cestos é ensinada pelo texto de João 6:13, sem pedir ao aluno que conte objetos na ilustração.
 
 A conferência automatizada do acervo e os limites da revisão estão em [revisao-conteudo.md](revisao-conteudo.md). Não se acrescentou uma narração humana licenciada nesta ampliação; os áudios sintéticos anteriores continuam identificados.
+
+
+## Jornada controlável em 3D — 06/11/2026
+
+Além das três práticas em duas dimensões, `/jogos/caminho-da-compaixao` oferece uma missão de seis ações ligadas a Lucas 10:25–37. O aluno controla o personagem, busca os recursos, representa o cuidado e acompanha o viajante à hospedaria. Os treze versículos da consulta mantêm o texto da edição. Cenário, personagens, câmera e tempo condensado são adaptações identificadas; não há alegação de reconstrução arqueológica. A missão fica em memória, sem pontuação espiritual ou custo de inferência por jogador. Consulte [jornada-3d.md](jornada-3d.md).

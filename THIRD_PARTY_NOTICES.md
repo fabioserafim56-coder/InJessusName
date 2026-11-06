@@ -567,3 +567,12 @@ ONNX Runtime CPU 1.31.1 processed one 240×192 crop of an original interpretive 
 The source in `services/multimodal/` supports optional PaddleOCR and Qwen2.5-VL or an existing compatible visual provider. Their dependencies and model weights are installed separately on that service, not embedded in the browser or distributed as public model files. PaddleOCR/PaddlePaddle and the selected Qwen2.5-VL-7B-Instruct model declare Apache-2.0; the exact dependencies, model revision and deployment instructions are recorded in the service README. A real CPU PaddleOCR sample is documented in `docs/multimodal-estado.md`; transport tests with substituted model functions do not establish Qwen inference.
 
 The Next.js server also has direct HTTP adapters for OpenAI and Gemini. These are commercial hosted APIs, not a distribution of open model weights or a claim that another model is Qwen. Private keys and explicit provider configuration are required; returned model identification is preserved. Provider terms, billing, access and data policies apply independently. The app's implementation and tests do not themselves prove public activation or a paid inference. See `docs/configurar-visao.md`.
+
+
+## Three.js 0.187.0 — controlled 3D biblical game
+
+Source: https://github.com/mrdoob/three.js/tree/r187. Copyright © 2010–2026 three.js authors. MIT License, verified against the installed `three` package. The complete, unmodified license is distributed at [public/licenses/three-MIT.txt](public/licenses/three-MIT.txt).
+
+Three.js supplies the browser-side renderer, scene graph, cameras, lighting and geometry used by the new controllable 3D game. The game's mission, controls and educational content are part of this project. The engine license does not cover Bible translations, historical photographs or other artwork, which retain their separately documented terms and provenance. Loading this rendering library does not run a Hugging Face model or send gameplay to an inference API.
+
+The research record in [docs/jogo3d-ferramentas.md](docs/jogo3d-ferramentas.md) distinguishes the selected renderer from alternative engines and image-to-3D models that were only investigated. No license or integration of TripoSR, TRELLIS or Hunyuan3D is implied by that research.

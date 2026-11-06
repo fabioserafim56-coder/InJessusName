@@ -40,6 +40,7 @@ function loadContent(relative) {
 
 const stories = loadContent("src/content/stories/index.ts").biblicalStories;
 const gameData = loadContent("src/content/games/index.ts");
+const journey3d = loadContent("src/content/games3d/index.ts");
 const datasets = [
   ["primeira-aula", loadContent("src/content/lessons/primeiros-passos.ts").firstLesson],
   ["curso", loadContent("src/content/courses/introductory-course.ts").additionalLessons],
@@ -49,6 +50,7 @@ const datasets = [
   ["museu", readJson("src/content/museum/exhibits.json")],
   ["narracoes", readJson("src/content/narration/passages.json")],
   ["jogos", gameData.gameReferences],
+  ["jornada-3d", [journey3d.missionReference, ...journey3d.missionStages.map(stage => stage.reference)]],
   ["guias-dos-livros", readJson("src/content/book-guides/guides.json").flatMap(guide =>
     guide.readings.map(reading => ({ ...reading, book: guide.id })))],
 ];
@@ -106,6 +108,12 @@ if (new Set(gameData.compassionTray).size !== gameData.compassionSteps.length ||
   errors.push("A bandeja de gestos do samaritano não corresponde aos gestos cadastrados.");
 }
 for (const game of gameData.games) if (!readings.has(game.reading)) errors.push(`Jogo ${game.id}: leitura inexistente.`);
+if (journey3d.missionStages.length !== 6) errors.push("A jornada 3D deve ligar seus seis gestos à parábola.");
+for (const stage of journey3d.missionStages) {
+  if (!(stage.target in journey3d.worldPoints)) errors.push(`Jornada 3D ${stage.id}: destino inexistente.`);
+  if (stage.reference.bookId !== "LUK" || stage.reference.chapter !== 10 || stage.reference.start < 25 || stage.reference.end > 37) errors.push(`Jornada 3D ${stage.id}: gesto fora da passagem-base.`);
+}
+for (const [name, point] of Object.entries(journey3d.worldPoints)) if (!Number.isFinite(point.x) || !Number.isFinite(point.z) || point.x < journey3d.worldBounds.minX || point.x > journey3d.worldBounds.maxX || point.z < journey3d.worldBounds.minZ || point.z > journey3d.worldBounds.maxZ) errors.push(`Jornada 3D ${name}: ponto fora do cenário.`);
 for (const story of stories) if (story.scenes.length !== 4) errors.push(`História ${story.id}: não tem quatro cenas.`);
 if (new Set(stories.map(story => story.id)).size !== stories.length) errors.push("IDs de histórias repetidos.");
 
@@ -155,7 +163,10 @@ const result = {
   occurrencesByGroup: counts,
   stories: stories.length,
   scenes: stories.reduce((count, story) => count + story.scenes.length, 0),
-  games: gameData.games.length,
+  games: gameData.games.length + 1,
+  twoDimensionalGames: gameData.games.length,
+  threeDimensionalJourneys: 1,
+  journeyObjectives: journey3d.missionStages.length,
   illustrations,
   errors,
   limits: "Confere referências estruturadas, existência do texto, integridade do ZIP, vínculos das atividades e proveniência técnica das novas ilustrações. Não interpreta teologia, não certifica pedagogia, não verifica cada referência em prosa nem a fidelidade visual das imagens.",

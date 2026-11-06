@@ -3,6 +3,7 @@ import { FocusShell } from "@/components/focus-shell";
 import { GamesHub } from "@/components/games/games-hub";
 import { gameReferences, games, type GameReadings } from "@/content/games";
 import { getBibleChapter, getBibleEdition } from "@/lib/bible";
+import { GameWorldEntry } from "@/components/games3d/world-entry";
 
 export const metadata: Metadata = { title: "Jogos na Palavra | InJessusName", description: "Reconstrua relatos, conecte contextos e investigue passagens bíblicas com a Bíblia aberta e no seu tempo." };
 
@@ -16,6 +17,7 @@ export default async function GamesPage({ searchParams }: { searchParams: Promis
   })) as GameReadings;
   const edition = getBibleEdition();
   return <FocusShell title="Jogos na Palavra" subtitle="Conhecer, praticar e guardar no coração" backHref="/aprender" backLabel="Voltar aos estudos" mainClassName="games-main">
+    <GameWorldEntry />
     <GamesHub readings={readings} initialGame={initialGame} attribution={edition.attribution} sourceUrl={edition.sourceUrl} licenseUrl={edition.licenseUrl} />
   </FocusShell>;
 }

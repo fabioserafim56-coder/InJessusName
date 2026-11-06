@@ -44,6 +44,6 @@ test("menu é recolhível, devolve o foco e dá acesso aos jogos sem ocupar uma 
   await page.keyboard.press("Escape");
   await expect(menu).not.toBeVisible();
   await expect(trigger).toBeFocused();
-  await expect(page.getByRole("link", { name: "Entrar nos jogos da Palavra", exact: true })).toHaveAttribute("href", "/jogos");
+  await expect(page.getByRole("link", { name: "Entrar na jornada 3D", exact: true })).toHaveAttribute("href", "/jogos/caminho-da-compaixao");
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
 });
